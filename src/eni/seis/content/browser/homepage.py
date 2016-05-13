@@ -1,5 +1,6 @@
 from plone import api
 from Products.Five.browser import BrowserView
+from eni.seis.content.util import EventItem
 
 
 class HomepageView(BrowserView):
@@ -11,4 +12,4 @@ class HomepageView(BrowserView):
         query = {
             'portal_type': 'Event',
         }
-        return [x.getObject() for x in catalog(**query)]
+        return [EventItem(brain) for brain in catalog(**query)]
