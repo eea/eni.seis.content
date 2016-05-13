@@ -1,0 +1,52 @@
+<html metal:use-macro="here/main_template/macros/master">
+  <metal:content fill-slot="content">
+
+  <!-- Events section -->
+  <section class="section"
+           tal:define="events python:view.get_events();
+                       has_events python:True if len(events) > 0 else False">
+
+    <header class="section-header">
+      <h2 class="section-title">Events</h2>
+    </header>
+
+    <div class="section-body">
+      <div class="listing block-inset">
+        <div class="listing-body">
+          <ul class="listing-items"
+              tal:condition="python:has_events">
+
+            <li class="listing-item"
+                tal:repeat="event python:events">
+
+              <div class="event snippet">
+                <time datetime="" class="event-date">
+                  <span class="event-month" tal:content="python:event.startDate.Month()">Sep</span>
+                  <span class="event-day" tal:content="python:event.startDate.day()">25</span>
+                  <span class="event-year" tal:content="python:event.startDate.year()">2016</span>
+                </time>
+
+                <div class="event-body">
+                  <h4 class="event-title">
+                    <a href="" tal:content="python:event.title"
+                       tal:attributes="href python:event.absolute_url()">Event title</a>
+                  </h4>
+                  <div class="event-description" tal:content="structure python:event.Description()">
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p tal:condition="python:has_events is False">No events.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="section-footer">
+      <a href="">See all events</a>
+      <a href="">See event calendar</a>
+    </footer>
+  </section><!-- Events section -->
+
+  </metal:content>
+</html>

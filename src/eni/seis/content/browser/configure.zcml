@@ -1,13 +1,24 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="eni.seis.content">
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="eni.seis.content">
+
+  <!-- Homepage -->
+  <browser:page
+    name="homepage"
+    for="*"
+    title="ENI-SEIS Homepage"
+    menu="plone_displayviews"
+    permission="zope2.View"
+    class=".homepage.HomepageView"
+    template="templates/homepage.pt"
+    />
 
   <!-- Publish static files -->
   <browser:resourceDirectory
-      name="eni.seis.content"
-      directory="static"
-      />
+    name="eni.seis.content"
+    directory="static"
+    />
 
 </configure>
