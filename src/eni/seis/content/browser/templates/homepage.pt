@@ -3,6 +3,7 @@
 
   <!-- Events section -->
   <section class="section"
+           id="events-section"
            tal:define="events python:view.get_events();
                        has_events python:True if len(events) > 0 else False;
                        all_events_url python:view.all_events_url();
