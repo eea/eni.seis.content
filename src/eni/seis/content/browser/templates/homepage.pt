@@ -4,7 +4,9 @@
   <!-- Events section -->
   <section class="section"
            tal:define="events python:view.get_events();
-                       has_events python:True if len(events) > 0 else False">
+                       has_events python:True if len(events) > 0 else False;
+                       all_events_url python:view.all_events_url();
+                       event_calendar_url python:view.event_calendar_url()">
 
     <header class="section-header">
       <h2 class="section-title">Events</h2>
@@ -43,8 +45,8 @@
     </div>
 
     <footer class="section-footer">
-      <a href="">See all events</a>
-      <a href="">See event calendar</a>
+      <a href="" tal:attributes="href python:all_events_url">See all events</a>
+      <a href="" tal:attributes="href python:event_calendar_url">See event calendar</a>
     </footer>
   </section><!-- Events section -->
 

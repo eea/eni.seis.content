@@ -1,6 +1,7 @@
 from plone import api
 from Products.Five.browser import BrowserView
 from eni.seis.content.util import EventItem
+from eni.seis.content.util import portal_absolute_url
 
 
 class HomepageView(BrowserView):
@@ -13,3 +14,9 @@ class HomepageView(BrowserView):
             'portal_type': 'Event',
         }
         return [EventItem(brain) for brain in catalog(**query)]
+
+    def all_events_url(self):
+        return portal_absolute_url() + "/events"
+
+    def event_calendar_url(self):
+        return portal_absolute_url() + "/events"  # [TODO] Update.

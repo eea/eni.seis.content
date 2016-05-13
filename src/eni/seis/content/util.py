@@ -5,6 +5,10 @@ import re
 import string
 
 
+def portal_absolute_url():
+    return api.portal.get().absolute_url()
+
+
 def reduce_text(text, limit):
     text = re.sub('<[^<]+?>', '', text)
     if len(text) <= limit:
