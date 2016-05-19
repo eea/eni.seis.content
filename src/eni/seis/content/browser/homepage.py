@@ -12,7 +12,10 @@ class HomepageView(BrowserView):
         catalog = api.portal.get_tool('portal_catalog')
         query = {
             'portal_type': 'Event',
+            'sort_on': 'start',
+            'sort_order': 'ascending'
         }
+
         return [EventItem(brain) for brain in catalog(**query)]
 
     def all_events_url(self):
