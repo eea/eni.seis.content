@@ -1,0 +1,36 @@
+contributors: 
+creation_date: 2016/05/13 08:26:18.889775 UTC
+expirationDate: None
+forcedisableautolinks: False
+id: aggregator
+tableContents: False
+UID: 436fe7fccf3d49958153433295749b27
+modification_date: 2016/05/19 16:02:16.232601 UTC
+title: News
+sort_on: effective
+relatedItems: 
+location: 
+excludeFromNav: False
+presentation: False
+description: Site News
+subject: 
+sort_reversed: True
+effectiveDate: None
+language: en
+rights: 
+b_size: 30
+customViewFields: Title
+   Creator
+   Type
+   ModificationDate
+limit: 1000
+allowDiscussion: False
+creators: admin
+Content-Type: text/html
+query0_i: portal_type
+query0_o: plone.app.querystring.operation.selection.is
+query0_v: News Item
+query1_i: review_state
+query1_o: plone.app.querystring.operation.selection.is
+query1_v: published
+

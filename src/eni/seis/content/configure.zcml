@@ -20,6 +20,22 @@
       />
 
   <genericsetup:registerProfile
+      name="extra-south"
+      title="eni.seis.content (extra SOUTH)"
+      directory="profiles/extra-south"
+      description="Extra content and configuration for ENI SOUTH website."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="extra-east"
+      title="eni.seis.content (extra EAST)"
+      directory="profiles/extra-east"
+      description="Extra content and configuration for ENI EAST website."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
       name="uninstall"
       title="eni.seis.content (uninstall)"
       directory="profiles/uninstall"
