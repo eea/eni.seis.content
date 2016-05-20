@@ -23,3 +23,15 @@ class HomepageView(BrowserView):
 
     def event_calendar_url(self):
         return portal_absolute_url() + "/media/events-calendar"
+
+    def section_url(self, abbrev):
+        urls = {
+            "ma": "/governance/management-group",
+            "st": "/governance/steering-committee",
+            "nf": "/governance/nfps",
+            "pr": "/governance/project-reports",
+            "ac": "/workplan/activities",
+            "me": "/workplan/meetings",
+            "re": "/workplan/regional",
+        }
+        return portal_absolute_url() + urls.get(abbrev, "")
