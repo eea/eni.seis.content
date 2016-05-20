@@ -22,4 +22,4 @@ class HomepageView(BrowserView):
         return portal_absolute_url() + "/events"
 
     def event_calendar_url(self):
-        return portal_absolute_url() + "/events"  # [TODO] Update.
+        return portal_absolute_url() + "/media/events-calendar"
