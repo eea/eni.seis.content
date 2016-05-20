@@ -1,56 +1,119 @@
 <html metal:use-macro="here/main_template/macros/master">
   <metal:content fill-slot="content">
 
-  <!-- Events section -->
-  <section class="section"
-           data-diazo="events-section"
-           id="events-section"
-           tal:define="events python:view.get_events();
-                       has_events python:True if len(events) > 0 else False;
-                       all_events_url python:view.all_events_url();
-                       event_calendar_url python:view.event_calendar_url()">
+    <main class="page-main" data-diazo="homepage-content" >
 
-    <header class="section-header">
-      <h2 class="section-title">Events</h2>
-    </header>
+      <!-- Governance section -->
+      <section class="section">
+        <header class="section-header">
+          <h2 class="section-title">Governance</h2>
+        </header>
+        <div class="section-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, aut! Deleniti excepturi dolore molestias, est soluta eaque, error ullam aperiam adipisci eveniet consectetur magnam saepe. Ullam enim explicabo, odit repudiandae!</p>
 
-    <div class="section-body">
-      <div class="listing block-inset">
-        <div class="listing-body">
-          <ul class="listing-items"
-              tal:condition="python:has_events">
-
-            <li class="listing-item"
-                tal:repeat="event python:events">
-
-              <div class="event snippet">
-                <time datetime="" class="event-date">
-                  <span class="event-month" tal:content="python:event.month">Sep</span>
-                  <span class="event-day" tal:content="python:event.day">25</span>
-                  <span class="event-year" tal:content="python:event.year">2016</span>
-                </time>
-
-                <div class="event-body">
-                  <h4 class="event-title">
-                    <a href="" tal:content="python:event.title"
-                       tal:attributes="href python:event.url">Event title</a>
-                  </h4>
-                  <div class="event-description" tal:content="structure python:event.description">
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <p tal:condition="python:has_events is False">No events.</p>
+          <div class="leading">
+            <ul class="list-inline separated-line">
+              <li><a href="">Management Group</a></li>
+              <li><a href="">Steering Committee</a></li>
+              <li><a href="">NFPs</a></li>
+              <li><a href="">Project Reports</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
+      </section><!-- Governance section -->
 
-    <footer class="section-footer">
-      <a href="" tal:attributes="href python:all_events_url">See all events</a>
-      <a href="" tal:attributes="href python:event_calendar_url">See event calendar</a>
-    </footer>
-  </section><!-- Events section -->
+      <!-- Workplan section -->
+      <section class="section">
+        <header class="section-header">
+          <h2 class="section-title">Workplan</h2>
+        </header>
+        <div class="section-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque ex qui accusamus nihil deserunt! Reiciendis sed dolore, aperiam aut laborum sequi quaerat error corporis facere quam magni omnis exercitationem sapiente!</p>
 
+          <div class="block-inset columns columns-3">
+            <div class="column">
+              <h3>Activities</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa rem animi tempore nesciunt ad libero molestiae est, ipsam atque totam hic voluptatem recusandae tenetur earum distinctio repellendus ex deserunt provident?</p>
+              <a href="">Read more</a>
+            </div>
+
+            <div class="column">
+              <h3>Meetings</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolores perferendis quibusdam rem a cumque dolore, enim quam expedita sunt ducimus facilis aperiam iste obcaecati ipsum itaque perspiciatis nam, quas.</p>
+              <a href="">Read more</a>
+            </div>
+
+            <div class="column">
+              <h3>Regional</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis officiis tempore quaerat, nemo, repellat, ea maiores eveniet velit, assumenda enim facere impedit. Quis sit, nemo nostrum blanditiis doloremque minima perferendis.</p>
+              <a href="">Read more</a>
+            </div>
+
+          </div>
+        </div>
+      </section><!-- Workplan section -->
+
+      <!-- Partners section -->
+      <section class="section">
+        <header class="section-header">
+          <h2 class="section-title">Partners</h2>
+        </header>
+        <div class="section-body">
+          ...
+        </div>
+      </section><!-- Partners section -->
+
+      <!-- Events section -->
+      <section class="section"
+               data-diazo="events-section"
+               id="events-section"
+               tal:define="events python:view.get_events();
+                           has_events python:True if len(events) > 0 else False;
+                           all_events_url python:view.all_events_url();
+                           event_calendar_url python:view.event_calendar_url()">
+
+        <header class="section-header">
+          <h2 class="section-title">Events</h2>
+        </header>
+
+        <div class="section-body">
+          <div class="listing block-inset">
+            <div class="listing-body">
+              <ul class="listing-items"
+                  tal:condition="python:has_events">
+
+                <li class="listing-item"
+                    tal:repeat="event python:events">
+
+                  <div class="event snippet">
+                    <time datetime="" class="event-date">
+                      <span class="event-month" tal:content="python:event.month">Sep</span>
+                      <span class="event-day" tal:content="python:event.day">25</span>
+                      <span class="event-year" tal:content="python:event.year">2016</span>
+                    </time>
+
+                    <div class="event-body">
+                      <h4 class="event-title">
+                        <a href="" tal:content="python:event.title"
+                           tal:attributes="href python:event.url">Event title</a>
+                      </h4>
+                      <div class="event-description" tal:content="structure python:event.description">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <p tal:condition="python:has_events is False">No events.</p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="section-footer">
+          <a href="" tal:attributes="href python:all_events_url">See all events</a>
+          <a href="" tal:attributes="href python:event_calendar_url">See event calendar</a>
+        </footer>
+      </section><!-- Events section -->
+
+    </main>
   </metal:content>
 </html>
