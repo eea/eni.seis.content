@@ -5,9 +5,6 @@
           tal:define="is_east_website python:view.is_east_website();
                       is_south_website python:view.is_south_website();">
 
-      <h2 tal:condition="is_east_website">IS EAST</h2>
-      <h2 tal:condition="is_south_website">IS SOUTH</h2>
-
       <!-- Governance section -->
       <section class="section">
         <header class="section-header">
@@ -16,14 +13,24 @@
         <div class="section-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, aut! Deleniti excepturi dolore molestias, est soluta eaque, error ullam aperiam adipisci eveniet consectetur magnam saepe. Ullam enim explicabo, odit repudiandae!</p>
 
-          <div class="leading">
+          <!-- SOUTH -->
+          <div class="leading" tal:condition="is_south_website">
             <ul class="list-inline separated-line">
               <li><a href="" tal:attributes="href python:view.section_url('ma')">Management Group</a></li>
-              <li><a href="" tal:attributes="href python:view.section_url('st')">Steering Committee</a></li>
+              <li><a href="" tal:attributes="href python:view.section_url('st_south')">Steering Committee</a></li>
               <li><a href="" tal:attributes="href python:view.section_url('nf')">NFPs</a></li>
               <li><a href="" tal:attributes="href python:view.section_url('pr')">Project Reports</a></li>
             </ul>
-          </div>
+          </div><!-- SOUTH -->
+
+          <!-- EAST -->
+          <div class="leading" tal:condition="is_east_website">
+            <ul class="list-inline separated-line">
+              <li><a href="" tal:attributes="href python:view.section_url('ma')">Management Group</a></li>
+              <li><a href="" tal:attributes="href python:view.section_url('st_east')">Steering</a></li>
+            </ul>
+          </div><!-- EAST -->
+
         </div>
       </section><!-- Governance section -->
 

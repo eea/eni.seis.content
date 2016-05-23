@@ -29,7 +29,8 @@ class HomepageView(BrowserView):
     def section_url(self, abbrev):
         urls = {
             "ma": "/governance/management-group",
-            "st": "/governance/steering-committee",
+            "st_south": "/governance/steering-committee",
+            "st_east": "/governance/steering",
             "nf": "/governance/nfps",
             "pr": "/governance/project-reports",
             "ac": "/workplan/activities",
