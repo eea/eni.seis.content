@@ -3,6 +3,16 @@ from plone.dexterity.interfaces import IDexterityContent
 from Products.PythonScripts.standard import url_quote
 import re
 import string
+from eni.seis.content.interfaces import IEniSeisEastContentLayer
+from eni.seis.content.interfaces import IEniSeisSouthContentLayer
+
+
+def is_east_website(request):
+    return IEniSeisEastContentLayer.providedBy(request)
+
+
+def is_south_website(request):
+    return IEniSeisSouthContentLayer.providedBy(request)
 
 
 def portal_absolute_url():

@@ -1,7 +1,12 @@
 <html metal:use-macro="here/main_template/macros/master">
   <metal:content fill-slot="content">
 
-    <main class="page-main" data-diazo="homepage-content" >
+    <main class="page-main" data-diazo="homepage-content"
+          tal:define="is_east_website python:view.is_east_website();
+                      is_south_website python:view.is_south_website();">
+
+      <h2 tal:condition="is_east_website">IS EAST</h2>
+      <h2 tal:condition="is_south_website">IS SOUTH</h2>
 
       <!-- Governance section -->
       <section class="section">

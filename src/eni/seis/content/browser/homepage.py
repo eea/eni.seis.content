@@ -2,6 +2,8 @@ from plone import api
 from Products.Five.browser import BrowserView
 from eni.seis.content.util import EventItem
 from eni.seis.content.util import portal_absolute_url
+from eni.seis.content.util import is_east_website
+from eni.seis.content.util import is_south_website
 
 
 class HomepageView(BrowserView):
@@ -35,3 +37,9 @@ class HomepageView(BrowserView):
             "re": "/workplan/regional",
         }
         return portal_absolute_url() + urls.get(abbrev, "")
+
+    def is_east_website(self):
+        return is_east_website(self.request)
+
+    def is_south_website(self):
+        return is_south_website(self.request)
