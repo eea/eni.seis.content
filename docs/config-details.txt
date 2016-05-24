@@ -80,6 +80,13 @@ Then you can edit rules.xml etc.
     you must replace new class in all related rules.
 
 
+EDIT TEMPLATES
+===================================================================
+Useful for homepage.pt.
+Use this condition if you want something specific for a ENI website:
+  <p tal:condition="context/is_east_website">EAST</p>
+  <p tal:condition="context/is_south_website">SOUTH</p>
+
 DEBUGGING
 ===================================================================
 import rpdb; rpdb.set_trace('0.0.0.0')

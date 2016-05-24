@@ -19,6 +19,20 @@
     class=".views.PortalAbsoluteUrlView"
     />
 
+  <browser:page
+    name="is_east_website"
+    for="*"
+    permission="zope2.View"
+    class=".views.IsEastWebsiteView"
+    />
+
+  <browser:page
+    name="is_south_website"
+    for="*"
+    permission="zope2.View"
+    class=".views.IsSouthWebsiteView"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"
