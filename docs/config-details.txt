@@ -1,0 +1,86 @@
+CONTENT STRUCTURE AND EXTRA PROFILES
+===================================================================
+We have two extra profiles for the two websites EAST and SOUTH.
+Each profile contains initial site folder structure and a browser layer.
+
+
+    Content import
+    ==============
+    First go to home folder_content select all and delete.
+    Then:
+    portal_setup
+    Import from file eni.seis.content (extra SOUTH)
+        56 Content
+        Import the site's structure and content.
+
+    Analog for eni.seis.content (extra EAST) for ENI SEIS EAST website.
+
+
+    Browser layer import
+    ====================
+    portal_setup
+    Import from file eni.seis.content (extra SOUTH)
+        38 Package browser layers
+        Enables use of skin layers for installed products.
+
+    Analog for eni.seis.content (extra EAST) for ENI SEIS EAST website.
+
+
+HOMEPAGE
+===================================================================
+
+    Set view as homepage
+    ====================
+    To replace home with our custom homepage view:
+    /manage_propertiesForm
+    Name: layout
+    Type: String
+    Value: @@homepage
+
+    Add
+
+
+    Add find_events script
+    ======================
+    This is needed in homepage
+    /manage_main
+    Script (Python)  Add
+    id: find_events
+
+        Add and edit
+        --------------------------
+        catalog = context.portal_catalog
+        query = {
+            'portal_type': 'Event',
+            'sort_on': 'start',
+            'sort_order': 'ascending'
+        }
+        return catalog(**query)
+        --------------------------
+        Save changes, Test
+
+    (For test add some events in /events for example.)
+
+
+    Add pages if missing. Copy and paste HTML from index.html sections (example from theme).
+        homepage-section-governance-text
+        homepage-section-workplan-text
+        homepage-section-partners-text
+
+
+EDIT THEME
+===================================================================
+in Theming copy theme then you can modify.
+Fix javascript errors adding:
+http://code.jquery.com/jquery-migrate-1.2.1.min.js
+in portal javascripts.
+Then you can edit rules.xml etc.
+
+    If class on body is changes from template-homepage to something else
+    you must replace new class in all related rules.
+
+
+DEBUGGING
+===================================================================
+import rpdb; rpdb.set_trace('0.0.0.0')
+nc localhost 4444
