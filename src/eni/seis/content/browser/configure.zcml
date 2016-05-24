@@ -15,6 +15,14 @@
     template="templates/homepage.pt"
     />
 
+  <!-- Website title -->
+  <browser:page
+    name="website_title_html"
+    for="*"
+    permission="zope2.View"
+    class=".website.WebsiteTitleHtmlView"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"
