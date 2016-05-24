@@ -5,7 +5,7 @@
 
       <!-- Events section -->
       <section class="section"
-               data-diazo="events-section"
+               data-diazo="section-events"
                id="events-section"
                tal:define="events context/find_events;
                            has_events python:True if len(events) > 0 else False;">
