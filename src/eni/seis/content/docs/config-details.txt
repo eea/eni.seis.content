@@ -1,0 +1,11 @@
+Script find_events
+==================
+This is needed in homepage
+--------------------------
+catalog = context.portal_catalog
+query = {
+    'portal_type': 'Event',
+    'sort_on': 'start',
+    'sort_order': 'ascending'
+}
+return catalog(**query)

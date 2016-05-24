@@ -79,7 +79,7 @@
       <section class="section"
                data-diazo="events-section"
                id="events-section"
-               tal:define="events python:view.get_events();
+               tal:define="events context/find_events;
                            has_events python:True if len(events) > 0 else False;
                            all_events_url python:view.all_events_url();
                            event_calendar_url python:view.event_calendar_url()">
@@ -94,26 +94,36 @@
               <ul class="listing-items"
                   tal:condition="python:has_events">
 
-                <li class="listing-item"
-                    tal:repeat="event python:events">
+                <tal:repeat tal:repeat="event python:events">
+                  <li class="listing-item"
+                      tal:define="event_object python:event.getObject();
+                                  event_date python:event_object.getField('startDate').getAccessor(event_object)();
+                                  event_start_date python:{'month': event_date.Month(), 'day': event_date.day(), 'year': event_date.year()};
+                                  event_month python:event_start_date.get('month');
+                                  event_day python:event_start_date.get('day');
+                                  event_year python:event_start_date.get('year');
+                                  event_title python:event_object.getField('title').getAccessor(event_object)();
+                                  event_url python:event_object.absolute_url();
+                                  event_description python:event_object.getField('description').getAccessor(event_object)();">
 
-                  <div class="event snippet">
-                    <time datetime="" class="event-date">
-                      <span class="event-month" tal:content="python:event.month">Sep</span>
-                      <span class="event-day" tal:content="python:event.day">25</span>
-                      <span class="event-year" tal:content="python:event.year">2016</span>
-                    </time>
+                    <div class="event snippet">
+                      <time datetime="" class="event-date">
+                        <span class="event-month" tal:content="python:event_month">Sep</span>
+                        <span class="event-day" tal:content="python:event_day">25</span>
+                        <span class="event-year" tal:content="python:event_year">2016</span>
+                      </time>
 
-                    <div class="event-body">
-                      <h4 class="event-title">
-                        <a href="" tal:content="python:event.title"
-                           tal:attributes="href python:event.url">Event title</a>
-                      </h4>
-                      <div class="event-description" tal:content="structure python:event.description">
+                      <div class="event-body">
+                        <h4 class="event-title">
+                          <a href="" tal:content="python:event_title"
+                             tal:attributes="href python:event_url">Event title</a>
+                        </h4>
+                        <div class="event-description" tal:content="structure python:event_description">
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                </tal:repeat>
               </ul>
               <p tal:condition="python:has_events is False">No events.</p>
             </div>
