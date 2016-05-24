@@ -1,9 +1,7 @@
 <html metal:use-macro="here/main_template/macros/master">
   <metal:content fill-slot="content">
 
-    <main class="page-main" data-diazo="homepage-content"
-          tal:define="is_east_website python:view.is_east_website();
-                      is_south_website python:view.is_south_website();">
+    <main class="page-main" data-diazo="homepage-content">
 
       <!-- Governance section -->
       <section class="section">
@@ -13,24 +11,14 @@
         <div class="section-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, aut! Deleniti excepturi dolore molestias, est soluta eaque, error ullam aperiam adipisci eveniet consectetur magnam saepe. Ullam enim explicabo, odit repudiandae!</p>
 
-          <!-- SOUTH -->
-          <div class="leading" tal:condition="is_south_website">
+          <div class="leading">
             <ul class="list-inline separated-line">
-              <li><a href="" tal:attributes="href python:view.section_url('ma')">Management Group</a></li>
-              <li><a href="" tal:attributes="href python:view.section_url('st_south')">Steering Committee</a></li>
-              <li><a href="" tal:attributes="href python:view.section_url('nf')">NFPs</a></li>
-              <li><a href="" tal:attributes="href python:view.section_url('pr')">Project Reports</a></li>
+              <li><a href="">Management Group</a></li>
+              <li><a href="">Steering Committee</a></li>
+              <li><a href="">NFPs</a></li>
+              <li><a href="">Project Reports</a></li>
             </ul>
-          </div><!-- SOUTH -->
-
-          <!-- EAST -->
-          <div class="leading" tal:condition="is_east_website">
-            <ul class="list-inline separated-line">
-              <li><a href="" tal:attributes="href python:view.section_url('ma')">Management Group</a></li>
-              <li><a href="" tal:attributes="href python:view.section_url('st_east')">Steering</a></li>
-            </ul>
-          </div><!-- EAST -->
-
+          </div>
         </div>
       </section><!-- Governance section -->
 
@@ -46,19 +34,19 @@
             <div class="column">
               <h3>Activities</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa rem animi tempore nesciunt ad libero molestiae est, ipsam atque totam hic voluptatem recusandae tenetur earum distinctio repellendus ex deserunt provident?</p>
-              <a href="" tal:attributes="href python:view.section_url('ac')">Read more</a>
+              <a href="">Read more</a>
             </div>
 
             <div class="column">
               <h3>Meetings</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolores perferendis quibusdam rem a cumque dolore, enim quam expedita sunt ducimus facilis aperiam iste obcaecati ipsum itaque perspiciatis nam, quas.</p>
-              <a href="" tal:attributes="href python:view.section_url('me')">Read more</a>
+              <a href="">Read more</a>
             </div>
 
             <div class="column">
               <h3>Regional</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis officiis tempore quaerat, nemo, repellat, ea maiores eveniet velit, assumenda enim facere impedit. Quis sit, nemo nostrum blanditiis doloremque minima perferendis.</p>
-              <a href="" tal:attributes="href python:view.section_url('re')">Read more</a>
+              <a href="">Read more</a>
             </div>
 
           </div>
