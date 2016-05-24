@@ -1,6 +1,11 @@
 Script find_events
 ==================
 This is needed in homepage
+/manage_main
+Script (Python)  Add
+id: find_events
+
+Add and edit
 --------------------------
 catalog = context.portal_catalog
 query = {
@@ -9,3 +14,5 @@ query = {
     'sort_order': 'ascending'
 }
 return catalog(**query)
+--------------------------
+Save changes, Test
