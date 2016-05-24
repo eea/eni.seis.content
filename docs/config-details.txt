@@ -91,3 +91,166 @@ DEBUGGING
 ===================================================================
 import rpdb; rpdb.set_trace('0.0.0.0')
 nc localhost 4444
+
+
+
+Configuration example (step by step):
+=====================================
+http://localhost:8080/
+Zope Management Interface
+Add Plone Site
+    IS: eni-east
+    Title: ENI SEIS EAST
+    Language: English
+    Checked: eni.seis.content
+    Checked: eni.seis.theme
+Create new site Plone
+
+Go to Contents, select all, Delete.
+
+http://localhost:8080/eni-east/portal_setup/manage_main
+Import
+    from profile eni.seis.content (extra EAST)
+        38 Package browser layers
+        Enables use of skin layers for installed products.
+
+        56 Content
+        Import the site's structure and content.
+
+        Checked: Include dependencies
+
+    Import selected steps
+
+http://localhost:8080/eni-east/manage_propertiesForm
+    Name: layout
+    Type: String
+    Value: @@homepage
+
+    Add
+
+http://localhost:8080/eni-east/manage_main
+    Script (Python)  Add
+    id: find_events
+
+        Add and edit
+catalog = context.portal_catalog
+query = {
+    'portal_type': 'Event',
+    'sort_on': 'start',
+    'sort_order': 'ascending'
+}
+return catalog(**query)
+        Save changes
+
+http://localhost:8080/eni-east/folder_contents
+    Add new page:
+        Title: Homepage section governance text
+        In Body text select Text format Plone Output Filters HTML
+
+Copy from index.html:
+  <section class="section" data-diazo="section-governance">
+    <header class="section-header">
+      <h2 class="section-title">Governance</h2>
+    </header>
+    <div class="section-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, aut! Deleniti excepturi dolore molestias, est soluta eaque, error ullam aperiam adipisci eveniet consectetur magnam saepe. Ullam enim explicabo, odit repudiandae!</p>
+
+      <div class="leading">
+        <ul class="list-inline separated-line">
+          <li><a href="">Management Group</a></li>
+          <li><a href="">Steering Committee</a></li>
+          <li><a href="">NFPs</a></li>
+          <li><a href="">Project Reports</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+Save
+Publish
+
+Analog for:
+Homepage section workplan text
+
+  <section class="section"  data-diazo="section-workplan">
+    <header class="section-header">
+      <h2 class="section-title">Workplan</h2>
+    </header>
+    <div class="section-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque ex qui accusamus nihil deserunt! Reiciendis sed dolore, aperiam aut laborum sequi quaerat error corporis facere quam magni omnis exercitationem sapiente!</p>
+
+      <div class="block-inset columns columns-3">
+        <div class="column">
+          <h3>Activities</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa rem animi tempore nesciunt ad libero molestiae est, ipsam atque totam hic voluptatem recusandae tenetur earum distinctio repellendus ex deserunt provident?</p>
+          <a href="">Read more</a>
+        </div>
+
+        <div class="column">
+          <h3>Meetings</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolores perferendis quibusdam rem a cumque dolore, enim quam expedita sunt ducimus facilis aperiam iste obcaecati ipsum itaque perspiciatis nam, quas.</p>
+          <a href="">Read more</a>
+        </div>
+
+        <div class="column">
+          <h3>Regional</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis officiis tempore quaerat, nemo, repellat, ea maiores eveniet velit, assumenda enim facere impedit. Quis sit, nemo nostrum blanditiis doloremque minima perferendis.</p>
+          <a href="">Read more</a>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+Save
+Publish
+
+Analog for:
+Homepage section partners text
+
+  <section class="section" data-diazo="section-partners">
+    <header class="section-header">
+      <h2 class="section-title">Partners</h2>
+    </header>
+    <div class="section-body">
+      ...
+    </div>
+  </section>
+
+Save
+Publish
+
+http://localhost:8080/eni-east/events
+Add new event
+    Event title 1
+    Some description for event 1
+    Body text for event 1
+
+Save
+Publish
+
+Adding new events you will see them in homepage list.
+Also you can change sections text editing pages their text pages.
+    Example:
+        Fix links in Governance and Workplan.
+
+
+Exclude from navidation pages:
+    /edit
+    Settings
+    Check Exclude from navigation
+    Save.
+
+
+Script: website_title_html
+
+portal_absolute_url = context.restrictedTraverse('portal_absolute_url')()
+return "<h1 class='east'><a href='" + portal_absolute_url + "'>ENI SEIS II <strong>East</strong></a></h1>"
+
+(or for SOUTH:
+
+portal_absolute_url = context.restrictedTraverse('portal_absolute_url')()
+return "<h1 class='south'><a href='" + portal_absolute_url + "'>ENI SEIS II <strong>South</strong></a></h1>"
+)
