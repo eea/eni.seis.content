@@ -34,7 +34,7 @@
 
                     <div class="event snippet">
                       <time datetime="" class="event-date">
-                        <span class="event-month" tal:content="python:event_month">Sep</span>
+                        <span class="event-month" tal:content="python:event_month[:3]">Sep</span>
                         <span class="event-day" tal:content="python:event_day">25</span>
                         <span class="event-year" tal:content="python:event_year">2016</span>
                       </time>
