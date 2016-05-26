@@ -303,3 +303,10 @@ In /manage_main of each website:
   ID: countries_map
   TITLE: countries_map
   upload svg map used in homepage
+
+Missing text in homepage?
+-------------------------
+You must define sections in text pages, else diazo rules ignore it.
+<section class="section">
+Your content
+</section>
