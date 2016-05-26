@@ -310,3 +310,9 @@ You must define sections in text pages, else diazo rules ignore it.
 <section class="section">
 Your content
 </section>
+
+Site-description
+----------------
+/edit
+Site description
+This is used on banner in homepage.

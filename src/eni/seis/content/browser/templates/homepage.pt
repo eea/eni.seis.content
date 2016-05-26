@@ -3,6 +3,9 @@
 
     <main class="page-main" data-diazo="homepage-content">
 
+      <!-- Moved on banner by diazo rule -->
+      <p class="site-description" data-diazo="site-description" tal:content="context/description"></p>
+
       <!-- Countries map -->
       <section class="section"
                data-diazo="section-countries-map"
