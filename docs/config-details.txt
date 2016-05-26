@@ -254,3 +254,14 @@ return "<h1 class='east'><a href='" + portal_absolute_url + "'>ENI SEIS II <stro
 portal_absolute_url = context.restrictedTraverse('portal_absolute_url')()
 return "<h1 class='south'><a href='" + portal_absolute_url + "'>ENI SEIS II <strong>South</strong></a></h1>"
 )
+
+
+Edit zope root index_html content:
+----------------------------------
+/index_html/pt_editForm
+
+<h1>Implementation of the Shared Environmental Information System principles and practices in the Eastern Partnership countries</h1>
+<ul>
+<li><a href="http://eni-seis.eionet.europa.eu/east">ENI SEIS II East</a></li>
+<li><a href="http://eni-seis.eionet.europa.eu/south">ENI SEIS II South</a></li>
+</ul>
