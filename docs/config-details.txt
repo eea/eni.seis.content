@@ -316,3 +316,7 @@ Site-description
 /edit
 Site description
 This is used on banner in homepage.
+
+Use classic theme if something broken
+-------------------------------------
+?diazo.off=1
