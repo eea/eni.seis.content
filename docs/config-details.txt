@@ -265,3 +265,33 @@ Edit zope root index_html content:
 <li><a href="http://eni-seis.eionet.europa.eu/east">ENI SEIS II East</a></li>
 <li><a href="http://eni-seis.eionet.europa.eu/south">ENI SEIS II South</a></li>
 </ul>
+
+
+If manage_portlets - add new portlet is not working:
+----------------------------------------------------
+/portal_javascripts/manage_jsForm
+
+Remove conditions for:
+
+eeatinymceutils.js
+python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL.split('/')[-1]
+
+++resource++eea.tinymce.plugins.js
+python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL.split('/')[-1]
+
+and Save.
+
+
+Newsletter
+----------
+@@manage-portlets
+Add portlet
+Static text portlet
+
+Portlet header: Newsletter
+
+<div class="box newsletter-box leading-large">
+  <h4>Newsletter</h4>
+  <p>Subscribe to our newsletter to be up to date with all things SEIS.</p>
+  <a href="">Subscribe</a>
+</div>
