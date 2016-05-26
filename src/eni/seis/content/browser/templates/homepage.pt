@@ -57,7 +57,8 @@
                           <a href="" tal:content="python:event_title"
                              tal:attributes="href python:event_url">Event title</a>
                         </h4>
-                        <div class="event-description" tal:content="structure python:event_description">
+                        <div class="event-description">
+                          <p tal:content="structure python:event_description"></p>
                         </div>
                       </div>
                     </div>
