@@ -3,6 +3,19 @@
 
     <main class="page-main" data-diazo="homepage-content">
 
+      <!-- Countries map -->
+      <section class="section"
+               data-diazo="section-countries-map"
+               id="countries-map-section"
+               tal:define="portal_absolute_url context/portal_absolute_url;
+                       map_svg_url python:portal_absolute_url + '/countries_map'">
+
+        <div class="section-body">
+          <object tal:attributes="data python:map_svg_url" type="image/svg+xml">
+          </object>
+        </div>
+      </section><!-- Countries map -->
+
       <!-- Events section -->
       <section class="section"
                data-diazo="section-events"

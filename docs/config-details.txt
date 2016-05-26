@@ -295,3 +295,11 @@ Portlet header: Newsletter
   <p>Subscribe to our newsletter to be up to date with all things SEIS.</p>
   <a href="">Subscribe</a>
 </div>
+
+svg countries map - upload in ZMI
+---------------------------------
+In /manage_main of each website:
+  File      Add
+  ID: countries_map
+  TITLE: countries_map
+  upload svg map used in homepage
