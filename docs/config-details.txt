@@ -359,9 +359,18 @@ Add
 
 How to change map in site-banner / homepage
 -------------------------------------------
-In /south.css/manage_edit add (with correct url for image):
+In /south.css/manage_main add (with correct url for image):
 
 /* Fixes added later: */
 .site-banner {
     background-image: url('http://localhost:8080/eni-east/++theme++eni.seis.theme/img/bg-header_south-lg.png') !important;
+}
+
+Fix menu background
+-------------------
+In /south.css/manage_main (or east.css) add:
+
+/* Fix menu backround */
+#portal-globalnav ul.submenu>li>a {
+    background: transparent !important;
 }
