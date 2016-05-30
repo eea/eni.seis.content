@@ -49,6 +49,7 @@ HOMEPAGE
 
         Add and edit
         --------------------------
+MAX_NUMBER_EVENTS = 4
 now = DateTime()
 
 catalog = context.portal_catalog
@@ -66,7 +67,7 @@ for event_brain in events_brains:
     if start_date > now:
         future_events.append(event_brain)
 
-return future_events
+return future_events[:MAX_NUMBER_EVENTS]
         --------------------------
         Save changes, Test
 
@@ -144,6 +145,7 @@ http://localhost:8080/eni-east/manage_main
     id: find_events
 
         Add and edit
+MAX_NUMBER_EVENTS = 4
 now = DateTime()
 
 catalog = context.portal_catalog
@@ -161,7 +163,7 @@ for event_brain in events_brains:
     if start_date > now:
         future_events.append(event_brain)
 
-return future_events
+return future_events[:MAX_NUMBER_EVENTS]
         Save changes
 
 http://localhost:8080/eni-east/folder_contents
