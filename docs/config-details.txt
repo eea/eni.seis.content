@@ -379,3 +379,28 @@ In /south.css/manage_main (or east.css) add:
 .page-header a span.subMenuTitle {
     color: initial;
 }
+
+Partners / Countries - Add pages
+--------------------------------
+Check Settings - Exclude from navigation for each one, else top menu design is broken.
+Save and Publish
+
+EAST
+http://eni-seis.eionet.europa.eu/east/partners/countries/ukraine Ukraine
+http://eni-seis.eionet.europa.eu/east/partners/countries/moldova Moldova
+http://eni-seis.eionet.europa.eu/east/partners/countries/georgia Georgia
+http://eni-seis.eionet.europa.eu/east/partners/countries/belarus Belarus
+http://eni-seis.eionet.europa.eu/east/partners/countries/azerbaijan Azerbaijan
+http://eni-seis.eionet.europa.eu/east/partners/countries/armenia Armenia
+
+SOUTH
+http://eni-seis.eionet.europa.eu/south/partners/countries/algeria Algeria
+http://eni-seis.eionet.europa.eu/south/partners/countries/tunisia Tunisia
+http://eni-seis.eionet.europa.eu/south/partners/countries/syria Syria
+http://eni-seis.eionet.europa.eu/south/partners/countries/palestine Palestine
+http://eni-seis.eionet.europa.eu/south/partners/countries/morocco Morocco
+http://eni-seis.eionet.europa.eu/south/partners/countries/libya Libya
+http://eni-seis.eionet.europa.eu/south/partners/countries/lebanon Lebanon
+http://eni-seis.eionet.europa.eu/south/partners/countries/jordan Jordan
+http://eni-seis.eionet.europa.eu/south/partners/countries/israel Israel
+http://eni-seis.eionet.europa.eu/south/partners/countries/egypt Egypt
