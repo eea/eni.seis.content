@@ -344,3 +344,15 @@ This is used on banner in homepage.
 Use classic theme if something broken
 -------------------------------------
 ?diazo.off=1 (Not working for production websites. :( Only on local. So, not very useful...)
+
+Add east.css / south.css
+------------------------
+/manage_main
+
+ID: east.css / south.css
+Title: east.css / south.css
+
+/portal_css/portal_css/manage_cssForm
+ID/Url: EXAMPLE: http://localhost:8080/eni-south/south.css/
+Render type: link
+Add
