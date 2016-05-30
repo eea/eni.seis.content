@@ -63,7 +63,7 @@ events_brains = catalog(**query)
 future_events = []
 for event_brain in events_brains:
     event = event_brain.getObject()
-    start_date = event.getRawStartDate()
+    start_date = event.getField('startDate').getAccessor(event)();
     if start_date > now:
         future_events.append(event_brain)
 
@@ -159,7 +159,7 @@ events_brains = catalog(**query)
 future_events = []
 for event_brain in events_brains:
     event = event_brain.getObject()
-    start_date = event.getRawStartDate()
+    start_date = event.getField('startDate').getAccessor(event)();
     if start_date > now:
         future_events.append(event_brain)
 
