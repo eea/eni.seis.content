@@ -356,3 +356,12 @@ Title: east.css / south.css
 ID/Url: EXAMPLE: http://localhost:8080/eni-south/south.css/
 Render type: link
 Add
+
+How to change map in site-banner / homepage
+-------------------------------------------
+In /south.css/manage_edit add (with correct url for image):
+
+/* Fixes added later: */
+.site-banner {
+    background-image: url('http://localhost:8080/eni-east/++theme++eni.seis.theme/img/bg-header_south-lg.png') !important;
+}
