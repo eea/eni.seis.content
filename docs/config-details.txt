@@ -374,3 +374,8 @@ In /south.css/manage_main (or east.css) add:
 #portal-globalnav ul.submenu>li>a {
     background: transparent !important;
 }
+
+/* Fix sub menu problem with white text on white background */
+.page-header a span.subMenuTitle {
+    color: initial;
+}
