@@ -49,13 +49,24 @@ HOMEPAGE
 
         Add and edit
         --------------------------
-        catalog = context.portal_catalog
-        query = {
-            'portal_type': 'Event',
-            'sort_on': 'start',
-            'sort_order': 'ascending'
-        }
-        return catalog(**query)
+now = DateTime()
+
+catalog = context.portal_catalog
+query = {
+    'portal_type': 'Event',
+    'sort_on': 'start',
+    'sort_order': 'ascending'
+}
+events_brains = catalog(**query)
+
+future_events = []
+for event_brain in events_brains:
+    event = event_brain.getObject()
+    start_date = event.getRawStartDate()
+    if start_date > now:
+        future_events.append(event_brain)
+
+return future_events
         --------------------------
         Save changes, Test
 
@@ -133,13 +144,24 @@ http://localhost:8080/eni-east/manage_main
     id: find_events
 
         Add and edit
+now = DateTime()
+
 catalog = context.portal_catalog
 query = {
     'portal_type': 'Event',
     'sort_on': 'start',
     'sort_order': 'ascending'
 }
-return catalog(**query)
+events_brains = catalog(**query)
+
+future_events = []
+for event_brain in events_brains:
+    event = event_brain.getObject()
+    start_date = event.getRawStartDate()
+    if start_date > now:
+        future_events.append(event_brain)
+
+return future_events
         Save changes
 
 http://localhost:8080/eni-east/folder_contents
