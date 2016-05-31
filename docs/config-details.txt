@@ -314,11 +314,8 @@ Static text portlet
 
 Portlet header: Newsletter
 
-<div class="box newsletter-box leading-large">
-  <h4>Newsletter</h4>
-  <p>Subscribe to our newsletter to be up to date with all things SEIS.</p>
-  <a href="">Subscribe</a>
-</div>
+<p>Subscribe to our newsletter to be up to date with all things SEIS.</p>
+<a href="">Subscribe</a>
 
 svg countries map - upload in ZMI
 ---------------------------------
@@ -408,3 +405,7 @@ http://eni-seis.eionet.europa.eu/south/partners/countries/egypt Egypt
 Hide Events portlet
 -------------------
 /@@manage-portlets click Hide for Events (right column)
+
+Update
+------
+Edit Newsletter portlet content (see above ^).
