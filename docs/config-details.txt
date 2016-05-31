@@ -409,3 +409,13 @@ Hide Events portlet
 Update
 ------
 Edit Newsletter portlet content (see above ^).
+
+
+Fix border color in submenu items
+---------------------------------
+Add in /manage_main south.css (/south.css/manage_main):
+
+/* Fix border color in submenu items */
+#portal-globalnav ul.submenu>li>a:hover {
+  box-shadow: inset 3px 0 0 #F7931E !important;
+}
