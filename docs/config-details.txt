@@ -404,3 +404,7 @@ http://eni-seis.eionet.europa.eu/south/partners/countries/lebanon Lebanon
 http://eni-seis.eionet.europa.eu/south/partners/countries/jordan Jordan
 http://eni-seis.eionet.europa.eu/south/partners/countries/israel Israel
 http://eni-seis.eionet.europa.eu/south/partners/countries/egypt Egypt
+
+Hide Events portlet
+-------------------
+/@@manage-portlets click Hide for Events (right column)
