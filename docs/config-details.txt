@@ -437,3 +437,8 @@ ID: favicon.ico
 Title: favicon.ico
 
 (used 16x16 px .ico images)
+
+  If cached:
+    go to /favicon.ico refresh until the new ones appears
+    Ctrl + F5 in site root
+    restart browser
