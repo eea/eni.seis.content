@@ -428,3 +428,12 @@ Add in /manage_main east.css (/east.css/manage_main):
 .admin span.state-published {
   color: #8CDA8C !important;
 }
+
+Update favicon
+--------------
+/portal_skins/custom/manage_main
+File Add
+ID: favicon.ico
+Title: favicon.ico
+
+(used 16x16 px .ico images)
