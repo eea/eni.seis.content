@@ -419,3 +419,12 @@ Add in /manage_main south.css (/south.css/manage_main):
 #portal-globalnav ul.submenu>li>a:hover {
   box-shadow: inset 3px 0 0 #F7931E !important;
 }
+
+EAST: State published label
+---------------------------
+Add in /manage_main east.css (/east.css/manage_main):
+
+/* Fix state published label to be visible on green editor bar */
+.admin span.state-published {
+  color: #8CDA8C !important;
+}
