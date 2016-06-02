@@ -442,3 +442,14 @@ Title: favicon.ico
     go to /favicon.ico refresh until the new ones appears
     Ctrl + F5 in site root
     restart browser
+
+Fix login link position
+-----------------------
+/* Login link top-right */
+#site-header .login-link {
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
