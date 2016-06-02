@@ -461,3 +461,8 @@ Add in /manage_main south.css (/south.css/manage_main):
 #site-footer .login-link {
   float: right;
 }
+
+/* Float right for second list of admin bar menu */
+.admin .list-inline:not(#contentViews) {
+  float: right;
+}
