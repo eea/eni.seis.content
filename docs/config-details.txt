@@ -445,6 +445,9 @@ Title: favicon.ico
 
 Fix login link position
 -----------------------
+Add in /manage_main east.css (/east.css/manage_main):
+Add in /manage_main south.css (/south.css/manage_main):
+
 /* Login link top-right */
 #site-header .login-link {
   float: right;
@@ -452,4 +455,9 @@ Fix login link position
   right: 10px;
   top: 10px;
   z-index: 1;
+}
+
+/* Login link footer */
+#site-footer .login-link {
+  float: right;
 }
