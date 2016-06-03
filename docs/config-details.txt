@@ -466,3 +466,8 @@ Add in /manage_main south.css (/south.css/manage_main):
 .admin .list-inline:not(#contentViews) {
   float: right;
 }
+
+Theme changes using interface
+=============================
+eni.seis.theme.new is an editable copy of eni.seis.theme.
+Use /@@theming-controlpanel - Modify theme - to make updates for its files.
