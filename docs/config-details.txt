@@ -467,12 +467,25 @@ Add in /manage_main south.css (/south.css/manage_main):
   float: right;
 }
 
+
 Theme changes using interface
 =============================
 eni.seis.theme.new is an editable copy of eni.seis.theme.
 Use /@@theming-controlpanel - Modify theme - to make updates for its files.
 
+
+Fix South map
+-------------
+Add in /manage_main south.css (/south.css/manage_main):
+
 /* Fix map to show South countries */
 .site-banner {
     background-position: bottom;
 }
+
+
+Fix bug cannot add new user / group (empty box pop-up)
+------------------------------------------------------
+/portal_javascripts/manage_jsForm
+Uncheck: popupforms.js
+Save
