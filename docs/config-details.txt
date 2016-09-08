@@ -489,3 +489,11 @@ Fix bug cannot add new user / group (empty box pop-up)
 /portal_javascripts/manage_jsForm
 Uncheck: popupforms.js
 Save
+
+Read more option:
+-----------------
+http://eni-seis.eionet.europa.eu/east/portal_javascripts/manage_jsForm
+Add script: https://cdn.rawgit.com/GhitaB/read-more/master/read-more-v-1-0.js
+
+Usage: https://github.com/GhitaB/read-more
+Demo: http://eni-seis.eionet.europa.eu/east/demo/readmore-example
