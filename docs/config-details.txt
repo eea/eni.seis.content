@@ -497,3 +497,18 @@ Add script: https://cdn.rawgit.com/GhitaB/read-more/master/read-more-v-1-0.js
 
 Usage: https://github.com/GhitaB/read-more
 Demo: http://eni-seis.eionet.europa.eu/east/demo/readmore-example
+
+Events
+------
+http://eni-seis.eionet.europa.eu/east/events - a folder containing events
+
+https://github.com/collective/Solgema.fullcalendar
+
+http://eni-seis.eionet.europa.eu/east/prefs_install_products_form
+  Activate
+    Solgema ContextualContentMenu 0.2
+    Solgema Fullcalendar 2.3.4
+
+http://eni-seis.eionet.europa.eu/east/events/@@solgemafullcalendar_properties
+CalendarView: Month
+firstDay: Sunday
