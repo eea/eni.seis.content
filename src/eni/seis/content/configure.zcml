@@ -43,6 +43,11 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <include package="archetypes.schemaextender" />
+
+  <adapter
+      factory=".extender.DescriptionFieldExtender" />
+
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="eni.seis.content-hiddenprofiles" />
