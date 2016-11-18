@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
+
+        <div tal:define="tabs view/tabs">
+            <ul class="nav nav-tabs">
+                <tal:tab tal:repeat="tab tabs">
+                    <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
+                        <a tal:attributes="href string:#${tab/getId}" tal:content="tab/Title" data-toggle="tab">
+                            Tab Title
+                        </a>
+                    </li>
+                </tal:tab>
+            </ul>
+
+            <div class="tab-content">
+                <tal:tab tal:repeat="tab tabs">
+                    <div tal:attributes="
+                        id tab/getId;
+                        class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
+                        tal:define="folderContents python:view.entries(tab)" class="tab-pane active" data-toggle="pill">
+                        <tal:entries tal:condition="folderContents" tal:define="macro python:view.macro(tab)">
+                            <metal:block metal:use-macro="macro" />
+                        </tal:entries>
+                    </div>
+                </tal:tab>
+            </div>
+        </div>
+
+    </metal:block>
+</metal:content-core>
+</body>
+</html>

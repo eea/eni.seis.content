@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+
+    <object name="eni_seis" meta_type="Filesystem Directory View"
+            directory="eni.seis.content:skins/eni_seis" />
+
+    <skin-path name="*">
+        <layer name="eni_seis" insert-after="custom" />
+    </skin-path>
+
+</object>

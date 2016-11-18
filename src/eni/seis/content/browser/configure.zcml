@@ -33,6 +33,15 @@
     class=".views.IsSouthWebsiteView"
     />
 
+  <browser:page
+    name="eni_events_listing"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    for="zope.interface.Interface"
+    permission="zope2.View"
+    class=".views.EventsListing"
+    template="templates/events_listing.pt"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"

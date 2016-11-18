@@ -1,0 +1,11 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="eni.seis">
+
+  <adapter name="eni.seis.event"
+    for="plone.app.event.at.interfaces.IATEvent"
+    provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+    factory=".schema.EventSchemaExtender"
+    />
+
+</configure>

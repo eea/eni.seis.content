@@ -7,8 +7,10 @@
   <i18n:registerTranslations directory="locales" />
 
   <includeDependencies package="." />
-
+  <include file="skins.zcml" />
   <include package=".browser" />
+  <include package=".subtypes" />
+  <include package=".upgrades" />
 
 
   <genericsetup:registerProfile
@@ -42,6 +44,11 @@
       description="Uninstalls the eni.seis.content add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
+    <genericsetup:importStep
+        name="eni.seis.various"
+        title="ENI SEIS Various Setup" description="Setup ENI SEIS Content"
+        handler="eni.seis.content.setuphandlers.setup_various" />
 
   <include package="archetypes.schemaextender" />
 
