@@ -8,4 +8,10 @@
     factory=".schema.EventSchemaExtender"
     />
 
+  <adapter name="eni.seis.news"
+    for="Products.ATContentTypes.interfaces.news.IATNewsItem"
+    provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+    factory=".schema.EventSchemaExtender"
+    />
+
 </configure>
