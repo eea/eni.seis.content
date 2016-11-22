@@ -28,10 +28,12 @@
                     <metal:block use-macro="context/folder_listing/macros/entries">
                         <metal:entry fill-slot="entry">
 
-                    <tr metal:define-macro="listitem" tal:define="item_effective item/EffectiveDate;">
+                    <tr metal:define-macro="listitem" tal:define="
+                      item_object item/getObject;
+                      item_effective item/EffectiveDate;">
                       <td tal:content="python:toLocalizedTime(item_effective,long_format=1)">August 16, 2001 at 23:35:59</td>
                       <td><a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></td>
-                      <td tal:content="item/getCountries|string:">Romania</td>
+                      <td><metal:countries metal:use-macro="python:item_object.widget('countries', mode='view')" /></td>
                     </tr>
 
                         </metal:entry>
