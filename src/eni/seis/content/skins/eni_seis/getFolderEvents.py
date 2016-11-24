@@ -1,4 +1,3 @@
-## Script (Python) "getFolderContents"
 ##bind container=container
 ##bind context=context
 ##bind namespace=
