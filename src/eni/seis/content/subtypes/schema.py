@@ -15,6 +15,11 @@ class CountriesField(ExtensionField, public.LinesField):
     """
 
 
+class ExtendedStringField(ExtensionField, public.StringField):
+    """ Extended StringField
+    """
+
+
 @implementer(ISchemaExtender, IBrowserLayerAwareExtender)
 class EventSchemaExtender(object):
     """ Schema extender
@@ -31,6 +36,18 @@ class EventSchemaExtender(object):
                 label=_(u"Countries"),
                 description=_(u"Countries")
             )
+        ),
+
+        ExtendedStringField(
+            name='event_level',
+            widget=public.SelectionWidget(
+                label="Event Level",
+                description=(u"Select Regional Level for events that belong "
+                             u"to both East and South")
+            ),
+            default="National Level",
+            required=True,
+            vocabulary=["National Level", "Regional Level"],
         ),
     )
 
