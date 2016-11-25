@@ -18,13 +18,13 @@
 
 <div tal:replace="structure tab/long_description | nothing" tal:on-error="nothing"></div>
 
-            <table class="listing"
+            <table class="listing event-table"
                    summary="Content listing"
                    i18n:attributes="summary summary_content_listing;">
                 <thead>
                     <tr>
-                        <th >&nbsp;Event&nbsp;</th>
-                        <th >&nbsp;Date&nbsp;</th>
+                        <th >Event</th>
+                        <th >Date</th>
                     </tr>
                 </thead>
 
@@ -35,28 +35,28 @@
 <tr metal:define-macro="listitem" tal:define="oddrow repeat/item/odd;" tal:attributes="class python:test(oddrow, 'even', 'odd')">
 
 <td>
-<div>
+<div class="event-title">
 <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
 </div>
 
-<div>
+<div class="event-location">
 <strong>Location:</strong> <span tal:replace="python: context.get_event_location(item)"></span>
 </div>
 
-<div>
+<div class="event-category">
 <strong>Category:</strong>
 <span tal:replace="python: context.get_event_type(item).capitalize()"></span>
 </div>
 
-<div tal:define="obj item/getObject"><strong>Contact:</strong>
+<div tal:define="obj item/getObject" class="event-contact"><strong>Contact:</strong>
 <a tal:condition="python: obj.contact_email and obj.contact_name" href="" tal:attributes="href python: obj.contact_email" tal:content="python: obj.contact_name">Somebody</a>
 </div>
 
-<div><a href="" tal:attributes="href string:${item/getURL}/register">Register</a></div>
+<div type="button" class="btn event-register"><a href="" tal:attributes="href string:${item/getURL}/register">Register</a></div>
 
 </td>
 
-<td><span tal:content="python: context.get_event_year(item)"></span> / <span tal:content="python:context.get_event_dates(item)"></span></td>
+<td class="event-table-date"><span tal:content="python: context.get_event_year(item)"></span> / <span tal:content="python:context.get_event_dates(item)"></span></td>
 
                     </tr>
 
@@ -64,7 +64,12 @@
                     </metal:block>
                 </tbody>
             </table>
-
+<div tal:on-error="nothing" tal:condition="python: not context.portal_membership.isAnonymousUser()">
+<form method="GET" action="" tal:attributes="action string:${tab/absolute_url}/createObject">
+<input type="hidden" name="type_name" value="eea.meeting" />
+<button type="button" class="btn btn-default">Create a new Meeting</button>
+</form>
+</div>
             </metal:entries>
         </metal:block>
 

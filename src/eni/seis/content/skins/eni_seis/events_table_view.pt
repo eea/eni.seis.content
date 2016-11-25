@@ -50,7 +50,12 @@
                     </metal:block>
                 </tbody>
             </table>
-
+<div tal:on-error="nothing" tal:condition="python: not context.portal_membership.isAnonymousUser()">
+<form method="GET" action="" tal:attributes="action string:${tab/absolute_url}/createObject">
+<input type="hidden" name="type_name" value="Event" />
+<button type="button" class="btn btn-default">Create a new Event</button>
+</form>
+</div>
             </metal:entries>
         </metal:block>
 

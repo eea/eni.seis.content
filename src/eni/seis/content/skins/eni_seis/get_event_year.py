@@ -3,14 +3,15 @@
 ##bind namespace=
 ##bind script=script
 ##bind subpath=traverse_subpath
-##parameters=contentFilter=None,batch=False,b_size=100,full_objects=False
-##title=brain
-# retrieves the year from an brain representing an event
+##parameters=brain=None,event=None
+##title=Retrieves the year from an brain representing an event
 
-start = brain.start
+if brain:
+    start = brain.start
+else:
+    start = event.start()
 
 if start:
     return start.year()
 
 return ""
-
