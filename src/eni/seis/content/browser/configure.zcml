@@ -48,4 +48,15 @@
     directory="static"
     />
 
+  <!-- Replace the default meetings view, to add the location map -->
+  <include package="eea.meeting" file="permissions.zcml" />
+  <browser:page
+      for="eea.meeting.interfaces.IMeeting"
+      name="view"
+      class="eea.meeting.browser.views.MeetingView"
+      template="templates/meeting_index.pt"
+      layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+      permission="eea.meeting.view_meeting"
+      />
+
 </configure>
