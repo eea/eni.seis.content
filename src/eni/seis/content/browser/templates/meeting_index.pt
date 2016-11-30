@@ -39,17 +39,11 @@
               <tr tal:define="location context/location" tal:condition="location">
                 <th i18n:translate="event_where">Where</th>
                 <td class="location">
-                  <div
-                    tal:condition="python: context.geolocation"
-                    tal:replace="structure python: view.w.get('IGeolocatable.geolocation').render()"
-                    >
-                  </div>
-
                   <a
                     tal:content="location"
-                    tal:condition="python: location and not context.geolocation"
                     tal:attributes="href string:http://maps.google.com?q=$location"
                     title="View on map" itemprop="location" >Location</a>
+                    <!-- tal:condition="python: location and not context.geolocation" -->
                 </td>
               </tr>
               <tr tal:define="mail context/contact_email;
@@ -98,6 +92,12 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div
+          tal:condition="python: context.geolocation"
+          tal:replace="structure python: view.w.get('IGeolocatable.geolocation').render()"
+          >
         </div>
 
         <div id="parent-fieldname-text" tal:content="structure context/text/output"></div>
