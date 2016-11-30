@@ -7,7 +7,7 @@ from zope.component.hooks import getSite
 from plone.i18n.locales.interfaces import ICountryAvailability
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFCore.utils import getToolByName
-from eni.seis.content.countries import EUROPEAN_COUNTRIES
+from eni.seis.content.vocabulary import EUROPEAN_COUNTRIES
 
 logger = logging.getLogger('eni.seis')
 

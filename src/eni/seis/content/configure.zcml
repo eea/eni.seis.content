@@ -59,4 +59,8 @@
       factory=".setuphandlers.HiddenProfiles"
       name="eni.seis.content-hiddenprofiles" />
 
+  <utility
+      name="european_countries"
+      component=".vocabulary.countries_vocabulary" />
+
 </configure>

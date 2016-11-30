@@ -1,5 +1,11 @@
-""" Countries
+""" Vocabularies for eni.seis.content
 """
+
+from Products.ATVocabularyManager import NamedVocabulary
+from zope.interface import alsoProvides
+from zope.schema.interfaces import IVocabularyFactory
+
+
 EUROPEAN_COUNTRIES = {
     'ad':'ad',
     'al':'al',
@@ -52,3 +58,21 @@ EUROPEAN_COUNTRIES = {
     'tr':'tr',
     'ua':'ua',
 }
+
+
+def atvocabulary_to_zope_vocab(name):
+    """ Constructs a vocabulary factory for interop with ATVocabularyManager
+    """
+
+    def factory(context):
+        nv = atvm.getVocabularyByName(name)
+        _terms = dict(nv.getVocabularyDict(nv))
+        return SimpleVocabulary([
+            SimpleTerm(n, n.encode('utf-8'), l) for n, l in _terms.items()
+        ])
+
+    return factory
+
+
+countries_vocabulary = atvocabulary_to_zope_vocab('european_countries')
+alsoProvides(countries_vocabulary, IVocabularyFactory)

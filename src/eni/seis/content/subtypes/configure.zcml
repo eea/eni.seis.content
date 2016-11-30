@@ -1,5 +1,6 @@
 <configure
   xmlns="http://namespaces.zope.org/zope"
+  xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="eni.seis">
 
   <adapter name="eni.seis.event"
@@ -12,6 +13,13 @@
     for="Products.ATContentTypes.interfaces.news.IATNewsItem"
     provides="archetypes.schemaextender.interfaces.ISchemaExtender"
     factory=".schema.EventSchemaExtender"
+    />
+
+  <plone:behavior
+    title="Country"
+    description="Adds the country field"
+    provides=".behaviors.ICountries"
+    factory=".behaviors.Countries"
     />
 
 </configure>
