@@ -9,7 +9,7 @@
 
       <div class="event clearfix" itemscope itemtype="http://data-vocabulary.org/Event">
 
-        <ul class="hiddenStructure">
+        <ul class="hiddenStructure" style="display:none">
           <li><a itemprop="url" class="url" href="" tal:attributes="href context/absolute_url" tal:content="context/absolute_url">url</a></li>
           <li itemprop="summary" class="summary" tal:content="context/title">title</li>
           <li itemprop="startDate" class="dtstart" tal:content="context/start/isoformat">start</li>
