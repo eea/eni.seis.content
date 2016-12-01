@@ -17,7 +17,6 @@
           <li itemprop="description" class="description" tal:content="context/description">description</li>
         </ul>
 
-
         <!-- Event summary -->
         <div class="eventDetails vcard">
           <table class="vertical listing"
@@ -106,7 +105,9 @@
           <div class="meeting-items" tal:define="
             contentFilter python:{'portal_type': view.allowedPortalTypes};
             folderContents python:context.getFolderContents(contentFilter);" tal:condition="folderContents">
-            <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" ></metal:content>
+            <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" >
+              <metal:fill fill-slot="long_description"></metal:fill>
+            </metal:content>
           </div>
         </tal:listing>
 
