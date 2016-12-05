@@ -16,8 +16,8 @@
     />
 
   <plone:behavior
-    title="Country"
-    description="Adds the country field"
+    title="Countries Field"
+    description="Adds the countries field"
     provides=".behaviors.ICountries"
     factory=".behaviors.Countries"
     />

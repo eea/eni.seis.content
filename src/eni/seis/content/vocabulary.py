@@ -2,8 +2,11 @@
 """
 
 from Products.ATVocabularyManager import NamedVocabulary
+from plone import api
 from zope.interface import alsoProvides
 from zope.schema.interfaces import IVocabularyFactory
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 EUROPEAN_COUNTRIES = {
@@ -65,8 +68,10 @@ def atvocabulary_to_zope_vocab(name):
     """
 
     def factory(context):
+        atvm = api.portal.get_tool(name='portal_vocabularies')
         nv = atvm.getVocabularyByName(name)
         _terms = dict(nv.getVocabularyDict(nv))
+
         return SimpleVocabulary([
             SimpleTerm(n, n.encode('utf-8'), l) for n, l in _terms.items()
         ])
