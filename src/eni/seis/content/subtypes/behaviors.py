@@ -8,7 +8,7 @@ from plone.supermodel import model
 from zope.component import adapter
 from zope.interface import implementer, Interface
 from zope.interface import provider
-from zope.schema import Choice
+from zope.schema import Choice, Tuple
 
 
 @provider(IFormFieldProvider)
@@ -20,11 +20,15 @@ class ICountries(model.Schema):
     #     fields=('countries',),
     # )
 
-    countries = Choice(
+    countries = Tuple(
         title=u"Countries",
         description=u"Applicable countries",
         required=True,
-        vocabulary="european_countries",
+        default=(),
+        value_type=Choice(
+            title=u"Country",
+            vocabulary="european_countries",
+        )
     )
 
 
