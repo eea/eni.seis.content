@@ -5,19 +5,11 @@
 
       <!-- Moved on banner by diazo rule -->
       <p class="site-description" data-diazo="site-description" tal:content="context/description"></p>
-
-      <!-- Countries map -->
-      <section class="section"
-               data-diazo="section-countries-map"
-               id="countries-map-section"
-               tal:define="portal_absolute_url context/portal_absolute_url;
-                       map_svg_url python:portal_absolute_url + '/countries_map'">
-
-        <div class="section-body">
-          <object tal:attributes="data python:map_svg_url" type="image/svg+xml">
-          </object>
-        </div>
-      </section><!-- Countries map -->
+    <section class="section" data-diazo="news-homepage">
+     <tal:content tal:define="folderContents context/communication/newsletter/getFolderNews" tal:on-error="string:error">
+         <tal:news metal:use-macro="here/news_tabular_view/macros/listing" />
+     </tal:content>
+    </section>
 
     </main>
   </metal:content>
