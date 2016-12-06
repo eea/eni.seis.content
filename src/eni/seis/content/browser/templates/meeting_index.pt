@@ -37,7 +37,13 @@
 
               <tr tal:define="location context/location" tal:condition="location">
                 <th i18n:translate="event_where">Where</th>
-                <td class="location">
+                <td class="location"
+                  tal:define="countries_vocab python: context.event_countries_vocab(key_based=True)">
+                  <div class="meeting_countries">
+                    <tal:rep tal:repeat="c_code context/countries" tal:on-error="nothing">
+                      <span tal:content="python: countries_vocab[c_code]">Ukraine</span>
+                    </tal:rep>
+                  </div>
                   <a
                     tal:content="location"
                     tal:attributes="href string:http://maps.google.com?q=$location"
