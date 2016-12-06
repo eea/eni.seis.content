@@ -1,11 +1,3 @@
-##bind container=container
-##bind context=context
-##bind namespace=
-##bind script=script
-##bind subpath=traverse_subpath
-##parameters=key_based=False
-##title=format dates for an event
-
 pairs = [
     ('Algeria', 'dz'),
     ('Egypt', 'eg'),
@@ -36,4 +28,3 @@ for p in pairs:
     res[p[0]] = p[1]
 
 return res
-
