@@ -1,0 +1,12 @@
+<metal:portlet metal:define-macro="portlet">
+  <dl class="portlet portletEvents" tal:define="url_site context/portal_url">
+    <dt class="portletHeader"><a tal:attributes="href string:${url_site}/events">Upcoming events</a></dt>
+    <dd class="portletItem">
+    </dd>
+    <dd class="portletFooter">
+        <a class="tile" tal:attributes="href url_site">
+           Upcoming events&hellip;
+        </a>
+    </dd>
+  </dl>
+</metal:portlet>

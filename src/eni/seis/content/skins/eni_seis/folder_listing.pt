@@ -13,12 +13,10 @@
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId;">
-<metal:slot define-slot="long_description">
+
 <div tal:replace="structure context/long_description | nothing" tal:on-error="nothing"></div>
-</metal:slot>
 
     <metal:listingmacro define-macro="listing">
-
     <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
                         contentFilter python:contentFilter and dict(contentFilter) or {};
                         limit_display limit_display|request/limit_display|nothing;
@@ -172,11 +170,13 @@
 
     </tal:listing>
     <metal:empty metal:define-slot="no_items_in_listing">
+<div tal:replace="nothing">
         <p class="discreet"
            tal:condition="not: folderContents"
            i18n:translate="description_no_items_in_folder">
-
+            There are currently no items in this folder.
         </p>
+</div>
     </metal:empty>
 
     </tal:foldercontents>
