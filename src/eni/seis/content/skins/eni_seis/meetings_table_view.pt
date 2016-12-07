@@ -49,14 +49,20 @@
 </div>
 
 <div tal:define="obj item/getObject" class="event-contact"><strong>Contact:</strong>
-<a tal:condition="python: obj.contact_email and obj.contact_name" href="" tal:attributes="href python: obj.contact_email" tal:content="python: obj.contact_name">Somebody</a>
+  <tal:condition tal:condition="python: hasattr(obj, 'contact_email') and hasattr(obj, 'contact_name')">
+    <a href="" tal:attributes="href python: obj.contact_email" tal:content="python: obj.contact_name">Somebody</a>
+  </tal:condition>
 </div>
 
 <div type="button" class="btn event-register"><a href="" tal:attributes="href string:${item/getURL}/register">Register</a></div>
 
 </td>
 
-<td class="event-table-date"><span tal:content="python: context.get_event_year(item)"></span> / <span tal:content="python:context.get_event_dates(item)"></span></td>
+<td class="event-table-date">
+  <tal:condition tal:condition="python: context.get_event_year(item) and context.get_event_dates(item)">
+    <span tal:content="python: context.get_event_year(item)"></span> / <span tal:content="python:context.get_event_dates(item)"></span>
+  </tal:condition>
+</td>
 
                     </tr>
 
