@@ -1,12 +1,21 @@
 # extract dates from a brain representing an event
 # return output: 28–29 October
 
-if brain:
+import DateTime
+
+if brain is not None:
     start = brain.start
     end = brain.end
 else:
-    start = event.start()
-    end = event.end()
+    if event.portal_type == 'Event':
+        start = event.start()
+        end = event.end()
+
+    elif event.portal_type == 'eea.meeting':
+        start = DateTime.DateTime(event.start)
+        end = DateTime.DateTime(event.end)
+    else:
+        return ''
 
 if not (start and end):
     return ""

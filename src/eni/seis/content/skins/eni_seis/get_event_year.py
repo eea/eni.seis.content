@@ -1,9 +1,18 @@
 # retrieves the year from an brain representing an event
 
-if brain:
+import DateTime
+
+if brain is not None:
     start = brain.start
 else:
-    start = event.start()
+    if event.portal_type == 'Event':
+        start = event.start()
+
+    elif event.portal_type == 'eea.meeting':
+        start = DateTime.DateTime(event.start)
+
+    else:
+        return ''
 
 if start:
     return start.year()

@@ -1,4 +1,5 @@
 pairs = [
+
     ('Algeria', 'dz'),
     ('Egypt', 'eg'),
     ('Israel', 'il'),
@@ -15,8 +16,8 @@ pairs = [
     ('Georgia', 'ge'),
     ('Moldova', 'md'),
     ('Ukraine', 'ua'),
-]
 
+]
 if key_based:
     res = {}
     for p in pairs:

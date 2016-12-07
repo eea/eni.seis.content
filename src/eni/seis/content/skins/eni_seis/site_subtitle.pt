@@ -1,0 +1,1 @@
+<p class="no-leading" tal:define="props python: context.portal_url.getPortalObject()"; tal:content="python: props.getProperty('description')"> Site description here </p>

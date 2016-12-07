@@ -36,7 +36,7 @@
 
 <td>
 <div class="event-title">
-<a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
+<a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a> 
 </div>
 
 <div class="event-location">
@@ -65,9 +65,8 @@
                 </tbody>
             </table>
 <div tal:on-error="nothing" tal:condition="python: not context.portal_membership.isAnonymousUser()">
-<form method="GET" action="" tal:attributes="action string:${tab/absolute_url}/createObject">
-<input type="hidden" name="type_name" value="eea.meeting" />
-<button type="button" class="btn btn-default">Create a new Meeting</button>
+<form method="GET" action="" tal:attributes="action string:${tab/absolute_url}/++add++eea.meeting">
+<button type="submit" class="btn btn-default">Create a new Meeting</button>
 </form>
 </div>
             </metal:entries>
