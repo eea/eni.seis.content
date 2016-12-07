@@ -16,6 +16,12 @@
 
         <metal:entries fill-slot="entries">
 
+          <legend>
+            <i class="fa fa-circle level-national" aria-hidden="true">National Event</i>
+            <i class="fa fa-circle level-regional" aria-hidden="true">Regional Event</i>
+            <i class="fa fa-circle other" aria-hidden="true">Other Event</i>
+          </legend>
+
           <div tal:replace="structure tab/long_description | nothing" tal:on-error="nothing"></div>
 
           <table class="listing" summary="Content listing" i18n:attributes="summary summary_content_listing;">
