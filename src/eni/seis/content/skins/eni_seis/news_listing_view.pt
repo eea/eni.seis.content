@@ -22,7 +22,6 @@
             <table class="listing" summary="Content listing" i18n:attributes="summary summary_content_listing;">
               <thead>
                 <tr>
-                  <th >&nbsp;Date&nbsp;</th>
                   <th >&nbsp;News Item&nbsp;</th>
                   <th >&nbsp;Countries&nbsp;</th>
                 </tr>
@@ -37,10 +36,9 @@
                                   news_item python:item.getObject()"
                       tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')">
 
-                      <td tal:content="python:toLocalizedTime(item.EffectiveDate)"></td>
-
                       <td>
                         <h3><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></h3>
+                        <p class="discreet" tal:content="python:toLocalizedTime(item.EffectiveDate)"></p>
                         <div tal:content="item/Description"></div>
                       </td>
 
