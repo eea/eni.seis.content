@@ -2,8 +2,8 @@ if brain.Type != 'Event':
     return ''
 
 levels = {
-'Regional Level': 'regional',
-'National Level': 'national',
+    'Regional Level': 'regional',
+    'National Level': 'national',
 }
 
 obj = brain.getObject()
