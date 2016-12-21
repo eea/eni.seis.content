@@ -6,6 +6,7 @@
 
     <skin-path name="*">
         <layer name="eni_seis" insert-after="custom" />
+        <layer name="eni_tinymce_override" insert-after="custom" />
     </skin-path>
 
 </object>
