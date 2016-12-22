@@ -1,3 +1,11 @@
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=brain
+##title=Get event level
+
 if brain.Type != 'Event':
     return ''
 
