@@ -46,6 +46,10 @@ text-align: center;
 vertical-align: middle;
 }
 
+a {
+	text-decoration: none;
+}
+
 .nowrap {
 white-space: nowrap;
 }
@@ -96,8 +100,10 @@ overflow-y: auto;
 overflow-x: hidden;
 }
 
+
+
 .radioscrolllist .list {
-padding-left: 0.5em;
+padding: 1rem .5rem;
 }
 .radioscrolllist .list a {
 margin-left: 0.5em;
@@ -107,6 +113,7 @@ margin-left: 0.5em;
 #internallinkcontainer .list.item a {
 position: absolute;
 white-space: nowrap;
+font-size: .9rem!important;
 }
 
 /* InputPanel */
@@ -143,3 +150,19 @@ font-weight: normal;
 }
 
 .verticalborder { height: 330px; width: 0px; border-right: 0.1em solid #329FD7; margin: 10px 20px 10px 20px }
+
+#plonebrowser .formHelp #internalpath span, #plonebrowser .formHelp #internalpath a{
+	font-size: 1rem;
+}
+
+#linktype_panel a {
+	font-size: 1rem;
+}
+
+#plonebrowser .formHelp strong {
+	font-size: 1rem;
+}
+
+.widget.radioscrolllist.input-border .item.list input {
+	margin-top: 5px!important;
+}

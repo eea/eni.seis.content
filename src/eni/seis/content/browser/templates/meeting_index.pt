@@ -18,6 +18,7 @@
         </ul>
 
         <!-- Event summary -->
+
         <div class="eventDetails vcard">
           <table class="vertical listing"
             summary="Event details" i18n:attributes="summary summary_event_details;">
@@ -95,8 +96,47 @@
                   </tal:registered>
                 </td>
               </tr>
+              <tr tal:define="host context/hosting_organisation | nothing"
+                   tal:condition="python:host">
+                   <th i18n:translate="hosting_organisation">Hosting organisation</th>
+                   <td tal:content="host">ONU</td>
+               </tr>
             </tbody>
           </table>
+      <div class="event-icons">
+        <div class="event-menu">
+        <div class="event-menu-item" id="register">
+          <a href="">
+            <img src="++theme++eni-seis-theme-latest/img/agenda2.png">
+          <span>register</span>
+          </a>
+        </div>
+        <div class="event-menu-item" id="ical">
+          <a href="">
+            <img src="++theme++eni-seis-theme-latest/img/calendar2.png">
+          <span>ical</span>
+          </a>
+        </div>
+        <div class="event-menu-item" id="participants">
+          <a href="">
+            <img src="++theme++eni-seis-theme-latest/img/participants2.png">
+          <span>participants</span>
+          </a>
+        </div>
+        <div class="event-menu-item" id="saved-emails">
+          <a href="">
+            <img src="++theme++eni-seis-theme-latest/img/email-saved2.png">
+          <span>saved emails</span>
+          </a>
+        </div>
+        <div class="event-menu-item" id="send-email">
+          <a href="">
+            <img src="++theme++eni-seis-theme-latest/img/email2.png">
+          <span>send email</span>
+          </a>
+        </div>
+        </div>
+      </div>
         </div>
 
         <div
