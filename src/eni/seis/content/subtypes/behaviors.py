@@ -1,12 +1,10 @@
-from Products.CMFCore.interfaces import IDublinCore
 from plone.autoform import directives
-from plone.autoform.interfaces import IFormFieldProvider
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
-from plone.supermodel import model
+from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from zope.component import adapter
-from zope.interface import implementer, Interface
+from zope.interface import implementer
 from zope.interface import provider
 from zope.schema import Choice, Tuple
 
@@ -20,9 +18,10 @@ class ICountries(model.Schema):
     #     fields=('countries',),
     # )
 
+    directives.widget('countries', CheckBoxFieldWidget)
     countries = Tuple(
         title=u"Countries",
-        description=u"Applicable countries",
+        description=u"Relevant countries",
         required=True,
         default=(),
         value_type=Choice(
