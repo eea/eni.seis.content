@@ -3,6 +3,9 @@
 
     <object name="eni_seis" meta_type="Filesystem Directory View"
             directory="eni.seis.content:skins/eni_seis" />
+  
+    <object name="eni_tinymce_override" meta_type="Filesystem Directory View"
+            directory="eni.seis.content:skins/eni_tinymce_override" />
 
     <skin-path name="*">
         <layer name="eni_seis" insert-after="custom" />

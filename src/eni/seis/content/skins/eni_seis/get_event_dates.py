@@ -1,3 +1,11 @@
+##bind container=container
+##bind context=context
+##bind namespace=
+##bind script=script
+##bind subpath=traverse_subpath
+##parameters=brain=None, event=None
+##title=format dates for an event
+
 # extract dates from a brain representing an event
 # return output: 28–29 October
 
