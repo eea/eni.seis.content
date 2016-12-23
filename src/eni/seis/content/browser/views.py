@@ -1,14 +1,11 @@
 """ BrowserView Controllers
 """
-import logging
-from Acquisition import aq_inner
+
 from Products.Five.browser import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from eni.seis.content.util import portal_absolute_url
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
+from eni.seis.content.util import portal_absolute_url
 
-logger = logging.getLogger('eni.seis.content')
 
 class HomepageView(BrowserView):
     """ Custom homepage
