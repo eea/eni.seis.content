@@ -5,6 +5,15 @@
   i18n_domain="eni.seis.content">
 
   <browser:page
+    for="plone.event.interfaces.IEvent"
+    name="event_summary"
+    class="plone.app.event.browser.event_summary.EventSummaryView"
+    template="overrides/event_summary.pt"
+    permission="zope2.View"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    />
+
+  <browser:page
     name="homepage"
     for="*"
     permission="zope2.View"
