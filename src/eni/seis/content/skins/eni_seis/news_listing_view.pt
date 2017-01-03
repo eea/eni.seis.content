@@ -8,7 +8,7 @@
 
   <body>
 
-    <metal:content-core fill-slot="content-core">
+    <metal:content-core fill-slot="content-core" tal:define="contentFilter python:{'path':{'query':'/'.join(context.getPhysicalPath()), 'depth':1}, 'sort_on':'effective', 'sort_order':'descending'}">
 
       <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
 
@@ -38,7 +38,7 @@
 
                       <td>
                         <h3><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></h3>
-                        <p class="discreet" tal:content="python:toLocalizedTime(item.EffectiveDate)"></p>
+                        <p class="discreet">Published: <tal:block tal:content="python:toLocalizedTime(item.EffectiveDate)" /></p>
                         <div tal:content="item/Description"></div>
                       </td>
 
