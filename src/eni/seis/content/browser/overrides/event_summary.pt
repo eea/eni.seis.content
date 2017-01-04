@@ -95,6 +95,11 @@
     </tal:cond>
     </tal:cond>
 
+    <dt i18n:translate="event_level">Event level</dt>
+    <dd class="event-level">
+      <span tal:replace="python:context.get_event_level(event=context)"></span>
+    </dd>
+
     <tal:cond condition="python:'ical' not in excludes">
       <dt i18n:translate="heading_add_to_calendar">Add event to calendar</dt>
       <dd tal:define="here_url context/@@plone_context_state/object_url;
