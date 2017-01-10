@@ -1,0 +1,25 @@
+<metal:macro define-macro="portlet">
+
+<tal:def tal:define="vocab context/event_countries_vocab;
+            news python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['News Item'], review_state='published', sort_on='effective', sort_order='descending', path='/east/communication/newsletter')];
+            news python: [n for n in news if vocab[context.Title()] in (n.countries or [])];
+            toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+">
+
+<dl class="box leading-large portlet portletEvents">
+  <dt>Country news</dt>
+  <dd>
+    <div tal:repeat="ni news">
+
+      <a tal:attributes="href ni/absolute_url" class="tile" tal:content="ni/Title">
+        news item
+      </a>
+      <span class="portletItemDetails location">
+          Published: <tal:block tal:content="python:toLocalizedTime(ni.EffectiveDate)" />
+      </span>
+
+    </div>
+  </dd>
+</dl>
+</tal:def>
+</metal:macro>
