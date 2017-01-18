@@ -2,5 +2,6 @@
 <metadata>
   <version>1001</version>
   <dependencies>
+    <dependency>profile-Products.ATVocabularyManager:default</dependency>
   </dependencies>
 </metadata>

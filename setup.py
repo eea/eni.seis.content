@@ -40,6 +40,7 @@ setup(
     install_requires=[
         'plone.api',
         'setuptools',
+        'Products.ATVocabularyManager',
     ],
     extras_require={
         'test': [
