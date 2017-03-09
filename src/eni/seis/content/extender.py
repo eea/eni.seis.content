@@ -23,7 +23,7 @@ class DescriptionFieldExtender(object):
             required=False,
             schemata='default',
             searchable=True,
-            primary=True,
+            primary=False,
             default_output_type='text/x-html-safe',
             widget=RichWidget(
                 description='',
