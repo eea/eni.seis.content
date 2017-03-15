@@ -60,6 +60,22 @@
     template="templates/events_listing.pt"
     />
 
+  <browser:page
+    name="register"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    for="Products.CMFPlone.Portal.PloneSite"
+    class="eni.seis.content.userdataschema.EniRegistrationForm"
+    permission="cmf.AddPortalMember"
+    />
+
+  <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    name="personal-information"
+    class="eni.seis.content.userdataschema.CustomizedUserDataPanel"
+    permission="cmf.SetOwnProperties"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"

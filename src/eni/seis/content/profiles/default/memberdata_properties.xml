@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_memberdata" meta_type="Plone Memberdata Tool">
+    <property name="first_name" type="string"></property>    <!-- Name                  -->
+    <property name="last_name" type="string"></property>     <!-- Surname (Family name) -->
+    <property name="telephone" type="string"></property>     <!-- Phone number          -->
+    <property name="institution" type="string"></property>   <!-- Institution           -->
+    <property name="from_country" type="string"></property>  <!-- From Country          -->
+    <property name="from_city" type="string"></property>     <!-- From City             -->
+</object>

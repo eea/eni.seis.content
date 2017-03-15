@@ -15,4 +15,27 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="*"
+            destination="1.0.0"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import propertiestool, memberdata-properties, componentregistry"
+            import_steps="propertiestool memberdata-properties"
+            />
+
+    </genericsetup:upgradeSteps>
+
+    <genericsetup:upgradeSteps
+            source="*"
+            destination="1.0.1"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import componentregistry"
+            import_steps="componentregistry"
+            />
+
+    </genericsetup:upgradeSteps>
 </configure>

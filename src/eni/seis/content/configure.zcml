@@ -8,10 +8,15 @@
 
   <includeDependencies package="." />
   <include file="skins.zcml" />
+  <include file="overrides.zcml" />
   <include package=".browser" />
   <include package=".subtypes" />
   <include package=".upgrades" />
 
+  <subscriber
+    for="Products.PluggableAuthService.interfaces.events.IPrincipalCreatedEvent"
+    handler="eni.seis.content.globalhandlers.autofillFullname"
+    />
 
   <genericsetup:registerProfile
       name="default"
