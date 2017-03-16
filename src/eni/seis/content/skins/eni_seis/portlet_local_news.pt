@@ -2,11 +2,20 @@
 
 <tal:def tal:define="vocab context/event_countries_vocab;
             news python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['News Item'], review_state='published', sort_on='effective', sort_order='descending', path='/east/communication/newsletter')];
-            news python: [n for n in news if vocab[context.Title()] in (n.countries or [])];
             toLocalizedTime nocall: context/@@plone/toLocalizedTime;
-">
+
+            here_is_country python:context.Title() in vocab;
+
+            parents python:context.aq_inner.aq_parent.absolute_url().split('/')[3:];
+            parents_paths python:['/' + '/'.join(parents[0:x+1]) + '/' for x in range(0, len(parents))];
+            find_parent_country_title python:[context.restrictedTraverse(x).Title() for x in parents_paths if context.restrictedTraverse(x).Title() in vocab];
+            a_parent_country_title python:find_parent_country_title[0] if len(find_parent_country_title) > 0 else None;
+            country_title python:context.Title() if here_is_country else a_parent_country_title;
+
+            news python: [n for n in news if vocab[country_title] in (n.countries or [])] if country_title is not None else news;">
 
 <dl class="box leading-large portlet portletEvents">
+  <!-- The news are filtered by country, in country page and subpages. -->
   <dt>Country news</dt>
   <dd>
     <div tal:repeat="ni news">
