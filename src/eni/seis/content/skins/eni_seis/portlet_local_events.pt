@@ -16,6 +16,7 @@ events python: [ev for ev in events if vocab[country_title] in (ev.countries or 
 ">
 
 <dl class="box leading-large portlet portletEvents" tal:condition="events">
+  <!-- The events are filtered by country, in country page and subpages. -->
   <dt>Events</dt>
   <dd>
     <div tal:repeat="event events">
