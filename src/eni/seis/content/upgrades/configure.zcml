@@ -17,12 +17,24 @@
 
     <genericsetup:upgradeSteps
             source="*"
-            destination="1.0.0"
+            destination="1.0.1"
             profile="eni.seis.content:default">
 
         <genericsetup:upgradeDepends
             title="Upgrade step for eni.seis.content: import propertiestool, memberdata-properties, componentregistry"
             import_steps="propertiestool memberdata-properties componentregistry"
+            />
+
+    </genericsetup:upgradeSteps>
+
+    <genericsetup:upgradeSteps
+            source="1.0.1"
+            destination="1.0.2"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Import step subscriber roles vocabulary"
+            import_steps="eni.seis.subscriber_roles"
             />
 
     </genericsetup:upgradeSteps>

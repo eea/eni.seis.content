@@ -1,7 +1,6 @@
 """ Vocabularies for eni.seis.content
 """
 
-from Products.ATVocabularyManager import NamedVocabulary
 from plone import api
 from zope.interface import alsoProvides
 from zope.schema.interfaces import IVocabularyFactory
@@ -10,56 +9,63 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 EUROPEAN_COUNTRIES = {
-    'ad':'ad',
-    'al':'al',
-    'am':'am',
-    'at':'at',
-    'az':'az',
-    'ba':'ba',
-    'be':'be',
-    'bg':'bg',
-    'by':'by',
-    'ch':'ch',
-    'cs':'cs',
-    'cy':'cy',
-    'cz':'cz',
-    'de':'de',
-    'dk':'dk',
-    'ee':'ee',
-    'es':'es',
-    'fi':'fi',
-    'fo':'fo',
-    'fr':'fr',
-    'gb':'gb',
-    'ge':'ge',
-    'gr':'gr',
-    'hr':'hr',
-    'hu':'hu',
-    'ie':'ie',
-    'il':'il',
-    'is':'is',
-    'it':'it',
-    'kz':'kz',
-    'li':'li',
-    'lt':'lt',
-    'lu':'lu',
-    'lv':'lv',
-    'mc':'mc',
-    'md':'md',
-    'mk':'mk',
-    'mt':'mt',
-    'nl':'nl',
-    'no':'no',
-    'pl':'pl',
-    'pt':'pt',
-    'ro':'ro',
-    'ru':'ru',
-    'se':'se',
-    'si':'si',
-    'sk':'sk',
-    'sm':'sm',
-    'tr':'tr',
-    'ua':'ua',
+    'ad': 'ad',
+    'al': 'al',
+    'am': 'am',
+    'at': 'at',
+    'az': 'az',
+    'ba': 'ba',
+    'be': 'be',
+    'bg': 'bg',
+    'by': 'by',
+    'ch': 'ch',
+    'cs': 'cs',
+    'cy': 'cy',
+    'cz': 'cz',
+    'de': 'de',
+    'dk': 'dk',
+    'ee': 'ee',
+    'es': 'es',
+    'fi': 'fi',
+    'fo': 'fo',
+    'fr': 'fr',
+    'gb': 'gb',
+    'ge': 'ge',
+    'gr': 'gr',
+    'hr': 'hr',
+    'hu': 'hu',
+    'ie': 'ie',
+    'il': 'il',
+    'is': 'is',
+    'it': 'it',
+    'kz': 'kz',
+    'li': 'li',
+    'lt': 'lt',
+    'lu': 'lu',
+    'lv': 'lv',
+    'mc': 'mc',
+    'md': 'md',
+    'mk': 'mk',
+    'mt': 'mt',
+    'nl': 'nl',
+    'no': 'no',
+    'pl': 'pl',
+    'pt': 'pt',
+    'ro': 'ro',
+    'ru': 'ru',
+    'se': 'se',
+    'si': 'si',
+    'sk': 'sk',
+    'sm': 'sm',
+    'tr': 'tr',
+    'ua': 'ua',
+}
+
+SUBSCRIBER_ROLES = {
+    'eni-seis-ii-south-nfp': 'ENI-SEIS II South NFP',
+    'medpol-nfp': 'MedPOL NFP',
+    'h2020-nfp': 'H2020 NFP',
+    'other': 'Other',
 }
 
 
@@ -81,3 +87,6 @@ def atvocabulary_to_zope_vocab(name):
 
 countries_vocabulary = atvocabulary_to_zope_vocab('european_countries')
 alsoProvides(countries_vocabulary, IVocabularyFactory)
+
+subscriber_roles_vocabulary = atvocabulary_to_zope_vocab('subscriber_roles')
+alsoProvides(subscriber_roles_vocabulary, IVocabularyFactory)

@@ -50,10 +50,15 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-    <genericsetup:importStep
-        name="eni.seis.various"
-        title="ENI SEIS Various Setup" description="Setup ENI SEIS Content"
-        handler="eni.seis.content.setuphandlers.setup_various" />
+  <genericsetup:importStep
+      name="eni.seis.various"
+      title="ENI SEIS Various Setup" description="Setup ENI SEIS Content"
+      handler="eni.seis.content.setuphandlers.setup_various" />
+
+  <genericsetup:importStep
+      name="eni.seis.subscriber_roles"
+      title="ENI SEIS Subscriber Roles Vocabulary" description="Add Subscriber Roles Vocabulary"
+      handler="eni.seis.content.setuphandlers.setup_subscriber_roles_vocabulary" />
 
   <include package="archetypes.schemaextender" />
 
@@ -67,5 +72,9 @@
   <utility
       name="european_countries"
       component=".vocabulary.countries_vocabulary" />
+
+  <utility
+      name="subscriber_roles"
+      component=".vocabulary.subscriber_roles_vocabulary" />
 
 </configure>

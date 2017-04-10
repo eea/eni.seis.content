@@ -8,8 +8,10 @@ from plone.i18n.locales.interfaces import ICountryAvailability
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFCore.utils import getToolByName
 from eni.seis.content.vocabulary import EUROPEAN_COUNTRIES
+from eni.seis.content.vocabulary import SUBSCRIBER_ROLES
 
 logger = logging.getLogger('eni.seis')
+
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
@@ -42,6 +44,7 @@ def getCountries():
         res[code] = country_name
     return res
 
+
 def setup_media_events(site):
     """ Update Site > Media > Events view
     """
@@ -54,6 +57,7 @@ def setup_media_events(site):
 
     events = media['events']
     events.setLayout('eni_events_listing')
+
 
 def setup_portal_vocabularies(site):
     """ Portal vocabularies
@@ -71,7 +75,9 @@ def setup_portal_vocabularies(site):
     atvm.invokeFactory('SimpleVocabulary', 'european_countries')
     voc = atvm.getVocabularyByName('european_countries')
     for key, val in countries.items():
-        logger.info('Adding country %s: %s within europea_countries vocabulary', key, val)
+        logger.info(
+            'Adding country %s: %s within europea_countries vocabulary',
+            key, val)
         voc.addTerm(key, val)
 
 
@@ -85,3 +91,28 @@ def setup_various(context):
     site = getSite()
     setup_media_events(site)
     setup_portal_vocabularies(site)
+
+
+def setup_subscriber_roles_vocabulary(context):
+    """ Add subscriber roles vocabulary to Portal vocabularies
+        (used by eea.meeting.subscriber)
+    """
+    site = getSite()
+
+    atvm = getToolByName(site, 'portal_vocabularies')
+    if not atvm:
+        logger.warn('No portal_vocabularies. Nothing to do.')
+        return
+
+    if 'subscriber_roles_vocabulary' in atvm.objectIds():
+        logger.warn(
+            'subscriber_roles_vocabulary already imported. Nothing to do.')
+        return
+
+    atvm.invokeFactory('SimpleVocabulary', 'subscriber_roles')
+    voc = atvm.getVocabularyByName('subscriber_roles')
+    for key, val in SUBSCRIBER_ROLES.items():
+        logger.info(
+            'Adding subscriber role %s: %s within subscriber_roles vocabulary',
+            key, val)
+        voc.addTerm(key, val)
