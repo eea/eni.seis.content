@@ -59,10 +59,9 @@
 
                     <div>
 
-                      <form tal:attributes="action string:${item/getURL}/register" method="GET">
-
-                        <div>
-                          <label for="form-widgets-reimbursed">
+                      <form class="form-horizontal" tal:attributes="action string:${item/getURL}/register" method="GET">
+                        <div class="form-group" class="col-md-3">
+                          <label for="form-widgets-reimbursed" class="control-label">
                               Reimbursed participation
                           </label>
 
@@ -83,19 +82,22 @@
                           </span>
                         </div>
 
-                        <div>
-                          <label for="form-widgets-role">
+                        <div class="form-group" class="col-md-3">
+                          <label for="form-widgets-role"  class="control-label">
                             Role
                           </label>
-                          <select id="form-widgets-role" name="form.widgets.role:list" class="select-widget required choice-field" size="1">
-                            <!-- [TODO] Get values from subscriber_role vocabulary -->
-                            <option id="form-widgets-role-0" value="medpol-nfp" selected="selected">MedPOL NFP</option>
-                            <option id="form-widgets-role-1" value="other">Other</option>
-                            <option id="form-widgets-role-2" value="h2020-nfp">H2020 NFP</option>
-                            <option id="form-widgets-role-3" value="eni-seis-ii-east-nfp">ENI-SEIS II EAST NFP</option>
+                          <select id="form-widgets-role" name="form.widgets.role:list" class="select-widget required choice-field" size="1"
+                                  tal:define="options python:context.portal_vocabularies.getVocabularyByName('subscriber_roles').items()">
+                            <tal:options tal:repeat="option options">
+                              <option tal:attributes="value python:option[0]">
+                                <span tal:replace="python:option[1].title">ENI-SEIS II EAST NFP</span>
+                              </option>
+                            </tal:options>
                           </select>
 
-                          <input class="btn event-register" type="submit" name="event-register" value="Register" />
+                          <div class="form-group" class="col-md-3">
+                            <input class="btn event-register" type="submit" name="event-register" value="Register" />
+                          </div>
                         </div>
                       </form>
                     </div>
