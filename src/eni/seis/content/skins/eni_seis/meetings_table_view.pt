@@ -57,8 +57,47 @@
                       </tal:condition>
                     </div>
 
-                    <div type="button" class="btn event-register">
-                      <a href="" tal:attributes="href string:${item/getURL}/register">Register</a>
+                    <div>
+
+                      <form tal:attributes="action string:${item/getURL}/register" method="GET">
+
+                        <div>
+                          <label for="form-widgets-reimbursed">
+                              Reimbursed participation
+                          </label>
+
+                          <span class="option">
+                            <label for="form-widgets-reimbursed-0">
+                              <input id="form-widgets-reimbursed" name="form.widgets.reimbursed" class="radio-widget required bool-field"
+                                     value="true" type="radio">
+                                  <span class="label">yes</span>
+                            </label>
+                          </span>
+
+                          <span class="option">
+                            <label for="form-widgets-reimbursed-1">
+                              <input id="form-widgets-reimbursed-1" name="form.widgets.reimbursed" class="radio-widget required bool-field"
+                                     value="false" checked="checked" type="radio">
+                              <span class="label">no</span>
+                            </label>
+                          </span>
+                        </div>
+
+                        <div>
+                          <label for="form-widgets-role">
+                            Role
+                          </label>
+                          <select id="form-widgets-role" name="form.widgets.role:list" class="select-widget required choice-field" size="1">
+                            <!-- [TODO] Get values from subscriber_role vocabulary -->
+                            <option id="form-widgets-role-0" value="medpol-nfp" selected="selected">MedPOL NFP</option>
+                            <option id="form-widgets-role-1" value="other">Other</option>
+                            <option id="form-widgets-role-2" value="h2020-nfp">H2020 NFP</option>
+                            <option id="form-widgets-role-3" value="eni-seis-ii-east-nfp">ENI-SEIS II EAST NFP</option>
+                          </select>
+
+                          <input class="btn event-register" type="submit" name="event-register" value="Register" />
+                        </div>
+                      </form>
                     </div>
                   </td>
 
