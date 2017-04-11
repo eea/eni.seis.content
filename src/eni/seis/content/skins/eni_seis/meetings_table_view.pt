@@ -87,10 +87,10 @@
                             Role
                           </label>
                           <select id="form-widgets-role" name="form.widgets.role:list" class="select-widget required choice-field" size="1"
-                                  tal:define="options python:context.portal_vocabularies.getVocabularyByName('subscriber_roles').items()">
+                                  tal:define="options python:context.restrictedTraverse('get_subscriber_roles')">
                             <tal:options tal:repeat="option options">
                               <option tal:attributes="value python:option[0]">
-                                <span tal:replace="python:option[1].title">ENI-SEIS II EAST NFP</span>
+                                <span tal:replace="python:option[1]">ENI-SEIS II EAST NFP</span>
                               </option>
                             </tal:options>
                           </select>

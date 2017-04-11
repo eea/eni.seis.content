@@ -52,6 +52,13 @@
     />
 
   <browser:page
+    name="get_subscriber_roles"
+    for="*"
+    permission="zope2.View"
+    class=".views.SubscriberRoles"
+    />
+
+  <browser:page
     name="eni_events_listing"
     layer="eni.seis.content.interfaces.IEniSeisContentLayer"
     for="zope.interface.Interface"

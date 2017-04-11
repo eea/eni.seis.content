@@ -62,3 +62,13 @@ class EventsListing(BrowserView):
             view = tab.restrictedTraverse('folder_summary_view')
             return view.macros['listing']
         return macro
+
+
+class SubscriberRoles(BrowserView):
+    """ Subscriber Roles List from subscriber_roles vocaulary
+    """
+    def __call__(self):
+        terms = self.context.portal_vocabularies.getVocabularyByName(
+            'subscriber_roles').items()
+        res = [(t[0], t[1].title) for t in terms]
+        return res
