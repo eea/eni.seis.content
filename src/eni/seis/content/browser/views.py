@@ -65,7 +65,7 @@ class EventsListing(BrowserView):
 
 
 class SubscriberRoles(BrowserView):
-    """ Subscriber Roles List from subscriber_roles vocaulary
+    """ Subscriber Roles List from subscriber_roles vocabulary
     """
     def __call__(self):
         terms = self.context.portal_vocabularies.getVocabularyByName(
