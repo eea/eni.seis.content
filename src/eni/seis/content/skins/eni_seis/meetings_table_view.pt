@@ -57,9 +57,21 @@
                       </tal:condition>
                     </div>
 
-                    <div>
+                    <div class="event-registration"
+                         tal:define="meeting python:item.getObject();
+                                     is_registered python:meeting.is_registered();
+                                     can_register python:meeting.can_register();">
 
-                      <form class="form-horizontal" tal:attributes="action string:${item/getURL}/register" method="GET">
+                      <tal:condition tal:condition="python:can_register is False or is_registered is True">
+                        <p>
+                          <strong>Registration:</strong>
+                          <span tal:condition="not:can_register">Not available.</span>
+                          <span tal:condition="is_registered">You are registered.</span>
+                        </p>
+                      </tal:condition>
+
+                      <form class="form-horizontal" tal:attributes="action string:${item/getURL}/register" method="GET"
+                            tal:condition="python: is_registered is False and can_register is True">
                         <div class="form-group" class="col-md-3">
                           <label for="form-widgets-reimbursed" class="control-label">
                               Reimbursed participation
