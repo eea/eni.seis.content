@@ -33,7 +33,8 @@
               <metal:entry fill-slot="entry">
 
                 <tr metal:define-macro="listitem" tal:define="oddrow repeat/item/odd;"
-                    tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                    tal:attributes="class python:test(oddrow, 'even', 'odd')"
+                    tal:condition="python:item.portal_type == 'eea.meeting'">
 
                   <td>
                     <div class="event-title">
