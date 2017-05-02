@@ -19,7 +19,7 @@
         <tal:block replace="structure provider:plone.rightcolumn" />
       </div>
 
-      <div class="col-md-7"
+      <div class="col-md-7 country-right-column"
            tal:define="
            query python: {'portal_type': 'Folder'};
            tabs python: context.getFolderContents(query, full_objects=True)">
