@@ -72,3 +72,10 @@ font-size:larger;
     content: "\f003";
     margin-right: .4rem;
 }
+
+
+/* New country pages implementation */
+.country-subsection-listing { }
+.template-country_view .page-main {
+  width: 100% !important;
+;
