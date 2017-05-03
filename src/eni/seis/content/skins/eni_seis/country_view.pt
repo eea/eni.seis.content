@@ -43,41 +43,47 @@
              class="tab-pane active"
              data-toggle="pill">
 
-            <!-- TODO: add condition here -->
-          <a
-             tal:condition="python:True"
-             href=""
-             tal:attributes="href string:${tab/absolute_url}/edit">
-            Edit this text
-          </a>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <!-- TODO: add condition here -->
+                  <a
+                     tal:condition="python:True"
+                     href=""
+                     tal:attributes="href string:${tab/absolute_url}/edit">
+                    Edit this text
+                  </a>
+                </div>
+              </div>
 
-          <div class="row"
-               tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
+              <div class="row"
+                   tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
 
-            <div tal:content="structure tab/long_description" class="col-md-8 col-xs-12">
-              Air richtext description here
-            </div>
+                <div tal:content="structure tab/long_description" class="col-md-8 col-xs-12">
+                  Air richtext description here
+                </div>
 
-            <div class="country-subsection-listing col-md-4 col-xs-12" tal:condition="subtabs">
+                <div class="country-subsection-listing col-md-4 col-xs-12" tal:condition="subtabs">
 
-              <div tal:repeat="subtab subtabs">
-                <h4 tal:content="subtab/Title">Key Documents</h4>
-                <ul tal:define="contents subtab/getFolderContents">
-                  <li tal:repeat="brain contents">
-                    <a href="" tal:attributes="href brain/getURL"
-                       tal:content="brain/Title">Title here</a>
-                  </li>
-                </ul>
+                  <div tal:repeat="subtab subtabs">
+                    <h4 tal:content="subtab/Title">Key Documents</h4>
+                    <ul tal:define="contents subtab/getFolderContents">
+                      <li tal:repeat="brain contents">
+                        <a href="" tal:attributes="href brain/getURL"
+                           tal:content="brain/Title">Title here</a>
+                      </li>
+                    </ul>
 
-                <a
-                       tal:condition="python:True"
-                       href=""
-                       tal:attributes="href string:${subtab/absolute_url}">
-                  More <span tal:replace="subtab/Title" ></span>
-                </a>
+                    <a
+                           tal:condition="python:True"
+                           href=""
+                           tal:attributes="href string:${subtab/absolute_url}">
+                      More <span tal:replace="subtab/Title" ></span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
           </div>
 
           </tal:tab>
