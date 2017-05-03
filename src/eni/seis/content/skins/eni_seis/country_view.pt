@@ -67,11 +67,13 @@
 
                   <div tal:repeat="subtab subtabs">
                     <h4 tal:content="subtab/Title">Key Documents</h4>
-                    <ul tal:define="contents subtab/getFolderContents">
-                      <li tal:repeat="brain contents">
-                        <i class="fa fa-file-text-o"></i>
-                        <a href="" tal:attributes="href brain/getURL"
-                           tal:content="brain/Title">Title here</a>
+
+                    <ul tal:define="contents subtab/getFolderContents" class="list-group">
+                      <li tal:repeat="brain contents" class="list-group-item">
+                        <a href="" tal:attributes="href brain/getURL">
+                          <i class="fa fa-file-text-o"></i>
+                          <span tal:replace="brain/Title">Title here</span>
+                        </a>
                       </li>
                     </ul>
 
