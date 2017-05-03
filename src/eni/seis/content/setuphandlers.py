@@ -62,6 +62,7 @@ def setup_media_events(site):
 def setup_portal_vocabularies(site):
     """ Portal vocabularies
     """
+
     atvm = getToolByName(site, 'portal_vocabularies')
     if not atvm:
         logger.warn('No portal_vocabularies. Nothing to do.')
@@ -97,6 +98,10 @@ def setup_subscriber_roles_vocabulary(context):
     """ Add subscriber roles vocabulary to Portal vocabularies
         (used by eea.meeting.subscriber)
     """
+
+    if context.readDataFile('eni.seis.txt') is None:
+        return
+
     site = getSite()
 
     atvm = getToolByName(site, 'portal_vocabularies')
