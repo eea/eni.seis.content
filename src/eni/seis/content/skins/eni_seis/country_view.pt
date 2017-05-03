@@ -71,10 +71,13 @@
                   <div tal:repeat="subtab subtabs">
                     <h4 tal:content="subtab/Title">Key Documents</h4>
 
-                    <ul tal:define="contents subtab/getFolderContents" class="list-group">
+                    <ul tal:define="contents subtab/getFolderContents;
+                                    is_links_list python: 'link' in subtab.Title().lower();
+                                    icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'"
+                        class="list-group">
                       <li tal:repeat="brain contents" class="list-group-item">
                         <a href="" tal:attributes="href brain/getURL">
-                          <i class="fa fa-file-text-o"></i>
+                          <i tal:attributes="class python:icon_class"></i>
                           <span tal:replace="brain/Title">Title here</span>
                         </a>
                       </li>
