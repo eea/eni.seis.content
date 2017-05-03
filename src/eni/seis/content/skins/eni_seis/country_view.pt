@@ -69,6 +69,7 @@
                     <h4 tal:content="subtab/Title">Key Documents</h4>
                     <ul tal:define="contents subtab/getFolderContents">
                       <li tal:repeat="brain contents">
+                        <i class="fa fa-file-text-o"></i>
                         <a href="" tal:attributes="href brain/getURL"
                            tal:content="brain/Title">Title here</a>
                       </li>
@@ -77,8 +78,11 @@
                     <a
                            tal:condition="python:True"
                            href=""
-                           tal:attributes="href string:${subtab/absolute_url}">
-                      More <span tal:replace="subtab/Title" ></span>
+                           tal:attributes="href string:${subtab/absolute_url}"
+                           class="more-items pull-right"
+                           tal:define="subtab_description python:subtab.Description() if subtab.Description() != '' else subtab.Title()">
+                      More <span tal:replace="python:subtab_description" ></span>
+                      <i class="fa fa-arrow-right"></i>
                     </a>
                   </div>
                 </div>
