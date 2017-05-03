@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone.app.event">
+<body>
+
+<metal:fill fill-slot="column_two_slot"></metal:fill>
+
+<metal:title fill-slot="content-title">
+  <h1 class="documentFirstHeading"><span tal:replace="context/title_or_id"></span> - Registration</h1>`
+</metal:title>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+<h2>I have an account</h2>
+<form action="./register" name="login" method="POST">
+  <input type="text" name="__ac__name" placeholder="username" />
+  <input type="password" name="__ac__password" placeholder="password" />
+  <button type="submit" name="submit">Login</button>
+</form>
+
+<h2>I don't have an account</h2>
+<form action="." name="register" method="POST">
+</form>
+
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
+
