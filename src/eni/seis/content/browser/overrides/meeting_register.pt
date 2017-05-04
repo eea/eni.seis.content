@@ -18,13 +18,14 @@
 
 <h2>I have an account</h2>
 <form action="./register" name="login" method="POST">
-  <input type="text" name="__ac__name" placeholder="username" />
-  <input type="password" name="__ac__password" placeholder="password" />
-  <button type="submit" name="submit">Login</button>
+  <input type="text" name="__ac_name" placeholder="username" />
+  <input type="password" name="__ac_password" placeholder="password" />
+  <button type="submit" name="submit.login">Login</button>
 </form>
 
 <h2>I don't have an account</h2>
 <form action="." name="register" method="POST">
+  <button type="submit" name="submit.register">Register new account</button>
 </form>
 
 
