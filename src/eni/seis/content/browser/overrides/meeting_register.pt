@@ -24,7 +24,20 @@
 </form>
 
 <h2>I don't have an account</h2>
-<form action="." name="register" method="POST">
+<form action="./register" name="register" method="POST">
+  <input type="text" name="first_name" placeholder="First name" />
+  <input type="text" name="last_name" placeholder="Last name" />
+  <input type="text" name="position" placeholder="Position" />
+  <input type="text" name="organisation" placeholder="Organisation" />
+  <textarea name="address" placeholder="Address"></textarea>
+  <input type="text" name="country" placeholder="Country" />
+  <input type="email" name="email" placeholder="Email" />
+  <textarea name="phone_numbers:lines" placeholder="Phone numbers"></textarea>
+
+  <input type="text" name="username" placeholder="Username" />
+  <input type="password" name="pw1" placeholder="password" />
+  <input type="password" name="pw2" placeholder="password confirmation" />
+
   <button type="submit" name="submit.register">Register new account</button>
 </form>
 
