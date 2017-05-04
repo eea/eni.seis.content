@@ -15,6 +15,14 @@ FIELDS_REGISTRATION = (
     ('phone_numbers', 'phone_numbers'),
 )
 
+FIELDS_REQUIRED = (
+    'first_name',
+    'last_name',
+    'position',
+    'organisation',
+    'email',
+)
+
 
 class Register(views.Register):
     index = ViewPageTemplateFile('meeting_register.pt')
@@ -39,21 +47,41 @@ class Register(views.Register):
         user = acl.authenticate(name, pwd, self.request)
 
         if user is not None:
-            api.portal.show_message(
-                'Login successful.', request=self.request, type='info')
+
             acl.session._setupSession(user.getId(), self.request.response)
-            return self.request.response.redirect(
-                self.context.absolute_url() + '/register'
+            return self.index(
+                login_message={'type': 'success', 'text': 'Login success!'}
             )
 
-        api.portal.show_message(
-            'Invalid credentials.', request=self.request, type='error')
-        return self.index()
+        return self.index(
+            login_message={'type': 'error', 'text': 'Invalid credentials!'}
+        )
 
     def register(self):
         pw1, pw2 = self.request.get('pw1'), self.request.get('pw2')
         if pw1 != pw2:
-            return self.index()
+            return self.index(
+                register_message={
+                    'type': 'error',
+                    'text': 'Passwords do not match!'
+                }
+            )
+
+        missing_fields = [
+            fname for fname in FIELDS_REQUIRED if
+            fname not in self.request
+        ]
+
+        if missing_fields:
+            return self.index(
+                register_message={
+                    'type': 'error',
+                    'text': 'These fields are required: {}'.format(
+                        ', '.join(missing_fields)
+                    )
+                }
+            )
+
 
         member_data = {
             member_key: self.request.get(form_key)

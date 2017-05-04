@@ -5,6 +5,107 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone.app.event">
+
+<head>
+  <metal:styleslot fill-slot="style_slot">
+    <style>
+      form .field {
+        padding: 1rem;
+      }
+
+      .field label {
+        min-width: 15em;
+        display: inline-block;
+      }
+
+      .message {
+        border: 1px solid #dfdfdf;
+        cursor: pointer;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .message:hover:before {
+        content: "\02713";
+        float: right;
+      }
+
+      .message.error {
+        border-color: #b70f0f;
+        background-color: #b70f0f;
+        color: #fff;
+      }
+
+      textarea {
+        width: initial !important;
+        vertical-align: top;
+      }
+
+      #form-register {
+        display: none;
+      }
+
+      #form-login .field label {
+        min-width: 10em;
+      }
+
+      #form-login .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .register-form-fields {
+        text-align: center;
+      }
+
+      .register-form h2 {
+        margin-top: 3em;
+      }
+
+      .register-form button {
+        padding: 0.5rem 1rem;
+        background: white;
+        border: 1px solid #dfdfdf;
+        border-radius: 5px;
+      }
+
+      .register-form button:hover {
+        background: #dfdfdf;
+      }
+
+      #choice {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-flow: row wrap;
+      }
+
+      #choice .login {
+        padding: 1em;
+        border: 1px solid #dfdfdf;
+        border-radius: 10px;
+      }
+
+      .choice-button {
+        padding: 1rem;
+        margin-right: 2rem;
+        font-size: x-large;
+        background: white;
+        border: 2px solid #31456e;
+        border-radius: 5px;
+      }
+
+      .choice-button:hover {
+        background: #31456e;
+        color: #fff;
+      }
+
+    </style>
+  </metal:styleslot>
+  <metal:javascriptslot fill-slot="javascript_head_slot">
+  </metal:javascriptslot>
+</head>
 <body>
 
 <metal:fill fill-slot="column_two_slot"></metal:fill>
@@ -16,30 +117,153 @@
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
-<h2>I have an account</h2>
-<form action="./register" name="login" method="POST">
-  <input type="text" name="__ac_name" placeholder="username" />
-  <input type="password" name="__ac_password" placeholder="password" />
-  <button type="submit" name="submit.login">Login</button>
+<p>A user account is required for registration. You can login with an existing account or create a one.</p>
+
+<div id="choice" style="display: none">
+  <div class="login" tal:define="message python:options.get('login_message', None)">
+    <metal:message define-macro="message">
+      <tal:message tal:condition="message">
+        <div tal:attributes="class string:message ${message/type}"
+          onclick="$(this).fadeOut()">
+          <div tal:content="message/text"></div>
+        </div>
+      </tal:message>
+    </metal:message>
+    <form id="form-login" action="./register" name="login" method="POST" class="register-form">
+      <div class="register-form-fields">
+        <div class="field">
+          <label for="f_username">Username</label>
+          <input id="f_username" type="text" name="__ac_name" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="__ac_password" required />
+        </div>
+        <div class="buttons">
+          <span>
+            <button type="submit" name="submit.login">Login</button>
+            <a href="./">Cancel</a>
+          </span>
+          <a href="./mail_password_form?userid=">Forgot?</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="register">
+    <button class="choice-button"
+      onclick="meeting.show_registration()">I need an account</button>
+  </div>
+</div>
+
+
+<form id="form-register"
+  action="./register" name="register" method="POST" class="register-form"
+  tal:define="message python:options.get('register_message', None)">
+  <h2>Personal information</h2>
+  <div class="register-form-fields">
+    <div class="field">
+      <label>First name<span class="required"></span></label>
+      <input type="text" name="first_name" required />
+    </div>
+    <div class="field">
+      <label>Last name<span class="required"></span></label>
+      <input type="text" name="last_name" required />
+    </div>
+    <div class="field">
+      <label>Position<span class="required"></span></label>
+      <input type="text" name="position" required />
+    </div>
+    <div class="field">
+      <label>Organisation<span class="required"></span></label>
+      <input type="text" name="organisation" required />
+    </div>
+    <div class="field">
+      <label>Address</label>
+      <textarea rows="5" cols="30" name="address"></textarea>
+    </div>
+    <div class="field">
+      <label>Country</label>
+      <input type="text" name="country" />
+    </div>
+    <div class="field">
+      <label>Email address<span class="required"></span></label>
+      <input type="email" name="email" required />
+    </div>
+    <div class="field">
+      <label>Phone numbers</label>
+      <textarea rows="5" cols="30" name="phone_numbers:lines"></textarea>
+    </div>
+  </div>
+
+  <h2>Login details</h2>
+  <div class="register-form-fields">
+    <div class="field">
+      <label>Username</label>
+      <input type="text" name="username" required />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="pw1" required />
+    </div>
+    <div class="field">
+      <label>Password confirmation</label>
+      <input type="password" name="pw2" required />
+    </div>
+
+    <button type="submit" name="submit.register">Register new account</button>
+    <button onclick="meeting.show_choice();return false">Cancel</button>
+
+    <metal:message use-macro="template/macros/message" />
+  </div>
 </form>
 
-<h2>I don't have an account</h2>
-<form action="./register" name="register" method="POST">
-  <input type="text" name="first_name" placeholder="First name" />
-  <input type="text" name="last_name" placeholder="Last name" />
-  <input type="text" name="position" placeholder="Position" />
-  <input type="text" name="organisation" placeholder="Organisation" />
-  <textarea name="address" placeholder="Address"></textarea>
-  <input type="text" name="country" placeholder="Country" />
-  <input type="email" name="email" placeholder="Email" />
-  <textarea name="phone_numbers:lines" placeholder="Phone numbers"></textarea>
+    <script>
+    (function(){
+      var elem_choice = document.getElementById('choice');
+      var elem_register = document.getElementById('form-register');
+      var show_registration = function() {
+        $(elem_register).fadeIn();
+        $(elem_choice).hide();
+        var new_url = document.location.hash ?
+          document.location.href.split(document.location.hash)[0] + '#register' :
+          document.location.href + '#register';
+        history.pushState(
+          { action: 'show_registration' },
+          'Show registration form.',
+          new_url
+        );
+      }
+      var show_choice = function() {
+        $(elem_register).hide();
+        $(elem_choice).fadeIn();
+        var new_url = document.location.hash ?
+          document.location.href.split(document.location.hash)[0] :
+          document.location.href;
+        history.pushState(
+          { action: 'show_choice' },
+          'Show choice form.',
+          new_url
+        );
+      }
 
-  <input type="text" name="username" placeholder="Username" />
-  <input type="password" name="pw1" placeholder="password" />
-  <input type="password" name="pw2" placeholder="password confirmation" />
+      ns = {
+        show_choice: show_choice,
+        show_registration: show_registration
+      }
 
-  <button type="submit" name="submit.register">Register new account</button>
-</form>
+      window.addEventListener('popstate', function(evt) {
+        ns[evt.state.action]();
+      });
+
+      if (document.location.hash.indexOf('#register') !== -1) {
+        show_registration();
+      } else {
+        show_choice();
+      }
+
+      window.meeting = ns;
+    })()
+  </script>
 
 
 </metal:block>
