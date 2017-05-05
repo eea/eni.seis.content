@@ -1,4 +1,6 @@
 from functools import partial
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 import plone.api as api
 
@@ -16,6 +18,7 @@ FIELDS_REGISTRATION = (
     ('phone_numbers', 'phone_numbers'),
 )
 
+
 FIELDS_REQUIRED = (
     ('first_name', 'First name'),
     ('last_name', 'Last name'),
@@ -24,6 +27,20 @@ FIELDS_REQUIRED = (
     ('username', 'Username'),
     ('email', 'Email'),
     ('pw1', 'Password'),
+)
+
+
+FIELDS_SIGNUP = (
+    ('role', 'role'),
+    ('visa', 'visa'),
+    ('reimbursed', 'reimbursed'),
+)
+
+
+FIELDS_SIGNUP_REQUIRED = (
+    ('role', 'Role'),
+    ('visa', 'Visa support'),
+    ('reimbursed', 'Reimbursed participation'),
 )
 
 
@@ -51,15 +68,19 @@ def login_user(response, user):
     acl.session._setupSession(user.getId(), response)
 
 
+def err_reducer(acc, cur):
+    return '\n'.join((acc, cur)) if type(cur) == str else acc
+
+
 def check_pw(request):
     pw1, pw2 = request.get('pw1'), request.get('pw2')
     return pw1 == pw2 or 'Passwords do not match!'
 
 
-def check_required(request):
+def check_required(fields, request):
     missing_fields = [
-        label for fname, label in FIELDS_REQUIRED
-        if not request.get(fname)
+        label for fname, label in fields
+        if request.get(fname, None) in (None, '', [])
     ]
 
     if missing_fields:
@@ -69,9 +90,22 @@ def check_required(request):
         )
 
 
-REGISTER_VALIDATORS = (
+def check_signup_other(request):
+    field_role = request.get('role')
+    field_role_other = request.get('role_other')
+    if field_role == 'Other' and not field_role_other:
+        return 'Please specify the role!'
+
+
+VALIDATORS_REGISTER = (
     check_pw,
-    check_required,
+    partial(check_required, FIELDS_REQUIRED),
+)
+
+
+VALIDATORS_SIGNUP = (
+    partial(check_required, FIELDS_SIGNUP_REQUIRED),
+    check_signup_other
 )
 
 
@@ -81,6 +115,16 @@ def register_error(request, template, msg):
         fields={
             form_key: request.get(form_key)
             for form_key, _ in FIELDS_REGISTRATION
+        }
+    )
+
+
+def signup_error(request, template, msg):
+    return template(
+        signup_message={'type': 'error', 'text': msg},
+        fields={
+            form_key: request.get(form_key)
+            for form_key, _ in FIELDS_SIGNUP
         }
     )
 
@@ -97,6 +141,8 @@ class Register(views.Register):
                 return self.login()
             elif 'submit.register' in self.request:
                 return self.register()
+            elif 'submit.signup' in self.request:
+                return self.signup()
 
         if not self.is_anon:
             if self.request.get('login'):
@@ -111,6 +157,13 @@ class Register(views.Register):
                     created_message={
                         'type': 'good',
                         'text': 'User account created!',
+                    }
+                )
+            elif self.request.get('signup'):
+                return self.index(
+                    signup_message={
+                        'type': 'good',
+                        'text': 'You are now registered to this meeting!',
                     }
                 )
 
@@ -135,12 +188,9 @@ class Register(views.Register):
     def register(self):
         err_msg = partial(register_error, self.request, self.index)
 
-        def reducer(acc, cur):
-            return '\n'.join((acc, cur)) if type(cur) == str else acc
-
-        errors = reduce(reducer, (
+        errors = reduce(err_reducer, (
             name(self.request)
-            for name in REGISTER_VALIDATORS
+            for name in VALIDATORS_REGISTER
         ) , '')
         if errors:
             return err_msg(errors)
@@ -152,3 +202,45 @@ class Register(views.Register):
 
         return self.response.redirect(
             self.context.absolute_url() + '/register?created=true')
+
+    def signup(self):
+        err_msg = partial(signup_error, self.request, self.index)
+
+        errors = reduce(err_reducer, (
+            name(self.request)
+            for name in VALIDATORS_SIGNUP
+        ) , '')
+        if errors:
+            return err_msg(errors)
+
+        try:
+            subscribers = self.context.get('subscribers')
+            self.validate(subscribers)
+
+            user = api.user.get_current()
+            uid = user.getId()
+
+            props = dict(
+                title=user.getProperty('fullname', uid),
+                id=uid,
+                userid=uid,
+                email=user.getProperty('email', ''),
+                reimbursed=bool(self.request.get('reimbursed')),
+                role=self.request.get('role'),
+                visa=bool(self.request.get('visa')),
+                role_other=self.request.get('role_other', ''),
+            )
+            views.add_subscriber(subscribers, **props)
+        except Exception as e:
+            return err_msg(e.message)
+
+        return self.response.redirect(
+            self.context.absolute_url() + '/register?signup=true')
+
+
+    def role_options(self):
+        vocab = getUtility(
+            IVocabularyFactory,
+            name='subscriber_roles'
+        )(self.context)
+        return tuple((term.token, term.title) for term in vocab)
