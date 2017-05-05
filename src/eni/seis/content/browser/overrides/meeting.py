@@ -59,11 +59,16 @@ class Register(views.Register):
 
     def register(self):
         pw1, pw2 = self.request.get('pw1'), self.request.get('pw2')
+
         if pw1 != pw2:
             return self.index(
                 register_message={
                     'type': 'error',
                     'text': 'Passwords do not match!'
+                },
+                fields={
+                    form_key: self.request.get(form_key)
+                    for form_key, _ in FIELDS_REGISTRATION
                 }
             )
 
@@ -81,7 +86,6 @@ class Register(views.Register):
                     )
                 }
             )
-
 
         member_data = {
             member_key: self.request.get(form_key)

@@ -157,41 +157,50 @@
 
 
 <form id="form-register"
-  action="./register" name="register" method="POST" class="register-form"
-  tal:define="message python:options.get('register_message', None)">
+  action="./register#register" name="register" method="POST" class="register-form"
+  tal:define="message python:options.get('register_message', None); fields python:options.get('fields', {});">
   <h2>Personal information</h2>
+  <metal:message use-macro="template/macros/message" />
   <div class="register-form-fields">
     <div class="field">
       <label>First name<span class="required"></span></label>
-      <input type="text" name="first_name" required />
+      <input type="text" name="first_name" required
+        tal:attributes="value python:fields.get('first_name', '')" />
     </div>
     <div class="field">
       <label>Last name<span class="required"></span></label>
-      <input type="text" name="last_name" required />
+      <input type="text" name="last_name" required
+        tal:attributes="value python:fields.get('last_name', '')" />
     </div>
     <div class="field">
       <label>Position<span class="required"></span></label>
-      <input type="text" name="position" required />
+      <input type="text" name="position" required
+        tal:attributes="value python:fields.get('position', '')" />
     </div>
     <div class="field">
       <label>Organisation<span class="required"></span></label>
-      <input type="text" name="organisation" required />
+      <input type="text" name="organisation" required
+        tal:attributes="value python:fields.get('organisation', '')" />
     </div>
     <div class="field">
       <label>Address</label>
-      <textarea rows="5" cols="30" name="address"></textarea>
+      <textarea rows="5" cols="30" name="address"
+        tal:content="python:fields.get('address', '')"></textarea>
     </div>
     <div class="field">
       <label>Country</label>
-      <input type="text" name="country" />
+      <input type="text" name="country"
+        tal:attributes="value python:fields.get('country', '')" />
     </div>
     <div class="field">
       <label>Email address<span class="required"></span></label>
-      <input type="email" name="email" required />
+      <input type="email" name="email" required
+        tal:attributes="value python:fields.get('email', '')" />
     </div>
     <div class="field">
       <label>Phone numbers</label>
-      <textarea rows="5" cols="30" name="phone_numbers:lines"></textarea>
+      <textarea rows="5" cols="30" name="phone_numbers:lines"
+        tal:content="python:'\n'.join(fields.get('phone_numbers', []))"></textarea>
     </div>
   </div>
 
@@ -199,7 +208,8 @@
   <div class="register-form-fields">
     <div class="field">
       <label>Username</label>
-      <input type="text" name="username" required />
+      <input type="text" name="username" required
+        tal:attributes="value python:fields.get('username', '')" />
     </div>
     <div class="field">
       <label>Password</label>
@@ -212,8 +222,6 @@
 
     <button type="submit" name="submit.register">Register new account</button>
     <button onclick="meeting.show_choice();return false">Cancel</button>
-
-    <metal:message use-macro="template/macros/message" />
   </div>
 </form>
 
@@ -221,29 +229,33 @@
     (function(){
       var elem_choice = document.getElementById('choice');
       var elem_register = document.getElementById('form-register');
-      var show_registration = function() {
+      var show_registration = function(preserve_history) {
         $(elem_register).fadeIn();
         $(elem_choice).hide();
         var new_url = document.location.hash ?
           document.location.href.split(document.location.hash)[0] + '#register' :
           document.location.href + '#register';
-        history.pushState(
-          { action: 'show_registration' },
-          'Show registration form.',
-          new_url
-        );
+          if (!preserve_history) {
+            history.pushState(
+              { action: 'show_registration' },
+              'Show registration form.',
+              new_url
+            );
+          }
       }
-      var show_choice = function() {
+      var show_choice = function(preserve_history) {
         $(elem_register).hide();
         $(elem_choice).fadeIn();
         var new_url = document.location.hash ?
           document.location.href.split(document.location.hash)[0] :
           document.location.href;
-        history.pushState(
-          { action: 'show_choice' },
-          'Show choice form.',
-          new_url
-        );
+        if (!preserve_history){
+          history.pushState(
+            { action: 'show_choice' },
+            'Show choice form.',
+            new_url
+          );
+        }
       }
 
       ns = {
@@ -252,7 +264,7 @@
       }
 
       window.addEventListener('popstate', function(evt) {
-        ns[evt.state.action]();
+        ns[evt.state.action](true);
       });
 
       if (document.location.hash.indexOf('#register') !== -1) {
