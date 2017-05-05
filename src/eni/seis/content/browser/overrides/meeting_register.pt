@@ -36,6 +36,12 @@
         color: #fff;
       }
 
+      .message.good {
+        border-color: #009245;
+        background-color: #009245;
+        color: #fff;
+      }
+
       textarea {
         width: initial !important;
         vertical-align: top;
@@ -117,6 +123,7 @@
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
+<tal:anon condition="view/is_anon">
 <p>A user account is required for registration. You can login with an existing account or create a one.</p>
 
 <div id="choice" style="display: none">
@@ -277,6 +284,18 @@
     })()
   </script>
 
+</tal:anon>
+
+<tal:member tal:condition="not:view/is_anon">
+  <tal:message-created define="message python:options.get('created_message', None)">
+    <metal:message use-macro="template/macros/message" />
+  </tal:message-created>
+  <tal:message-login define="message python:options.get('login_message', None)">
+    <metal:message use-macro="template/macros/message" />
+  </tal:message-login>
+  <p>Please complete the following form in order to register to this meeting</p>
+
+</tal:member>
 
 </metal:block>
 </metal:content-core>
