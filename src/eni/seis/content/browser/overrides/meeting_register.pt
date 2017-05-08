@@ -9,7 +9,10 @@
 <head>
   <metal:styleslot fill-slot="style_slot">
     <style>
-      #parent-fieldname-description { display: none; }
+      #parent-fieldname-description,
+      .documentByLine {
+        display: none !important;
+      }
 
       form .field {
         padding: 1rem;
@@ -29,12 +32,14 @@
       .field-label {
         width: 15em;
         display: inline-block;
+        vertical-align: middle;
       }
 
       .field-body {
         display: inline-block;
         text-align: left;
         width: 20em;
+        vertical-align: middle;
       }
 
       .field-body > * {
@@ -142,7 +147,11 @@
 <metal:block define-macro="content-core">
 
 <tal:anon condition="view/is_anon">
-<p>A user account is required for registration. You can login with an existing account or create a one.</p>
+<p>
+  Log in to register to this meeting.
+  If you have an account on this portal, type it in the form below.
+  If you don't have an account yet, use the button on the right to create one.
+</p>
 
 <div id="choice" style="display: none">
   <div class="login" tal:define="message python:options.get('login_message', None)">
@@ -181,16 +190,16 @@
         <div class="buttons">
           <span>
             <button type="submit" name="submit.login">Login</button>
-            <a href="./">Cancel</a>
+            <a href="./">Back to meeting</a>
           </span>
-          <a href="./mail_password_form?userid=">Forgot?</a>
+          <a href="./mail_password_form?userid=">Forgot password?</a>
         </div>
       </div>
     </form>
   </div>
   <div class="register">
     <button class="choice-button"
-      onclick="meeting.show_registration()">I need an account</button>
+      onclick="meeting.show_registration()">Create new account</button>
   </div>
 </div>
 
@@ -279,7 +288,10 @@
   <div class="register-form-fields">
     <metal:field use-macro="template/macros/field">
       <metal:label fill-slot="label">
-        <label>Username</label>
+        <label>Username<span class="required"></span></label>
+        <p class="formHelp">
+          The username must contain only ASCII letters [a..z] or [A..Z].
+        </p>
       </metal:label>
       <metal:body fill-slot="body">
         <input type="text" name="username" required
@@ -288,7 +300,10 @@
     </metal:field>
     <metal:field use-macro="template/macros/field">
       <metal:label fill-slot="label">
-        <label>Password</label>
+        <label>Password<span class="required"></span></label>
+        <p class="formHelp">
+          The password must be at least 5 characters long.
+        </p>
       </metal:label>
       <metal:body fill-slot="body">
         <input type="password" name="pw1" required />
@@ -296,7 +311,7 @@
     </metal:field>
     <metal:field use-macro="template/macros/field">
       <metal:label fill-slot="label">
-        <label>Password confirmation</label>
+        <label>Password confirmation<span class="required"></span></label>
       </metal:label>
       <metal:body fill-slot="body">
         <input type="password" name="pw2" required />
@@ -447,7 +462,7 @@
         </metal:field>
         <div class="buttons">
           <span>
-            <button type="submit" name="submit.signup">Register to the meeting</button>
+            <button type="submit" name="submit.signup">Register to this meeting</button>
             <a href="./">Cancel</a>
           </span>
         </div>
@@ -459,7 +474,7 @@
       <metal:message use-macro="template/macros/message" />
     </tal:message-signup>
     <p>You are registered to this meeting!</p>
-    <a tal:attributes="href context/absolute_url">Return to meeting index</a>
+    <a tal:attributes="href context/absolute_url">Return to the meeting page</a>
   </tal:registered>
 
 </tal:member>

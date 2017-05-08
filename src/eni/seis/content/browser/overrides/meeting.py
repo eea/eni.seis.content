@@ -16,6 +16,7 @@ FIELDS_REGISTRATION = (
     ('country', 'from_country'),
     ('email', 'email'),
     ('phone_numbers', 'phone_numbers'),
+    ('username', None),
 )
 
 
@@ -48,6 +49,7 @@ def create_user(request):
     member_data = {
         member_key: request.get(form_key)
         for form_key, member_key in FIELDS_REGISTRATION
+        if member_key
     }
 
     member_data['fullname'] = '{} {}'.format(
@@ -159,13 +161,6 @@ class Register(views.Register):
                         'text': 'User account created!',
                     }
                 )
-            elif self.request.get('signup'):
-                return self.index(
-                    signup_message={
-                        'type': 'good',
-                        'text': 'You are now registered to this meeting!',
-                    }
-                )
 
         return self.index()
 
@@ -235,7 +230,7 @@ class Register(views.Register):
             return err_msg(e.message)
 
         return self.response.redirect(
-            self.context.absolute_url() + '/register?signup=true')
+            self.context.absolute_url() + '/register')
 
 
     def role_options(self):
