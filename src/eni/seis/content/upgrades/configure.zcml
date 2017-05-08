@@ -39,4 +39,17 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.0.2"
+            destination="1.0.3"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Add memberdata properties"
+            description="[refs #83535] Extra fields for members."
+            import_steps="memberdata-properties"
+            />
+
+    </genericsetup:upgradeSteps>
+
 </configure>

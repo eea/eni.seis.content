@@ -4,6 +4,9 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="eni.seis.content">
 
+
+  <include package=".overrides" />
+
   <browser:page
     for="plone.event.interfaces.IEvent"
     name="event_summary"
