@@ -1,6 +1,8 @@
 from functools import partial
+from zope.event import notify
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
+from eea.meeting.events.rules import SendNewSubscriberEmailEvent
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 import plone.api as api
 
@@ -226,6 +228,7 @@ class Register(views.Register):
                 role_other=self.request.get('role_other', ''),
             )
             views.add_subscriber(subscribers, **props)
+            notify(SendNewSubscriberEmailEvent(self.context))
         except Exception as e:
             return err_msg(e.message)
 
