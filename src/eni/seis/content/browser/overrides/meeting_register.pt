@@ -74,7 +74,10 @@
             <button type="submit" name="submit.login">Login</button>
             <a href="./">Back to meeting</a>
           </span>
-          <a href="./mail_password_form?userid=">Forgot password?</a>
+          <span>
+            <a href="./mail_password_form?userid=">Forgot password?</a>
+            <span class="info" title="Will not work for Eionet users. If you have an Eionet account you will need to contact the Eionet Helpdesk to reset your password.">&#x24d8;</span>
+          </span>
         </div>
       </div>
     </form>
