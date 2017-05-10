@@ -8,131 +8,12 @@
 
 <head>
   <metal:styleslot fill-slot="style_slot">
-    <style>
-      #parent-fieldname-description,
-      .documentByLine {
-        display: none !important;
-      }
-
-      form .field {
-        padding: 1rem;
-      }
-
-      form .info {
-        cursor: help;
-        font-weight: bold;
-      }
-
-      form input.other {
-        font-size: initial !important;
-        vertical-align: middle;
-        width: 10em !important;
-      }
-
-      .field-label {
-        width: 15em;
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      .field-body {
-        display: inline-block;
-        text-align: left;
-        width: 20em;
-        vertical-align: middle;
-      }
-
-      .field-body > * {
-        vertical-align: middle !important;
-      }
-
-      .message {
-        border: 1px solid #dfdfdf;
-        cursor: pointer;
-        padding: 0.5em;
-        margin-bottom: 0.5em;
-      }
-
-      .message:hover:before {
-        content: "\02713";
-        float: right;
-      }
-
-      .message.error {
-        border-color: #b70f0f;
-        background-color: #b70f0f;
-        color: #fff;
-      }
-
-      .message.good {
-        border-color: #009245;
-        background-color: #009245;
-        color: #fff;
-      }
-
-      #form-register {
-        display: none;
-      }
-
-      #form-login .field label {
-        min-width: 10em;
-      }
-
-      #form-login .buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .register-form-fields {
-        text-align: center;
-      }
-
-      .register-form h2 {
-        margin-top: 3em;
-      }
-
-      .register-form button {
-        padding: 0.5rem 1rem;
-        background: white;
-        border: 1px solid #dfdfdf;
-        border-radius: 5px;
-      }
-
-      .register-form button:hover {
-        background: #dfdfdf;
-      }
-
-      #choice {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-flow: row wrap;
-      }
-
-      #choice .login {
-        padding: 1em;
-        border: 1px solid #dfdfdf;
-        border-radius: 10px;
-      }
-
-      .choice-button {
-        padding: 1rem;
-        margin-right: 2rem;
-        font-size: x-large;
-        background: white;
-        border: 2px solid #31456e;
-        border-radius: 5px;
-      }
-
-      .choice-button:hover {
-        background: #31456e;
-        color: #fff;
-      }
-
-    </style>
+    <link rel="stylesheet" type="text/css"
+      tal:attributes="href string:${portal_url}/++resource++eni.seis.content/meeting/register.css" />
   </metal:styleslot>
   <metal:javascriptslot fill-slot="javascript_head_slot">
+    <script type="text/javascript"
+      tal:attributes="src string:${portal_url}/++resource++eni.seis.content/meeting/register.js"></script>
   </metal:javascriptslot>
 </head>
 <body>
@@ -143,7 +24,8 @@
   <h1 class="documentFirstHeading"><span tal:replace="context/title_or_id"></span> - Registration</h1>`
 </metal:title>
 
-<metal:content-core fill-slot="content-core">
+<metal:content-core fill-slot="content-core"
+  tal:define="show_register_form python:request.get('form', '') == 'register'">
 <metal:block define-macro="content-core">
 
 <tal:anon condition="view/is_anon">
@@ -153,7 +35,7 @@
   If you don't have an account yet, use the button on the right to create one.
 </p>
 
-<div id="choice" style="display: none">
+<div id="choice" tal:attributes="style python:'display: none' if show_register_form else ''">
   <div class="login" tal:define="message python:options.get('login_message', None)">
     <metal:message define-macro="message">
       <tal:message tal:condition="message">
@@ -198,14 +80,14 @@
     </form>
   </div>
   <div class="register">
-    <button class="choice-button"
-      onclick="meeting.show_registration()">Create new account</button>
+    <a href="./register?form=register" class="choice-button"
+      onclick="meeting.show_registration();return false">Create new account</a>
   </div>
 </div>
 
 
-<form id="form-register"
-  action="./register#register" name="register" method="POST" class="register-form"
+<form id="form-register" class="register-form" tal:attributes="style python:'display: none' if not show_register_form else ''"
+  action="./register?form=register" name="register" method="POST" class="register-form"
   tal:define="message python:options.get('register_message', None); fields python:options.get('fields', {});">
   <h2>Personal information</h2>
   <metal:message use-macro="template/macros/message" />
@@ -319,61 +201,10 @@
     </metal:field>
 
     <button type="submit" name="submit.register">Register new account</button>
-    <button onclick="meeting.show_choice();return false">Cancel</button>
+    <a href="./register" onclick="meeting.show_choice();return false">Cancel</a>
   </div>
 </form>
-
-    <script>
-    (function(){
-      var elem_choice = document.getElementById('choice');
-      var elem_register = document.getElementById('form-register');
-      var show_registration = function(preserve_history) {
-        $(elem_register).fadeIn();
-        $(elem_choice).hide();
-        var new_url = document.location.hash ?
-          document.location.href.split(document.location.hash)[0] + '#register' :
-          document.location.href + '#register';
-          if (!preserve_history) {
-            history.pushState(
-              { action: 'show_registration' },
-              'Show registration form.',
-              new_url
-            );
-          }
-      }
-      var show_choice = function(preserve_history) {
-        $(elem_register).hide();
-        $(elem_choice).fadeIn();
-        var new_url = document.location.hash ?
-          document.location.href.split(document.location.hash)[0] :
-          document.location.href;
-        if (!preserve_history){
-          history.pushState(
-            { action: 'show_choice' },
-            'Show choice form.',
-            new_url
-          );
-        }
-      }
-
-      ns = {
-        show_choice: show_choice,
-        show_registration: show_registration
-      }
-
-      window.addEventListener('popstate', function(evt) {
-        ns[evt.state.action](true);
-      });
-
-      if (document.location.hash.indexOf('#register') !== -1) {
-        show_registration();
-      } else {
-        show_choice();
-      }
-
-      window.meeting = ns;
-    })()
-  </script>
+<script>meeting.setup_pages()</script>
 
 </tal:anon>
 
@@ -410,28 +241,10 @@
             <input class="other" type="text" id="f_role_other"
                    name="role_other"
                    tal:attributes="value python:fields.get('role_other', '')"
-                   style="display: none"
                    placeholder="please specify"
                    />
             <span>&nbsp;</span>
-            <script>
-              (function(){
-                var role = document.getElementById('f_role');
-                var other = document.getElementById('f_role_other');
-                function update_other() {
-                  if (role.value === 'other') {
-                    other.style.display = '';
-                    other.setAttribute('required', 'required');
-                  }
-                  else {
-                    other.style.display = 'none';
-                    other.removeAttribute('required');
-                  }
-                }
-                update_other();
-                role.addEventListener('change', update_other);
-              })()
-            </script>
+            <script>meeting.widget_other('#f_role', '#f_role_other')</script>
           </metal:body>
         </metal:field>
         <metal:field use-macro="template/macros/field">
