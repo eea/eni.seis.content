@@ -28,7 +28,7 @@
             tal:define="tab_icons python:{'Air': 'icon icon-air', 'Water': 'icon icon-water', 'Land': 'icon icon-land', 'Waste': 'icon icon-waste'}">
           <tal:tab tal:repeat="tab tabs">
           <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
-            <a tal:attributes="href string:#${tab/getId}" data-toggle="tab">
+            <a tal:attributes="href string:#${tab/getId}; class python:tab_icons.get(tab.Title(), 'icon icon-none')" data-toggle="tab">
               <div tal:attributes="class python:tab_icons.get(tab.Title(), 'icon icon-none')"></div>
               <span tal:replace="tab/Title">Tab Title</span>
             </a>
