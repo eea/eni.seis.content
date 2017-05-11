@@ -89,7 +89,6 @@
                            class="more-items pull-right"
                            tal:define="subtab_description python:subtab.Description() if subtab.Description() != '' else subtab.Title()">
                       More <span tal:replace="python:subtab_description" ></span>
-                      <i class="fa fa-arrow-right"></i>
                     </a>
                   </div>
                 </div>
