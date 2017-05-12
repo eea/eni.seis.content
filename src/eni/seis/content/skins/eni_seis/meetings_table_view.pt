@@ -18,13 +18,14 @@
 
         <div tal:replace="structure tab/long_description | nothing" tal:on-error="nothing"></div>
 
-        <table class="listing event-table"
+        <table class="listing event-table table table-responsive table-hover"
                summary="Content listing"
                i18n:attributes="summary summary_content_listing;">
           <thead>
             <tr>
-              <th>Event</th>
-              <th>Date</th>
+              <th class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Event</th>
+              <th class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Summary</th>
+              <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Link</th>
             </tr>
           </thead>
 
@@ -36,56 +37,17 @@
                     tal:attributes="class python:test(oddrow, 'even', 'odd')"
                     tal:condition="python:item.portal_type == 'eea.meeting'">
 
-                  <td>
-                    <div class="event-title">
-                      <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
-                    </div>
-
-                    <div class="event-location">
-                      <strong>Location:</strong>
-                      <span tal:replace="python: context.get_event_location(item)"></span>
-                    </div>
-
-                    <div class="event-category">
-                      <strong>Category:</strong>
-                      <span tal:replace="python: context.get_event_type(item).capitalize()"></span>
-                    </div>
-
-                    <div tal:define="obj item/getObject" class="event-contact">
-                      <strong>Contact:</strong>
-                      <tal:condition tal:condition="python: hasattr(obj, 'contact_email') and hasattr(obj, 'contact_name')">
-                        <a href="" tal:attributes="href python: obj.contact_email" tal:content="python: obj.contact_name">Somebody</a>
-                      </tal:condition>
-                    </div>
-
-                    <div class="event-registration"
-                         tal:define="meeting python:item.getObject();
-                                     is_registered python:meeting.is_registered();
-                                     can_register python:meeting.can_register();">
-
-                      <tal:condition tal:condition="python:can_register is False or is_registered is True">
-                        <p>
-                          <strong>Registration:</strong>
-                          <span tal:condition="not:can_register">Not available.</span>
-                          <span tal:condition="is_registered">You are registered.</span>
-                        </p>
-                      </tal:condition>
-
-                      <tal:condition tal:condition="can_register">
-                        <a tal:attributes="href string:${item/getURL}/register" class="btn event-register">
-                          Register to this meeting
-                        </a>
-                      </tal:condition>
-                    </div>
+                  <td class="event-link">
+                    <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
                   </td>
 
-                  <td class="event-table-date">
-                    <tal:condition tal:condition="python: context.get_event_year(item) and context.get_event_dates(item)">
-                      <span tal:content="python: context.get_event_year(item)">
-                      </span> / <span tal:content="python:context.get_event_dates(item)"></span>
-                    </tal:condition>
+                  <td class="event-summary">
+                    <span tal:content="item/Description"></span>
                   </td>
 
+                  <td class="event-link">
+                    <a href="" tal:attributes="href item/getURL">≫ Read more</a> <!-- (≫ = much greater than) -->
+                  </td>
                 </tr>
 
               </metal:entry>
