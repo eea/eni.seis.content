@@ -17,9 +17,18 @@
         <metal:entries fill-slot="entries">
 
           <legend>
-            <i class="fa fa-circle level-national" aria-hidden="true">National Event</i>
-            <i class="fa fa-circle level-regional" aria-hidden="true">Regional Event</i>
-            <i class="fa fa-circle other" aria-hidden="true">Other Event</i>
+            <span class="level-national">
+              <i class="fa fa-circle level-national" aria-hidden="true"></i>
+              <span>National Event</span>
+            </span>
+            <span class="level-regional">
+              <i class="fa fa-circle level-regional" aria-hidden="true"></i>
+              <span>Regional Event</span>
+            </span>
+            <span class="other">
+              <i class="fa fa-circle other" aria-hidden="true"></i>
+              <span>Other Event</span>
+            </span>
           </legend>
 
           <div tal:replace="structure tab/long_description | nothing" tal:on-error="nothing"></div>
