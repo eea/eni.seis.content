@@ -35,43 +35,44 @@
       <div class="col-md-7 data-right-column">
         <div class="data row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="data-item">
-              <a href="/south/areas-of-work/data-and-statistics">
-                <img class="slide-img" src="http://eni-seis.eionet.europa.eu/south/++theme++eni-seis-theme-south//img/img-south-environmental-reporting.jpg">
-                <span>Data and statistics</span>
-              </a>
-            </div>
+            <a href="" class="data-link">
+              <div class="data-item">
+                <span>Water</span>
+                <div class="data-img icon-water"></div>
+              </div>
+            </a>
           </div>
+
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="data-item">
-              <a href="/south/areas-of-work/data-management-and-infrastructure">
-                <img class="slide-img" src="http://eni-seis.eionet.europa.eu/south/++theme++eni-seis-theme-south//img/img-south-data-management-and-infrastructure.jpg">
-                <span>Data management and infrastructure</span>
-              </a>
-            </div>
+            <a href="" class="data-link">
+              <div class="data-item">
+                <span>Waste</span>
+                <div class="data-img icon-waste"></div>
+              </div>
+            </a>
           </div>
         </div>
+
         <div class="data row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="data-item">
-              <a href="/south/areas-of-work/indicators-and-assessment">
-                <img class="slide-img" src="http://eni-seis.eionet.europa.eu/south/++theme++eni-seis-theme-south//img/img-south-assessment.jpg">
-                <span>Indicators and assessment</span>
-              </a>
-            </div>
+            <a href="" class="data-link">
+              <div class="data-item">
+                <span>Industrial Emissions</span>
+                <div class="data-img icon-industrial-emissions"></div>
+              </div>
+            </a>
           </div>
+
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="data-item">
-              <a href="/south/areas-of-work/national-work-plans">
-                <img class="slide-img" src="http://eni-seis.eionet.europa.eu/south/++theme++eni-seis-theme-south//img/img-south-national-work-plans.jpg">
-                <span>National work plans</span>
-              </a>
-            </div>
+            <a href="" class="data-link">
+              <div class="data-item">
+                <span>Cross-cutting Issues</span>
+                <div class="data-img icon-cross-cutting-issues"></div>
+              </div>
+            </a>
           </div>
         </div>
-
       </div>
     </div>
-
   </body>
 </html>
