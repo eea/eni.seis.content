@@ -15,20 +15,40 @@
 
       <div class="col-md-5 data-left-column">
 
-        <h4>News</h4>
-        <a href="#" class="img">
-          <img src="newsitem-fallback.png">
-        </a>
-        <h4>
-          <a href="" class="title">News item title Lorem ipsum dolor sit amet, consectetur adipisicing</a>
-        </h4>
+        <div class="news">
+          <h4>News</h4>
+          <div class="news-item">
+            <a href="#" class="img">
+              <img src="newsitem-fallback.png">
+            </a>
+            <h4>
+              <a href="" class="title">News item title Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+            </h4>
 
-        <div class="description">
-          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna </span>…
-          <a href="#" class="read_more">
-            Read more
-          </a>
+            <div class="description">
+              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna </span>…
+              <a href="#" class="read_more">
+                Read more
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="knowledge-resources">
+          <h4>Knowledge resources</h4>
+          <ul>
+            <li>
+              <a href="#">Basic Set of Environment Statistics</a>
+            </li>
+            <li>
+              <a href="#">UNECE About Environmental Monitoring</a>
+            </li>
+            <li>
+              <a href="#">UNECE Online Guidelines for the Application</a>
+            </li>
+          </ul>
+          <a href="#" class="more-items pull-right">More resources</a>
         </div>
       </div>
 
