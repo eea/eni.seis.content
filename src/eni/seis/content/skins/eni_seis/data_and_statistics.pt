@@ -16,27 +16,30 @@
       <div class="col-md-5 data-left-column">
 
         <div class="news">
-          <h4>News</h4>
+          <h3>News</h3>
           <div class="news-item">
             <a href="#" class="img">
               <img src="newsitem-fallback.png">
             </a>
-            <h4>
-              <a href="" class="title">News item title Lorem ipsum dolor sit amet, consectetur adipisicing</a>
-            </h4>
+            <h3>
+              <a href="">News item title Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+            </h3>
 
             <div class="description">
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna </span>…
-              <a href="#" class="read_more">
+              <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>…
+              <a href="#" class="read-more">
                 Read more
               </a>
             </div>
+
+            <a href="#" class="more-news pull-right more-items">
+              More news
+            </a>
           </div>
         </div>
 
         <div class="knowledge-resources">
-          <h4>Knowledge resources</h4>
+          <h3>Knowledge resources</h3>
           <ul>
             <li>
               <a href="#">Basic Set of Environment Statistics</a>
