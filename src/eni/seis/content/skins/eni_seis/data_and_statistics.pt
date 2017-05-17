@@ -15,24 +15,29 @@
 
       <div class="col-md-5 data-left-column">
 
-        <div class="news">
+        <div class="news"
+             tal:define="firstn python:context.getGlobalNews()[0]">
           <h3>News</h3>
           <div class="news-item">
-            <a href="#" class="img">
-              <img src="newsitem-fallback.png">
+            <a href="firstn/absolute_url" class="img">
+              <img tal:attributes="src python:firstn.getLeadImagePath('preview', 'newsitem-fallback.png')">
             </a>
             <h3>
-              <a href="">News item title Lorem ipsum dolor sit amet, consectetur adipisicing</a>
+              <a href="" tal:attributes="href firstn/absolute_url" class="title" tal:content="firstn/Title">
+                An event related to ENI-SEIS South
+              </a>
             </h3>
 
-            <div class="description">
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing </span>…
-              <a href="#" class="read-more">
+            <div class='description'>
+              <span tal:content="firstn/Description">
+                Description here
+              </span>&hellip;
+              <a href="" tal:attributes="href firstn/absolute_url" class="read-more" >
                 Read more
               </a>
             </div>
 
-            <a href="#" class="more-news pull-right more-items">
+            <a href="http://eni-seis.eionet.europa.eu/south/communication/newsletter" class="more-news pull-right more-items">
               More news
             </a>
           </div>
