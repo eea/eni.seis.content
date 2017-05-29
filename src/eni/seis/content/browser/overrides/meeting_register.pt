@@ -289,7 +289,7 @@
     <tal:message-signup define="message python:options.get('signup_message', None)">
       <metal:message use-macro="template/macros/message" />
     </tal:message-signup>
-    <p>You are registered to this meeting!</p>
+    <p>You are registered to this meeting! Do not forget to look into your spam folder.</p>
     <a tal:attributes="href context/absolute_url">Return to the meeting page</a>
   </tal:registered>
 
