@@ -27,6 +27,8 @@ FIELDS_REQUIRED = (
     ('last_name', 'Last name'),
     ('position', 'Position'),
     ('organisation', 'Organisation'),
+    ('address', 'Address'),
+    ('country', 'Country'),
     ('username', 'Username'),
     ('email', 'Email'),
     ('pw1', 'Password'),
