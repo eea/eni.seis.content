@@ -52,4 +52,17 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.0.3"
+            destination="1.0.4"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import propertiestool."
+	    description="Fix new fields on registration forms."
+            import_steps="propertiestool"
+            />
+
+    </genericsetup:upgradeSteps>
+
 </configure>

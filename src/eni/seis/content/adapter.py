@@ -4,80 +4,101 @@ from plone.app.users.browser.personalpreferences import UserDataPanelAdapter
 class EnhancedUserDataPanelAdapter(UserDataPanelAdapter):
     """
     """
-    def get_first_name(self):
+    @property
+    def first_name(self):
         value = self.context.getProperty('first_name', '')
-        if value is not None:
-            value = value.decode('utf-8')
-        return value
+        return value.decode('utf-8')
 
-    def set_first_name(self, value):
+    @first_name.setter
+    def first_name(self, value):
         if value is not None:
-            value = value.encode('utf-8')
-        return self.context.setMemberProperties(
-            {'first_name': value})
-    first_name = property(get_first_name, set_first_name)
+            return self.context.setMemberProperties(
+                {'first_name': value.encode('utf-8')})
 
-    def get_last_name(self):
+    @property
+    def last_name(self):
         value = self.context.getProperty('last_name', '')
-        if value is not None:
-            value = value.decode('utf-8')
-        return value
+        return value.decode('utf-8')
 
-    def set_last_name(self, value):
+    @last_name.setter
+    def last_name(self, value):
         if value is not None:
-            value = value.encode('utf-8')
-        return self.context.setMemberProperties(
-            {'last_name': value})
-    last_name = property(get_last_name, set_last_name)
+            return self.context.setMemberProperties(
+                {'last_name': value.encode('utf-8')})
 
-    def get_telephone(self):
-        value = self.context.getProperty('last_name', '')
+    @property
+    def telephone(self):
+        value = self.context.getProperty('telephone', '')
+        return value.decode('utf-8')
+
+    @telephone.setter
+    def telephone(self, value):
         if value is not None:
-            value = value.decode('utf-8')
-        return value
+            return self.context.setMemberProperties(
+                {'telephone': value.encode('utf-8')})
 
-    def set_telephone(self, value):
+    @property
+    def phone_numbers(self):
+        value = self.context.getProperty('phone_numbers', [])
+        return [v.decode('utf-8') for v in value]
+
+    @phone_numbers.setter
+    def phone_numbers(self, value):
         if value is not None:
-            value = value.encode('utf-8')
-        return self.context.setMemberProperties(
-            {'telephone': value})
-    telephone = property(get_telephone, set_telephone)
+            return self.context.setMemberProperties(
+                {'phone_numbers': [v.encode('utf-8') for v in value]})
 
-    def get_institution(self):
+    @property
+    def institution(self):
         value = self.context.getProperty('institution', '')
-        if value is not None:
-            value = value.decode('utf-8')
-        return value
+        return value.decode('utf-8')
 
-    def set_institution(self, value):
+    @institution.setter
+    def institution(self, value):
         if value is not None:
-            value = value.encode('utf-8')
-        return self.context.setMemberProperties(
-            {'institution': value})
-    institution = property(get_institution, set_institution)
+            return self.context.setMemberProperties(
+                {'institution': value.encode('utf-8')})
 
-    def get_from_country(self):
+    @property
+    def position(self):
+        value = self.context.getProperty('position', '')
+        return value.decode('utf-8')
+
+    @position.setter
+    def position(self, value):
+        if value is not None:
+            return self.context.setMemberProperties(
+                {'position': value.encode('utf-8')})
+
+    @property
+    def from_country(self):
         value = self.context.getProperty('from_country', '')
-        if value is not None:
-            value = value.decode('utf-8')
-        return value
+        return value.decode('utf-8')
 
-    def set_from_country(self, value):
+    @from_country.setter
+    def from_country(self, value):
         if value is not None:
-            value = value.encode('utf-8')
-        return self.context.setMemberProperties(
-            {'from_country': value})
-    from_country = property(get_from_country, set_from_country)
+            return self.context.setMemberProperties(
+                {'from_country': value.encode('utf-8')})
 
-    def get_from_city(self):
+    @property
+    def from_city(self):
         value = self.context.getProperty('from_city', '')
-        if value is not None:
-            value = value.decode('utf-8')
-        return value
+        return value.decode('utf-8')
 
-    def set_from_city(self, value):
+    @from_city.setter
+    def from_city(self, value):
         if value is not None:
-            value = value.encode('utf-8')
-        return self.context.setMemberProperties(
-            {'from_city': value})
-    from_city = property(get_from_city, set_from_city)
+            return self.context.setMemberProperties(
+                {'from_city': value.encode('utf-8')})
+
+    @property
+    def address(self):
+        value = self.context.getProperty('address', '')
+        return value.decode('utf-8')
+
+    @address.setter
+    def address(self, value):
+        if value is not None:
+            return self.context.setMemberProperties(
+                {'address': value.encode('utf-8')})

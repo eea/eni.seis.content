@@ -2,12 +2,10 @@ from zope.component import getUtility
 from plone.app.users.userdataschema import IUserDataSchema
 from plone.app.users.userdataschema import IUserDataSchemaProvider
 from plone.app.users.browser.register import RegistrationForm
-from plone.app.users.browser.personalpreferences import UserDataPanel
 from plone.app.users.browser.register import CantChoosePasswordWidget
 from Products.CMFCore.interfaces import ISiteRoot
 from zope import schema
 from zope.interface import implements
-from zope.formlib.widget import SimpleInputWidget
 from eni.seis.content.config import MessageFactory as _
 
 
@@ -36,39 +34,8 @@ class EniRegistrationForm(RegistrationForm):
             defaultFields = defaultFields.omit('mail_me')
 
         defaultFields = defaultFields.omit('fullname')
-        first_name = defaultFields['first_name']
-        last_name = defaultFields['last_name']
-        telephone = defaultFields['telephone']
-        institution = defaultFields['institution']
-        from_country = defaultFields['from_country']
-        from_city = defaultFields['from_city']
-
-        first_name.custom_widget = SimpleInputWidget
-        last_name.custom_widget = SimpleInputWidget
-        telephone.custom_widget = SimpleInputWidget
-        institution.custom_widget = SimpleInputWidget
-        from_country.custom_widget = SimpleInputWidget
-        from_city.custom_widget = SimpleInputWidget
 
         return defaultFields
-
-
-class CustomizedUserDataPanel(UserDataPanel):
-    def __init__(self, context, request):
-        super(CustomizedUserDataPanel, self).__init__(context, request)
-        first_name = self.form_fields['first_name']
-        last_name = self.form_fields['last_name']
-        telephone = self.form_fields['telephone']
-        institution = self.form_fields['institution']
-        from_country = self.form_fields['from_country']
-        from_city = self.form_fields['from_city']
-
-        first_name.custom_widget = SimpleInputWidget
-        last_name.custom_widget = SimpleInputWidget
-        telephone.custom_widget = SimpleInputWidget
-        institution.custom_widget = SimpleInputWidget
-        from_country.custom_widget = SimpleInputWidget
-        from_city.custom_widget = SimpleInputWidget
 
 
 class UserDataSchemaProvider(object):
@@ -105,10 +72,25 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         required=False
     )
 
+    phone_numbers = schema.List(
+        title=_(u'label_phone_numbers', default=u'Phone numbers'),
+        description=_(u'help_phone_numbers',
+                      default=u'Fill in phone numbers.'),
+        value_type=schema.TextLine(),
+        required=False
+    )
+
     institution = schema.TextLine(
         title=_(u'label_institution', default=u'Institution'),
         description=_(u'help_institution',
                       default=u'Fill in the institution'),
+        required=False,
+    )
+
+    position = schema.TextLine(
+        title=_(u'label_position', default=u'Position'),
+        description=_(u'help_position',
+                      default=u'Fill in the position'),
         required=False,
     )
 
@@ -123,5 +105,12 @@ class IEnhancedUserDataSchema(IUserDataSchema):
         title=_(u'label_from_city', default=u'From city'),
         description=_(u'help_from_city',
                       default=u'Fill in the From city'),
+        required=False,
+    )
+
+    address = schema.TextLine(
+        title=_(u'label_address', default=u'Address'),
+        description=_(u'help_address',
+                      default=u'Fill in the address'),
         required=False,
     )

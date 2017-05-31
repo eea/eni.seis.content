@@ -6,10 +6,12 @@
    <element value="first_name" />
    <element value="last_name" />
    <element value="telephone" />
+   <element value="phone_numbers" />
    <element value="institution" />
+   <element value="position" />
    <element value="from_country" />
    <element value="from_city" />
-
+   <element value="address" />
   </property>
  </object>
 </object>
