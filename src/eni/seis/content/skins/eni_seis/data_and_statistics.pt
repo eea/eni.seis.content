@@ -44,21 +44,28 @@
             </div>
           </div>
 
-          <div class="knowledge-resources">
-            <h3>Knowledge resources</h3>
-            <ul>
-              <li>
-                <a href="#">Basic Set of Environment Statistics</a>
-              </li>
-              <li>
-                <a href="#">UNECE About Environmental Monitoring</a>
-              </li>
-              <li>
-                <a href="#">UNECE Online Guidelines for the Application</a>
-              </li>
-            </ul>
-            <a href="#" class="more-items pull-right">More resources</a>
-          </div>
+          <tal:resources tal:define="
+            query python: {'portal_type': 'Folder'};
+            sections python: context.getFolderContents(query, full_objects=True)">
+
+            <div class="knowledge-resources"
+                 tal:repeat="section sections">
+              <h3 tal:content="section/Title">Knowledge resources zzz</h3>
+              <ul tal:define="contents section/getFolderContents"
+                  class="list-group">
+                <li tal:repeat="brain contents" class="list-group-item">
+                  <a href="" tal:attributes="href brain/getURL">
+                    <span tal:replace="brain/Title">Title here</span>
+                  </a>
+                </li>
+              </ul>
+              <a tal:attributes="href section/absolute_url"
+                 class="more-items pull-right">
+                More
+                <span tal:replace="section/Description"></span>
+              </a>
+            </div>
+          </tal:resources>
         </div>
       </div>
 
