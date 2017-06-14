@@ -68,7 +68,12 @@
                   Air richtext description here
                 </div>
 
-                <div class="country-subsection-listing col-md-4 col-xs-12" tal:condition="subtabs">
+                <div class="country-subsection-listing col-md-4 col-xs-12">
+                  <a class="btn btn-default edit-text"
+                     href=""
+                     tal:attributes="href string:${tab/absolute_url}/createObject?type_name=Folder">
+                    Add category
+                  </a>
 
                   <div tal:repeat="subtab subtabs">
                     <h4 tal:content="subtab/Title">Key Documents</h4>
@@ -85,8 +90,13 @@
                       </li>
                     </ul>
 
+                    <a class="btn btn-default edit-text"
+                       href=""
+                       tal:attributes="href string:${subtab/absolute_url}/folder_contents">
+                      Manage contents
+                    </a>
+
                     <a
-                           tal:condition="python:True"
                            href=""
                            tal:attributes="href string:${subtab/absolute_url}"
                            class="more-items pull-right"
@@ -94,6 +104,12 @@
                       More <span tal:replace="python:subtab_description" ></span>
                     </a>
                   </div>
+
+                  <a class="btn btn-default edit-text"
+                     href=""
+                     tal:attributes="href string:${tab/absolute_url}/folder_contents">
+                    Manage categories
+                  </a>
                 </div>
               </div>
             </div>
