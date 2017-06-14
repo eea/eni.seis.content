@@ -70,46 +70,10 @@
       </div>
 
       <div class="col-md-7 data-right-column">
-        <div class="data row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <a href="" class="data-link">
-              <div class="data-item">
-                <span>Water</span>
-                <div class="data-img icon-water"></div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <a href="" class="data-link">
-              <div class="data-item">
-                <span>Waste</span>
-                <div class="data-img icon-waste"></div>
-              </div>
-            </a>
-          </div>
+        <div tal:replace="structure python:context.long_description">
+          Water, Waste, Industrial Emissions, Cross-cutting Issues
         </div>
-
-        <div class="data row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <a href="" class="data-link">
-              <div class="data-item">
-                <span>Industrial Emissions</span>
-                <div class="data-img icon-industrial-emissions"></div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <a href="" class="data-link">
-              <div class="data-item">
-                <span>Cross-cutting Issues</span>
-                <div class="data-img icon-cross-cutting-issues"></div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+     </div>
     </div>
   </body>
 </html>
