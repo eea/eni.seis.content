@@ -23,9 +23,10 @@
                i18n:attributes="summary summary_content_listing;">
           <thead>
             <tr>
-              <th class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Event</th>
-              <th class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Summary</th>
-              <th class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Link</th>
+              <th>Year</th>
+              <th>Dates</th>
+              <th>Title</th>
+              <th>Location</th>
             </tr>
           </thead>
 
@@ -36,18 +37,26 @@
                 <tr metal:define-macro="listitem" tal:define="oddrow repeat/item/odd;"
                     tal:attributes="class python:test(oddrow, 'even', 'odd')"
                     tal:condition="python:item.portal_type == 'eea.meeting'">
+                  <td class="event-table-date">
+                    <tal:condition tal:condition="python: context.get_event_year(item)">
+                      <span tal:content="python:context.get_event_year(item)"></span>
+                    </tal:condition>
+                  </td>
+
+                  <td class="event-table-date">
+                    <tal:condition tal:condition="python: context.get_event_dates(item)">
+                      <span tal:content="python:context.get_event_dates(item)"></span>
+                    </tal:condition>
+                  </td>
 
                   <td class="event-link">
                     <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
                   </td>
 
-                  <td class="event-summary">
-                    <span tal:content="item/Description"></span>
+                  <td class="event-table-location">
+                    <span tal:content="python: context.get_event_location(item)"></span>
                   </td>
 
-                  <td class="event-link">
-                    <a href="" tal:attributes="href item/getURL">≫ Read more</a> <!-- (≫ = much greater than) -->
-                  </td>
                 </tr>
 
               </metal:entry>
