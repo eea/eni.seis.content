@@ -35,15 +35,15 @@
               <metal:entry fill-slot="entry">
 
                 <tr metal:define-macro="listitem" tal:define="oddrow repeat/item/odd;"
-                    tal:attributes="class python:test(oddrow, 'even', 'odd')"
+                    tal:attributes="class python:'level-national ' + test(oddrow, 'even', 'odd')"
                     tal:condition="python:item.portal_type == 'eea.meeting'">
-                  <td class="event-table-date">
+                  <td class="event-dates">
                     <tal:condition tal:condition="python: context.get_event_year(item)">
                       <span tal:content="python:context.get_event_year(item)"></span>
                     </tal:condition>
                   </td>
 
-                  <td class="event-table-date">
+                  <td class="event-dates">
                     <tal:condition tal:condition="python: context.get_event_dates(item)">
                       <span tal:content="python:context.get_event_dates(item)"></span>
                     </tal:condition>
