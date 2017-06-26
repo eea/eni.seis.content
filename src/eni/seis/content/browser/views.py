@@ -5,11 +5,29 @@ from Products.Five.browser import BrowserView
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
+from DateTime import DateTime
 
 
 class HomepageView(BrowserView):
     """ Custom homepage
     """
+
+
+class GetUpcomingEventsView(BrowserView):
+    """ Next future Event and eea.meetings items list
+    """
+    def __call__(self):
+        now = DateTime()
+
+        events = [
+            b for b in self.context.portal_catalog.searchResults(
+                portal_type=['Event', 'eea.meeting'],
+                review_state='published',
+                sort_on='start')
+            if b.start > now
+        ]
+
+        return events
 
 
 class PortalAbsoluteUrlView(BrowserView):
