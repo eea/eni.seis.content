@@ -11,6 +11,20 @@
 
   <body metal:fill-slot="content-core">
     <div class="row no-portlets">
+
+      <tal:rep repeat="name python: [
+        'frontpage-news',
+        'frontpage-events',
+        ]">
+        <div class="section"
+             data-diazo="..."
+             tal:attributes="data-diazo name; class string:section-${name};"
+             tal:define="text python:context.restrictedTraverse(name)()"
+             tal:content="structure text"
+             tal:on-error="string: Error in ${name}">
+        </div>
+      </tal:rep>
+
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <tal:resources tal:define="
