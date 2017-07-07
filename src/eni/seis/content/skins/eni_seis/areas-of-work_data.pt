@@ -71,14 +71,28 @@
           <div class="knowledge-resources"
                tal:repeat="section sections">
             <h3 tal:content="section/Title">Knowledge resources</h3>
-            <ul tal:define="contents section/getFolderContents"
-                class="list-group">
-              <li tal:repeat="brain contents" class="list-group-item">
-                <a href="" tal:attributes="href brain/getURL">
-                  <span tal:replace="brain/Title">Title here</span>
-                </a>
-              </li>
-            </ul>
+            <div class="row" tal:define="contents section/getFolderContents">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <ul class="list-group">
+                  <li tal:repeat="brain python:contents[:len(contents)/2]"
+                      class="list-group-item">
+                    <a href="" tal:attributes="href brain/getURL">
+                      <span tal:replace="brain/Title">Title here</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <ul class="list-group">
+                  <li tal:repeat="brain python:contents[len(contents)/2:]"
+                      class="list-group-item">
+                    <a href="" tal:attributes="href brain/getURL">
+                      <span tal:replace="brain/Title">Title here</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <a tal:attributes="href section/absolute_url"
                class="more-items pull-right">
               More
