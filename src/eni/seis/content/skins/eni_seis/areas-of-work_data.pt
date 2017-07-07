@@ -10,39 +10,51 @@
   <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
   <body metal:fill-slot="content-core">
-    <div class="homepage-section-aow-slider row">
+    <div class="data-section-aow-slider row">
       <div class="col-md-3 col-xs-12 col-sm-6">
         <div class="aow-slide">
-          <a href="/east/areas-of-work/Data%20and%20Statistics">
+          <a href="/east/areas-of-work/data/air">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="http://eni-seis.eionet.europa.eu/east/++theme++eni-seis-theme-latest/img/img-east-environmental-reporting.jpg">
+              <img class="slide-img" src="./data-air.png">
             </div>
             <div class="text">
-              <span>Data and Statistics</span>
+              <span>Air</span>
             </div>
           </a>
         </div>
       </div>
       <div class="col-md-3 col-xs-12 col-sm-6">
         <div class="aow-slide">
-          <a href="/east/areas-of-work/data-management-and-infrastructure">
+          <a href="/east/areas-of-work/data/biodiversity">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="http://eni-seis.eionet.europa.eu/east/++theme++eni-seis-theme-latest/img/img-east-data-management-and-infrastructure.jpg">
+              <img class="slide-img" src="./data-biodiversity.png">
             </div>
             <div class="text">
-              <span>Data management and infrastructure</span>
+              <span>Biodiversity</span>
             </div>
           </a>
         </div>
       </div>
       <div class="col-md-3 col-xs-12 col-sm-6">
         <div class="aow-slide">
-          <a href="/east/areas-of-work/Indicators%20and%20Assessments">
+          <a href="/east/areas-of-work/data/water">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="http://eni-seis.eionet.europa.eu/east/++theme++eni-seis-theme-latest/img/img-east-assessment.jpg">
+              <img class="slide-img" src="./data-water.png">
             </div>
             <div class="text">
-              <span>Indicators and Assessments</span>
+              <span>Water</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-12 col-sm-6">
+        <div class="aow-slide">
+          <a href="/east/areas-of-work/data/land">
+            <div class="img-circle-cropper">
+              <img class="slide-img" src="./data-land.png">
+            </div>
+            <div class="text">
+              <span>Land</span>
             </div>
           </a>
         </div>
@@ -58,7 +70,7 @@
 
           <div class="knowledge-resources"
                tal:repeat="section sections">
-            <h3 tal:content="section/Title">Knowledge resources zzz</h3>
+            <h3 tal:content="section/Title">Knowledge resources</h3>
             <ul tal:define="contents section/getFolderContents"
                 class="list-group">
               <li tal:repeat="brain contents" class="list-group-item">
