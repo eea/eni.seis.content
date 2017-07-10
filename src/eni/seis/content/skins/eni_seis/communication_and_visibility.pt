@@ -18,7 +18,8 @@
           sections python: [x for x in all_sections if x.Title().lower() not in
           ['news', 'events', 'knowledge resources']];
           knowledge_resources python: [x for x in all_sections if x.Title().lower() in
-          ['knowledge resources']]
+          ['knowledge resources']];
+          icons python: {'newsletters': 'fa fa-envelope-o', 'knowledge resources': 'fa fa-file-pdf-o'}
         ">
 
       <tal:rep repeat="name python: [
@@ -34,8 +35,7 @@
         </div>
       </tal:rep>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
         <div class="knowledge-resources"
              tal:repeat="section sections">
           <h3 tal:content="section/Title">Knowledge resources</h3>
@@ -44,6 +44,9 @@
               <ul class="list-group">
                 <li tal:repeat="brain python:contents"
                     class="list-group-item">
+                  <i tal:attributes="class
+                  python:icons.get(section.Title().lower(), 'fa fa-file-o')">
+                  </i>
                   <a href="" tal:attributes="href brain/getURL">
                     <span tal:replace="brain/Title">Title here</span>
                   </a>
@@ -59,8 +62,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
+      <div class="col-lg-offset-2 col-lg-5 col-md-offset-2 col-md-5 col-sm-12 col-xs-12">
         <div class="knowledge-resources"
              tal:repeat="section knowledge_resources">
           <h3 tal:content="section/Title">Knowledge resources</h3>
@@ -69,6 +71,9 @@
               <ul class="list-group">
                 <li tal:repeat="brain python:contents"
                     class="list-group-item">
+                  <i tal:attributes="class
+                  python:icons.get(section.Title().lower(), 'fa fa-file-o')">
+                  </i>
                   <a href="" tal:attributes="href brain/getURL">
                     <span tal:replace="brain/Title">Title here</span>
                   </a>
@@ -83,7 +88,6 @@
           </a>
         </div>
       </div>
-
 
     </div>
   </body>
