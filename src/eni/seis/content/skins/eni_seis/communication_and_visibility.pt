@@ -10,7 +10,11 @@
   <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
   <body metal:fill-slot="content-core">
-    <div class="row no-portlets">
+    <div class="row no-portlets"
+         tal:define="
+          query python: {'portal_type': 'Folder'};
+          sections python: context.getFolderContents(query, full_objects=True)
+        ">
 
       <tal:rep repeat="name python: [
         'frontpage-news',
@@ -25,45 +29,56 @@
         </div>
       </tal:rep>
 
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-        <tal:resources tal:define="
-          query python: {'portal_type': 'Folder'};
-          sections python: context.getFolderContents(query, full_objects=True)">
-
-          <div class="knowledge-resources"
-               tal:repeat="section sections">
-            <h3 tal:content="section/Title">Knowledge resources</h3>
-            <div class="row" tal:define="contents section/getFolderContents">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <ul class="list-group">
-                  <li tal:repeat="brain python:contents[:len(contents)/2]"
-                      class="list-group-item">
-                    <a href="" tal:attributes="href brain/getURL">
-                      <span tal:replace="brain/Title">Title here</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <ul class="list-group">
-                  <li tal:repeat="brain python:contents[len(contents)/2:]"
-                      class="list-group-item">
-                    <a href="" tal:attributes="href brain/getURL">
-                      <span tal:replace="brain/Title">Title here</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+        <div class="knowledge-resources"
+             tal:repeat="section sections">
+          <h3 tal:content="section/Title">Knowledge resources</h3>
+          <div class="row" tal:define="contents section/getFolderContents">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <ul class="list-group">
+                <li tal:repeat="brain python:contents"
+                    class="list-group-item">
+                  <a href="" tal:attributes="href brain/getURL">
+                    <span tal:replace="brain/Title">Title here</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <a tal:attributes="href section/absolute_url"
-               class="more-items pull-right">
-              More
-              <span tal:replace="section/Description"></span>
-            </a>
           </div>
-        </tal:resources>
+          <a tal:attributes="href section/absolute_url"
+             class="more-items pull-right">
+            More
+            <span tal:replace="section/Description"></span>
+          </a>
+        </div>
       </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+        <div class="knowledge-resources"
+             tal:repeat="section sections">
+          <h3 tal:content="section/Title">Knowledge resources</h3>
+          <div class="row" tal:define="contents section/getFolderContents">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <ul class="list-group">
+                <li tal:repeat="brain python:contents"
+                    class="list-group-item">
+                  <a href="" tal:attributes="href brain/getURL">
+                    <span tal:replace="brain/Title">Title here</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a tal:attributes="href section/absolute_url"
+             class="more-items pull-right">
+            More
+            <span tal:replace="section/Description"></span>
+          </a>
+        </div>
+      </div>
+
 
     </div>
   </body>
