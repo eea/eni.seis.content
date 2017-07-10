@@ -13,7 +13,12 @@
     <div class="row no-portlets"
          tal:define="
           query python: {'portal_type': 'Folder'};
-          sections python: context.getFolderContents(query, full_objects=True)
+          all_sections python: context.getFolderContents(query,
+          full_objects=True);
+          sections python: [x for x in all_sections if x.Title().lower() not in
+          ['news', 'events', 'knowledge resources']];
+          knowledge_resources python: [x for x in all_sections if x.Title().lower() in
+          ['knowledge resources']]
         ">
 
       <tal:rep repeat="name python: [
@@ -57,7 +62,7 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
         <div class="knowledge-resources"
-             tal:repeat="section sections">
+             tal:repeat="section knowledge_resources">
           <h3 tal:content="section/Title">Knowledge resources</h3>
           <div class="row" tal:define="contents section/getFolderContents">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
