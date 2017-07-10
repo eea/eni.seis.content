@@ -35,6 +35,7 @@
         </div>
       </tal:rep>
 
+      <div class="jquery-move-me"> <!-- MOVE THIS TO BOTTOM -->
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
         <div class="knowledge-resources"
              tal:repeat="section sections">
@@ -88,7 +89,7 @@
           </a>
         </div>
       </div>
-
+      </div> <!-- MOVE THIS TO BOTTOM -->
     </div>
   </body>
 </html>
