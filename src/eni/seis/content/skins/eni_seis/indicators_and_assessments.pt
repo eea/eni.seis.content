@@ -22,15 +22,15 @@
           full_objects=True)[0];
         ">
 
-    <div class="row no-portlets">
-      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+    <div class="row no-portlets jquery-move-me video-section">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="video-container">
           <span
             tal:replace="structure python:video_section.getField('text').getAccessor(video_section)()"></span>
         </div>
       </div>
 
-      <div class="col-lg-offset-2 col-lg-5 col-md-offset-2 col-md-5 col-sm-12 col-xs-12">
+      <div class="col-lg-offset-3 col-lg-5 col-md-offset-3 col-md-5 col-sm-12 col-xs-12">
         <div class="knowledge-resources"
              tal:repeat="section knowledge_resources">
           <h3 tal:content="section/Title">Knowledge resources</h3>
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div class="row no-portlets">
+      <div class="row no-portlets jquery-move-me text-section">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="description-container">
             <span
