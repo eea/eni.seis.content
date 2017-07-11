@@ -17,11 +17,17 @@
           full_objects=True);
           knowledge_resources python: [x for x in all_sections if x.Title().lower() in
           ['knowledge resources']];
-          icons python: {'newsletters': 'fa fa-envelope-o', 'knowledge resources': 'fa fa-file-pdf-o'}
+          icons python: {'newsletters': 'fa fa-envelope-o', 'knowledge
+          resources': 'fa fa-file-pdf-o'};
+          video_section python:context.getFolderContents({'Title': 'Video'},
+          full_objects=True)[0];
         ">
       <div class="jquery-move-me"> <!-- MOVE THIS TO BOTTOM -->
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-        Left
+        <div class="video-container">
+          <span
+            tal:replace="structure python:video_section.getField('text').getAccessor(video_section)()"></span>
+        </div>
       </div>
 
       <div class="col-lg-offset-2 col-lg-5 col-md-offset-2 col-md-5 col-sm-12 col-xs-12">
@@ -31,7 +37,7 @@
           <div class="row" tal:define="contents section/getFolderContents">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <ul class="list-group">
-                <li tal:repeat="brain python:contents"
+                <li tal:repeat="brain python:contents[:6]"
                     class="list-group-item">
                   <i tal:attributes="class
                   python:icons.get(section.Title().lower(), 'fa fa-file-o')">
