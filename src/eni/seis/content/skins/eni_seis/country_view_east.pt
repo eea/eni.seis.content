@@ -191,34 +191,28 @@
 
     <div class="row no-portlets">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        ZZZZ
-        <div class="newsa-container">
+        <div class="news-container">
 
-          <tal:def tal:define="news python:country.getLocalNews();
+          <tal:def tal:define="news python:country.getLocalNews()[:3];
             toLocalizedTime nocall: context/@@plone/toLocalizedTime; ">
 
-            <span tal:content="python:news"></span>
+            <div class="row news-row">
+              <div tal:repeat="ni news" class="col-lg-4 col-md-4 col-sm-12
+                col-xs-12">
 
+                <div class="news-image pull-left">
+                  <a href="" tal:attributes="href ni/absolute_url" title="" >
+                    <img tal:attributes="src python:ni.getLeadImagePath('thumb', 'newsitem-fallback.png')" />
+                  </a>
+                </div>
 
-            <div tal:repeat="ni news">
+                <div class="news-details">
+                  <a tal:attributes="href ni/absolute_url" title="" tal:content="ni/Title">Title</a>
+                </div>
 
-              <div>
-                <a href="" tal:attributes="href ni/absolute_url" title="" >
-                  <img tal:attributes="src python:ni.getLeadImagePath('thumb', 'newsitem-fallback.png')" />
-                </a>
               </div>
-
-              <div>
-                <a tal:attributes="href ni/absolute_url" title="" tal:content="ni/Title">Title</a>
-
-                <span
-                  class="portletItemDetails location"
-                  tal:content="python:toLocalizedTime(ni.effective(),long_format=0)">
-                  Date
-                </span>
-              </div>
-
             </div>
+
             <a href="eni-seis.eionet.europa.eu/east/communication/newsletter" class="pull-right more-items">More news</a>
           </tal:def>
 
