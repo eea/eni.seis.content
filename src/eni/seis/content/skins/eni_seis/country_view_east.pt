@@ -9,7 +9,44 @@
   <tal:col metal:fill-slot="portlets_one_slot"></tal:col>
   <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
-  <body metal:fill-slot="content-core">
+  <body metal:fill-slot="content-core"
+        tal:define="country python:context;
+                    country_title python:country.Title()">
+
+    <div class="row no-portlets">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="country-header">
+          <img class="flag pull-left" src="./flag/@@images/image/preview" alt="flag"/>
+          <h1 class="country-title" tal:content="country_title">
+            Country title
+          </h1>
+        </div>
+
+        <div class="country-content">
+          <ul class="nav nav-tabs">
+            <li class="pull-right">
+              <a data-toggle="tab" href="#environmental-assessment-reports">
+                Environmental assessment reports
+              </a>
+            </li>
+            <li class="active pull-right">
+              <a data-toggle="tab" href="#unece-environmental-indicators">
+                UNECE Environmental Indicators
+              </a>
+            </li>
+         </ul>
+
+          <div class="tab-content">
+            <div id="unece-environmental-indicators" class="tab-pane active">
+              <p>Lorem ipsum 1</p>
+            </div>
+            <div id="environmental-assessment-reports" class="tab-pane fade">
+              <p>Lorem ipsum 2</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="row no-portlets">
 
