@@ -172,7 +172,7 @@
               <p>Description of folder 2 here? TODO</p>
             </div>
 
-            <div class="not-used-TODO-remove">
+            <div tal:condition="python:False" class="not-used-TODO-remove">
               <!-- context decription -->
               <a class="btn btn-default edit-text"
                  href=""
