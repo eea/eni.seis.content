@@ -38,121 +38,150 @@
 
           <div class="tab-content">
             <div id="unece-environmental-indicators" class="tab-pane active">
-              <p>Lorem ipsum 1</p>
-            </div>
-            <div id="environmental-assessment-reports" class="tab-pane fade">
-              <p>Lorem ipsum 2</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <p>Description of folder 1 here? TODO</p>
 
-    <div class="row no-portlets">
 
-      <div class="col-md-5 country-left-column">
-        <a class="btn btn-default edit-text"
-           href=""
-           tal:attributes="href string:${context/absolute_url}/edit">
-          Edit this text
-        </a>`
-        <div tal:content="structure context/long_description" ></div>
-        <!-- <tal:block replace="structure provider:plone.leftcolumn" /> -->
-        <tal:block replace="structure provider:plone.rightcolumn" />
-      </div>
+              <div class="col-md-7 country-right-column"
+                tal:define="
+                  query python: {'portal_type': 'Folder'};
+                  tabs python: context.getFolderContents(query, full_objects=True)">
 
-      <div class="col-md-7 country-right-column"
-           tal:define="
-           query python: {'portal_type': 'Folder'};
-           tabs python: context.getFolderContents(query, full_objects=True)">
-
-        <ul class="nav nav-tabs"
-            tal:define="tab_icons python:{'Air': 'icon icon-air', 'Water': 'icon icon-water', 'Land': 'icon icon-land', 'Waste': 'icon icon-waste'}">
-          <tal:tab tal:repeat="tab tabs">
-          <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
-            <a tal:attributes="href string:#${tab/getId}; class python:tab_icons.get(tab.Title(), 'icon icon-none')" data-toggle="tab">
-              <div tal:attributes="class python:tab_icons.get(tab.Title(), 'icon icon-none')"></div>
-              <span tal:replace="tab/Title">Tab Title</span>
-            </a>
-          </li>
-          </tal:tab>
-        </ul>
-
-        <div class="tab-content">
-          <tal:tab tal:repeat="tab tabs" >
-
-          <div tal:attributes="
-          id tab/getId;
-          class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
-             class="tab-pane active"
-             data-toggle="pill">
-
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="btn btn-default edit-text"
-                     href=""
-                     tal:attributes="href string:${tab/absolute_url}/edit">
-                    Edit this text
-                  </a>
-                </div>
-              </div>
-
-              <div class="row"
-                   tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
-
-                <div tal:content="structure tab/long_description" class="col-md-8 col-xs-12">
-                  Air richtext description here
-                </div>
-
-                <div class="country-subsection-listing col-md-4 col-xs-12">
-                  <a class="btn btn-default edit-text"
-                     href=""
-                     tal:attributes="href string:${tab/absolute_url}/createObject?type_name=Folder">
-                    Add category
-                  </a>
-
-                  <div tal:repeat="subtab subtabs">
-                    <h4 tal:content="subtab/Title">Key Documents</h4>
-
-                    <ul tal:define="contents subtab/getFolderContents;
-                                    is_links_list python: 'link' in subtab.Title().lower();
-                                    icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'"
-                        class="list-group">
-                      <li tal:repeat="brain contents" class="list-group-item">
-                        <a href="" tal:attributes="href brain/getURL">
-                          <i tal:attributes="class python:icon_class"></i>
-                          <span tal:replace="brain/Title">Title here</span>
-                        </a>
-                      </li>
-                    </ul>
-
-                    <a class="btn btn-default edit-text"
-                       href=""
-                       tal:attributes="href string:${subtab/absolute_url}/folder_contents">
-                      Manage contents
+                <ul class="nav nav-tabs"
+                    tal:define="tab_icons python:{'Air': 'icon icon-air', 'Water': 'icon icon-water', 'Land': 'icon icon-land', 'Waste': 'icon icon-waste'}">
+                  <tal:tab tal:repeat="tab tabs">
+                  <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
+                    <a tal:attributes="href string:#${tab/getId}; class python:tab_icons.get(tab.Title(), 'icon icon-none')" data-toggle="tab">
+                      <div tal:attributes="class python:tab_icons.get(tab.Title(), 'icon icon-none')"></div>
+                      <span tal:replace="tab/Title">Tab Title</span>
                     </a>
+                  </li>
+                  </tal:tab>
+                </ul>
 
-                    <a
-                           href=""
-                           tal:attributes="href string:${subtab/absolute_url}"
-                           class="more-items pull-right"
-                           tal:define="subtab_description python:subtab.Description() if subtab.Description() != '' else subtab.Title()">
-                      More <span tal:replace="python:subtab_description" ></span>
-                    </a>
+                <div class="tab-content">
+                  <tal:tab tal:repeat="tab tabs" >
+
+                  <div tal:attributes="
+                  id tab/getId;
+                  class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
+                     class="tab-pane active"
+                     data-toggle="pill">
+
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <a class="btn btn-default edit-text"
+                             href=""
+                             tal:attributes="href string:${tab/absolute_url}/edit">
+                            Edit this text
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="row"
+                           tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
+
+                        <div tal:content="structure tab/long_description" class="col-md-8 col-xs-12">
+                          Air richtext description here
+                        </div>
+
+                        <div class="country-subsection-listing col-md-4 col-xs-12">
+                          <a class="btn btn-default edit-text"
+                             href=""
+                             tal:attributes="href string:${tab/absolute_url}/createObject?type_name=Folder">
+                            Add category
+                          </a>
+
+                          <div tal:repeat="subtab subtabs">
+                            <h4 tal:content="subtab/Title">Key Documents</h4>
+
+                            <ul tal:define="contents subtab/getFolderContents;
+                                            is_links_list python: 'link' in subtab.Title().lower();
+                                            icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'"
+                                class="list-group">
+                              <li tal:repeat="brain contents" class="list-group-item">
+                                <a href="" tal:attributes="href brain/getURL">
+                                  <i tal:attributes="class python:icon_class"></i>
+                                  <span tal:replace="brain/Title">Title here</span>
+                                </a>
+                              </li>
+                            </ul>
+
+                            <a class="btn btn-default edit-text"
+                               href=""
+                               tal:attributes="href string:${subtab/absolute_url}/folder_contents">
+                              Manage contents
+                            </a>
+
+                            <a
+                                   href=""
+                                   tal:attributes="href string:${subtab/absolute_url}"
+                                   class="more-items pull-right"
+                                   tal:define="subtab_description python:subtab.Description() if subtab.Description() != '' else subtab.Title()">
+                              More <span tal:replace="python:subtab_description" ></span>
+                            </a>
+                          </div>
+
+                          <a class="btn btn-default edit-text"
+                             href=""
+                             tal:attributes="href string:${tab/absolute_url}/folder_contents">
+                            Manage categories
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <a class="btn btn-default edit-text"
-                     href=""
-                     tal:attributes="href string:${tab/absolute_url}/folder_contents">
-                    Manage categories
-                  </a>
-                </div>
+                </tal:tab>
               </div>
             </div>
-          </div>
 
-          </tal:tab>
+            </div>
+            <div id="environmental-assessment-reports" class="tab-pane fade">
+              <table class="table table-responsive table-hover" summary="Content listing">
+                <thead>
+                  <tr>
+                    <th>&nbsp;Type of Report&nbsp;</th>
+                    <th>&nbsp;TODO Country name&nbsp;</th>
+                    <th><!-- Link to the report --></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>Odd line</td>
+                    <td>Odd line</td>
+                    <td>Odd line</td>
+                  </tr>
+                  <tr class="even">
+                    <td>Even line</td>
+                    <td>Even line</td>
+                    <td>Even line</td>
+                  </tr>
+                  <tr class="odd">
+                    <td>Odd line</td>
+                    <td>Odd line</td>
+                    <td>Odd line</td>
+                  </tr>
+                  <tr class="even">
+                    <td>Even line</td>
+                    <td>Even line</td>
+                    <td>Even line</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Description of folder 2 here? TODO</p>
+            </div>
+
+            <div class="not-used-TODO-remove">
+              <!-- context decription -->
+              <a class="btn btn-default edit-text"
+                 href=""
+                 tal:attributes="href string:${context/absolute_url}/edit">
+                Edit this text
+              </a>`
+              <div tal:content="structure context/long_description" ></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
