@@ -50,7 +50,7 @@
                   <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
                     <a tal:attributes="href string:#${tab/getId};" data-toggle="tab">
                       <div class="tab-title" tal:content="tab/Title">
-                        Tab Title
+                        <h3>Tab Title</h3>
                       </div>
                       <div class="tab-description" tal:content="tab/Description">
                         Tab description
@@ -61,13 +61,14 @@
                 </ul>
 
                 <div class="tab-content">
-                  <tal:tab tal:repeat="tab tabs" >
+                  <tal:tab tal:repeat="tab tabs">
 
                   <div tal:attributes="
-                  id tab/getId;
-                  class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
-                     class="tab-pane active"
-                     data-toggle="pill">
+                    id tab/getId;
+                    class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
+                    tal:define="reports python:tab.getFolderContents(full_objects=True)"
+                    class="tab-pane active"
+                    data-toggle="pill">
 
                     <div class="container">
                       <div class="row">
@@ -76,35 +77,42 @@
                             <thead>
                               <tr>
                                 <th>
-                                  <h2>&nbsp;Type of Report&nbsp;</h2>
+                                  <h2>
+                                    &nbsp;
+                                    <span tal:replace="tab/Title"></span>.&nbsp;
+                                    <span tal:replace="tab/Description"></span>
+                                    &nbsp;
+                                  </h2>
                                 </th>
                                 <th>
-                                  <h2>&nbsp;<span tal:replace="country_title"></span>&nbsp;</h2>
+                                  <h3>
+                                    &nbsp;
+                                    <span tal:replace="country_title"></span>
+                                    &nbsp;
+                                  </h3>
+                                  <p class="reports-number" tal:content="python:len(reports)">
+                                    14
+                                  </p>
                                 </th>
                                 <th><!-- Link to the report --></th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr class="odd">
-                                <td>Odd line</td>
-                                <td>Odd line</td>
-                                <td>Odd line</td>
-                              </tr>
-                              <tr class="even">
-                                <td>Even line</td>
-                                <td>Even line</td>
-                                <td>Even line</td>
-                              </tr>
-                              <tr class="odd">
-                                <td>Odd line</td>
-                                <td>Odd line</td>
-                                <td>Odd line</td>
-                              </tr>
-                              <tr class="even">
-                                <td>Even line</td>
-                                <td>Even line</td>
-                                <td>Even line</td>
-                              </tr>
+                              <tal:repeat tal:repeat="report reports">
+                                <tr tal:define="oddrow repeat/report/odd;"
+                                    tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                                  <td>
+                                    <span tal:replace="tab/Title">C</span><span tal:replace="repeat/report/index">1</span>.&nbsp;
+                                    <span tal:replace="report/Title">Report title</span>
+                                  </td>
+                                  <td>No data or <i class="fa fa-square" aria-hidden="true"></i></td>
+                                  <td>
+                                    <a tal:attributes="href report/absolute_url">
+                                      Read more »
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tal:repeat>
                             </tbody>
                           </table>
                         </div>
