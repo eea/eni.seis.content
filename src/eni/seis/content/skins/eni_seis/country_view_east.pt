@@ -75,7 +75,7 @@
                     <div class="container">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <table class="table table-responsive table-hover" summary="Content listing">
+                          <table class="table table-responsive table-hover reports" summary="Content listing">
                             <thead>
                               <tr>
                                 <th>
@@ -133,14 +133,14 @@
                   'Environmental Assessment Reports'][0];
                   reports python:e_a_r.getFolderContents(full_objects=True)">
 
-              <table class="table table-responsive table-hover" summary="Content listing">
+              <table class="table table-responsive table-hover environ-reports" summary="Content listing">
                 <thead>
                   <tr>
                     <th>
                       <h2>&nbsp;Type of Report&nbsp;</h2>
                     </th>
                     <th>
-                      <h2>&nbsp;<span tal:replace="country_title"></span>&nbsp;</h2>
+                      <h2><span tal:replace="country_title"></span>&nbsp;</h2>
                     </th>
                     <th><!-- Link to the report --></th>
                   </tr>
