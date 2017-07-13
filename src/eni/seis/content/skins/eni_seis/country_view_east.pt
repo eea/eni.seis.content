@@ -46,7 +46,7 @@
             <div id="unece-environmental-indicators" class="tab-pane active">
               <p>Description of folder 1 here? TODO</p>
 
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-nav-tabs">
                 <ul class="nav nav-tabs">
                   <tal:tab tal:repeat="tab tabs">
                   <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
@@ -72,9 +72,9 @@
                     class="tab-pane active"
                     data-toggle="pill">
 
-                    <div class="container">
+                    <div class="container container-table-reports">
                       <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-table-reports">
                           <table class="table table-responsive table-hover reports" summary="Content listing">
                             <thead>
                               <tr>
