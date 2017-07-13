@@ -129,9 +129,11 @@
             </div>
             <div id="environmental-assessment-reports" class="tab-pane fade"
                  tal:define="
-                  e_a_r python:[x for x in folders if x.Title() ==
-                  'Environmental Assessment Reports'][0];
-                  reports python:e_a_r.getFolderContents(full_objects=True)">
+                  e_a_r_list python:[x for x in folders if x.Title() ==
+                  'Environmental Assessment Reports'];
+                  e_a_r python:e_a_r_list[0] if len(e_a_r_list) > 0 else None;
+                  reports python:e_a_r.getFolderContents(full_objects=True) if
+                  e_a_r else []">
 
               <table class="table table-responsive table-hover environ-reports" summary="Content listing">
                 <thead>
@@ -146,6 +148,11 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr class="even" tal:condition="python:e_a_r is None">
+                    <td> No reports.</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
                   <tal:repeat tal:repeat="report reports">
                     <tr tal:define="oddrow repeat/report/odd;"
                         tal:attributes="class python:test(oddrow, 'even', 'odd')">
