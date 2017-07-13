@@ -44,7 +44,7 @@
                   tabs python:[x for x in folders if len(x.Title()) == 1]">
 
             <div id="unece-environmental-indicators" class="tab-pane active">
-              <p>Description of folder 1 here? TODO</p>
+              <div tal:replace="structure country/long_description | nothing" tal:on-error="nothing"></div>
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-nav-tabs">
                 <ul class="nav nav-tabs">
