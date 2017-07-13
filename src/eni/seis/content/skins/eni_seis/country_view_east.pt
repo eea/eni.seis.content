@@ -49,7 +49,12 @@
                   <tal:tab tal:repeat="tab tabs">
                   <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
                     <a tal:attributes="href string:#${tab/getId};" data-toggle="tab">
-                      <span tal:replace="tab/Title">Tab Title</span>
+                      <div class="tab-title" tal:content="tab/Title">
+                        Tab Title
+                      </div>
+                      <div class="tab-description" tal:content="tab/Description">
+                        Tab description
+                      </div>
                     </a>
                   </li>
                   </tal:tab>
@@ -67,11 +72,41 @@
                     <div class="container">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <a class="btn btn-default edit-text"
-                             href=""
-                             tal:attributes="href string:${tab/absolute_url}/edit">
-                            Edit this text
-                          </a>
+                          <table class="table table-responsive table-hover" summary="Content listing">
+                            <thead>
+                              <tr>
+                                <th>
+                                  <h2>&nbsp;Type of Report&nbsp;</h2>
+                                </th>
+                                <th>
+                                  <h2>&nbsp;<span tal:replace="country_title"></span>&nbsp;</h2>
+                                </th>
+                                <th><!-- Link to the report --></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="odd">
+                                <td>Odd line</td>
+                                <td>Odd line</td>
+                                <td>Odd line</td>
+                              </tr>
+                              <tr class="even">
+                                <td>Even line</td>
+                                <td>Even line</td>
+                                <td>Even line</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>Odd line</td>
+                                <td>Odd line</td>
+                                <td>Odd line</td>
+                              </tr>
+                              <tr class="even">
+                                <td>Even line</td>
+                                <td>Even line</td>
+                                <td>Even line</td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </div>
                     </div>
