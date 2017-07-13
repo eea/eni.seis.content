@@ -178,8 +178,9 @@
       </div>
     </div>
 
-    <div class="row no-portlets">
+    <div class="row no-portlets jquery-move-me country-news-row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3 class="section-title">Country news</h3>
         <div class="news-container">
 
           <tal:def tal:define="news python:country.getLocalNews()[:3];
