@@ -23,7 +23,7 @@
         </div>
 
         <div class="country-content">
-          <ul class="nav nav-tabs">
+          <ul class="nav nav-tabs base">
             <li class="pull-right">
               <a data-toggle="tab" href="#environmental-assessment-reports">
                 Environmental assessment reports
