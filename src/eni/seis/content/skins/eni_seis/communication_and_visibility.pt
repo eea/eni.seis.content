@@ -19,7 +19,9 @@
           ['news', 'events', 'knowledge resources']];
           knowledge_resources python: [x for x in all_sections if x.Title().lower() in
           ['knowledge resources']];
-          icons python: {'newsletters': 'fa fa-envelope-o', 'knowledge resources': 'fa fa-file-pdf-o'}
+          icons python: {'newsletters': {'is_fa': False, 'text': './newsletter-icon.svg'}, 'knowledge resources': {'is_fa': True, 'text': 'fa
+          fa-file-pdf-o'}, 'visibility materials': {'is_fa': False, 'text':
+          './leaflet-icon.svg'}}
         ">
 
       <tal:rep repeat="name python: [
@@ -45,9 +47,19 @@
               <ul class="list-group">
                 <li tal:repeat="brain python:contents"
                     class="list-group-item">
-                  <i tal:attributes="class
-                  python:icons.get(section.Title().lower(), 'fa fa-file-o')">
-                  </i>
+                  <span tal:define="
+                    default_icon python:{'is_fa': True, 'text': 'fa
+                    fa-file-o'};
+                    icon python:icons.get(section.Title().lower(),
+                    default_icon);
+                    icon_is_fa python:icon.get('is_fa', True)">
+                    <i tal:condition="python:icon_is_fa is True"
+                       tal:attributes="class python:icon.get('text',
+                       default_icon.get('text'))">
+                    </i>
+                    <img tal:condition="python:icon_is_fa is False"
+                         tal:attributes="src python:icon.get('text', './leaflet-icon.svg')"/>
+                  </span>
                   <a href="" tal:attributes="href brain/getURL">
                     <span tal:replace="brain/Title">Title here</span>
                   </a>
@@ -72,9 +84,19 @@
               <ul class="list-group">
                 <li tal:repeat="brain python:contents"
                     class="list-group-item">
-                  <i tal:attributes="class
-                  python:icons.get(section.Title().lower(), 'fa fa-file-o')">
-                  </i>
+                  <span tal:define="
+                    default_icon python:{'is_fa': True, 'text': 'fa
+                    fa-file-o'};
+                    icon python:icons.get(section.Title().lower(),
+                    default_icon);
+                    icon_is_fa python:icon.get('is_fa', True)">
+                    <i tal:condition="python:icon_is_fa is True"
+                       tal:attributes="class python:icon.get('text',
+                       default_icon.get('text'))">
+                    </i>
+                    <img tal:condition="python:icon_is_fa is False"
+                         tal:attributes="src python:icon.get('text', './leaflet-icon.svg')"/>
+                  </span>
                   <a href="" tal:attributes="href brain/getURL">
                     <span tal:replace="brain/Title">Title here</span>
                   </a>
