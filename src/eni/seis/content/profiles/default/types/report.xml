@@ -3,10 +3,11 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="title" i18n:translate="">Report</property>
  <property name="description"
-    i18n:translate="">A report in country section</property>
+    i18n:translate="">a report in country section</property>
  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
  <property name="factory">report</property>
- <property name="add_view_expr">string:${folder_url}/++add++report</property>
+ <property
+    name="add_view_expr">string:${folder_url}/++add++report</property>
  <property name="link_target"></property>
  <property name="immediate_view">view</property>
  <property name="global_allow">True</property>
@@ -24,22 +25,8 @@
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
  </property>
- <property name="schema"></property>
- <property
-    name="model_source">&lt;model xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns="http://namespaces.plone.org/supermodel/schema"&gt;
-    &lt;schema&gt;
-      &lt;field name="link" type="zope.schema.URI"&gt;
-        &lt;description&gt;Use this field if the report is an external link / file.&lt;/description&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Link&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="file" type="plone.namedfile.field.NamedBlobFile"&gt;
-        &lt;description&gt;Use this field if the report is a file.&lt;/description&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;File&lt;/title&gt;
-      &lt;/field&gt;
-    &lt;/schema&gt;
-  &lt;/model&gt;</property>
+ <property name="schema">eni.seis.content.interfaces.IReport</property>
+ <property name="model_source"></property>
  <property name="model_file"></property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
