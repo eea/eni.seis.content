@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
+from eni.seis.content.config import REPORT_CATEGORIES_VOCAB
 from plone.namedfile.field import NamedBlobFile
 from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
@@ -37,3 +38,9 @@ class IReport(model.Schema):
         required=False,
         description=u"Report file if it has one."
     )
+
+    category = schema.Choice(
+        title=u"Category",
+        vocabulary=REPORT_CATEGORIES_VOCAB,
+        required=True
+        )

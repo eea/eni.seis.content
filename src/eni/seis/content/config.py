@@ -1,6 +1,9 @@
 """Common configuration constants
 """
 from zope.i18nmessageid import MessageFactory as MF
+from zope.schema.vocabulary import SimpleVocabulary
+from zope.schema.vocabulary import SimpleTerm
+
 MessageFactory = MF('eni.seis')
 
 ALL_REPORTS_CATEGORIES = {
@@ -15,3 +18,12 @@ ALL_REPORTS_CATEGORIES = {
     "I": "Waste",
     "J": "Environmental financing"
 }
+
+REPORT_CATEGORIES_VOCAB = SimpleVocabulary(
+    [
+        SimpleTerm(
+            value=x,
+            title=x + ". " + ALL_REPORTS_CATEGORIES[x])
+        for x in ALL_REPORTS_CATEGORIES.keys()
+    ]
+)
