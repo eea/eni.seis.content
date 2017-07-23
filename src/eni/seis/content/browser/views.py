@@ -13,6 +13,11 @@ class HomepageView(BrowserView):
     """
 
 
+class ReportView(BrowserView):
+    """ Report
+    """
+
+
 class GetUpcomingEventsView(BrowserView):
     """ Next future Event and eea.meetings items list
     """

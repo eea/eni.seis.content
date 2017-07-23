@@ -86,6 +86,14 @@
     permission="cmf.AddPortalMember"
     />
 
+  <browser:page
+    name="view"
+    for="eni.seis.content.interfaces.IReport"
+    class=".views.ReportView"
+    template="templates/report_view.pt"
+    permission="zope2.View"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"
