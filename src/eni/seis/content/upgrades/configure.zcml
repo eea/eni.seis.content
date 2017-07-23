@@ -65,4 +65,17 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.0.4"
+            destination="1.0.5"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import types."
+	          description="New content type: Reports."
+            import_steps="typeinfo"
+            />
+
+    </genericsetup:upgradeSteps>
+
 </configure>
