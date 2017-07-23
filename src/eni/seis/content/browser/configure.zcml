@@ -94,6 +94,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="reports_data"
+    for="*"
+    class=".views.ReportsDataView"
+    permission="zope2.View"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"

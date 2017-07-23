@@ -13,6 +13,34 @@ class HomepageView(BrowserView):
     """
 
 
+class ReportsDataView(BrowserView):
+    """ Utils for Reports
+    """
+    utils = {
+        'get_all_reports_categories':
+            "Return possible categories for a report"
+    }
+
+    def get_all_reports_categories(self):
+        """ Return possible categories for a report
+        """
+        return {
+            "A": "Air pollution and ozone depletion",
+            "B": "Climate change",
+            "C": "Water",
+            "D": "Biodiversity",
+            "E": "Land and soil",
+            "F": "Agriculture",
+            "G": "Energy",
+            "H": "Transport",
+            "I": "Waste",
+            "J": "Environmental financing"
+        }
+
+    def __call__(self):
+        return self.utils
+
+
 class ReportView(BrowserView):
     """ Report
     """
