@@ -12,17 +12,21 @@ class Report(Container):
 
     meta_type = REPORT_META_TYPE
 
-    def has_data(self):
-        """ [TODO] Return True if it has a link or a file, else False
-        """
-        return False
-
     def has_external_link(self):
-        """ [TODO] Return True if it has a link or a file, else False
+        """ Return True if it has a link, else False
         """
+        if self.external_link:
+            return True
         return False
 
     def has_file(self):
-        """ [TODO] Return True if it has a link or a file, else False
+        """ Return True if it has a file, else False
         """
+        if self.file:
+            return True
         return False
+
+    def has_data(self):
+        """ Return True if it has a link or a file, else False
+        """
+        return self.has_external_link() or self.has_file()

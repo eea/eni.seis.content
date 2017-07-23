@@ -16,11 +16,22 @@
         has_data python:report.has_data();">
 
         <div tal:condition="python:has_data is True">
-          <a tal:condition="python:has_external_link is True"
-             tal:attributes="attr python:report.external_link"
-             tal:content="python:report.external_link">
-            External link
-          </a>
+          <p tal:condition="python:has_external_link is True">
+            External link:
+            <a tal:attributes="attr python:report.external_link"
+               tal:content="python:report.external_link">
+              External link
+            </a>
+          </p>
+
+          <p tal:condition="python:has_file is True">
+            File:
+            <a tal:attributes="attr python:report.external_link"
+               tal:content="python:report.external_link">
+              [TODO] File download link
+            </a>
+          </p>
+
         </div>
 
         <div tal:condition="python:has_data is False">
