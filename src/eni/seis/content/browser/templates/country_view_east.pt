@@ -34,7 +34,11 @@
                 UNECE Environmental Indicators
               </a>
             </li>
-         </ul>
+          </ul>
+
+          <p tal:content="python:context.unrestrictedTraverse('reports_data/get_all_reports_categories')()">
+            Test reports data
+          </p>
 
           <div class="tab-content"
                tal:define="
@@ -102,7 +106,7 @@
                             <tbody>
                               <tal:repeat tal:repeat="report reports">
                                 <tr tal:define="oddrow repeat/report/odd;"
-                                    tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                                    tal:attributes="class python:'TODO'">
                                   <td>
                                     <span tal:replace="tab/Title">C</span><span tal:replace="repeat/report/index">1</span>.&nbsp;
                                     <span tal:replace="report/Title">Report title</span>
@@ -155,7 +159,7 @@
                   </tr>
                   <tal:repeat tal:repeat="report reports">
                     <tr tal:define="oddrow repeat/report/odd;"
-                        tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                        tal:attributes="class python:'TODO'">
                       <td>
                         <span tal:replace="report/Title">Report title</span>
                       </td>

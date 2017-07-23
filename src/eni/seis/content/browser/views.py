@@ -14,6 +14,11 @@ class HomepageView(BrowserView):
     """
 
 
+class CountryViewEastView(BrowserView):
+    """ The view for a country (East)
+    """
+
+
 class ReportsDataView(BrowserView):
     """ Utils for Reports
     """
