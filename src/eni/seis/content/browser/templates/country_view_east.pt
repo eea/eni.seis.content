@@ -36,9 +36,15 @@
             </li>
           </ul>
 
-          <p tal:content="python:context.unrestrictedTraverse('reports_data/get_all_reports_categories')()">
-            Test reports data
-          </p>
+          <div tal:define="ztags python:context.unrestrictedTraverse('reports_data/get_all_reports_categories')()">
+            <ul>
+              <li tal:repeat="ztag python:ztags">
+                <span tal:content="python:ztag"></span>.
+                <span tal:content="python:ztags[ztag]"></span>
+              </li>
+            </ul>
+          </div>
+          [TODO] ZZZZZZZZZZZzzzzzzzzzzz
 
           <div class="tab-content"
                tal:define="
