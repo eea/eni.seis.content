@@ -2,6 +2,7 @@
 """
 
 from Products.Five.browser import BrowserView
+from eni.seis.content.config import ALL_REPORTS_CATEGORIES
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
@@ -24,20 +25,10 @@ class ReportsDataView(BrowserView):
     def get_all_reports_categories(self):
         """ Return possible categories for a report
         """
-        return {
-            "A": "Air pollution and ozone depletion",
-            "B": "Climate change",
-            "C": "Water",
-            "D": "Biodiversity",
-            "E": "Land and soil",
-            "F": "Agriculture",
-            "G": "Energy",
-            "H": "Transport",
-            "I": "Waste",
-            "J": "Environmental financing"
-        }
+        return ALL_REPORTS_CATEGORIES
 
-    def __call__(self):
+
+def __call__(self):
         return self.utils
 
 
