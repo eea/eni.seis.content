@@ -14,7 +14,7 @@ class HomepageView(BrowserView):
     """
 
 
-class CountryViewEastView(BrowserView):
+class CountryViewEast(BrowserView):
     """ The view for a country (East)
     """
 

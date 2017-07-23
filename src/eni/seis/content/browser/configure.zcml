@@ -104,7 +104,7 @@
   <browser:page
     name="country_view_east"
     for="Products.ATContentTypes.interfaces.IATFolder"
-    class=".views.CountryViewEastView"
+    class=".views.CountryViewEast"
     template="templates/country_view_east.pt"
     permission="zope2.View"
     />
