@@ -18,7 +18,7 @@
         <div tal:condition="python:has_data is True">
           <p tal:condition="python:has_external_link is True">
             External link:
-            <a tal:attributes="attr python:report.external_link"
+            <a tal:attributes="href python:report.external_link"
                tal:content="python:report.external_link">
               External link
             </a>
@@ -26,9 +26,9 @@
 
           <p tal:condition="python:has_file is True">
             File:
-            <a tal:attributes="attr python:report.external_link"
-               tal:content="python:report.external_link">
-              [TODO] File download link
+            <a tal:attributes="href python:report.absolute_url() + '/@@download/file'"
+               tal:content="python:report.file.filename">
+              Filename
             </a>
           </p>
 
