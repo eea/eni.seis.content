@@ -9,7 +9,24 @@
 
 <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
-      Report view
+      <div class="report-details" tal:define="
+        report python:context;
+        has_external_link python:report.has_external_link();
+        has_file python:report.has_file();
+        has_data python:report.has_data();">
+
+        <div tal:condition="python:has_data is True">
+          <a tal:condition="python:has_external_link is True"
+             tal:attributes="attr python:report.external_link"
+             tal:content="python:report.external_link">
+            External link
+          </a>
+        </div>
+
+        <div tal:condition="python:has_data is False">
+          <p>No data for this report.</p>
+        </div>
+      </div>
     </metal:block>
 </metal:content-core>
 </body>
