@@ -37,10 +37,6 @@
         <div tal:condition="python:has_data is False">
           <p>No data for this report.</p>
         </div>
-
-        <p tal:content="python:context.unrestrictedTraverse('reports_data/get_all_reports_categories')()">
-          Test reports data
-        </p>
       </div>
     </metal:block>
 </metal:content-core>
