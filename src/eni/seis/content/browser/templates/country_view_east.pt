@@ -196,9 +196,8 @@
         <h3 class="section-title">Country news</h3>
         <div class="news-container">
 
-          <tal:def tal:define="news python:country.getLocalNews()[:3];
+          <tal:def tal:define="news python:view.getLocalNews()[:3];
             toLocalizedTime nocall: context/@@plone/toLocalizedTime; ">
-
             <div class="row news-row">
               <div tal:repeat="ni news" class="col-lg-4 col-md-4 col-sm-12
                 col-xs-12">
@@ -216,7 +215,7 @@
               </div>
             </div>
 
-            <a href="eni-seis.eionet.europa.eu/east/communication/newsletter" class="pull-right more-items">More news</a>
+            <a href="https://eni-seis.eionet.europa.eu/east/areas-of-work/communication/newsletter" class="pull-right more-items">More news</a>
           </tal:def>
 
         </div>

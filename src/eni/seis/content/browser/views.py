@@ -19,6 +19,25 @@ class CountryViewEast(BrowserView):
     """ The view for a country (East)
     """
 
+    def getLocalNews(self):
+        """ Return local news for this country
+        """
+        vocab = self.context.event_countries_vocab()
+        res = self.context.portal_catalog.searchResults(
+            portal_type=['News Item'],
+            review_state='published',
+            sort_on='effective',
+            sort_order='descending',
+            path='/east/areas-of-work/communication/newsletter'
+        )
+        news = [b.getObject() for b in res]
+
+        country_title = self.context.Title()
+        news = [
+            n for n in news if vocab[country_title] in (n.countries or [])]
+
+        return news
+
 
 class ReportsDataView(BrowserView):
     """ Utils for Reports
