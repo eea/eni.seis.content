@@ -36,7 +36,7 @@
             </li>
           </ul>
 
-          <div tal:define="ztags python:context.unrestrictedTraverse('reports_data/get_all_reports_categories')()">
+          <div tal:define="ztags python:context.unrestrictedTraverse('reports_data/get_reports_categories')()">
             <ul>
               <li tal:repeat="ztag python:ztags">
                 <span tal:content="python:ztag"></span>.

@@ -24,25 +24,26 @@ class ReportsDataView(BrowserView):
     """ Utils for Reports
     """
     utils = {
-        'get_all_reports_categories()':
+        'get_reports_categories()':
             "Return possible categories for a report",
-        'get_all_reports()':
+        'get_reports()':
             "Return all published reports found in this context"
     }
 
-    def get_all_reports_categories(self):
+    def get_reports_categories(self):
         """ Return possible categories for a report
         """
         return ALL_REPORTS_CATEGORIES
 
-    def get_all_reports(self):
+    def get_reports(self):
         """ Return all published reports found in this context
         """
         catalog = getToolByName(self.context, 'portal_catalog')
         results = [x.getObject() for x in catalog.searchResults(
             {
                 'portal_type': ['report'],
-                'review_state': 'published'
+                'review_state': 'published',
+                'path': '/'.join(self.context.getPhysicalPath())
             }
         )]
 
