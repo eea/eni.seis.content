@@ -22,15 +22,14 @@
     <div class="row no-portlets countries-container">
       <tal:countries tal:repeat="country python:view.get_countries()">
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
-          <a href="" class="country-item">
+          <a href="" tal:attributes="href country/absolute_url" class="country-item">
             <div class="country-box">
-              <p class="country-title" tal:content="country">Country title</p>
+              <p class="country-title" tal:content="country/Title">Country title</p>
             </div>
           </a>
         </div>
       </tal:countries>
     </div>
-
 
   </body>
 </html>

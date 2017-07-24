@@ -20,6 +20,15 @@ ALL_REPORTS_CATEGORIES = OrderedDict([
     ("J", "Environmental financing")
 ])
 
+EAST_COUNTRIES = [
+    'Armenia',
+    'Azerbaijan',
+    'Belarus',
+    'Georgia',
+    'Moldova',
+    'Ukraine'
+]
+
 REPORT_CATEGORIES_VOCAB = SimpleVocabulary(
     [
         SimpleTerm(

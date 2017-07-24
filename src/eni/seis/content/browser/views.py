@@ -5,6 +5,7 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from eni.seis.content.config import ALL_REPORTS_CATEGORIES
+from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
@@ -22,9 +23,14 @@ class CountriesViewEast(BrowserView):
     def get_countries(self):
         """ Return list of countries with details
         """
-        countries = ['armenia', 'azerbaijan', 'belarus', 'georgia', 'moldova',
-                     'ukraine']
-        # TODO Use existing countries vocab
+        folders = self.context.portal_catalog.searchResults(
+            portal_type=['Folder'],
+            review_state='published',
+            sort_on='id',
+            path='/east/countries'
+        )
+        folders = [b.getObject() for b in folders]
+        countries = [x for x in folders if x.Title() in EAST_COUNTRIES]
         return countries
 
 
