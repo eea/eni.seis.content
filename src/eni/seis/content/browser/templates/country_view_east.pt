@@ -71,8 +71,8 @@
                   <div tal:attributes="
                     id tab;
                     class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
-                    tal:define="reports python:[x for x in reports if 'TODO' ==
-                     'TODO']"
+                    tal:define="reports python:[x for x in reports if
+                    x.category == tab]"
                     class="tab-pane active"
                     data-toggle="pill">
 
@@ -106,7 +106,8 @@
                             <tbody>
                               <tal:repeat tal:repeat="report reports">
                                 <tr tal:define="oddrow repeat/report/odd;"
-                                    tal:attributes="class python:'TODO'">
+                                    tal:attributes="class python:'odd' if
+                                    oddrow else 'even'">
                                   <td>
                                     <span tal:replace="tab">C</span><span tal:replace="repeat/report/index">1</span>.&nbsp;
                                     <span tal:replace="python:tabs[tab]">Report title</span>
@@ -158,7 +159,7 @@
                   </tr>
                   <tal:repeat tal:repeat="report reports">
                     <tr tal:define="oddrow repeat/report/odd;"
-                        tal:attributes="class python:'TODO'">
+                        tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
                         <span tal:replace="report/Title">Report title</span>
                       </td>
@@ -174,15 +175,6 @@
               </table>
             </div>
 
-            <div tal:condition="python:False" class="not-used-TODO-remove">
-              <!-- context decription -->
-              <a class="btn btn-default edit-text"
-                 href=""
-                 tal:attributes="href string:${context/absolute_url}/edit">
-                Edit this text
-              </a>`
-              <div tal:content="structure context/long_description" ></div>
-            </div>
           </div>
         </div>
       </div>
