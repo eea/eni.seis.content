@@ -19,10 +19,13 @@ class CountriesViewEast(BrowserView):
     """ The view for Countries section (East)
     """
 
-    def test(self):
-        """ TODO Remove
+    def get_countries(self):
+        """ Return list of countries with details
         """
-        return "ZZZ"
+        countries = ['armenia', 'azerbaijan', 'belarus', 'georgia', 'moldova',
+                     'ukraine']
+        # TODO Use existing countries vocab
+        return countries
 
 
 class CountryViewEast(BrowserView):
