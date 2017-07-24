@@ -23,7 +23,7 @@ class ReportsDataView(BrowserView):
     """ Utils for Reports
     """
     utils = {
-        'get_all_reports_categories':
+        'get_all_reports_categories()':
             "Return possible categories for a report"
     }
 
@@ -32,8 +32,7 @@ class ReportsDataView(BrowserView):
         """
         return ALL_REPORTS_CATEGORIES
 
-
-def __call__(self):
+    def __call__(self):
         return self.utils
 
 
