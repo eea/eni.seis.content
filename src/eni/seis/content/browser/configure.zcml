@@ -109,6 +109,15 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="countries_view_east"
+    for="Products.ATContentTypes.interfaces.IATFolder"
+    class=".views.CountriesViewEast"
+    template="templates/countries_view_east.pt"
+    permission="zope2.View"
+    />
+
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"

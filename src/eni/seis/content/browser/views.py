@@ -15,6 +15,16 @@ class HomepageView(BrowserView):
     """
 
 
+class CountriesViewEast(BrowserView):
+    """ The view for Countries section (East)
+    """
+
+    def test(self):
+        """ TODO Remove
+        """
+        return "ZZZ"
+
+
 class CountryViewEast(BrowserView):
     """ The view for a country (East)
     """
