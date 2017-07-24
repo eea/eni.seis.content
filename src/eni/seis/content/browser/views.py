@@ -1,12 +1,13 @@
 """ BrowserView Controllers
 """
 
+from DateTime import DateTime
+from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from eni.seis.content.config import ALL_REPORTS_CATEGORIES
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
-from DateTime import DateTime
 
 
 class HomepageView(BrowserView):
@@ -24,13 +25,28 @@ class ReportsDataView(BrowserView):
     """
     utils = {
         'get_all_reports_categories()':
-            "Return possible categories for a report"
+            "Return possible categories for a report",
+        'get_all_reports()':
+            "Return all published reports found in this context"
     }
 
     def get_all_reports_categories(self):
         """ Return possible categories for a report
         """
         return ALL_REPORTS_CATEGORIES
+
+    def get_all_reports(self):
+        """ Return all published reports found in this context
+        """
+        catalog = getToolByName(self.context, 'portal_catalog')
+        results = [x.getObject() for x in catalog.searchResults(
+            {
+                'portal_type': ['report'],
+                'review_state': 'published'
+            }
+        )]
+
+        return results
 
     def __call__(self):
         return self.utils
