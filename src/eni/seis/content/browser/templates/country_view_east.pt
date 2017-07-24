@@ -71,8 +71,10 @@
                   <div tal:attributes="
                     id tab;
                     class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
-                    tal:define="reports python:[x for x in reports if
-                    x.category == tab]"
+                    tal:define="
+                      reports_in_category python:[x for x in reports if x.category == tab];
+                      reports_with_data_number python:len([x for x in
+                      reports_in_category if x.has_data() is True])"
                     class="tab-pane active"
                     data-toggle="pill">
 
@@ -96,7 +98,8 @@
                                     <span tal:replace="country_title"></span>
                                     &nbsp;
                                   </h3>
-                                  <p class="reports-number" tal:content="python:len(reports)">
+                                  <p class="reports-number"
+                                  tal:content="python:reports_with_data_number">
                                     14
                                   </p>
                                 </th>
@@ -104,11 +107,11 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr class="nodata" tal:condition="python:len(reports) == 0">
+                              <tr class="nodata" tal:condition="python:len(reports_in_category) == 0">
                                 <td colspan="3">No reports.</td>
                               </tr>
 
-                              <tal:repeat tal:repeat="report reports">
+                              <tal:repeat tal:repeat="report reports_in_category">
                                 <tr tal:define="oddrow repeat/report/odd;"
                                     tal:attributes="class python:'odd' if
                                     oddrow else 'even'">
