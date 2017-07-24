@@ -104,6 +104,10 @@
                               </tr>
                             </thead>
                             <tbody>
+                              <tr class="nodata" tal:condition="python:len(reports) == 0">
+                                <td colspan="3">No reports.</td>
+                              </tr>
+
                               <tal:repeat tal:repeat="report reports">
                                 <tr tal:define="oddrow repeat/report/odd;"
                                     tal:attributes="class python:'odd' if
@@ -156,10 +160,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="even" tal:condition="python:e_a_r is None">
-                    <td> No reports.</td>
-                    <td></td>
-                    <td></td>
+                  <tr class="nodata" tal:condition="python:e_a_r is None">
+                    <td colspan="3">No reports.</td>
                   </tr>
                   <tal:repeat tal:repeat="report reports">
                     <tr tal:define="oddrow repeat/report/odd;"
