@@ -24,6 +24,9 @@
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
           <a href="" tal:attributes="href country/absolute_url" class="country-item">
             <div class="country-box">
+              <img src="" alt="flag" class="country-flag"
+                   tal:attributes="src python:country.absolute_url()
+                   + '/flag/@@images/image/preview'" />
               <p class="country-title" tal:content="country/Title">Country title</p>
             </div>
           </a>
