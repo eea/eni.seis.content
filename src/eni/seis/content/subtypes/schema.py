@@ -47,7 +47,7 @@ class EventSchemaExtender(object):
             ),
             default="National Level",
             required=True,
-            vocabulary=["National Level", "Regional Level"],
+            vocabulary=["National Level", "Regional Level", "Other"],
         ),
     )
 
