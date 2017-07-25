@@ -190,7 +190,7 @@ class Register(views.Register):
         errors = reduce(err_reducer, (
             name(self.request)
             for name in VALIDATORS_REGISTER
-        ) , '')
+        ), '')
         if errors:
             return err_msg(errors)
 
@@ -208,7 +208,7 @@ class Register(views.Register):
         errors = reduce(err_reducer, (
             name(self.request)
             for name in VALIDATORS_SIGNUP
-        ) , '')
+        ), '')
         if errors:
             return err_msg(errors)
 
@@ -236,7 +236,6 @@ class Register(views.Register):
 
         return self.response.redirect(
             self.context.absolute_url() + '/register')
-
 
     def role_options(self):
         vocab = getUtility(
