@@ -7,20 +7,28 @@
 ##title=Get event level
 
 
-if not brain:
-    return ''
+DEFAULT_LEVEL = 'other'
 
-if brain.Type != 'Event':
-    return ''
+if not brain:
+    return DEFAULT_LEVEL
 
 levels = {
     'Regional Level': 'regional',
     'National Level': 'national',
+    'Other': 'other',
+    'regional': 'regional',
+    'national': 'national'
 }
+
+if brain.Type not in ['Event', 'EEA Meeting']:
+    return DEFAULT_LEVEL
 
 obj = brain.getObject()
 try:
     event_level = obj.event_level
 except:
-    event_level = ''
-return levels.get(event_level, '')
+    try:
+        event_level = obj.meeting_level
+    except:
+        event_level = DEFAULT_LEVEL
+return levels.get(event_level, DEFAULT_LEVEL)

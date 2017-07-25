@@ -34,9 +34,11 @@
             <metal:block use-macro="context/folder_listing/macros/entries">
               <metal:entry fill-slot="entry">
 
-                <tr metal:define-macro="listitem" tal:define="oddrow repeat/item/odd;"
-                    tal:attributes="class python:'level-national ' + test(oddrow, 'even', 'odd')"
-                    tal:condition="python:item.portal_type == 'eea.meeting'">
+                <metal:listitem metal:define-macro="listitem"
+                  tal:define="oddrow repeat/item/odd;"
+                  tal:condition="python:item.portal_type == 'eea.meeting'">
+                <tr tal:attributes="class python:'level-'
+                  + context.get_event_level(item) + ' ' + test(oddrow, 'even', 'odd')">
                   <td class="event-dates">
                     <tal:condition tal:condition="python: context.get_event_year(item)">
                       <span tal:content="python:context.get_event_year(item)"></span>
@@ -58,6 +60,7 @@
                   </td>
 
                 </tr>
+                </metal:listitem>
 
               </metal:entry>
             </metal:block>
