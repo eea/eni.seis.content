@@ -20,8 +20,8 @@ class CountriesViewEast(BrowserView):
     """ The view for Countries section (East)
     """
 
-    def get_countries(self):
-        """ Return list of countries with details
+    def get_countries_folders(self):
+        """ Return list of countries folders
         """
         folders = self.context.portal_catalog.searchResults(
             portal_type=['Folder'],
@@ -32,6 +32,20 @@ class CountriesViewEast(BrowserView):
         folders = [b.getObject() for b in folders]
         countries = [x for x in folders if x.Title() in EAST_COUNTRIES]
         return countries
+
+    def get_country_visits_pages(self):
+        """ Return list of country visits pages
+        """
+        pages = self.context.portal_catalog.searchResults(
+            portal_type=['Document'],
+            review_state='published',
+            sort_on='id',
+            path='/east/countries'
+        )
+        pages = [b.getObject() for b in pages]
+        country_visits_pages = [
+            x for x in pages if 'country visits' in x.Title().lower()]
+        return country_visits_pages
 
 
 class CountryViewEast(BrowserView):
