@@ -66,5 +66,104 @@
       </div>
     </div>
 
+    <div class="row container-table-reports" tal:define="
+      reports_categories python:context.unrestrictedTraverse('reports_data/get_reports_categories')();
+      reports
+      python:context.unrestrictedTraverse('reports_data/get_reports')();
+      tabs python:reports_categories">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-nav-tabs">
+        <ul class="nav nav-tabs">
+          <tal:tab tal:repeat="tab tabs">
+          <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
+            <a tal:attributes="href string:#${tab};" data-toggle="tab">
+              <div class="tab-title" tal:content="tab">
+                <h3>Tab Title</h3>
+              </div>
+              <div class="tab-description" tal:content="python:tabs[tab]">
+                Tab description
+              </div>
+            </a>
+          </li>
+          </tal:tab>
+        </ul>
+
+        <div class="tab-content">
+          <tal:tab tal:repeat="tab tabs">
+
+          <div tal:attributes="
+            id tab;
+            class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
+            tal:define="
+              reports_in_category python:[x for x in reports if x.category == tab];
+              reports_with_data_number python:len([x for x in
+              reports_in_category if x.has_data() is True])"
+            class="tab-pane active"
+            data-toggle="pill">
+
+            <div class="container container-table-reports">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-table-reports">
+                  <table class="table table-responsive table-hover reports" summary="Content listing">
+                    <thead>
+                      <tr>
+                        <th>
+                          <h2>
+                            &nbsp;
+                            <span tal:replace="tab"></span>.&nbsp;
+                            <span tal:replace="python:tabs[tab]"></span>
+                            &nbsp;
+                          </h2>
+                        </th>
+                        <th>
+                          <h3>
+                            &nbsp;
+                            <span tal:replace="country_title"></span>
+                            &nbsp;
+                          </h3>
+                          <p class="reports-number"
+                          tal:content="python:reports_with_data_number">
+                            14
+                          </p>
+                        </th>
+                        <th><!-- Link to the report --></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="nodata" tal:condition="python:len(reports_in_category) == 0">
+                        <td colspan="3">No reports.</td>
+                      </tr>
+
+                      <tal:repeat tal:repeat="report reports_in_category">
+                        <tr tal:define="oddrow repeat/report/odd;"
+                            tal:attributes="class python:'odd' if
+                            oddrow else 'even'">
+                          <td>
+                            <span tal:replace="tab">C</span><span tal:replace="repeat/report/index">1</span>.&nbsp;
+                            <span tal:replace="report/Title">Report title</span>
+                          </td>
+                          <td tal:define="has_data python:report.has_data()">
+                            <span tal:condition="python:has_data is False">No data</span>
+                            <i tal:condition="python:has_data is True"
+                               class="fa fa-square" aria-hidden="true"></i>
+                          </td>
+                          <td>
+                            <a tal:attributes="href report/absolute_url">
+                              Read more »
+                            </a>
+                          </td>
+                        </tr>
+                      </tal:repeat>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </tal:tab>
+      </div>
+    </div>
+    </div>
   </body>
 </html>
