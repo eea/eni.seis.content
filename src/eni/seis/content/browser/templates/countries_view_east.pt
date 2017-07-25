@@ -36,9 +36,13 @@
 
     <div class="row no-portlets country-visits-container">
       <tal:visits tal:repeat="visits_page python:view.get_country_visits_pages()">
-        <div class="col-lg-12 col-md-12 col-sm-14 col-xs-12">
-          <h2 tal:content="visits_page/Title"></h2>
-          <p tal:content="visits_page/Description"></p>
+        <div class="col-lg-12 col-md-12 col-sm-14 col-xs-12 country-visits-item">
+          <h3 tal:content="visits_page/Title">Country visits in 2016</h3>
+          <p>
+            <span tal:content="visits_page/Description">Page description</span>
+            <a href="" tal:attributes="href visits_page/absolute_url">
+              Read more
+            </a>
         </div>
       </tal:visits>
     </div>
