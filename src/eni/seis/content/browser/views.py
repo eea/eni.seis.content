@@ -51,6 +51,18 @@ class CountriesViewEast(BrowserView):
 class CountryViewEast(BrowserView):
     """ The view for a country (East)
     """
+    def get_publications_pages(self):
+        """ Return list of country publications pages
+            from Publications folder
+        """
+        pages = self.context.portal_catalog.searchResults(
+            portal_type=['Document'],
+            review_state='published',
+            sort_on='id',
+            path=self.context.absolute_url_path() + "/publications"
+        )
+        pages = [b.getObject() for b in pages]
+        return pages
 
     def getLocalNews(self):
         """ Return local news for this country

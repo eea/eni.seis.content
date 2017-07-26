@@ -186,6 +186,24 @@
               </table>
             </div>
 
+            <div class="row no-portlets country-publications"
+                 tal:define="publications_pages python:view.get_publications_pages()">
+
+              <tal:has-publications tal:condition="python:len(publications_pages) > 0">
+                <h2>Publications</h2>
+                <tal:publications tal:repeat="publications_page python:publications_pages">
+                  <div class="col-lg-12 col-md-12 col-sm-14 col-xs-12 country-publications-item">
+                    <h3 tal:content="publications_page/Title">Publication page title</h3>
+                    <p>
+                      <span tal:content="publications_page/Description">Page description</span>
+                      <a href="" tal:attributes="href publications_page/absolute_url">
+                        Read more
+                      </a>
+                  </div>
+                </tal:publications>
+              </tal:has-publications>
+            </div>
+
           </div>
         </div>
       </div>
