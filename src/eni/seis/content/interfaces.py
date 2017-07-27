@@ -2,6 +2,8 @@
 """Module where all interfaces, events and exceptions live."""
 
 from eni.seis.content.config import REPORT_CATEGORIES_VOCAB
+from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
+from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from plone.namedfile.field import NamedBlobFile
 from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
@@ -42,5 +44,33 @@ class IReport(model.Schema):
     category = schema.Choice(
         title=u"Category",
         vocabulary=REPORT_CATEGORIES_VOCAB,
+        required=True
+        )
+
+
+class IIndicator(model.Schema):
+    """ Indicator item to be added in a country section
+    """
+    external_link = schema.URI(
+        title=u"External link",
+        required=False,
+        description=u"Indicator source if it is an external link."
+    )
+
+    file = NamedBlobFile(
+        title=u"File",
+        required=False,
+        description=u"Indicator file if it has one."
+    )
+
+    category = schema.Choice(
+        title=u"Category",
+        vocabulary=UNECE_INDICATORS_CATEGORIES_VOCAB,
+        required=True
+        )
+
+    subcategory = schema.Choice(
+        title=u"Subcategory",
+        vocabulary=UNECE_INDICATORS_SUBCATEGORIES_VOCAB,
         required=True
         )

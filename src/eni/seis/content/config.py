@@ -114,3 +114,21 @@ REPORT_CATEGORIES_VOCAB = SimpleVocabulary(
         for x in ALL_REPORTS_CATEGORIES.keys()
     ]
 )
+
+UNECE_INDICATORS_CATEGORIES_VOCAB = SimpleVocabulary(
+    [
+        SimpleTerm(
+            value=x,
+            title=x + ". " + UNECE_INDICATORS_CATEGORIES[x])
+        for x in UNECE_INDICATORS_CATEGORIES.keys()
+    ]
+)
+
+UNECE_INDICATORS_SUBCATEGORIES_VOCAB = SimpleVocabulary(
+    [
+        SimpleTerm(
+            value=x,
+            title=x + ". " + UNECE_INDICATORS_SUBCATEGORIES[x])
+        for x in UNECE_INDICATORS_SUBCATEGORIES.keys()
+    ]
+)
