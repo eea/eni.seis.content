@@ -8,6 +8,7 @@ from eni.seis.content.config import ALL_REPORTS_CATEGORIES
 from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
+from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
@@ -124,6 +125,39 @@ class ReportsDataView(BrowserView):
 class ReportView(BrowserView):
     """ Report
     """
+
+
+class IndicatorsDataView(BrowserView):
+    """ Utils for Indicators
+    """
+    utils = {
+        'get_indicators_categories()':
+            "Return possible categories for an indicator",
+        'get_indicators()':
+            "Return all published indicators found in this context"
+    }
+
+    def get_indicators_categories(self):
+        """ Return possible categories for an indicator
+        """
+        return UNECE_INDICATORS_CATEGORIES
+
+    def get_indicators(self):
+        """ Return all published indicators found in this context
+        """
+        catalog = getToolByName(self.context, 'portal_catalog')
+        results = [x.getObject() for x in catalog.searchResults(
+            {
+                'portal_type': ['indicators'],
+                'review_state': 'published',
+                'path': '/'.join(self.context.getPhysicalPath())
+            }
+        )]
+
+        return results
+
+    def __call__(self):
+        return self.utils
 
 
 class IndicatorView(BrowserView):

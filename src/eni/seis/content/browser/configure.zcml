@@ -117,6 +117,13 @@
     />
 
   <browser:page
+    name="indicators_data"
+    for="*"
+    class=".views.IndicatorsDataView"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="country_view_east"
     for="Products.ATContentTypes.interfaces.IATFolder"
     class=".views.CountryViewEast"
