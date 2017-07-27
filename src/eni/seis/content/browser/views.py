@@ -10,6 +10,7 @@ from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
+from plone import api
 
 
 class HomepageView(BrowserView):
@@ -147,8 +148,14 @@ class UpgradeGenerateIndicatorsViewEast(BrowserView):
                     UNECE_INDICATORS_CONTAINER[0])
             return indicators_container
         except AttributeError:
-            return "Missing indicators container."
-        return "Done."
+            indicators_container = api.content.create(
+                container=country, type='Folder',
+                title=UNECE_INDICATORS_CONTAINER[1])
+            api.content.transition(obj=indicators_container,
+                                   transition='publish')
+            return "Indicators container created."
+
+        return indicators_container
 
 
 class GetUpcomingEventsView(BrowserView):
