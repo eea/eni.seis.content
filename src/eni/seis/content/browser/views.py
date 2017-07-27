@@ -7,10 +7,12 @@ from Products.Five.browser import BrowserView
 from eni.seis.content.config import ALL_REPORTS_CATEGORIES
 from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
+from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
 from plone import api
+from plone.dexterity.utils import createContentInContainer
 
 
 class HomepageView(BrowserView):
@@ -145,17 +147,27 @@ class UpgradeGenerateIndicatorsViewEast(BrowserView):
 
         try:
             indicators_container = country.unrestrictedTraverse(
-                    UNECE_INDICATORS_CONTAINER[0])
-            return indicators_container
+                UNECE_INDICATORS_CONTAINER[0])
         except AttributeError:
             indicators_container = api.content.create(
                 container=country, type='Folder',
                 title=UNECE_INDICATORS_CONTAINER[1])
             api.content.transition(obj=indicators_container,
                                    transition='publish')
-            return "Indicators container created."
 
-        return indicators_container
+        for indicator in UNECE_INDICATORS_SUBCATEGORIES_VOCAB:
+            # A1, A2, ... => the category is A
+            category = ''.join(
+                    [i for i in indicator.value if not i.isdigit()])
+
+            item = createContentInContainer(
+                indicators_container, "indicator",
+                title=indicator.title, category=category,
+                subcategory=indicator.value
+            )
+            api.content.transition(obj=item, transition='publish')
+
+        return "Done. Please verify indicators folder and its contents."
 
 
 class GetUpcomingEventsView(BrowserView):
