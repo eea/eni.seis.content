@@ -20,6 +20,19 @@ ALL_REPORTS_CATEGORIES = OrderedDict([
     ("J", "Environmental financing")
 ])
 
+UNECE_INDICATORS_CATEGORIES = OrderedDict([
+    ("A", "Air pollution and ozone depletion"),
+    ("B", "Climate change"),
+    ("C", "Water"),
+    ("D", "Biodiversity"),
+    ("E", "Land and soil"),
+    ("F", "Agriculture"),
+    ("G", "Energy"),
+    ("H", "Transport"),
+    ("I", "Waste"),
+    ("J", "Environmental financing")
+])
+
 EAST_COUNTRIES = [
     'Armenia',
     'Azerbaijan',
