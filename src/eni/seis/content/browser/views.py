@@ -127,6 +127,14 @@ class IndicatorView(BrowserView):
     """
 
 
+class UpgradeGenerateIndicatorsViewEast(BrowserView):
+    """ /upgrade_generate_indicators_east to be unsed in a country section
+        to create Indicators folder with all UNECE indicators A1, A2, ...
+    """
+    def __call__(self):
+        return "Done."
+
+
 class GetUpcomingEventsView(BrowserView):
     """ Next future Event and eea.meetings items list
     """

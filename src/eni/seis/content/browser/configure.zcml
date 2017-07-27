@@ -95,6 +95,13 @@
     />
 
   <browser:page
+    name="upgrade_generate_indicators_east"
+    for="Products.ATContentTypes.interfaces.IATFolder"
+    class=".views.UpgradeGenerateIndicatorsViewEast"
+    permission="cmf.ManagePortal"
+    />
+
+  <browser:page
     name="view"
     for="eni.seis.content.interfaces.IIndicator"
     class=".views.IndicatorView"
