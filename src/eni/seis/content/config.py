@@ -20,6 +20,10 @@ ALL_REPORTS_CATEGORIES = OrderedDict([
     (u"J", u"Environmental financing")
 ])
 
+UNECE_INDICATORS_CONTAINER = (
+        'unece-environmental-indicators', "UNECE Environmental Indicators"
+    )
+
 UNECE_INDICATORS_CATEGORIES = OrderedDict([
     (u"A", u"Air pollution and ozone depletion"),
     (u"B", u"Climate change"),

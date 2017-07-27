@@ -6,6 +6,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from eni.seis.content.config import ALL_REPORTS_CATEGORIES
 from eni.seis.content.config import EAST_COUNTRIES
+from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
@@ -132,6 +133,21 @@ class UpgradeGenerateIndicatorsViewEast(BrowserView):
         to create Indicators folder with all UNECE indicators A1, A2, ...
     """
     def __call__(self):
+        country = self.context
+        if country.title not in EAST_COUNTRIES:
+            return "Nothing changed. Use this upgrade for an East country: " \
+                + ", ".join(EAST_COUNTRIES) + "."
+
+        if country.aq_parent.title != "Countries":
+            return "Nothing changed. Use this upgrade for an East country: " \
+                + ", ".join(EAST_COUNTRIES) + ". (Parent folder: Countries)."
+
+        try:
+            indicators_container = country.unrestrictedTraverse(
+                    UNECE_INDICATORS_CONTAINER[0])
+            return indicators_container
+        except AttributeError:
+            return "Missing indicators container."
         return "Done."
 
 
