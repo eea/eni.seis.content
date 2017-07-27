@@ -95,6 +95,14 @@
     />
 
   <browser:page
+    name="view"
+    for="eni.seis.content.interfaces.IIndicator"
+    class=".views.IndicatorView"
+    template="templates/indicator_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="reports_data"
     for="*"
     class=".views.ReportsDataView"

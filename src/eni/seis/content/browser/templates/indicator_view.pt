@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
+      <div class="indicator-details" tal:define="
+        indicator python:context;
+        has_external_link python:indicator.has_external_link();
+        has_file python:indicator.has_file();
+        has_data python:indicator.has_data();">
+
+        <div tal:condition="python:has_data is True">
+          <p tal:condition="python:has_external_link is True">
+            External link:
+            <a tal:attributes="href python:indicator.external_link"
+               tal:content="python:indicator.external_link">
+              External link
+            </a>
+          </p>
+
+          <p tal:condition="python:has_file is True">
+            File:
+            <a tal:attributes="href python:indicator.absolute_url() + '/@@download/file'"
+               tal:content="python:indicator.file.filename">
+              Filename
+            </a>
+          </p>
+
+        </div>
+
+        <div tal:condition="python:has_data is False">
+          <p>No data for this indicator.</p>
+        </div>
+      </div>
+    </metal:block>
+</metal:content-core>
+</body>
+</html>

@@ -122,6 +122,11 @@ class ReportView(BrowserView):
     """
 
 
+class IndicatorView(BrowserView):
+    """ Indicator
+    """
+
+
 class GetUpcomingEventsView(BrowserView):
     """ Next future Event and eea.meetings items list
     """
