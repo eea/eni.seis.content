@@ -72,7 +72,20 @@
 
         <genericsetup:upgradeDepends
             title="Upgrade step for eni.seis.content: import types."
-	          description="New content type: Reports."
+	          description="New content type: Report."
+            import_steps="typeinfo"
+            />
+
+    </genericsetup:upgradeSteps>
+
+    <genericsetup:upgradeSteps
+            source="1.0.5"
+            destination="1.0.6"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import types."
+	          description="New content type: Indicator."
             import_steps="typeinfo"
             />
 
