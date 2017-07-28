@@ -61,7 +61,7 @@ class CountryViewEast(BrowserView):
         """
 
         def percentage(percent, whole):
-            return (percent * whole) / 100.0
+            return (percent * 100.0) / whole
 
         stats = {}
         categories = self.context.unrestrictedTraverse(
