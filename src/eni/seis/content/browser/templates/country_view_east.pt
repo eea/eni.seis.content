@@ -78,11 +78,11 @@
                           <td tal:attributes="class python:stats['total']['indicators_class']"></td>
                         </tr>
                          <tr>
-                          <td>0/No data</td>
-                          <td>25%</td>
-                          <td>50%</td>
-                          <td>75%</td>
-                          <td>100%</td>
+                          <td class="percentage-0">0/No data</td>
+                          <td class="percentage-25">25%</td>
+                          <td class="percentage-50">50%</td>
+                          <td class="percentage-75">75%</td>
+                          <td class="percentage-100">100%</td>
                         </tr>
                       </tbody>
                     </table>
