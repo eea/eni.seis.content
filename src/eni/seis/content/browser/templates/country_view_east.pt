@@ -81,10 +81,10 @@
                     class="tab-pane active"
                     data-toggle="pill">
 
-                    <div class="container container-table-reports">
+                    <div class="container container-table-indicators">
                       <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-table-reports">
-                          <table class="table table-responsive table-hover reports" summary="Content listing">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-table-indicators">
+                          <table class="table table-responsive table-hover indicators" summary="Content listing">
                             <thead>
                               <tr>
                                 <th>
@@ -101,7 +101,7 @@
                                     <span tal:replace="country_title"></span>
                                     &nbsp;
                                   </h3>
-                                  <p class="reports-number"
+                                  <p class="indicators-number"
                                   tal:content="python:indicators_with_data_number">
                                     14
                                   </p>
@@ -120,7 +120,7 @@
                                     tal:attributes="class python:'odd' if
                                     oddrow else 'even'">
                                   <td>
-                                    <span tal:replace="indicator/Title">Report title</span>
+                                    <span tal:replace="indicator/Title">Indicator title</span>
                                   </td>
                                   <td tal:define="has_data python:indicator.has_data()">
                                     <span tal:condition="python:has_data is False">No data</span>
@@ -236,13 +236,15 @@
               </div>
             </div>
 
-            <a href="https://eni-seis.eionet.europa.eu/east/areas-of-work/communication/newsletter" class="pull-right more-items">More news</a>
+            <a href="https://eni-seis.eionet.europa.eu/east/areas-of-work/communication/newsletter"
+               class="pull-right more-items">
+              More news
+            </a>
           </tal:def>
 
         </div>
       </div>
     </div>
-
 
   </body>
 </html>
