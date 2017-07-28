@@ -120,8 +120,6 @@
                                     tal:attributes="class python:'odd' if
                                     oddrow else 'even'">
                                   <td>
-                                    <span tal:replace="tab">C</span><span
-                                      tal:replace="repeat/indicator/index">1</span>.&nbsp;
                                     <span tal:replace="indicator/Title">Report title</span>
                                   </td>
                                   <td tal:define="has_data python:indicator.has_data()">
