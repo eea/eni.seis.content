@@ -190,6 +190,15 @@
               </table>
             </div>
 
+            <!-- TODO Move me -->
+            <div class="row">
+              <div class="col-lg-12">
+                <div tal:define="stats python:view.get_indicators_statistics()">
+                  <span tal:replace="python:stats"></span>
+                </div>
+              </div>
+            </div>
+
             <div class="row no-portlets country-publications"
                  tal:define="publications_pages python:view.get_publications_pages()">
 

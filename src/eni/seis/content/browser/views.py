@@ -56,6 +56,37 @@ class CountriesViewEast(BrowserView):
 class CountryViewEast(BrowserView):
     """ The view for a country (East)
     """
+    def get_indicators_statistics(self):
+        """ Generate content for table in UNECE Environmental Indicators tab
+        """
+
+        def percentage(percent, whole):
+            return (percent * whole) / 100.0
+
+        stats = {}
+        categories = self.context.unrestrictedTraverse(
+            'indicators_data/get_indicators_categories')()
+        for category in categories:
+            stats[category] = {
+                    'indicators_total': 0,
+                    'indicators_with_data': 0,
+                    'indicators_percent': 0
+                }
+        indicators = self.context.unrestrictedTraverse(
+            'indicators_data/get_indicators')()
+
+        for indicator in indicators:
+            stats[indicator.category]['indicators_total'] += 1
+            if indicator.has_data():
+                stats[indicator.category]['indicators_with_data'] += 1
+
+        for category in categories:
+            stats[category]['indicators_percent'] = percentage(
+                 stats[category]['indicators_with_data'],
+                 stats[category]['indicators_total']
+            )
+        return stats
+
     def get_publications_pages(self):
         """ Return list of country publications pages
             from Publications folder
