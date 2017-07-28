@@ -148,7 +148,7 @@ class IndicatorsDataView(BrowserView):
         catalog = getToolByName(self.context, 'portal_catalog')
         results = [x.getObject() for x in catalog.searchResults(
             {
-                'portal_type': ['indicators'],
+                'portal_type': ['indicator'],
                 'review_state': 'published',
                 'path': '/'.join(self.context.getPhysicalPath())
             }
