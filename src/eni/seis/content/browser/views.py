@@ -63,6 +63,27 @@ class CountryViewEast(BrowserView):
         def percentage(percent, whole):
             return (percent * 100.0) / whole
 
+        def indicators_class(percent):
+            """ Return
+                0 => percentage-0
+                [1, 33] => percentage-25
+                [34, 66] => percentage-50
+                [67, 99] => percentage-75
+                100 => percentage-100
+                to be used as green backgrounds
+            """
+            percent = int(percent)
+            if percent == 0:
+                return "percentage-0"
+            if 1 <= percent <= 33:
+                return "percentage-25"
+            if 34 <= percent <= 66:
+                return "percentage-50"
+            if 67 <= percent <= 99:
+                return "percentage-75"
+            if percent == 100:
+                return "percentage-100"
+
         stats = {}
         categories = self.context.unrestrictedTraverse(
             'indicators_data/get_indicators_categories')()
@@ -70,7 +91,8 @@ class CountryViewEast(BrowserView):
             stats[category] = {
                     'indicators_total': 0,
                     'indicators_with_data': 0,
-                    'indicators_percent': 0
+                    'indicators_percentage': 0,
+                    'indicators_class': ""
                 }
         indicators = self.context.unrestrictedTraverse(
             'indicators_data/get_indicators')()
@@ -81,9 +103,12 @@ class CountryViewEast(BrowserView):
                 stats[indicator.category]['indicators_with_data'] += 1
 
         for category in categories:
-            stats[category]['indicators_percent'] = percentage(
+            stats[category]['indicators_percentage'] = percentage(
                  stats[category]['indicators_with_data'],
                  stats[category]['indicators_total']
+            )
+            stats[category]['indicators_class'] = indicators_class(
+                 stats[category]['indicators_percentage']
             )
         return stats
 
