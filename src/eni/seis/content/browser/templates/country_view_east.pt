@@ -122,12 +122,13 @@
                                   <td>
                                     <span tal:replace="indicator/Title">Indicator title</span>
                                   </td>
-                                  <td tal:define="has_data python:indicator.has_data()">
+                                  <td class="text-center"
+                                      tal:define="has_data python:indicator.has_data()">
                                     <span tal:condition="python:has_data is False">No data</span>
                                     <i tal:condition="python:has_data is True"
                                        class="fa fa-square" aria-hidden="true"></i>
                                   </td>
-                                  <td>
+                                  <td class="text-center">
                                     <a tal:attributes="href indicator/absolute_url">
                                       Read more »
                                     </a>
@@ -193,7 +194,7 @@
                  tal:define="publications_pages python:view.get_publications_pages()">
 
               <tal:has-publications tal:condition="python:len(publications_pages) > 0">
-                <h2>Publications</h2>
+                <h2 class="eni-section-title">Publications</h2>
                 <tal:publications tal:repeat="publications_page python:publications_pages">
                   <div class="col-lg-12 col-md-12 col-sm-14 col-xs-12 country-publications-item">
                     <h3 tal:content="publications_page/Title">Publication page title</h3>
