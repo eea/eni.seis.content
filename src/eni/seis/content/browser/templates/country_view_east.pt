@@ -194,7 +194,35 @@
             <div class="row">
               <div class="col-lg-12">
                 <div tal:define="stats python:view.get_indicators_statistics()">
-                  <span tal:replace="python:stats"></span>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th colspan="4">UNECE Environmental Indicator</th>
+                        <th tal:content="context/Title">Armenia</th>
+                      </tr>
+                    </thead>
+                     <tbody>
+                      <tr tal:repeat="category python:indicators_categories">
+                        <td colspan="4" tal:content="python:category + '. ' + indicators_categories[category]">
+                          A. Air pollution and ozone depletion
+                        </td>
+                        <td tal:content="python:stats[category]['indicators_class']">color</td>
+                      </tr>
+                      <tr>
+                        <td colspan="4">
+                          Total
+                        </td>
+                        <td tal:content="python:stats['total']['indicators_class']">color</td>
+                      </tr>
+                       <tr>
+                        <td>0/No data</td>
+                        <td>25%</td>
+                        <td>50%</td>
+                        <td>75%</td>
+                        <td>100%</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

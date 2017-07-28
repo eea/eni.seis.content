@@ -102,14 +102,20 @@ class CountryViewEast(BrowserView):
             if indicator.has_data():
                 stats[indicator.category]['indicators_with_data'] += 1
 
+        total_value = 0
         for category in categories:
             stats[category]['indicators_percentage'] = percentage(
                  stats[category]['indicators_with_data'],
                  stats[category]['indicators_total']
             )
+            total_value += stats[category]['indicators_percentage']
             stats[category]['indicators_class'] = indicators_class(
                  stats[category]['indicators_percentage']
             )
+        total_value_percentage = total_value / len(categories)
+        stats['total'] = {
+            'indicators_class': indicators_class(total_value_percentage)
+        }
         return stats
 
     def get_publications_pages(self):
