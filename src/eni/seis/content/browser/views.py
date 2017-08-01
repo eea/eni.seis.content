@@ -43,6 +43,45 @@ def indicators_class(percent):
         return "percentage-100"
 
 
+def get_indicators_statistics(context):
+    """ Generate content for table in UNECE Environmental Indicators tab
+    """
+
+    stats = {}
+    categories = context.unrestrictedTraverse(
+        'indicators_data/get_indicators_categories')()
+    for category in categories:
+        stats[category] = {
+                'indicators_total': 0,
+                'indicators_with_data': 0,
+                'indicators_percentage': 0,
+                'indicators_class': ""
+            }
+    indicators = context.unrestrictedTraverse(
+        'indicators_data/get_indicators')()
+
+    for indicator in indicators:
+        stats[indicator.category]['indicators_total'] += 1
+        if indicator.has_data():
+            stats[indicator.category]['indicators_with_data'] += 1
+
+    total_value = 0
+    for category in categories:
+        stats[category]['indicators_percentage'] = percentage(
+             stats[category]['indicators_with_data'],
+             stats[category]['indicators_total']
+        )
+        total_value += stats[category]['indicators_percentage']
+        stats[category]['indicators_class'] = indicators_class(
+             stats[category]['indicators_percentage']
+        )
+    total_value_percentage = total_value / len(categories)
+    stats['total'] = {
+        'indicators_class': indicators_class(total_value_percentage)
+    }
+    return stats
+
+
 class HomepageView(BrowserView):
     """ Custom homepage
     """
@@ -128,39 +167,10 @@ class CountriesViewEast(BrowserView):
     def get_indicators_statistics(self):
         """ Generate content for table in UNECE Environmental Indicators tab
         """
-
+        countries = self.get_countries_folders()
         stats = {}
-        categories = self.context.unrestrictedTraverse(
-            'indicators_data/get_indicators_categories')()
-        for category in categories:
-            stats[category] = {
-                    'indicators_total': 0,
-                    'indicators_with_data': 0,
-                    'indicators_percentage': 0,
-                    'indicators_class': ""
-                }
-        indicators = self.context.unrestrictedTraverse(
-            'indicators_data/get_indicators')()
-
-        for indicator in indicators:
-            stats[indicator.category]['indicators_total'] += 1
-            if indicator.has_data():
-                stats[indicator.category]['indicators_with_data'] += 1
-
-        total_value = 0
-        for category in categories:
-            stats[category]['indicators_percentage'] = percentage(
-                 stats[category]['indicators_with_data'],
-                 stats[category]['indicators_total']
-            )
-            total_value += stats[category]['indicators_percentage']
-            stats[category]['indicators_class'] = indicators_class(
-                 stats[category]['indicators_percentage']
-            )
-        total_value_percentage = total_value / len(categories)
-        stats['total'] = {
-            'indicators_class': indicators_class(total_value_percentage)
-        }
+        for country in countries:
+            stats[country.Title()] = get_indicators_statistics(country)
         return stats
 
 
@@ -168,42 +178,7 @@ class CountryViewEast(BrowserView):
     """ The view for a country (East)
     """
     def get_indicators_statistics(self):
-        """ Generate content for table in UNECE Environmental Indicators tab
-        """
-
-        stats = {}
-        categories = self.context.unrestrictedTraverse(
-            'indicators_data/get_indicators_categories')()
-        for category in categories:
-            stats[category] = {
-                    'indicators_total': 0,
-                    'indicators_with_data': 0,
-                    'indicators_percentage': 0,
-                    'indicators_class': ""
-                }
-        indicators = self.context.unrestrictedTraverse(
-            'indicators_data/get_indicators')()
-
-        for indicator in indicators:
-            stats[indicator.category]['indicators_total'] += 1
-            if indicator.has_data():
-                stats[indicator.category]['indicators_with_data'] += 1
-
-        total_value = 0
-        for category in categories:
-            stats[category]['indicators_percentage'] = percentage(
-                 stats[category]['indicators_with_data'],
-                 stats[category]['indicators_total']
-            )
-            total_value += stats[category]['indicators_percentage']
-            stats[category]['indicators_class'] = indicators_class(
-                 stats[category]['indicators_percentage']
-            )
-        total_value_percentage = total_value / len(categories)
-        stats['total'] = {
-            'indicators_class': indicators_class(total_value_percentage)
-        }
-        return stats
+        return get_indicators_statistics(self.context)
 
     def get_publications_pages(self):
         """ Return list of country publications pages
