@@ -47,22 +47,49 @@
       </tal:visits>
     </div>
 
-    <div class="row no-portlets environmental-indicators-container">
+    <div class="row no-portlets environmental-indicators-container"
+      tal:define="indicators_categories
+      python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();">
+
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
         <h2 class="eni-section-title">UNECE ENVIRONMENTAL INDICATORS</h2>
       </div>
       <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 indicators-description">
-        <p>Lorem ipsum description</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-           industry. Lorem Ipsum has been the industry's standard dummy text
-           ever since the 1500s, when an unknown printer took a galley of type
-           and scrambled it to make a type specimen book. It has survived not
-           only five centuries, but also the leap into electronic typesetting,
-           remaining essentially unchanged.
-        </p>
+        <div tal:replace="structure country/long_description | nothing" tal:on-error="nothing"></div>
       </div>
       <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 indicators-description">
-        <img src="unece-environmental-indicators.png" />
+        <div tal:define="stats python:view.get_indicators_statistics()">
+          <table class="unece-environmental-indicators-table">
+            <thead>
+              <tr>
+                <th colspan="4">UNECE Environmental Indicator</th>
+                <th tal:content="context/Title">Armenia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr tal:repeat="category python:indicators_categories">
+                <td colspan="4" tal:content="python:category + '. ' + indicators_categories[category]">
+                  A. Air pollution and ozone depletion
+                </td>
+                <td tal:attributes="class python:stats[category]['indicators_class']"></td>
+              </tr>
+              <tr class="total">
+                <td colspan="4">
+                Total
+                </td>
+                <td tal:attributes="class python:stats['total']['indicators_class']"></td>
+              </tr>
+              <tr class="spacer"><td colspan="5"></td></tr>
+              <tr class="footer">
+                <td class="percentage-0">0/No data</td>
+                <td class="percentage-25">25%</td>
+                <td class="percentage-50">50%</td>
+                <td class="percentage-75">75%</td>
+                <td class="percentage-100">100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -145,7 +172,7 @@
                                 Indicator title
                             </span>
                           </td>
-                          <td tal:repeat="country python:countries">
+                          <td class="text-center" tal:repeat="country python:countries">
                             <span
                               tal:condition="python:table_data[tab][subcategory][country]['has_data']
                               is False">No data</span>
@@ -153,7 +180,7 @@
                               is True"
                                class="fa fa-square" aria-hidden="true"></i>
                           </td>
-                          <td>
+                          <td class="text-center">
                             <a tal:attributes="href python:'http://www.unece.org/env/indicators.html'">
                               Read more »
                             </a>

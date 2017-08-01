@@ -125,6 +125,44 @@ class CountriesViewEast(BrowserView):
             'table_data': result
             }
 
+    def get_indicators_statistics(self):
+        """ Generate content for table in UNECE Environmental Indicators tab
+        """
+
+        stats = {}
+        categories = self.context.unrestrictedTraverse(
+            'indicators_data/get_indicators_categories')()
+        for category in categories:
+            stats[category] = {
+                    'indicators_total': 0,
+                    'indicators_with_data': 0,
+                    'indicators_percentage': 0,
+                    'indicators_class': ""
+                }
+        indicators = self.context.unrestrictedTraverse(
+            'indicators_data/get_indicators')()
+
+        for indicator in indicators:
+            stats[indicator.category]['indicators_total'] += 1
+            if indicator.has_data():
+                stats[indicator.category]['indicators_with_data'] += 1
+
+        total_value = 0
+        for category in categories:
+            stats[category]['indicators_percentage'] = percentage(
+                 stats[category]['indicators_with_data'],
+                 stats[category]['indicators_total']
+            )
+            total_value += stats[category]['indicators_percentage']
+            stats[category]['indicators_class'] = indicators_class(
+                 stats[category]['indicators_percentage']
+            )
+        total_value_percentage = total_value / len(categories)
+        stats['total'] = {
+            'indicators_class': indicators_class(total_value_percentage)
+        }
+        return stats
+
 
 class CountryViewEast(BrowserView):
     """ The view for a country (East)
