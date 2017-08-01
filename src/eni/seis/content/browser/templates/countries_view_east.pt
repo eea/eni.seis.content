@@ -56,7 +56,7 @@
         <h2 class="eni-section-title">UNECE ENVIRONMENTAL INDICATORS</h2>
       </div>
       <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 indicators-description">
-        <div tal:replace="structure country/long_description | nothing" tal:on-error="nothing"></div>
+        <div tal:replace="structure context/long_description | nothing" tal:on-error="nothing"></div>
       </div>
       <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 indicators-description">
         <div tal:define="stats python:view.get_indicators_statistics()">
