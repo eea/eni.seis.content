@@ -238,6 +238,8 @@ class IndicatorsDataView(BrowserView):
     utils = {
         'get_indicators_categories()':
             "Return possible categories for an indicator",
+        'get_indicators_subcategories()':
+            "Return possible subcategories for an indicator",
         'get_indicators()':
             "Return all published indicators found in this context"
     }
@@ -246,6 +248,11 @@ class IndicatorsDataView(BrowserView):
         """ Return possible categories for an indicator
         """
         return UNECE_INDICATORS_CATEGORIES
+
+    def get_indicators_subcategories(self):
+        """ Return possible subcategories for an indicator
+        """
+        return UNECE_INDICATORS_SUBCATEGORIES
 
     def get_indicators(self):
         """ Return all published indicators found in this context

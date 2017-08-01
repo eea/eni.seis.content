@@ -66,20 +66,39 @@
       </div>
     </div>
 
-    <div class="row TODO-remove">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div tal:replace="python:view.get_indicators_table_data()"></div>
-      </div>
-    </div>
-
     <div class="row container-table-indicators" tal:define="
+      data python:view.get_indicators_table_data();
+      table_data python:data['table_data'];
+      categories python:data['categories'];
+      subcategories python:data['subcategories'];
+      countries python:data['countries'];
       indicators_categories
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
+      indicators_subcategories
+      python:context.unrestrictedTraverse('indicators_data/get_indicators_subcategories')();
       indicators
       python:context.unrestrictedTraverse('indicators_data/get_indicators')();
       tabs python:indicators_categories">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-nav-tabs">
+        <h1>Table data</h1>
+        <div class="TODO-remove" tal:content="python:table_data"></div>
+
+        <h1>Categories</h1>
+        <div class="TODO-remove" tal:content="python:categories"></div>
+
+        <h1>Subcategories</h1>
+        <div class="TODO-remove" tal:content="python:subcategories"></div>
+
+        <h1>Countries</h1>
+        <div class="TODO-remove" tal:content="python:countries"></div>
+
+        <h1>Indicators categories</h1>
+        <div class="TODO-remove" tal:content="python:indicators_categories"></div>
+
+        <h1>Indicators subcategories</h1>
+        <div class="TODO-remove" tal:content="python:indicators_subcategories"></div>
+
         <ul class="nav nav-tabs">
           <tal:tab tal:repeat="tab tabs">
           <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
