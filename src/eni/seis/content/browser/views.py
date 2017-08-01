@@ -101,9 +101,10 @@ class CountriesViewEast(BrowserView):
         for category in categories:
             result[category] = {}
             for subcategory in subcategories:
-                result[category][subcategory] = {}
-                for country in countries:
-                    result[category][subcategory][country] = {}
+                if subcategory[0] == category:  # for A select only A1, A2...
+                    result[category][subcategory] = {}
+                    for country in countries:
+                        result[category][subcategory][country] = {}
 
         for indicator in indicators_data:
             result[indicator['category']][

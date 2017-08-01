@@ -76,8 +76,6 @@
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
       indicators_subcategories
       python:context.unrestrictedTraverse('indicators_data/get_indicators_subcategories')();
-      indicators
-      python:context.unrestrictedTraverse('indicators_data/get_indicators')();
       tabs python:indicators_categories">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-nav-tabs">
@@ -120,10 +118,6 @@
           <div tal:attributes="
             id tab;
             class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
-            tal:define="
-              indicators_in_category python:[x for x in indicators if x.category == tab];
-              indicators_with_data_number python:len([x for x in
-              indicators_in_category if x.has_data() is True])"
             class="tab-pane active"
             data-toggle="pill">
 
@@ -149,34 +143,29 @@
                             &nbsp;
                           </h3>
                           <p class="indicators-number"
-                          tal:content="python:indicators_with_data_number">
+                          tal:content="python:'14'">
                             14
                           </p>
                         </th>
                         <th><!-- Link to the indicator --></th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr class="nodata" tal:condition="python:len(indicators_in_category) == 0">
-                        <td colspan="3">No indicators.</td>
-                      </tr>
-
-                      <tal:repeat tal:repeat="indicator indicators_in_category">
-                        <tr tal:define="oddrow repeat/indicator/odd;"
+                    <tbody tal:define="valid_subcategories python:[x for x in
+                      subcategories if x[0] == tab]">
+                      <tal:repeat tal:repeat="subcategory valid_subcategories">
+                        <tr tal:define="oddrow repeat/subcategory/odd;"
                             tal:attributes="class python:'odd' if
                             oddrow else 'even'">
                           <td>
-                            <span tal:replace="tab">C</span><span
-                              tal:replace="repeat/indicator/index">1</span>.&nbsp;
-                            <span tal:replace="indicator/Title">Indicator title</span>
+                            <span tal:replace="subcategory">Indicator title</span>
                           </td>
-                          <td tal:define="has_data python:indicator.has_data()">
+                          <td tal:define="has_data python:True">
                             <span tal:condition="python:has_data is False">No data</span>
                             <i tal:condition="python:has_data is True"
                                class="fa fa-square" aria-hidden="true"></i>
                           </td>
                           <td>
-                            <a tal:attributes="href indicator/absolute_url">
+                            <a tal:attributes="href python:'TODO'">
                               Read more »
                             </a>
                           </td>
