@@ -8,16 +8,24 @@ from zope.schema.vocabulary import SimpleTerm
 MessageFactory = MF('eni.seis')
 
 ALL_REPORTS_CATEGORIES = OrderedDict([
-    (u"A", u"Air pollution and ozone depletion"),
-    (u"B", u"Climate change"),
-    (u"C", u"Water"),
-    (u"D", u"Biodiversity"),
-    (u"E", u"Land and soil"),
-    (u"F", u"Agriculture"),
-    (u"G", u"Energy"),
-    (u"H", u"Transport"),
-    (u"I", u"Waste"),
-    (u"J", u"Environmental financing")
+    (u"national-environmental-reports", u"National environmental reports"),
+    (u"subnational-environmental-reports",
+        u"Subnational environmental reports"),
+    (u"local-environmental-reports",
+     u"Local environmental reports"),
+    (u"specialized-reports-climate-national-communications-to-unfccc",
+     u"Specialized reports - climate (national communications to UNFCCC)"),
+    (u"specialized-reports-air",
+     u"Specialized reports - air"),
+    (u"specialied-reports-water",
+     u"Specialized reports - water"),
+    (u"specialized-reports-biodiversity",
+        u"Specialized reports - biodiversity"),
+    (u"specialized-reports-waste", u"Specialized reports - waste"),
+    (u"indicator-based-reports", u"Indicator-based reports"),
+    (u"national-statistical-yearbook", u"National Statistical Yearbook"),
+    (u"national-statistical-yearbook-on-environment",
+        u"National Statistical Yearbook on environment")
 ])
 
 UNECE_INDICATORS_CONTAINER = (
