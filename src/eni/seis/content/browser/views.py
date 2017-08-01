@@ -9,11 +9,38 @@ from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES
+from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
 from plone import api
 from plone.dexterity.utils import createContentInContainer
+
+
+def percentage(percent, whole):
+    return (percent * 100.0) / whole
+
+
+def indicators_class(percent):
+    """ Return
+        0 => percentage-0
+        [1, 33] => percentage-25
+        [34, 66] => percentage-50
+        [67, 99] => percentage-75
+        100 => percentage-100
+        to be used as green backgrounds
+    """
+    percent = int(percent)
+    if percent == 0:
+        return "percentage-0"
+    if 1 <= percent <= 33:
+        return "percentage-25"
+    if 34 <= percent <= 66:
+        return "percentage-50"
+    if 67 <= percent <= 99:
+        return "percentage-75"
+    if percent == 100:
+        return "percentage-100"
 
 
 class HomepageView(BrowserView):
@@ -52,6 +79,46 @@ class CountriesViewEast(BrowserView):
             x for x in pages if 'country visits' in x.Title().lower()]
         return country_visits_pages
 
+    def get_indicators_table_data(self):
+        """ Return data used in UNECE ENVIRONMENTAL INDICATORS table with tabs
+        """
+        indicators = self.context.unrestrictedTraverse(
+            'indicators_data/get_indicators')()
+
+        indicators_data = [
+            {
+                'country': x.aq_parent.aq_parent.Title(),
+                'category': x.category,
+                'subcategory': x.subcategory,
+                'has_data': x.has_data(),
+                'object': x
+            } for x in indicators]
+
+        categories = [x for x in UNECE_INDICATORS_CATEGORIES]
+        subcategories = [x for x in UNECE_INDICATORS_SUBCATEGORIES]
+        countries = EAST_COUNTRIES
+        result = {}
+        for category in categories:
+            result[category] = {}
+            for subcategory in subcategories:
+                result[category][subcategory] = {}
+                for country in countries:
+                    result[category][subcategory][country] = {}
+
+        for indicator in indicators_data:
+            result[indicator['category']][
+                    indicator['subcategory']][indicator['country']] = {
+                            'has_data': indicator['has_data'],
+                            'object': indicator['object']
+                        }
+
+        return {
+            'categories': categories,
+            'subcategories': subcategories,
+            'countries': countries,
+            'table_data': result
+            }
+
 
 class CountryViewEast(BrowserView):
     """ The view for a country (East)
@@ -59,30 +126,6 @@ class CountryViewEast(BrowserView):
     def get_indicators_statistics(self):
         """ Generate content for table in UNECE Environmental Indicators tab
         """
-
-        def percentage(percent, whole):
-            return (percent * 100.0) / whole
-
-        def indicators_class(percent):
-            """ Return
-                0 => percentage-0
-                [1, 33] => percentage-25
-                [34, 66] => percentage-50
-                [67, 99] => percentage-75
-                100 => percentage-100
-                to be used as green backgrounds
-            """
-            percent = int(percent)
-            if percent == 0:
-                return "percentage-0"
-            if 1 <= percent <= 33:
-                return "percentage-25"
-            if 34 <= percent <= 66:
-                return "percentage-50"
-            if 67 <= percent <= 99:
-                return "percentage-75"
-            if percent == 100:
-                return "percentage-100"
 
         stats = {}
         categories = self.context.unrestrictedTraverse(

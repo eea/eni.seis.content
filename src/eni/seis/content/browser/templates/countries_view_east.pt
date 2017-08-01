@@ -66,6 +66,12 @@
       </div>
     </div>
 
+    <div class="row TODO-remove">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div tal:replace="python:view.get_indicators_table_data()"></div>
+      </div>
+    </div>
+
     <div class="row container-table-indicators" tal:define="
       indicators_categories
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
