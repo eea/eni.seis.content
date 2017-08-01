@@ -66,11 +66,12 @@
       </div>
     </div>
 
-    <div class="row container-table-reports" tal:define="
-      reports_categories python:context.unrestrictedTraverse('reports_data/get_reports_categories')();
-      reports
-      python:context.unrestrictedTraverse('reports_data/get_reports')();
-      tabs python:reports_categories">
+    <div class="row container-table-indicators" tal:define="
+      indicators_categories
+      python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
+      indicators
+      python:context.unrestrictedTraverse('indicators_data/get_indicators')();
+      tabs python:indicators_categories">
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-nav-tabs">
         <ul class="nav nav-tabs">
@@ -95,16 +96,17 @@
             id tab;
             class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
             tal:define="
-              reports_in_category python:[x for x in reports if x.category == tab];
-              reports_with_data_number python:len([x for x in
-              reports_in_category if x.has_data() is True])"
+              indicators_in_category python:[x for x in indicators if x.category == tab];
+              indicators_with_data_number python:len([x for x in
+              indicators_in_category if x.has_data() is True])"
             class="tab-pane active"
             data-toggle="pill">
 
-            <div class="container container-table-reports">
+            <div class="container container-table-indicators">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-table-reports">
-                  <table class="table table-responsive table-hover reports" summary="Content listing">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12
+                  col-table-indicators">
+                  <table class="table table-responsive table-hover indicators" summary="Content listing">
                     <thead>
                       <tr>
                         <th>
@@ -121,34 +123,35 @@
                             <span tal:replace="country_title"></span>
                             &nbsp;
                           </h3>
-                          <p class="reports-number"
-                          tal:content="python:reports_with_data_number">
+                          <p class="indicators-number"
+                          tal:content="python:indicators_with_data_number">
                             14
                           </p>
                         </th>
-                        <th><!-- Link to the report --></th>
+                        <th><!-- Link to the indicator --></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="nodata" tal:condition="python:len(reports_in_category) == 0">
-                        <td colspan="3">No reports.</td>
+                      <tr class="nodata" tal:condition="python:len(indicators_in_category) == 0">
+                        <td colspan="3">No indicators.</td>
                       </tr>
 
-                      <tal:repeat tal:repeat="report reports_in_category">
-                        <tr tal:define="oddrow repeat/report/odd;"
+                      <tal:repeat tal:repeat="indicator indicators_in_category">
+                        <tr tal:define="oddrow repeat/indicator/odd;"
                             tal:attributes="class python:'odd' if
                             oddrow else 'even'">
                           <td>
-                            <span tal:replace="tab">C</span><span tal:replace="repeat/report/index">1</span>.&nbsp;
-                            <span tal:replace="report/Title">Report title</span>
+                            <span tal:replace="tab">C</span><span
+                              tal:replace="repeat/indicator/index">1</span>.&nbsp;
+                            <span tal:replace="indicator/Title">Indicator title</span>
                           </td>
-                          <td tal:define="has_data python:report.has_data()">
+                          <td tal:define="has_data python:indicator.has_data()">
                             <span tal:condition="python:has_data is False">No data</span>
                             <i tal:condition="python:has_data is True"
                                class="fa fa-square" aria-hidden="true"></i>
                           </td>
                           <td>
-                            <a tal:attributes="href report/absolute_url">
+                            <a tal:attributes="href indicator/absolute_url">
                               Read more »
                             </a>
                           </td>
