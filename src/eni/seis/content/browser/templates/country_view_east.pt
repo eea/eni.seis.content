@@ -71,13 +71,14 @@
                           </td>
                           <td tal:attributes="class python:stats[category]['indicators_class']"></td>
                         </tr>
-                        <tr>
+                        <tr class="total">
                           <td colspan="4">
                             Total
                           </td>
                           <td tal:attributes="class python:stats['total']['indicators_class']"></td>
                         </tr>
-                         <tr>
+                        <tr class="spacer"><td colspan="5"></td></tr>
+                        <tr class="footer">
                           <td class="percentage-0">0/No data</td>
                           <td class="percentage-25">25%</td>
                           <td class="percentage-50">50%</td>
