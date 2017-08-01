@@ -126,11 +126,11 @@
                             &nbsp;
                           </h3>
                           <p class="indicators-number"
-                          tal:content="python:'14'">
+                            tal:content="python:table_data[tab][country]['indicators_with_data']">
                             14
                           </p>
                         </th>
-                        <th><!-- Link to the indicator --></th>
+                        <th><!-- Link to the indicators details --></th>
                       </tr>
                     </thead>
                     <tbody tal:define="valid_subcategories python:[x for x in
@@ -141,7 +141,9 @@
                             oddrow else 'even'">
                           <td>
                             <span
-                              tal:replace="python:subcategory + '. ' + indicators_subcategories[subcategory]">Indicator title</span>
+                              tal:replace="python:subcategory + '. ' + indicators_subcategories[subcategory]">
+                                Indicator title
+                            </span>
                           </td>
                           <td tal:repeat="country python:countries">
                             <span
@@ -152,7 +154,7 @@
                                class="fa fa-square" aria-hidden="true"></i>
                           </td>
                           <td>
-                            <a tal:attributes="href python:'TODO'">
+                            <a tal:attributes="href python:'http://www.unece.org/env/indicators.html'">
                               Read more »
                             </a>
                           </td>

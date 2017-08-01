@@ -104,14 +104,19 @@ class CountriesViewEast(BrowserView):
                 if subcategory[0] == category:  # for A select only A1, A2...
                     result[category][subcategory] = {}
                     for country in countries:
-                        result[category][subcategory][country] = {}
+                        result[category][country] = {
+                            'indicators_with_data': 0
+                        }
 
         for indicator in indicators_data:
+            data_value = 0 if indicator['has_data'] is False else 1
             result[indicator['category']][
                     indicator['subcategory']][indicator['country']] = {
                             'has_data': indicator['has_data'],
                             'object': indicator['object']
                         }
+            result[indicator['category']][indicator['country']][
+                'indicators_with_data'] += data_value
 
         return {
             'categories': categories,
