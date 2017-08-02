@@ -39,6 +39,6 @@ class Report(Container):
         status = ""
         if self.status is not None:
             status = REPORTS_STATUS_TYPES[self.status]
-            if len(self.status_details) > 0:
+            if self.status_details and len(self.status_details) > 0:
                 status = status + " / " + self.status_details
         return status
