@@ -178,16 +178,28 @@ class CountriesViewEast(BrowserView):
     def get_reports_statistics(self):
         """ Return reports statistics for given country
         """
+        def report_class(report_status):
+            """ Class used to give colors in reports table
+            """
+            report_status = report_status.lower()
+            if 'annual' in report_status:
+                return 'report-yes-annual'
+            elif 'yes' in report_status:
+                return 'report-yes'
+            elif 'no' in report_status:
+                return 'report-no'
+            else:
+                return 'report-no-data'
 
         stats = {}
         for country in self.get_countries_folders():
-            stats[country] = {}
+            stats[country.Title()] = {}
             reports = country.unrestrictedTraverse(
                 'reports_data/get_reports')()
             for report in reports:
-                stats[country][report.title] = {
-                    'status': 'yes',
-                    'report_class': 'report-yes'
+                stats[country.Title()][report.title] = {
+                    'status': report.get_status(),
+                    'report_class': report_class(report.get_status())
                 }
 
         return stats
