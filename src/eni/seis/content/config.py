@@ -34,6 +34,10 @@ REPORTS_STATUS_TYPES = OrderedDict([
     (u"no-data", u"No data")
 ])
 
+REPORTS_CONTAINER = (
+        'reports', "Reports"
+    )
+
 UNECE_INDICATORS_CONTAINER = (
         'unece-environmental-indicators', "UNECE Environmental Indicators"
     )

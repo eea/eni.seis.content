@@ -5,6 +5,8 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from eni.seis.content.config import REPORTS_TYPES
+from eni.seis.content.config import REPORTS_TYPES_VOCAB
+from eni.seis.content.config import REPORTS_CONTAINER
 from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
@@ -329,6 +331,41 @@ class UpgradeGenerateIndicatorsViewEast(BrowserView):
                 indicators_container, "indicator",
                 title=indicator.title, category=category,
                 subcategory=indicator.value
+            )
+            api.content.transition(obj=item, transition='publish')
+
+        return "Done. Please verify indicators folder and its contents."
+
+
+class UpgradeGenerateReportsViewEast(BrowserView):
+    """ /upgrade_generate_reports_east to be unsed in a country section
+        to create Reports folder with all types reports
+    """
+    def __call__(self):
+        country = self.context
+        if country.title not in EAST_COUNTRIES:
+            return "Nothing changed. Use this upgrade for an East country: " \
+                + ", ".join(EAST_COUNTRIES) + "."
+
+        if country.aq_parent.title != "Countries":
+            return "Nothing changed. Use this upgrade for an East country: " \
+                + ", ".join(EAST_COUNTRIES) + ". (Parent folder: Countries)."
+
+        try:
+            reports_container = country.unrestrictedTraverse(
+                REPORTS_CONTAINER[0])
+        except AttributeError:
+            reports_container = api.content.create(
+                container=country, type='Folder',
+                title=REPORTS_CONTAINER[1])
+            api.content.transition(obj=reports_container,
+                                   transition='publish')
+
+        for report in REPORTS_TYPES_VOCAB:
+            item = createContentInContainer(
+                reports_container, "report",
+                title=report.title, report_type=report,
+                status='yes', status_details=''
             )
             api.content.transition(obj=item, transition='publish')
 
