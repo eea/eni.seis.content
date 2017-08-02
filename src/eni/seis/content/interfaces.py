@@ -2,6 +2,7 @@
 """Module where all interfaces, events and exceptions live."""
 
 from eni.seis.content.config import REPORTS_TYPES_VOCAB
+from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from plone.namedfile.field import NamedBlobFile
@@ -46,6 +47,18 @@ class IReport(model.Schema):
         vocabulary=REPORTS_TYPES_VOCAB,
         required=True
         )
+
+    status = schema.Choice(
+        title=u"Status",
+        vocabulary=REPORTS_STATUS_VOCAB,
+        required=True
+        )
+
+    status_details = schema.TextLine(
+        title=u"Status details",
+        required=False,
+        description=u"Example: Annual"
+    )
 
 
 class IIndicator(model.Schema):

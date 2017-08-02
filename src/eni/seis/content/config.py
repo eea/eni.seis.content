@@ -133,7 +133,7 @@ REPORTS_TYPES_VOCAB = SimpleVocabulary(
     ]
 )
 
-REPORTS_STATUS_TYPES = SimpleVocabulary(
+REPORTS_STATUS_VOCAB = SimpleVocabulary(
     [
         SimpleTerm(
             value=x,
