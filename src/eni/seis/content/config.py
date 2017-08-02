@@ -35,7 +35,7 @@ REPORTS_STATUS_TYPES = OrderedDict([
 ])
 
 REPORTS_CONTAINER = (
-        'reports', "Reports"
+        'environmental-assesment-reports', "Environmental Assesment Reports"
     )
 
 UNECE_INDICATORS_CONTAINER = (

@@ -361,15 +361,15 @@ class UpgradeGenerateReportsViewEast(BrowserView):
             api.content.transition(obj=reports_container,
                                    transition='publish')
 
-        for report in REPORTS_TYPES_VOCAB:
+        for report_type in REPORTS_TYPES_VOCAB:
             item = createContentInContainer(
                 reports_container, "report",
-                title=report.title, report_type=report,
+                title=report_type.title, report_type=report_type.value,
                 status='yes', status_details=''
             )
             api.content.transition(obj=item, transition='publish')
 
-        return "Done. Please verify indicators folder and its contents."
+        return "Done. Please verify reports folder and its contents."
 
 
 class GetUpcomingEventsView(BrowserView):
