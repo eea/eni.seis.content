@@ -48,6 +48,40 @@
       </tal:visits>
     </div>
 
+    <div tal:on-error="nothing" class="row no-portlets environmental-assesment-reports-container"
+      tal:define="reports_types
+      python:context.unrestrictedTraverse('reports_data/get_reports_types')();">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <h2 class="eni-section-title">ENVIRONMENTAL ASSESMENT REPORTS</h2>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reports-content">
+        <div tal:define="stats python:view.get_reports_statistics()">
+          <table class="environmental-assesment-reports-table">
+            <thead>
+              <tr>
+                <th colspan="4">Type of report</th>
+                <th tal:repeat="country python:countries_titles"
+                    tal:content="country">Armenia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr tal:repeat="report_type python:reports_types">
+                <td colspan="4" tal:content="python:report_type">
+                  Report type
+                </td>
+                <td tal:repeat="country python:countries_titles"
+                    tal:attributes="class
+                    python:stats[country][report_type]['reports_class']"
+                    tal:content="python:stats[country][report_type]['status']">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <div class="row no-portlets environmental-indicators-container"
       tal:define="indicators_categories
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();">
