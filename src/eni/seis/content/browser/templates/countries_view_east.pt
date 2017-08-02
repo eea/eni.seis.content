@@ -67,7 +67,7 @@
             </thead>
             <tbody>
               <tr tal:repeat="report_type python:reports_types">
-                <td colspan="4" tal:content="python:report_type">
+                <td colspan="4" tal:content="python:reports_types[report_type]">
                   Report type
                 </td>
                 <td tal:repeat="country python:countries_titles"
