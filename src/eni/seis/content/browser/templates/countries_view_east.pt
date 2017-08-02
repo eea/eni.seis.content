@@ -48,11 +48,7 @@
       </tal:visits>
     </div>
 
-    <div class="TODO-remove" tal:content="python:view.get_reports_statistics()">
-
-    </div>
-
-    <div tal:on-error="nothing" class="row no-portlets environmental-assesment-reports-container"
+    <div class="row no-portlets environmental-assesment-reports-container"
       tal:define="reports_types
       python:context.unrestrictedTraverse('reports_data/get_reports_types')();">
 
@@ -76,7 +72,7 @@
                 </td>
                 <td tal:repeat="country python:countries_titles"
                     tal:attributes="class
-                    python:stats[country][report_type]['reports_class']"
+                    python:stats[country][report_type]['report_class']"
                     tal:content="python:stats[country][report_type]['status']">
                 </td>
               </tr>

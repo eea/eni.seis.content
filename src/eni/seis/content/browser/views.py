@@ -197,9 +197,10 @@ class CountriesViewEast(BrowserView):
             reports = country.unrestrictedTraverse(
                 'reports_data/get_reports')()
             for report in reports:
-                stats[country.Title()][report.title] = {
+                stats[country.Title()][report.report_type] = {
                     'status': report.get_status(),
-                    'report_class': report_class(report.get_status())
+                    'report_class': report_class(report.get_status()),
+                    'object': report
                 }
 
         return stats
