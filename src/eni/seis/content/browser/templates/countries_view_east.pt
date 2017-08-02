@@ -48,6 +48,10 @@
       </tal:visits>
     </div>
 
+    <div class="TODO-remove" tal:content="python:view.get_reports_statistics()">
+
+    </div>
+
     <div tal:on-error="nothing" class="row no-portlets environmental-assesment-reports-container"
       tal:define="reports_types
       python:context.unrestrictedTraverse('reports_data/get_reports_types')();">

@@ -175,6 +175,23 @@ class CountriesViewEast(BrowserView):
             stats[country.Title()] = get_indicators_statistics(country)
         return stats
 
+    def get_reports_statistics(self):
+        """ Return reports statistics for given country
+        """
+
+        stats = {}
+        for country in self.get_countries_folders():
+            stats[country] = {}
+            reports = country.unrestrictedTraverse(
+                'reports_data/get_reports')()
+            for report in reports:
+                stats[country][report.title] = {
+                    'status': 'yes',
+                    'report_class': 'report-yes'
+                }
+
+        return stats
+
 
 class CountryViewEast(BrowserView):
     """ The view for a country (East)
