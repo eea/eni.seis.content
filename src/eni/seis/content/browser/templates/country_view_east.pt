@@ -17,7 +17,7 @@
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
       indicators
       python:context.unrestrictedTraverse('indicators_data/get_indicators')();
-      reports python:[]">
+      reports python:context.unrestrictedTraverse('reports_data/get_reports')()">
 
     <div class="row no-portlets">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -207,10 +207,6 @@
                     <tr tal:define="oddrow repeat/report/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
-                        <span tal:replace="
-                          python:report.category + '. ' + tabs[report.category] + ': '">
-                          Report category
-                        </span>
                         <span tal:replace="report/Title">Report title</span>
                       </td>
                       <td tal:define="has_data python:report.has_data()">
