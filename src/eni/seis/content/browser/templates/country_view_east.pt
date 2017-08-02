@@ -209,10 +209,10 @@
                       <td>
                         <span tal:replace="report/Title">Report title</span>
                       </td>
-                      <td tal:define="has_data python:report.has_data()">
-                        <span tal:condition="python:has_data is False">No data</span>
-                        <i tal:condition="python:has_data is True"
-                           class="fa fa-square" aria-hidden="true"></i>
+                      <td>
+                        <span tal:replace="python:report.get_status()">
+                          Yes / Annual
+                        </span>
                       </td>
                       <td>
                         <a tal:attributes="href report/absolute_url">
