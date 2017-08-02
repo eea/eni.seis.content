@@ -4,7 +4,7 @@
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
-from eni.seis.content.config import ALL_REPORTS_CATEGORIES
+from eni.seis.content.config import REPORTS_TYPES
 from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
@@ -217,16 +217,16 @@ class ReportsDataView(BrowserView):
     """ Utils for Reports
     """
     utils = {
-        'get_reports_categories()':
-            "Return possible categories for a report",
+        'get_reports_types()':
+            "Return possible types for a report",
         'get_reports()':
             "Return all published reports found in this context"
     }
 
-    def get_reports_categories(self):
-        """ Return possible categories for a report
+    def get_reports_types(self):
+        """ Return possible types for a report
         """
-        return ALL_REPORTS_CATEGORIES
+        return REPORTS_TYPES
 
     def get_reports(self):
         """ Return all published reports found in this context

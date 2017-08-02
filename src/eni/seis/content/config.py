@@ -7,7 +7,7 @@ from zope.schema.vocabulary import SimpleTerm
 
 MessageFactory = MF('eni.seis')
 
-ALL_REPORTS_CATEGORIES = OrderedDict([
+REPORTS_TYPES = OrderedDict([
     (u"national-environmental-reports", u"National environmental reports"),
     (u"subnational-environmental-reports",
         u"Subnational environmental reports"),
@@ -26,6 +26,12 @@ ALL_REPORTS_CATEGORIES = OrderedDict([
     (u"national-statistical-yearbook", u"National Statistical Yearbook"),
     (u"national-statistical-yearbook-on-environment",
         u"National Statistical Yearbook on environment")
+])
+
+REPORTS_STATUS_TYPES = OrderedDict([
+    (u"yes", u"Yes"),
+    (u"no", u"No"),
+    (u"no-data", u"No data")
 ])
 
 UNECE_INDICATORS_CONTAINER = (
@@ -118,12 +124,21 @@ EAST_COUNTRIES = [
     'Ukraine'
 ]
 
-REPORT_CATEGORIES_VOCAB = SimpleVocabulary(
+REPORTS_TYPES_VOCAB = SimpleVocabulary(
     [
         SimpleTerm(
             value=x,
-            title=x + ". " + ALL_REPORTS_CATEGORIES[x])
-        for x in ALL_REPORTS_CATEGORIES.keys()
+            title=REPORTS_TYPES[x])
+        for x in REPORTS_TYPES.keys()
+    ]
+)
+
+REPORTS_STATUS_TYPES = SimpleVocabulary(
+    [
+        SimpleTerm(
+            value=x,
+            title=REPORTS_STATUS_TYPES[x])
+        for x in REPORTS_STATUS_TYPES.keys()
     ]
 )
 

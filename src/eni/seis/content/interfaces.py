@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
-from eni.seis.content.config import REPORT_CATEGORIES_VOCAB
+from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from plone.namedfile.field import NamedBlobFile
@@ -41,9 +41,9 @@ class IReport(model.Schema):
         description=u"Report file if it has one."
     )
 
-    category = schema.Choice(
-        title=u"Category",
-        vocabulary=REPORT_CATEGORIES_VOCAB,
+    report_type = schema.Choice(
+        title=u"Type of the report",
+        vocabulary=REPORTS_TYPES_VOCAB,
         required=True
         )
 
