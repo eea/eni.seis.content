@@ -352,6 +352,9 @@ class UpgradeGenerateIndicatorsViewEast(BrowserView):
             api.content.transition(obj=indicators_container,
                                    transition='publish')
 
+        if len(indicators_container.getFolderContents()) > 0:
+            return "Canceled. The indicators folder is not empty."
+
         for indicator in UNECE_INDICATORS_SUBCATEGORIES_VOCAB:
             # A1, A2, ... => the category is A
             category = ''.join(
@@ -390,6 +393,9 @@ class UpgradeGenerateReportsViewEast(BrowserView):
                 title=REPORTS_CONTAINER[1])
             api.content.transition(obj=reports_container,
                                    transition='publish')
+
+        if len(reports_container.getFolderContents()) > 0:
+            return "Canceled. The reports folder is not empty."
 
         for report_type in REPORTS_TYPES_VOCAB:
             item = createContentInContainer(
