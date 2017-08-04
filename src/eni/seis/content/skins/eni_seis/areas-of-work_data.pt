@@ -15,7 +15,8 @@
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/air">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="./data-air.png">
+              <img class="slide-img" src="./data-air.png"
+                   title="© Charles Keddie">
             </div>
             <div class="text">
               <span>Air</span>
@@ -27,7 +28,8 @@
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/biodiversity">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="./data-biodiversity.png">
+              <img class="slide-img" src="./data-biodiversity.png"
+                   title="© Charles Keddie">
             </div>
             <div class="text">
               <span>Biodiversity</span>
@@ -39,7 +41,8 @@
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/water">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="./data-water.png">
+              <img class="slide-img" src="./data-water.png"
+                   title="© Charles Keddie">
             </div>
             <div class="text">
               <span>Water</span>
@@ -51,7 +54,8 @@
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/land">
             <div class="img-circle-cropper">
-              <img class="slide-img" src="./data-land.png">
+              <img class="slide-img" src="./data-land.png"
+                   title="© Charles Keddie">
             </div>
             <div class="text">
               <span>Land</span>
