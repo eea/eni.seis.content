@@ -60,6 +60,11 @@
       title="ENI SEIS Subscriber Roles Vocabulary" description="Add Subscriber Roles Vocabulary"
       handler="eni.seis.content.setuphandlers.setup_subscriber_roles_vocabulary" />
 
+  <subscriber
+    for="Products.ATContentTypes.interfaces.IATFolder
+         Products.Archetypes.event.ObjectInitializedEvent"
+    handler="eni.seis.content.globalhandlers.set_folder_listing_by_default" />
+
   <include package="archetypes.schemaextender" />
 
   <adapter

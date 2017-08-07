@@ -16,3 +16,11 @@ def autofillFullname(event):
         principal = event.principal
         properties = principal._propertysheets.get('mutable_properties')
         properties.setProperty(principal, 'fullname', auto_fullname)
+
+
+def set_folder_listing_by_default(folder, event):
+    """ Set folder_listing as default Display for new created folders.
+        This solves the problem: country_view_east as default Display
+        for new folders added in East countries folders, for example.
+    """
+    folder.setLayout('folder_listing')
