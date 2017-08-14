@@ -112,7 +112,7 @@ class CountriesViewEast(BrowserView):
         pages = self.context.portal_catalog.searchResults(
             portal_type=['Document'],
             review_state='published',
-            sort_on='id',
+            sort_on='getObjPositionInParent',
             path='/east/countries'
         )
         pages = [b.getObject() for b in pages]
