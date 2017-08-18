@@ -11,8 +11,16 @@
 
   <body metal:fill-slot="content-core">
     <div class="areas-of-work-container"
-         data-diazo="areas-of-work">
-      Areas of work here
-    </div>
+         tal:define="name python:'homepage-section-aow-slider'">
+
+      <div class="section"
+           data-diazo="..."
+           tal:define="text python: context.aq_parent.getDocText(name)"
+           tal:attributes="data-diazo name; class string:section-${name};"
+           tal:content="structure text"
+           tal:on-error="string: Error in ${name}"
+           >
+      </div>
+      </div>
   </body>
 </html>
