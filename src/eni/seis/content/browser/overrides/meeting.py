@@ -1,3 +1,5 @@
+import socket
+import transaction
 from functools import partial
 from zope.event import notify
 from zope.component import getUtility
@@ -231,8 +233,12 @@ class Register(views.Register):
             )
             views.add_subscriber(subscribers, **props)
             notify(SendNewSubscriberEmailEvent(self.context))
+        except socket.gaierror:
+            # Make sure the transaction gets aborted.
+            transaction.get().abort()
+            return err_msg('Cannot send email!')
         except Exception as e:
-            return err_msg(e.message)
+            return err_msg(e.message or e)
 
         return self.response.redirect(
             self.context.absolute_url() + '/register')
