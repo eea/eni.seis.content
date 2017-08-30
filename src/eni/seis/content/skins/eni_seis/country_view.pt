@@ -39,7 +39,7 @@
           <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
             <a tal:attributes="href string:#${tab/getId}; class python:tab_icons.get(tab.Title(), 'icon icon-none')" data-toggle="tab">
               <div tal:attributes="class python:tab_icons.get(tab.Title(), 'icon icon-none')"></div>
-              <span tal:replace="tab/Title">Tab Title</span>
+              <p class="tab-title" tal:content="tab/Title">Tab Title</p>
             </a>
           </li>
           </tal:tab>
