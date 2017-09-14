@@ -485,3 +485,19 @@ class SubscriberRoles(BrowserView):
             'subscriber_roles').items()
         res = [(t[0], t[1].title) for t in terms]
         return res
+
+
+class NFPSList(BrowserView):
+    """ Return National Focal Point items list in context
+    """
+    def __call__(self):
+        nfps = [
+            b.getObject() for b in self.context.portal_catalog.searchResults(
+                    portal_type=['nfp'],
+                    review_state='published',
+                    sort_on='getObjPositionInParent',
+                    path='/'.join(self.context.getPhysicalPath())
+                )
+            ]
+
+        return nfps

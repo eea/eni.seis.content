@@ -146,6 +146,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="get_nfps_list"
+    for="Products.ATContentTypes.interfaces.IATFolder"
+    class=".views.NFPSList"
+    permission="zope2.View"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"
