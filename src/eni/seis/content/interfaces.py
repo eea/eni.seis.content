@@ -96,24 +96,19 @@ class INationalFocalPoint(model.Schema):
     name = schema.TextLine(
         title=u"Name",
         required=True,
-        description=u"Example: Ms Amina Benzekri"
     )
 
     organisation = schema.TextLine(
         title=u"Organisation",
         required=True,
-        description=u"""Example: Ministère des Ressources en eau et de
-        l'environnement"""
     )
 
     position = schema.TextLine(
         title=u"Position",
         required=True,
-        description=u"""Example: Directrice Générale Observatoire National de
-        l'Environnement et du Développement Durable (ONEDD) l'environnement"""
     )
 
     photo = NamedBlobImage(
-        title=u"Upload photo",
+        title=u"Photo",
         required=False,
     )
