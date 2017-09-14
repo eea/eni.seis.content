@@ -490,18 +490,27 @@ class SubscriberRoles(BrowserView):
 
 class NFPSList(BrowserView):
     """ Return National Focal Point items list in context
+        - in country context return local nfps
+        - in other context return the list of countries with their nfps
     """
     def get_countries_folders(self):
         """ Return list of countries folders
         """
+        if 'south' in api.portal.get().absolute_url():
+            COUNTRIES = SOUTH_COUNTRIES
+            path = '/south/countries'
+        else:
+            COUNTRIES = EAST_COUNTRIES
+            path = '/east/countries'
+
         folders = self.context.portal_catalog.searchResults(
             portal_type=['Folder'],
             review_state='published',
             sort_on='id',
-            path='/south/countries'
+            path=path
         )
         folders = [b.getObject() for b in folders]
-        countries = [x for x in folders if x.Title() in SOUTH_COUNTRIES]
+        countries = [x for x in folders if x.Title() in COUNTRIES]
         return countries
 
     def get_country_nfps_list(self, context):
