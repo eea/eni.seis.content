@@ -66,7 +66,9 @@
       <div class="col-md-7 country-right-column"
            tal:define="
            query python: {'portal_type': 'Folder'};
-           tabs python: context.getFolderContents(query, full_objects=True)">
+           excluded_folders python:['nfps'];
+           tabs python: [x for x in context.getFolderContents(
+           query, full_objects=True) if x.Title().lower() not in excluded_folders]">
 
         <ul class="nav nav-tabs"
             tal:define="tab_icons python:{'Waste': 'icon icon-waste', 'Water':
