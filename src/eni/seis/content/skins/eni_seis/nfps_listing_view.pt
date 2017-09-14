@@ -1,0 +1,3 @@
+<div tal:define="nfps context/get_nfps_list">
+  <span tal:replace="nfps"></span>
+</div>
