@@ -8,6 +8,7 @@ from eni.seis.content.config import REPORTS_TYPES
 from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.config import REPORTS_CONTAINER
 from eni.seis.content.config import EAST_COUNTRIES
+from eni.seis.content.config import SOUTH_COUNTRIES
 from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES
@@ -490,14 +491,50 @@ class SubscriberRoles(BrowserView):
 class NFPSList(BrowserView):
     """ Return National Focal Point items list in context
     """
-    def __call__(self):
+    def get_countries_folders(self):
+        """ Return list of countries folders
+        """
+        folders = self.context.portal_catalog.searchResults(
+            portal_type=['Folder'],
+            review_state='published',
+            sort_on='id',
+            path='/south/countries'
+        )
+        folders = [b.getObject() for b in folders]
+        countries = [x for x in folders if x.Title() in SOUTH_COUNTRIES]
+        return countries
+
+    def get_country_nfps_list(self, context):
+        """ Return nfps list for given context (country)
+        """
         nfps = [
-            b.getObject() for b in self.context.portal_catalog.searchResults(
+            b.getObject() for b in
+            context.portal_catalog.searchResults(
                     portal_type=['nfp'],
                     review_state='published',
                     sort_on='getObjPositionInParent',
-                    path='/'.join(self.context.getPhysicalPath())
+                    path='/'.join(context.getPhysicalPath())
                 )
             ]
+        return nfps
+
+    def get_countries_nfps_list(self, context):
+        """ Return nfps list for all countries
+        """
+        countries = self.get_countries_folders()
+        nfps = []
+        for country in countries:
+            nfps.append({
+                    country.title: self.get_country_nfps_list(country)
+                })
 
         return nfps
+
+    def __call__(self):
+        portal = api.portal.get()
+        is_country = True if self.context.aq_parent.absolute_url() == \
+            portal.absolute_url() + '/countries' else False
+        if is_country is True:
+            return self.get_country_nfps_list(self.context)
+        else:
+            return self.get_countries_nfps_list(portal)

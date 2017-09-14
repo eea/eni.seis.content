@@ -128,6 +128,18 @@ EAST_COUNTRIES = [
     'Ukraine'
 ]
 
+SOUTH_COUNTRIES = [
+    'Algeria',
+    'Egypt',
+    'Israel',
+    'Jordan',
+    'Lebanon',
+    'Libya',
+    'Morocco',
+    'Palestine',
+    'Tunisia'
+]
+
 REPORTS_TYPES_VOCAB = SimpleVocabulary(
     [
         SimpleTerm(
