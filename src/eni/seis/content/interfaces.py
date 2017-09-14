@@ -6,6 +6,7 @@ from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from plone.namedfile.field import NamedBlobFile
+from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope import schema
@@ -87,3 +88,32 @@ class IIndicator(model.Schema):
         vocabulary=UNECE_INDICATORS_SUBCATEGORIES_VOCAB,
         required=True
         )
+
+
+class INationalFocalPoint(model.Schema):
+    """ nfp item to be added in a country section
+    """
+    name = schema.TextLine(
+        title=u"Name",
+        required=True,
+        description=u"Example: Ms Amina Benzekri"
+    )
+
+    organisation = schema.TextLine(
+        title=u"Organisation",
+        required=True,
+        description=u"""Example: Ministère des Ressources en eau et de
+        l'environnement"""
+    )
+
+    position = schema.TextLine(
+        title=u"Position",
+        required=True,
+        description=u"""Example: Directrice Générale Observatoire National de
+        l'Environnement et du Développement Durable (ONEDD) l'environnement"""
+    )
+
+    photo = NamedBlobImage(
+        title=u"Upload photo",
+        required=False,
+    )
