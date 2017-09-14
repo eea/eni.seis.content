@@ -1,3 +1,48 @@
-<div tal:define="nfps context/get_nfps_list">
-  <span tal:replace="nfps"></span>
+<div tal:define="nfps_list context/get_nfps_list">
+  <table class="table table-responsive table-hover">
+    <tbody>
+      <tr>
+        <td>
+          <p align="center">
+            <b><i>Country</i></b>
+          </p>
+        </td>
+        <td>
+          <p align="center">
+            <b><i>Name</i></b>
+          </p>
+        </td>
+        <td>
+          <p align="center">
+            <b><i>Organisation</i></b>
+          </p>
+        </td>
+        <td>
+          <p align="center">
+            <b><i>Position </i></b>
+          </p>
+        </td>
+      </tr>
+
+      <tr tal:repeat="country_dict python:nfps_list">
+        <tal:countries tal:define="country_title python:list(country_dict)[0];
+                                   country_nfps python:country_dict[country_title]">
+          <tal:nfps tal:repeat="nfp python:country_nfps">
+            <td tal:content="python:country_title">
+              Country title
+            </td>
+            <td tal:content="structure python:nfp.name">
+              Name
+            </td>
+            <td tal:content="structure python:nfp.organisation">
+              Organisation
+            </td>
+            <td tal:content="structure python:nfp.position">
+              Position
+            </td>
+          </tal:nfps>
+        </tal:countries>
+      </tr>
+    </tbody>
+  </table>
 </div>
