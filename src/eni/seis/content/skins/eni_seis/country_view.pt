@@ -32,9 +32,9 @@
             </thead>
             <tbody tal:define="nfps context/get_nfps_list">
               <tr tal:repeat="nfp python:nfps">
-                <td tal:content="python:nfp.name">Ms Amina Benzekri</td>
-                <td tal:content="python:nfp.organisation">Ministère des ... </td>
-                <td tal:content="python:nfp.position">Directrice Générale ... </td>
+                <td tal:content="structure python:nfp.name">Ms Amina Benzekri</td>
+                <td tal:content="structure python:nfp.organisation">Ministère des ... </td>
+                <td tal:content="structure python:nfp.position">Directrice Générale ... </td>
               </tr>
             </tbody>
           </table>

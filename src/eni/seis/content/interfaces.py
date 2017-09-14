@@ -5,6 +5,8 @@ from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
+from plone.autoform import directives as form
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.namedfile.field import NamedBlobFile
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
@@ -93,17 +95,20 @@ class IIndicator(model.Schema):
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section
     """
-    name = schema.TextLine(
+    form.widget('name', WysiwygFieldWidget)
+    name = schema.Text(
         title=u"Name",
         required=True,
     )
 
-    organisation = schema.TextLine(
+    form.widget('organisation', WysiwygFieldWidget)
+    organisation = schema.Text(
         title=u"Organisation",
         required=True,
     )
 
-    position = schema.TextLine(
+    form.widget('position', WysiwygFieldWidget)
+    position = schema.Text(
         title=u"Position",
         required=True,
     )
