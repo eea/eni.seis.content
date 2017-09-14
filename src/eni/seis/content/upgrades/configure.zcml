@@ -91,4 +91,18 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.0.6"
+            destination="1.0.7"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import types."
+	          description="New content type: nfp (National Focal Point)."
+            import_steps="typeinfo"
+            />
+
+    </genericsetup:upgradeSteps>
+
+
 </configure>
