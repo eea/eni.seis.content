@@ -53,6 +53,35 @@
 
               <div class="row indicators-row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                  <div>
+                    <br />
+                      <h2>
+                        National Focal Points
+                      </h2>
+
+                    <table class="table table-hover table-condensed">
+                      <thead>
+                        <tr>
+                          <th>NAME</th>
+                          <th>ORGANISATION</th>
+                          <th>POSITION</th>
+                        </tr>
+                      </thead>
+                      <tbody tal:define="nfps context/get_nfps_list">
+                        <tr tal:repeat="nfp python:nfps">
+                          <td tal:content="structure python:nfp.name">Ms Amina Benzekri</td>
+                          <td tal:content="structure python:nfp.organisation">Ministère des ... </td>
+                          <td tal:content="structure python:nfp.position">Directrice Générale ... </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>
+                      <a class="more-items pull-right" href="../../NFPs_link">
+                        Read more
+                      </a>
+                    </p>
+                  </div>
+
                   <div tal:replace="structure country/long_description | nothing" tal:on-error="nothing"></div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
