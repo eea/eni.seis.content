@@ -11,30 +11,16 @@
     <metal:block define-macro="content-core">
       <div tal:define="nfps_list context/get_nfps_list">
         <table class="table table-responsive table-hover">
-          <tbody>
+          <thead>
             <tr>
-              <td>
-                <p align="center">
-                  <b><i>Country</i></b>
-                </p>
-              </td>
-              <td>
-                <p align="center">
-                  <b><i>Name</i></b>
-                </p>
-              </td>
-              <td>
-                <p align="center">
-                  <b><i>Organisation</i></b>
-                </p>
-              </td>
-              <td>
-                <p align="center">
-                  <b><i>Position </i></b>
-                </p>
-              </td>
+              <th>Country</th>
+              <th>Name</th>
+              <th>Organisation</th>
+              <th>Position</th>
             </tr>
+          </thead>
 
+          <tbody>
             <tal:countries tal:repeat="country_dict python:nfps_list">
               <tal:country tal:define="country_title python:list(country_dict)[0];
                                          country_nfps python:country_dict[country_title]">
