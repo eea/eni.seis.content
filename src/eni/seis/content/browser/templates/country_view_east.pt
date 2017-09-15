@@ -54,10 +54,11 @@
               <div class="row indicators-row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                   <div tal:define="nfps context/get_nfps_list"
-                       tal:condition="python:len(nfps) > 0">
+                       tal:condition="python:len(nfps) > 0"
+                       class="nfps-container">
                     <br />
                       <h2>
-                        National Focal Points
+                        National Focal Points:
                       </h2>
 
                     <table class="table table-hover table-condensed">
