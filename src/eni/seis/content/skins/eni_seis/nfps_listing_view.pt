@@ -1,54 +1,68 @@
-<div tal:define="nfps_list context/get_nfps_list">
-  <table class="table table-responsive table-hover">
-    <tbody>
-      <tr>
-        <td>
-          <p align="center">
-            <b><i>Country</i></b>
-          </p>
-        </td>
-        <td>
-          <p align="center">
-            <b><i>Name</i></b>
-          </p>
-        </td>
-        <td>
-          <p align="center">
-            <b><i>Organisation</i></b>
-          </p>
-        </td>
-        <td>
-          <p align="center">
-            <b><i>Position </i></b>
-          </p>
-        </td>
-      </tr>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="plone">
+<body>
 
-
-
-      <tal:countries tal:repeat="country_dict python:nfps_list">
-        <tal:country tal:define="country_title python:list(country_dict)[0];
-                                   country_nfps python:country_dict[country_title]">
-          <tal:nfps tal:repeat="nfp python:country_nfps">
+<metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
+      <div tal:define="nfps_list context/get_nfps_list">
+        <table class="table table-responsive table-hover">
+          <tbody>
             <tr>
-              <td tal:attributes="rowspan python:len(country_nfps)"
-                  tal:content="python:country_title"
-                  tal:condition="python:repeat['nfp'].index == 0">
-                Country title
+              <td>
+                <p align="center">
+                  <b><i>Country</i></b>
+                </p>
               </td>
-              <td tal:content="structure python:nfp.name">
-                Name
+              <td>
+                <p align="center">
+                  <b><i>Name</i></b>
+                </p>
               </td>
-              <td tal:content="structure python:nfp.organisation">
-                Organisation
+              <td>
+                <p align="center">
+                  <b><i>Organisation</i></b>
+                </p>
               </td>
-              <td tal:content="structure python:nfp.position">
-                Position
+              <td>
+                <p align="center">
+                  <b><i>Position </i></b>
+                </p>
               </td>
             </tr>
-          </tal:nfps>
-        </tal:country>
-      </tal:countries>
-    </tbody>
-  </table>
-</div>
+
+            <tal:countries tal:repeat="country_dict python:nfps_list">
+              <tal:country tal:define="country_title python:list(country_dict)[0];
+                                         country_nfps python:country_dict[country_title]">
+                <tal:nfps tal:repeat="nfp python:country_nfps">
+                  <tr>
+                    <td tal:attributes="rowspan python:len(country_nfps)"
+                        tal:content="python:country_title"
+                        tal:condition="python:repeat['nfp'].index == 0">
+                      Country title
+                    </td>
+                    <td tal:content="structure python:nfp.name">
+                      Name
+                    </td>
+                    <td tal:content="structure python:nfp.organisation">
+                      Organisation
+                    </td>
+                    <td tal:content="structure python:nfp.position">
+                      Position
+                    </td>
+                  </tr>
+                </tal:nfps>
+              </tal:country>
+            </tal:countries>
+          </tbody>
+        </table>
+      </div>
+
+    </metal:block>
+</metal:content-core>
+</body>
+</html>
