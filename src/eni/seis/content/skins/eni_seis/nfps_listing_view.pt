@@ -8,62 +8,61 @@
 <body>
 
 <metal:content-core fill-slot="content-core">
-    <metal:block define-macro="content-core">
+  <metal:block define-macro="content-core">
 
-      <div tal:content="structure python:context.getField('text').getAccessor(context)()">
-        Body Text
-      </div>
+    <div tal:content="structure python:context.getField('text').getAccessor(context)()">
+      Body Text
+    </div>
 
-      <div tal:define="nfps_list
-        python:context.aq_parent.restrictedTraverse('get_nfps_list')()">
-        <table class="table table-responsive table-hover">
-          <thead>
-            <tr>
-              <th>Country</th>
-              <th>Name</th>
-              <th>Organisation</th>
-              <th>Position</th>
-            </tr>
-          </thead>
+    <div tal:define="nfps_list
+      python:context.aq_parent.restrictedTraverse('get_nfps_list')()">
+      <table class="table table-responsive table-hover">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Name</th>
+            <th>Organisation</th>
+            <th>Position</th>
+          </tr>
+        </thead>
 
-          <tbody>
-            <tal:countries tal:repeat="country_dict python:nfps_list">
-              <tal:country tal:define="country_title python:list(country_dict)[0];
-                                         country_nfps python:country_dict[country_title]">
-                <tal:nfps tal:repeat="nfp python:country_nfps">
-                  <tr>
-                    <td tal:attributes="rowspan python:len(country_nfps)"
-                        tal:content="python:country_title"
-                        tal:condition="python:repeat['nfp'].index == 0">
-                      Country title
-                    </td>
-                    <td tal:content="structure python:nfp.name">
-                      Name
-                    </td>
-                    <td tal:content="structure python:nfp.organisation">
-                      Organisation
-                    </td>
-                    <td tal:content="structure python:nfp.position">
-                      Position
-                    </td>
-                  </tr>
-                </tal:nfps>
-              </tal:country>
-            </tal:countries>
-          </tbody>
-        </table>
+        <tbody>
+          <tal:countries tal:repeat="country_dict python:nfps_list">
+            <tal:country tal:define="country_title python:list(country_dict)[0];
+                                       country_nfps python:country_dict[country_title]">
+              <tal:nfps tal:repeat="nfp python:country_nfps">
+                <tr>
+                  <td tal:attributes="rowspan python:len(country_nfps)"
+                      tal:content="python:country_title"
+                      tal:condition="python:repeat['nfp'].index == 0">
+                    Country title
+                  </td>
+                  <td tal:content="structure python:nfp.name">
+                    Name
+                  </td>
+                  <td tal:content="structure python:nfp.organisation">
+                    Organisation
+                  </td>
+                  <td tal:content="structure python:nfp.position">
+                    Position
+                  </td>
+                </tr>
+              </tal:nfps>
+            </tal:country>
+          </tal:countries>
+        </tbody>
+      </table>
 
-        <!-- TODO: Move styles in theme -->
-        <p style="text-align: right; ">
+      <div class="nfp-legend pull-right">
+        <p class="nfp-pdf-list">
           <img src="https://eni-seis.eionet.europa.eu/south/governance/NFPs/pdf-icon"
                alt="pdf icon" class="image-inline" title="pdf icon">
-          &nbsp;
-            <!-- Usage: Add a link with ID: latest_nfps_list to current pdf -->
+               &nbsp;
             <a href="./latest_nfps_list">
               NFPs full list
             </a>
         </p>
-        <p style="text-align: right; ">
+        <p class="nfp-latest-update">
           <span class="latest-modified-nfps"
                 tal:define="latest_modification_nfps python:max(
                   [item.modification_date for sublist in
@@ -78,13 +77,12 @@
               <span tal:content="python:latest_modification_nfps.year()">
                 2017
               </span>
-              <br />
             </small>
           </span>
         </p>
       </div>
-
-    </metal:block>
+    </div>
+  </metal:block>
 </metal:content-core>
 </body>
 </html>
