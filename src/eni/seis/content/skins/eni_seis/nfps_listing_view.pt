@@ -51,7 +51,11 @@
         <p style="text-align: right; ">
           <img src="https://eni-seis.eionet.europa.eu/south/governance/NFPs/pdf-icon"
                alt="pdf icon" class="image-inline" title="pdf icon">
-          &nbsp;NFPs full list
+          &nbsp;
+            <!-- Usage: Add a link with ID: latest_nfps_list to current pdf -->
+            <a href="./latest_nfps_list">
+              NFPs full list
+            </a>
         </p>
         <p style="text-align: right; ">
           <span class="latest-modified-nfps"
