@@ -53,7 +53,8 @@
 
               <div class="row indicators-row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                  <div>
+                  <div tal:define="nfps context/get_nfps_list"
+                       tal:condition="python:len(nfps) > 0">
                     <br />
                       <h2>
                         National Focal Points
@@ -67,7 +68,7 @@
                           <th>POSITION</th>
                         </tr>
                       </thead>
-                      <tbody tal:define="nfps context/get_nfps_list">
+                      <tbody>
                         <tr tal:repeat="nfp python:nfps">
                           <td tal:content="structure python:nfp.name">Ms Amina Benzekri</td>
                           <td tal:content="structure python:nfp.organisation">Ministère des ... </td>
