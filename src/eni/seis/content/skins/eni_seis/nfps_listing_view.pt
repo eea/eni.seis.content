@@ -9,7 +9,13 @@
 
 <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
-      <div tal:define="nfps_list context/get_nfps_list">
+
+      <div tal:content="structure python:context.getField('text').getAccessor(context)()">
+        Body Text
+      </div>
+
+      <div tal:define="nfps_list
+        python:context.aq_parent.restrictedTraverse('get_nfps_list')()">
         <table class="table table-responsive table-hover">
           <thead>
             <tr>
