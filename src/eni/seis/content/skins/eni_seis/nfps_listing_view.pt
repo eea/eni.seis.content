@@ -46,6 +46,31 @@
             </tal:countries>
           </tbody>
         </table>
+
+        <!-- TODO: Move styles in theme -->
+        <p style="text-align: right; ">
+          <img src="https://eni-seis.eionet.europa.eu/south/governance/NFPs/pdf-icon"
+               alt="pdf icon" class="image-inline" title="pdf icon">
+          &nbsp;NFPs full list
+        </p>
+        <p style="text-align: right; ">
+          <span class="latest-modified-nfps"
+                tal:define="latest_modification_nfps python:max(
+                  [item.modification_date for sublist in
+                  [country_dict[list(country_dict)[0]] for country_dict in
+                  nfps_list] for item in sublist])">
+            <small>
+              Latest update:&nbsp;
+              <span tal:content="python:latest_modification_nfps.Month()">
+                September
+              </span>
+              <span tal:content="python:latest_modification_nfps.year()">
+                2017
+              </span>
+              <br />
+            </small>
+          </span>
+        </p>
       </div>
 
     </metal:block>
