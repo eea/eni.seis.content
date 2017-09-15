@@ -58,7 +58,8 @@
                 tal:define="latest_modification_nfps python:max(
                   [item.modification_date for sublist in
                   [country_dict[list(country_dict)[0]] for country_dict in
-                  nfps_list] for item in sublist])">
+                  nfps_list] for item in sublist])"
+                tal:on-error="string:">
             <small>
               Latest update:&nbsp;
               <span tal:content="python:latest_modification_nfps.Month()">
