@@ -14,7 +14,7 @@
       Body Text
     </div>
 
-    <div tal:define="nfps_list
+    <div class="nfps-container" tal:define="nfps_list
       python:context.aq_parent.restrictedTraverse('get_nfps_list')()">
       <table class="table table-responsive table-hover">
         <thead>
@@ -33,7 +33,8 @@
               <tal:nfps tal:repeat="nfp python:country_nfps">
                 <tr>
                   <td tal:attributes="rowspan python:len(country_nfps)"
-                      tal:condition="python:repeat['nfp'].index == 0">
+                      tal:condition="python:repeat['nfp'].index == 0"
+                      class="country-title">
                     <strong tal:content="python:country_title">
                       Country title
                     </strong>
