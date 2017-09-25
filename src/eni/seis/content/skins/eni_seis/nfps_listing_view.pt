@@ -33,9 +33,10 @@
               <tal:nfps tal:repeat="nfp python:country_nfps">
                 <tr>
                   <td tal:attributes="rowspan python:len(country_nfps)"
-                      tal:content="python:country_title"
                       tal:condition="python:repeat['nfp'].index == 0">
-                    Country title
+                    <strong tal:content="python:country_title">
+                      Country title
+                    </strong>
                   </td>
                   <td tal:content="structure python:nfp.name">
                     Name
