@@ -3,14 +3,9 @@ from plone.dexterity.content import Container
 from eni.seis.content.interfaces import IIndicator
 
 
-INDICATOR_META_TYPE = 'Indicator'
-
-
 @implementer(IIndicator)
 class Indicator(Container):
     """ Indicator content type """
-
-    meta_type = INDICATOR_META_TYPE
 
     def has_external_link(self):
         """ Return True if it has a link, else False
