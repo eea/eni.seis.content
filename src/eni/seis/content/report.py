@@ -4,14 +4,9 @@ from eni.seis.content.interfaces import IReport
 from eni.seis.content.config import REPORTS_STATUS_TYPES
 
 
-REPORT_META_TYPE = 'Report'
-
-
 @implementer(IReport)
 class Report(Container):
     """ Report content type """
-
-    meta_type = REPORT_META_TYPE
 
     def has_external_link(self):
         """ Return True if it has a link, else False
