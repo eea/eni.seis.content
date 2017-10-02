@@ -71,3 +71,14 @@
   window.meeting = ns;
 })()
 
+$(document).ready(function() {
+  // Prevent multiple submitting of register form with multiple click on
+  // button 'Register to this meeting' (submit.signup). Without this, duplicate
+  // mail notification is sent to participant and contact person.
+  $('form#form-signup').submit(function() {
+    $(this).submit(function() {
+      return false;
+    });
+    return true;
+  });
+});
