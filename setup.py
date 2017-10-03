@@ -41,6 +41,7 @@ setup(
         'plone.api',
         'setuptools',
         'Products.ATVocabularyManager',
+        'z3c.jbot',
     ],
     extras_require={
         'test': [
