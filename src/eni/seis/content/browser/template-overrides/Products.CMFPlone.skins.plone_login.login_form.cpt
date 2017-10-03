@@ -1,3 +1,7 @@
+<!-- OVERRIDE:
+     For EIONET members, in Forgot your password? section use
+     http://www.eionet.europa.eu/password-reset
+-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -277,11 +281,13 @@
         </tal:use_iframe>
 
             <div id="login-forgotten-password"
-                 tal:condition="python:mail_password_url and use_normal">
+                 tal:condition="python:mail_password_url and use_normal"
+                 tal:define="is_eionet_member python:True"><!--TODO WIP-->
                 <strong i18n:translate="box_forgot_password_option">
                     Forgot your password?
                 </strong>
                 <p class="discreet"
+                   tal:condition="python:is_eionet_member is False"
                    i18n:translate="help_password_retrieval">
                     If you have forgotten your password,
                     <span i18n:name="click_here">
@@ -289,7 +295,17 @@
                             tal:attributes="href mail_password_url; target target;"
                            i18n:translate="label_click_here_to_retrieve">we can send you a new one</a></span>.
                 </p>
-            </div>
+                <p class="discreet"
+                   tal:condition="python:is_eionet_member is True">
+                    If you have forgotten your EIONET account password,
+                    <span><a href="http://www.eionet.europa.eu/password-reset">
+                      you can reset it here</a></span>. For simple accounts use
+                    <span>
+                    <a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
+                       tal:attributes="href mail_password_url; target target;">
+                      this link to reset password</a></span>.
+                </p>
+             </div>
 
             <div id="login-new-user"
                tal:condition="python:join_url and use_normal">
