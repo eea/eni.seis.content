@@ -41,6 +41,7 @@ setup(
         'plone.api',
         'setuptools',
         'Products.ATVocabularyManager',
+        'wildcard.media',
         'z3c.jbot',
     ],
     extras_require={
