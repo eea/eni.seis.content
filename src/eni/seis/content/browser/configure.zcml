@@ -153,6 +153,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="user_roles_here"
+    for="*"
+    class=".views.UserRolesHere"
+    permission="zope2.View"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"

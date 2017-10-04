@@ -488,6 +488,17 @@ class SubscriberRoles(BrowserView):
         return res
 
 
+class UserRolesHere(BrowserView):
+    """ Return a list of user roles in this context. Examples:
+        anonymous: ['anonymous']
+        admin: ['admin']
+        authenticated: ['authenticated']
+        registered for this meeting: ['authenticated', 'participant']
+    """
+    def __call__(self):
+        return ['authenticated', 'participant']
+
+
 class NFPSList(BrowserView):
     """ Return National Focal Point items list in context
         - in country context return local nfps

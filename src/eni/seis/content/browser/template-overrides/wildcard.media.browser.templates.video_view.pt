@@ -19,14 +19,25 @@
   </metal:js>
 
 <body>
+  <metal:content-core fill-slot="content-core">
+    <tal:filteredcontent tal:define="
+      user_roles python:context.restrictedTraverse('user_roles_here')();
+      can_view python:'admin' in user_roles or 'participant' in user_roles;">
+      <tal:canview tal:condition="python:can_view is True">
+        <metal:content-core define-macro="content-core" tal:define="video nocall: context">
+          <div metal:use-macro="context/wildcard_video_macro/macros/video" />
+          <div class="transcript-text" tal:content="structure context/transcript/output|nothing" />
+        </metal:content-core>
+      </tal:canview>
 
-<metal:content-core fill-slot="content-core">
-    <p>TODO Override.</p>
-    <metal:content-core define-macro="content-core" tal:define="video nocall: context">
-        <div metal:use-macro="context/wildcard_video_macro/macros/video" />
-        <div class="transcript-text" tal:content="structure context/transcript/output|nothing" />
-    </metal:content-core>
-</metal:content-core>
-
+      <tal:notcanview tal:condition="python:can_view is False">
+        <p>
+          <strong>Info:</strong>
+          This video is available only for participants of this meeting
+          and administrators. Please login.
+        </p>
+      </tal:notcanview>
+    </tal:filteredcontent>
+  </metal:content-core>
 </body>
 </html>
