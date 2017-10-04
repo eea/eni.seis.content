@@ -488,15 +488,57 @@ class SubscriberRoles(BrowserView):
         return res
 
 
+def find_meeting_in_parents(context):
+    """ If given context is added inside a meeting return meeting,
+        else None.
+    """
+    if context.portal_type == "eea.meeting":
+        return context
+    else:
+        parents = context.aq_inner.aq_parent.absolute_url().split('/')[3:]
+        obj = api.portal.get()
+        for item in parents:
+            obj = obj.restrictedTraverse(item)
+            if obj.portal_type == "eea.meeting":
+                return obj
+    return None
+
+
+def user_is_participant(context, user=None):
+    """ Check if user is registered to a meeting that has this context
+        is its children (any level).
+    """
+    if user is None:
+        user = api.user.get_current()
+    meeting = find_meeting_in_parents(context)
+    if meeting is None:
+        return False
+    else:
+        subscribers = meeting.get_subscribers()
+        if user.getProperty('email') in [x.email for x in subscribers]:
+            return True
+    return False
+
+
 class UserRolesHere(BrowserView):
     """ Return a list of user roles in this context. Examples:
-        anonymous: ['anonymous']
-        admin: ['admin']
-        authenticated: ['authenticated']
+        Anonymous: ['anonymous']
+        Site admintrator, Manager: ['admin']
+        Authenticated: ['authenticated']
         registered for this meeting: ['authenticated', 'participant']
     """
     def __call__(self):
-        return ['authenticated', 'participant']
+        roles = api.user.get_roles()
+        result = []
+        if 'Site Administrator' in roles or 'Manager' in roles:
+            result.append('admin')
+        if 'Anonymous' in roles:
+            result.append('anonymous')
+
+        if user_is_participant(context=self.context):
+            result.append('participant')
+
+        return result
 
 
 class NFPSList(BrowserView):

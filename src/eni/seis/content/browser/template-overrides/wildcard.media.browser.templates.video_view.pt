@@ -1,4 +1,5 @@
-<!-- OVERRIDE: We don't want video visible for anonymous. -->
+<!-- OVERRIDE: We want this video to be visible only for admins and
+     participants of the meeting where this video is added. -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
