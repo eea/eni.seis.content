@@ -1,5 +1,9 @@
-<!-- OVERRIDE: We want this video to be visible only for admins and
-     participants of the meeting where this video is added. -->
+<!-- OVERRIDE: If video is added inside a meeting we want this video to be
+     visible only for admins and participants.
+
+     ELSE: no added rules, use default behavior.
+     TODO: Fix this case to work.
+-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
