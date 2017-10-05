@@ -541,6 +541,21 @@ class UserRolesHere(BrowserView):
         return result
 
 
+class CanViewMeetingRestrictedContent(BrowserView):
+    """ Return True if user is admin or participant of related meeting.
+        To be used as added filter (in templates for example).
+    """
+    def __call__(self):
+        meeting = find_meeting_in_parents(self.context)
+        if meeting is not None:
+            user_roles = self.context.restrictedTraverse('user_roles_here')()
+            if 'admin' in user_roles or 'participant' in user_roles:
+                return True
+            else:
+                return False
+        return True
+
+
 class NFPSList(BrowserView):
     """ Return National Focal Point items list in context
         - in country context return local nfps

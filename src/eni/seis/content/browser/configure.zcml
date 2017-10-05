@@ -160,6 +160,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="can_view_meeting_restricted_content"
+    for="*"
+    class=".views.CanViewMeetingRestrictedContent"
+    permission="zope2.View"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"
