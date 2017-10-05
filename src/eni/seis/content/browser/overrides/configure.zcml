@@ -12,5 +12,13 @@
     layer="eni.seis.content.interfaces.IEniSeisContentLayer"
     />
 
+  <browser:page
+    for="eea.meeting.interfaces.ISubscriber"
+    name="edit"
+    class=".subscriber.EditForm"
+    permission="zope2.View"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    />
+
 </configure>
 

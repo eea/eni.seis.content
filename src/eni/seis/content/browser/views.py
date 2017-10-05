@@ -532,6 +532,10 @@ class UserRolesHere(BrowserView):
         result = []
         if 'Site Administrator' in roles or 'Manager' in roles:
             result.append('admin')
+
+        if 'Authenticated' in roles:
+            result.append('authenticated')
+
         if 'Anonymous' in roles:
             result.append('anonymous')
 
