@@ -85,15 +85,9 @@ class EditFormExtender(FormExtender):
                 required=True,
             )
 
-            self.form.fields += Fields(first_name)
-            self.form.fields += Fields(last_name)
-            self.form.fields += Fields(telephone)
-            self.form.fields += Fields(phone_numbers)
-            self.form.fields += Fields(institution)
-            self.form.fields += Fields(position)
-            self.form.fields += Fields(from_country)
-            self.form.fields += Fields(from_city)
-            self.form.fields += Fields(address)
+            self.form.fields += Fields(
+                first_name, last_name, telephone, phone_numbers,
+                institution, position, from_country, from_city, address)
 
         if self.request.REQUEST_METHOD == 'POST':
             # save values
