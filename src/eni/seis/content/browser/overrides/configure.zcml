@@ -20,5 +20,13 @@
     layer="eni.seis.content.interfaces.IEniSeisContentLayer"
     />
 
+  <adapter
+    provides="plone.z3cform.fieldsets.interfaces.IFormExtender"
+    for="eea.meeting.interfaces.ISubscriber
+    zope.publisher.interfaces.browser.IDefaultBrowserLayer
+    .subscriber.EditForm"
+    factory=".subscriber.EditFormExtender"
+    />
+
 </configure>
 
