@@ -1,24 +1,32 @@
+# -*- coding: utf-8 -*-
+from eni.seis.content.config import MessageFactory as _
 from plone.dexterity.browser import edit
 from plone.dexterity.interfaces import IDexterityEditForm
 from plone.z3cform import layout
 from zope.interface import classImplements
 from plone.z3cform.fieldsets.extensible import FormExtender
 from z3c.form.field import Fields
+from z3c.form import util
 from zope import schema
-from eni.seis.content.config import MessageFactory as _
 
 
 class EditFormExtender(FormExtender):
     def update(self):
         if self.request.REQUEST_METHOD == 'GET':
             # add fields
-            # [TODO] Initialize each field with existing value.
+            subscriber = self.context
+            details = subscriber.get_details()
+            phones = details.get("phone_numbers", "")
+            if phones == "":
+                phones = []
+
             first_name = schema.TextLine(
                 __name__="first_name",
                 title=_(u'label_first_name', default=u'Name'),
                 description=_(u'help_first_name',
                               default=u'Enter your first name.'),
                 required=True,
+                default=util.toUnicode(details.get("first_name", ""))
             )
 
             last_name = schema.TextLine(
@@ -27,14 +35,7 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_last_name',
                               default=u'Enter your last name (family name).'),
                 required=True,
-            )
-
-            telephone = schema.TextLine(
-                __name__="telephone",
-                title=_(u'label_telephone', default=u'Phone number'),
-                description=_(u'help_telephone',
-                              default=u'Fill in the phone number'),
-                required=False
+                default=util.toUnicode(details.get("last_name", ""))
             )
 
             phone_numbers = schema.List(
@@ -43,7 +44,8 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_phone_numbers',
                               default=u'Fill in phone numbers.'),
                 value_type=schema.TextLine(),
-                required=False
+                required=False,
+                default=phones
             )
 
             institution = schema.TextLine(
@@ -52,6 +54,7 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_institution',
                               default=u'Fill in the institution'),
                 required=True,
+                default=util.toUnicode(details.get("institution", ""))
             )
 
             position = schema.TextLine(
@@ -60,6 +63,7 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_position',
                               default=u'Fill in the position'),
                 required=False,
+                default=util.toUnicode(details.get("position", ""))
             )
 
             from_country = schema.TextLine(
@@ -68,6 +72,7 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_from_country',
                               default=u'Fill in the From country'),
                 required=True,
+                default=util.toUnicode(details.get("from_country", ""))
             )
 
             from_city = schema.TextLine(
@@ -76,6 +81,7 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_from_city',
                               default=u'Fill in the From city'),
                 required=False,
+                default=util.toUnicode(details.get("from_city", ""))
             )
 
             address = schema.Text(
@@ -84,10 +90,11 @@ class EditFormExtender(FormExtender):
                 description=_(u'help_address',
                               default=u'Fill in the address'),
                 required=True,
+                default=util.toUnicode(details.get("address", ""))
             )
 
             self.form.fields += Fields(
-                first_name, last_name, telephone, phone_numbers,
+                first_name, last_name, phone_numbers,
                 institution, position, from_country, from_city, address)
 
         if self.request.REQUEST_METHOD == 'POST':
