@@ -12,6 +12,7 @@ class EditFormExtender(FormExtender):
     def update(self):
         if self.request.REQUEST_METHOD == 'GET':
             # add fields
+            # [TODO] Initialize each field with existing value.
             first_name = schema.TextLine(
                 __name__="first_name",
                 title=_(u'label_first_name', default=u'Name'),
@@ -91,7 +92,17 @@ class EditFormExtender(FormExtender):
 
         if self.request.REQUEST_METHOD == 'POST':
             # save values
-            pass
+            # [TODO] Update only if the entire form was submitted.
+            # [TODO] Update user profile with these values.
+            prefix = 'form.widgets.'
+            field_names = [
+                'first_name', 'last_name', 'telephone',
+                'phone_numbers', 'institution', 'position', 'from_country',
+                'from_city', 'address']
+
+            print "UPDATED:"
+            for field_name in field_names:
+                print self.request.form.get(prefix + field_name)
 
 
 class EditForm(edit.DefaultEditForm):
