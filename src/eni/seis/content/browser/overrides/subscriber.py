@@ -25,7 +25,7 @@ class EditFormExtender(FormExtender):
                 title=_(u'label_first_name', default=u'Name'),
                 description=_(u'help_first_name',
                               default=u'Enter your first name.'),
-                required=True,
+                required=False,
                 default=util.toUnicode(details.get("first_name", ""))
             )
 
@@ -34,7 +34,7 @@ class EditFormExtender(FormExtender):
                 title=_(u'label_last_name', default=u'Surname'),
                 description=_(u'help_last_name',
                               default=u'Enter your last name (family name).'),
-                required=True,
+                required=False,
                 default=util.toUnicode(details.get("last_name", ""))
             )
 
@@ -53,7 +53,7 @@ class EditFormExtender(FormExtender):
                 title=_(u'label_institution', default=u'Institution'),
                 description=_(u'help_institution',
                               default=u'Fill in the institution'),
-                required=True,
+                required=False,
                 default=util.toUnicode(details.get("institution", ""))
             )
 
@@ -71,7 +71,7 @@ class EditFormExtender(FormExtender):
                 title=_(u'label_from_country', default=u'From country'),
                 description=_(u'help_from_country',
                               default=u'Fill in the From country'),
-                required=True,
+                required=False,
                 default=util.toUnicode(details.get("from_country", ""))
             )
 
@@ -89,7 +89,7 @@ class EditFormExtender(FormExtender):
                 title=_(u'label_address', default=u'Address'),
                 description=_(u'help_address',
                               default=u'Fill in the address'),
-                required=True,
+                required=False,
                 default=util.toUnicode(details.get("address", ""))
             )
 
