@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from eni.seis.content.config import MessageFactory as _
+from plone import api
 from plone.dexterity.browser import edit
 from plone.dexterity.interfaces import IDexterityEditForm
 from plone.z3cform import layout
@@ -16,9 +17,7 @@ class EditFormExtender(FormExtender):
             # add fields
             subscriber = self.context
             details = subscriber.get_details()
-            phones = details.get("phone_numbers", "")
-            if phones == "":
-                phones = []
+            phones = details.get("phone_numbers", "").split(", ")
 
             first_name = schema.TextLine(
                 __name__="first_name",
@@ -100,16 +99,27 @@ class EditFormExtender(FormExtender):
         if self.request.REQUEST_METHOD == 'POST':
             # save values
             if 'form.buttons.save' in self.request.form:
-                # [TODO] Update user profile with these values.
                 prefix = 'form.widgets.'
-                field_names = [
-                    'first_name', 'last_name', 'telephone',
-                    'phone_numbers', 'institution', 'position', 'from_country',
-                    'from_city', 'address']
-
-                print "UPDATED:"
-                for field_name in field_names:
-                    print self.request.form.get(prefix + field_name)
+                userid = self.request.form.get('form.widgets.userid')
+                member = api.user.get(userid=userid)
+                member.setMemberProperties(mapping={
+                    "first_name": self.request.form.get(
+                        prefix + 'first_name'),
+                    "last_name": self.request.form.get(
+                        prefix + 'last_name'),
+                    "phone_numbers": self.request.form.get(
+                        prefix + 'phone_numbers').split("\r\n"),
+                    "institution": self.request.form.get(
+                        prefix + 'institution'),
+                    "position": self.request.form.get(
+                        prefix + 'position'),
+                    "from_country": self.request.form.get(
+                        prefix + 'from_country'),
+                    "from_city": self.request.form.get(
+                        prefix + 'from_city'),
+                    "address": self.request.form.get(
+                        prefix + 'address')
+                    })
 
 
 class EditForm(edit.DefaultEditForm):
