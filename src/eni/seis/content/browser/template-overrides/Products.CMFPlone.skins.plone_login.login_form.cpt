@@ -286,15 +286,18 @@
                     Forgot your password?
                 </strong>
                 <p class="discreet">
-                    If you have forgotten your EIONET account password,
-                    <span><a href="http://www.eionet.europa.eu/password-reset">
-                      you can reset it here</a></span>. For simple accounts use
-                    <span>
-                    <a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
+                    Do you have an ENI SEIS local account?
+                    <span><a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
                        tal:attributes="href mail_password_url; target target;">
-                      this link to reset your password</a></span>.
+                      Click here to reset your password</a></span>.
+
+                    <br />
+
+                    Do you have an EIONET account?
+                    <span><a href="http://www.eionet.europa.eu/password-reset">
+                      Click here</a></span>.
                 </p>
-             </div>
+            </div>
 
             <div id="login-new-user"
                tal:condition="python:join_url and use_normal">
