@@ -20,7 +20,16 @@
     layer="eni.seis.content.interfaces.IEniSeisContentLayer"
     />
 
-  <adapter
+  <browser:page
+    for="eea.meeting.interfaces.ISubscriber"
+    name="view"
+    class=".subscriber.SubscriberView"
+    template="subscriber_view.pt"
+    permission="zope2.View"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    />
+
+ <adapter
     provides="plone.z3cform.fieldsets.interfaces.IFormExtender"
     for="eea.meeting.interfaces.ISubscriber
     zope.publisher.interfaces.browser.IDefaultBrowserLayer

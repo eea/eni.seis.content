@@ -6,9 +6,15 @@ from plone.dexterity.interfaces import IDexterityEditForm
 from plone.z3cform import layout
 from zope.interface import classImplements
 from plone.z3cform.fieldsets.extensible import FormExtender
+from Products.Five.browser import BrowserView
 from z3c.form.field import Fields
 from z3c.form import util
 from zope import schema
+
+
+class SubscriberView(BrowserView):
+    """ Override subscriber view to have member related fields
+    """
 
 
 class EditFormExtender(FormExtender):
