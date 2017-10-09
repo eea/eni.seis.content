@@ -147,6 +147,10 @@
                                                value login_name;"
                                />
 
+                        <p class="discreet" style="position: relative; left: 60px"
+                           tal:condition="use_email_as_login">
+                          (EIONET account? Use login name.)
+                        </p>
                 </div>
 
                 <div class="field"
