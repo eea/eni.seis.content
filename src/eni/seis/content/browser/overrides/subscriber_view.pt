@@ -60,13 +60,13 @@
             </span>
           </div>
 
-          <div class="field" id="formfield-form-widgets-organisation">
-            <label for="form-widgets-organisation" class="horizontal">
+          <div class="field" id="formfield-form-widgets-institution">
+            <label for="form-widgets-institution" class="horizontal">
               Organisation:
             </label>
 
-            <span id="form-widgets-organisation" class="text-widget textline-field"
-                  tal:content="python:details.get('organisation', '')">
+            <span id="form-widgets-institution" class="text-widget textline-field"
+                  tal:content="python:details.get('institution', '')">
               EDW
             </span>
           </div>
@@ -132,8 +132,7 @@
             </label>
 
             <span id="form-widgets-reimbursed" class="text-widget textline-field"
-                  tal:content="python:'Yes' if subscriber.reimbursed is True
-                  else 'No'">
+                  tal:content="python:subscriber.reimbursed and 'Yes' or 'No'">
               Yes
             </span>
           </div>
@@ -144,8 +143,7 @@
             </label>
 
             <span id="form-widgets-visa" class="text-widget textline-field"
-                  tal:content="python: 'Yes' if subscriber.visa is True else
-                  'No'">
+                  tal:content="python:subscriber.visa and 'Yes' or 'No'">
               No
             </span>
           </div>
