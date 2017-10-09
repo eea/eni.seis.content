@@ -4,6 +4,8 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="eni.seis.content">
 
+  <include package="eea.meeting" file="permissions.zcml" />
+
   <browser:page
     for="eea.meeting.interfaces.IMeeting"
     name="register"
@@ -25,7 +27,7 @@
     name="view"
     class=".subscriber.SubscriberView"
     template="subscriber_view.pt"
-    permission="zope2.View"
+    permission="eea.meeting.view_subscribers"
     layer="eni.seis.content.interfaces.IEniSeisContentLayer"
     />
 
