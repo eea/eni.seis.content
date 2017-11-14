@@ -65,8 +65,9 @@ class EditFormExtender(FormExtender):
             position = schema.TextLine(
                 __name__="position",
                 title=_(u'label_position', default=u'Position'),
-                description=_(u'help_position',
-                              default=u'Fill in the position'),
+                description=_(
+                    u'help_position',
+                    default=u'Fill in your position within your Institution'),
                 required=False,
                 default=util.toUnicode(details.get("position", ""))
             )

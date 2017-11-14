@@ -89,9 +89,10 @@ class IEnhancedUserDataSchema(IUserDataSchema):
 
     position = schema.TextLine(
         title=_(u'label_position', default=u'Position'),
-        description=_(u'help_position',
-                      default=u'Fill in the position'),
-        required=False,
+        description=_(
+            u'help_position',
+            default=u'Fill in your position within your Institution'),
+        required=True,
     )
 
     from_country = schema.TextLine(
