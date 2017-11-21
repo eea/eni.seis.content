@@ -196,6 +196,13 @@ div#internallinkcontainer div.item.list {
 
 form button, form input[type=button], input[type=submit] {
   border-radius: 0px;
+  background: <dtml-var color_primary>;
+  color: #FFFFFF;
+  border: none;
+}
+
+form button:hover, form input[type=button]:hover, input[type=submit]:hover {
+  background: <dtml-var color_accent>;
 }
 
 #content a:visited, dl.portlet a:visited,
