@@ -179,3 +179,7 @@ div#upload-button a#upload span {
 div#internallinkcontainer div.item.list {
   position: relative;
 }
+
+form button, form input[type=button], input[type=submit] {
+  border-radius: 0px;
+}
