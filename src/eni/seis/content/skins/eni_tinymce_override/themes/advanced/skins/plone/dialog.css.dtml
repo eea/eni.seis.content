@@ -1,4 +1,18 @@
-/* <dtml-call "REQUEST.set('portal_url', portal_url())"> */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())">
+
+<dtml-call "REQUEST.set('color_primary', '#1f87e8')">
+<dtml-call "REQUEST.set('color_accent', '#000000')">
+
+<dtml-if "'/east' in REQUEST.get('portal_url')">
+  <dtml-call "REQUEST.set('color_primary', '#009345')">
+  <dtml-call "REQUEST.set('color_accent', '#1f87e8')">
+</dtml-if>
+
+<dtml-if "'/south' in REQUEST.get('portal_url')">
+  <dtml-call "REQUEST.set('color_primary', '#ff6b01')">
+  <dtml-call "REQUEST.set('color_accent', '#08a8dc')">
+</dtml-if>
+*/
 
 @import "<dtml-var portal_url>/plone.css";
 
@@ -182,4 +196,18 @@ div#internallinkcontainer div.item.list {
 
 form button, form input[type=button], input[type=submit] {
   border-radius: 0px;
+}
+
+#content a:visited, dl.portlet a:visited,
+#content a:link, dl.portlet a:link,
+a:link, a:visited,
+a {
+  color: <dtml-var color_primary>;
+}
+
+#content a:visited:hover, dl.portlet a:visited:hover,
+#content a:link:hover, dl.portlet a:link:hover,
+a:link:hover, a:visited:hover,
+a:hover {
+  color: <dtml-var color_accent>;
 }
