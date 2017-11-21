@@ -164,7 +164,8 @@ font-weight: normal;
 }
 
 .widget.radioscrolllist.input-border .item.list input {
-	margin-top: 5px!important;
+  position: relative;
+  top: 5px;
 }
 
 body {
