@@ -183,7 +183,7 @@ body {
 
 div#upload-button a#upload span {
   position: relative;
-  top: -3px;
+  top: -1px;
 }
 
 #internallinkcontainer .list.item span, #internallinkcontainer .list.item a {
@@ -210,4 +210,9 @@ a {
 a:link:hover, a:visited:hover,
 a:hover {
   color: <dtml-var color_accent>;
+}
+
+#content a:link, dl.portlet a:link,
+#content a:visited, dl.portlet a:visited {
+  border-bottom: none;
 }
