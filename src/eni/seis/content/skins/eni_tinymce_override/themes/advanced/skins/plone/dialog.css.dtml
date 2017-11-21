@@ -163,11 +163,6 @@ font-weight: normal;
 	font-size: 1rem;
 }
 
-.widget.radioscrolllist.input-border .item.list input {
-  position: relative;
-  top: 5px;
-}
-
 body {
   font-family: Arial,FreeSans,sans-serif;
 }
@@ -175,4 +170,12 @@ body {
 div#upload-button a#upload span {
   position: relative;
   top: -3px;
+}
+
+#internallinkcontainer .list.item span, #internallinkcontainer .list.item a {
+  top: 10px;
+}
+
+div#internallinkcontainer div.item.list {
+  position: relative;
 }
