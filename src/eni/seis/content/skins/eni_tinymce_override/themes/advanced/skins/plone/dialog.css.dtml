@@ -170,3 +170,8 @@ font-weight: normal;
 body {
   font-family: Arial,FreeSans,sans-serif;
 }
+
+div#upload-button a#upload span {
+  position: relative;
+  top: -3px;
+}
