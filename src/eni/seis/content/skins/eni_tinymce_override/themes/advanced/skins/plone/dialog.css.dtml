@@ -166,3 +166,7 @@ font-weight: normal;
 .widget.radioscrolllist.input-border .item.list input {
 	margin-top: 5px!important;
 }
+
+body {
+  font-family: Arial,FreeSans,sans-serif;
+}
