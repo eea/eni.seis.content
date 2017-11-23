@@ -22,5 +22,8 @@ def set_folder_listing_by_default(folder, event):
     """ Set folder_listing as default Display for new created folders.
         This solves the problem: country_view_east as default Display
         for new folders added in East countries folders, for example.
-    """
-    folder.setLayout('folder_listing')
+
+        But skip this action for Folderish Event, News Item and Page.
+        """
+    if 'Folderish' not in folder.portal_type:
+        folder.setLayout('folder_listing')
