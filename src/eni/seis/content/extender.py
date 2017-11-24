@@ -37,4 +37,6 @@ class DescriptionFieldExtender(object):
         self.context = context
 
     def getFields(self):
+        if "Folderish" in self.context.portal_type:
+            return []
         return self._fields
