@@ -231,7 +231,7 @@ class CountryViewEast(BrowserView):
         """
         vocab = self.context.event_countries_vocab()
         res = self.context.portal_catalog.searchResults(
-            portal_type=['News Item'],
+            portal_type=['News Item', 'Folderish News Item'],
             review_state='published',
             sort_on='effective',
             sort_order='descending',
@@ -417,7 +417,7 @@ class GetUpcomingEventsView(BrowserView):
 
         events = [
             b.getObject() for b in self.context.portal_catalog.searchResults(
-                portal_type=['Event', 'eea.meeting'],
+                portal_type=['Event', 'Folderish Event', 'eea.meeting'],
                 review_state='published',
                 sort_on='start')
             if b.start > now
