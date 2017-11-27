@@ -26,6 +26,14 @@
     />
 
   <browser:page
+    for="Products.ATContentTypes.interfaces.IATNewsItem"
+    name="newsitem_view"
+    template="overrides/newsitem_view.pt"
+    permission="zope2.View"
+    layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    />
+
+  <browser:page
     name="homepage"
     for="*"
     permission="zope2.View"
