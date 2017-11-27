@@ -8,7 +8,7 @@
 
 if not contentFilter:
     contentFilter = {
-        'portal_type': ['Event', 'eea.meeting'],
+        'portal_type': ['Event', 'Folderish Event', 'eea.meeting'],
         'sort_on': 'start',
         'sort_order': 'descending'
     }

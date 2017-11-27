@@ -1,7 +1,7 @@
 <metal:macro define-macro="portlet">
 
 <tal:def tal:define="vocab context/event_countries_vocab;
-            news python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['News Item'], review_state='published', sort_on='effective', sort_order='descending', path='/east/communication/newsletter')];
+            news python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['News Item', 'Folderish News Item'], review_state='published', sort_on='effective', sort_order='descending', path='/east/communication/newsletter')];
             toLocalizedTime nocall: context/@@plone/toLocalizedTime;
 
             here_is_country python:context.Title() in vocab;

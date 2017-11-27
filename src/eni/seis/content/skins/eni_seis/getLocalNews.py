@@ -1,6 +1,6 @@
 vocab = context.event_countries_vocab()
 res = context.portal_catalog.searchResults(
-        portal_type=['News Item'],
+        portal_type=['News Item', 'Folderish News Item'],
         review_state='published',
         sort_on='effective',
         sort_order='descending',

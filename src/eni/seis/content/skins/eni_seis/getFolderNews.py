@@ -9,7 +9,7 @@
 
 if not contentFilter:
     contentFilter = {
-        'portal_type': ['News Item'],
+        'portal_type': ['News Item', 'Folderish News Item'],
         'sort_on': 'effective',
         'sort_order': 'descending'
     }

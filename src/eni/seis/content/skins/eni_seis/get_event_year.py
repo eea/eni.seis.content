@@ -13,7 +13,7 @@ import DateTime
 if brain is not None:
     start = brain.start
 else:
-    if event.portal_type == 'Event':
+    if event.portal_type in ['Event', 'Folderish Event']:
         start = event.start()
 
     elif event.portal_type == 'eea.meeting':

@@ -2,7 +2,7 @@
 
 <tal:def tal:define="
 vocab context/event_countries_vocab;
-events python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['Event', 'eea.meeting'], review_state='published', sort_on='start')];
+events python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['Event', 'Folderish Event', 'eea.meeting'], review_state='published', sort_on='start')];
 
 here_is_country python:context.Title() in vocab;
 

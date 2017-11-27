@@ -111,7 +111,7 @@ class CountriesViewEast(BrowserView):
         """ Return list of country visits pages
         """
         pages = self.context.portal_catalog.searchResults(
-            portal_type=['Document'],
+            portal_type=['Document', 'Folderish Document'],
             review_state='published',
             sort_on='getObjPositionInParent',
             path='/east/countries'

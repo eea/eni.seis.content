@@ -15,7 +15,7 @@ if brain is not None:
     start = brain.start
     end = brain.end
 else:
-    if event.portal_type == 'Event':
+    if event.portal_type in ['Event', 'Folderish Event']:
         start = event.start()
         end = event.end()
 

@@ -51,7 +51,7 @@
                   <tr metal:define-macro="listitem"
                     tal:define="oddrow repeat/item/odd; event_level python: context.get_event_level(item)"
                     tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')"
-                    tal:condition="python:item.portal_type == 'Event'">
+                    tal:condition="python:item.portal_type in ['Event', 'Folderish Event']">
 
                     <td><span tal:content="python: context.get_event_year(item)"></span></td>
                     <td><span tal:content="python:context.get_event_dates(item)"></span></td>
