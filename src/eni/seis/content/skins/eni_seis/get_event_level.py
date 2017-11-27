@@ -20,7 +20,7 @@ levels = {
     'national': 'national'
 }
 
-if brain.Type not in ['Event', 'EEA Meeting']:
+if brain.Type not in ['Event', 'Folderish Event', 'EEA Meeting']:
     return DEFAULT_LEVEL
 
 obj = brain.getObject()

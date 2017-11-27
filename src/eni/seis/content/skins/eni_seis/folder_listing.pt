@@ -59,10 +59,10 @@
                                    item_start item/start|item/StartDate|nothing;
                                    item_end item/end|item/EndDate|nothing;
                                    item_sametime python: item_start == item_end;
-                                   item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
+                                   item_samedate python: (item_end - item_start &lt; 1) if item_type in ['Event', 'Folderish Event'] else False">
                 <metal:block define-slot="entry">
                 <dt metal:define-macro="listitem"
-                    tal:attributes="class python:test(item_type == 'Event', 'vevent', '')">
+                    tal:attributes="class python:test(item_type in ['Event', 'Folderish Event'], 'vevent', '')">
 
                     <span class="summary">
                         <img tal:replace="structure item_icon/html_tag" />
@@ -75,14 +75,14 @@
                     </span>
 
                     <span class="documentByLine">
-                        <span tal:condition="python: item_type == 'Event' and item_sametime"
+                        <span tal:condition="python: item_type in ['Event', 'Folderish Event'] and item_sametime"
                               i18n:translate="label_event_byline_onlyfrom">
                              <abbr class="dtstart"
                                    tal:attributes="title python:item_start"
                                    tal:content="python:toLocalizedTime(item_start,long_format=1)"
                                    i18n:name="start">from date</abbr>
                         </span>
-                        <span tal:condition="python: item_type == 'Event' and item_samedate and not item_sametime"
+                        <span tal:condition="python: item_type in ['Event', 'Folderish Event'] and item_samedate and not item_sametime"
                               i18n:translate="label_event_byline_samedate">
                              <abbr class="dtstart"
                                    tal:attributes="title python:item_start"
@@ -97,7 +97,7 @@
                                    tal:content="python:toLocalizedTime(item_end,time_only=1)"
                                    i18n:name="end">to time</abbr>
                         </span>
-                        <span tal:condition="python: item_type == 'Event' and not item_samedate and not item_sametime"
+                        <span tal:condition="python: item_type in ['Event', 'Folderish Event'] and not item_samedate and not item_sametime"
                               i18n:translate="label_event_byline">
                               from
                                    <abbr class="dtstart"
@@ -109,7 +109,7 @@
                                    tal:content="python:toLocalizedTime(item_end,long_format=1)"
                                    i18n:name="end">to date</abbr>
                         </span>
-                         <span tal:condition="python: item_type == 'Event' and item.location"
+                         <span tal:condition="python: item_type in ['Event', 'Folderish Event'] and item.location"
                               i18n:translate="label_event_byline_location">&mdash;
                              <span tal:content="string:${item/location}"
                                    class="location"
@@ -137,7 +137,7 @@
 
                             </tal:name>
 
-                            <tal:modified condition="python: item_type != 'Event'">
+                            <tal:modified condition="python: item_type not it ['Event', 'Folderish Event']">
                                 &mdash;
                                 <tal:mod i18n:translate="box_last_modified">
                                   last modified

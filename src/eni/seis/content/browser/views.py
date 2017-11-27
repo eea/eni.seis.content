@@ -218,7 +218,7 @@ class CountryViewEast(BrowserView):
             from Publications folder
         """
         pages = self.context.portal_catalog.searchResults(
-            portal_type=['Document'],
+            portal_type=['Document', 'Folderish Document'],
             review_state='published',
             sort_on='id',
             path=self.context.absolute_url_path() + "/publications"

@@ -64,8 +64,8 @@
 
           <div tal:on-error="nothing" tal:condition="python: not context.portal_membership.isAnonymousUser()">
             <form method="POST" action="" tal:attributes="action string:${tab/absolute_url}/createObject">
-              <input type="hidden" name="type_name" value="Event" />
-              <button type="submit" class="btn btn-default">Create a new Event</button>
+              <input type="hidden" name="type_name" value="Folderish News Item" />
+              <button type="submit" class="btn btn-default">Create a News Item</button>
             </form>
           </div>
         </metal:entries>
