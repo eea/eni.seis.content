@@ -32,6 +32,16 @@
   </div>
 
 </tal:def>
+
+<tal:listing>
+  <div class="event-items" tal:define="folderContents python:context.getFolderContents();"
+       tal:condition="folderContents">
+    <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" >
+      <metal:fill fill-slot="long_description"></metal:fill>
+    </metal:content>
+  </div>
+</tal:listing>
+
 </metal:block>
 </metal:content-core>
 
