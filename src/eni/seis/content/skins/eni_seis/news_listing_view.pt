@@ -34,7 +34,8 @@
                     <tr metal:define-macro="listitem"
                       tal:define="oddrow repeat/item/odd; event_level python: context.get_event_level(item);
                                   news_item python:item.getObject()"
-                      tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')">
+                      tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')"
+                      tal:condition="python:news_item.portal_type in ['News Item', 'Folderish News Item']">
 
                       <td>
                         <h3><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></h3>
