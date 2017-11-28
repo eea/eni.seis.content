@@ -137,7 +137,7 @@
 
                             </tal:name>
 
-                            <tal:modified condition="python: item_type not it ['Event', 'Folderish Event']">
+                            <tal:modified condition="python: item_type not in ['Event', 'Folderish Event']">
                                 &mdash;
                                 <tal:mod i18n:translate="box_last_modified">
                                   last modified
