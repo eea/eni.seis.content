@@ -9,9 +9,6 @@
 
 DEFAULT_LEVEL = 'other'
 
-if not brain:
-    return DEFAULT_LEVEL
-
 levels = {
     'Regional Level': 'regional',
     'National Level': 'national',
@@ -20,10 +17,17 @@ levels = {
     'national': 'national'
 }
 
-if brain.Type not in ['Event', 'Folderish Event', 'EEA Meeting']:
+if event is not None:
+    obj = event
+elif brain is not None:
+    obj = brain.getObject()
+else:
     return DEFAULT_LEVEL
 
-obj = brain.getObject()
+if obj.portal_type not in ['Event', 'Folderish Event', 'EEA Meeting',
+                           'eea.meeting']:
+    return DEFAULT_LEVEL
+
 try:
     event_level = obj.event_level
 except:
