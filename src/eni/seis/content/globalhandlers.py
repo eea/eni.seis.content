@@ -26,4 +26,4 @@ def set_folder_listing_by_default(folder, event):
         But skip this action for Folderish Event, News Item and Page.
         """
     if 'Folderish' not in folder.portal_type:
-        folder.setLayout('folder_listing')
+        folder.setLayout('folder_listing_custom')
