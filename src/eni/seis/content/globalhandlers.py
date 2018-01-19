@@ -7,8 +7,13 @@ def autofillFullname(event):
         on register event.
     """
     site = getSite()
-    first_name = site.REQUEST.form.get('form.first_name', '')
-    last_name = site.REQUEST.form.get('form.last_name', '')
+    try:
+        first_name = site.REQUEST.form.get('form.first_name', '')
+        last_name = site.REQUEST.form.get('form.last_name', '')
+    except Exception:
+        # Make usable: bin/www1 adduser username password
+        first_name = last_name = u''
+
     # This event might not be triggered by the
     # default Plone form (e.g. api.user.create).
     if first_name or last_name:
