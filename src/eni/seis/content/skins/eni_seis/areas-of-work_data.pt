@@ -11,7 +11,8 @@
 
   <body metal:fill-slot="content-core">
     <div class="data-section-aow-slider row jquery-move-me">
-      <div class="col-md-3 col-xs-12 col-sm-6">
+      <div class="col-lg-1 col-md-1 hidden-sm hidden-xs" style="color:transparent;">nbsp</div>
+      <div class="col-lg-2 col-md-2 col-xs-12 col-sm-6">
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/air">
             <div class="img-circle-cropper">
@@ -24,7 +25,7 @@
           </a>
         </div>
       </div>
-      <div class="col-md-3 col-xs-12 col-sm-6">
+      <div class="col-lg-2 col-md-2 col-xs-12 col-sm-6">
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/biodiversity">
             <div class="img-circle-cropper">
@@ -37,7 +38,7 @@
           </a>
         </div>
       </div>
-      <div class="col-md-3 col-xs-12 col-sm-6">
+      <div class="col-lg-2 col-md-2 col-xs-12 col-sm-6">
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/water">
             <div class="img-circle-cropper">
@@ -50,7 +51,7 @@
           </a>
         </div>
       </div>
-      <div class="col-md-3 col-xs-12 col-sm-6">
+      <div class="col-lg-2 col-md-2 col-xs-12 col-sm-6">
         <div class="aow-slide">
           <a href="/east/areas-of-work/data/land">
             <div class="img-circle-cropper">
@@ -59,6 +60,19 @@
             </div>
             <div class="text">
               <span>Land</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-xs-12 col-sm-6">
+        <div class="aow-slide">
+          <a href="/east/areas-of-work/data/waste">
+            <div class="img-circle-cropper">
+              <img class="slide-img" src="./data-waste.png"
+                   title="by NRC for Communication EEA-Eionet">
+            </div>
+            <div class="text">
+              <span>Waste</span>
             </div>
           </a>
         </div>
