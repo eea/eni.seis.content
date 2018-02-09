@@ -1,14 +1,34 @@
+/* <dtml-call "REQUEST.set('portal_url', portal_url())">
+
+<dtml-call "REQUEST.set('color_primary', '#1f87e8')">
+<dtml-call "REQUEST.set('color_accent', '#000000')">
+
+<dtml-if "'/east' in REQUEST.get('portal_url')">
+  <dtml-call "REQUEST.set('color_primary', '#009345')">
+  <dtml-call "REQUEST.set('color_accent', '#1f87e8')">
+</dtml-if>
+
+<dtml-if "'/south' in REQUEST.get('portal_url')">
+  <dtml-call "REQUEST.set('color_primary', '#ff6b01')">
+  <dtml-call "REQUEST.set('color_accent', '#08a8dc')">
+</dtml-if>
+*/
+
 body.mceForceColors {background:#FFF; color:#000;}
 
 .mceContentBody {
-    background: transparent;
+  background: transparent;
 }
 
 .mceContentBody a {
-    color: #205C90 !important;
-    background-color: transparent;
-    text-decoration: none !important;
-    border-bottom: 1px #cccccc solid !important;
+  color: <dtml-var color_primary> !important;
+  background-color: transparent;
+  text-decoration: none !important;
+  border-bottom: 1px #cccccc solid !important;
+}
+
+.mceContentBody a:hover {
+  color: <dtml-var color_accent> !important;
 }
 
 .mceItemTable, .mceItemTable td, .mceItemTable th, .mceItemTable caption, .mceItemVisualAid {border: 1px dashed #BBB;}

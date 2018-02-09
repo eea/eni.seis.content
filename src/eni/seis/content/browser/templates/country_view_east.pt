@@ -199,7 +199,7 @@
                                        class="fa fa-square" aria-hidden="true"></i>
                                   </td>
                                   <td class="text-center">
-                                    <a tal:attributes="href indicator/absolute_url">
+                                    <a tal:attributes="href python:indicator.get_view_url()">
                                       Read more »
                                     </a>
                                   </td>
@@ -246,7 +246,7 @@
                         </span>
                       </td>
                       <td>
-                        <a tal:attributes="href report/absolute_url">
+                        <a tal:attributes="href python:report.get_view_url()">
                           Link to the report »
                         </a>
                       </td>

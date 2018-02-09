@@ -25,3 +25,12 @@ class Indicator(Container):
         """ Return True if it has a link or a file, else False
         """
         return self.has_external_link() or self.has_file()
+
+    def get_view_url(self):
+        """ Return its external link if exists or absolute_url
+            (because in some cases an indicator can act like a page with links
+            or some other content)
+        """
+        if self.has_external_link():
+            return self.external_link
+        return self.absolute_url()
