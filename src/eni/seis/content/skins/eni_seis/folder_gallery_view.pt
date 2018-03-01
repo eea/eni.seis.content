@@ -7,21 +7,52 @@
       i18n:domain="plone">
 
 <body>
+<metal:main fill-slot="main">
+  <div id="content-core">
 
-  <metal:content-core fill-slot="content-core">
+    <h1 id="parent-fieldname-title" class="documentFirstHeading"
+        tal:content="context/Title">
+      Photo gallery title
+    </h1>
 
-    <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
+    <div class="documentDescription" tal:content="context/Description">
+      Photo gallery description
+    </div>
 
-      <metal:entries fill-slot="long_description">
-        <h3>WIP Photo gallery</h3>
-        <div tal:replace="structure context/long_description" />
-      </metal:entries>
+    <div tal:replace="structure context/long_description" />
 
-      <metal:entries fill-slot="entries">
-      </metal:entries>
-    </metal:block>
+    <div class="photo-gallery-container"
+         tal:define="images python:context.getFolderContents(contentFilter={'portal_type':['Image']});
+                     images_per_row python:3;
+                     images_rows python:[images[i:i+images_per_row] for i in range(0, len(images), images_per_row)];">
 
-  </metal:content-core>
+      <tal:rows tal:repeat="images_columns python:images_rows">
+        <div class="row">
+          <tal:columns tal:repeat="image python:images_columns">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 land-publication-item"
+                 tal:define="image_obj python:image.getObject();
+                             image_title python:image_obj.Title();
+                             image_url python:image_obj.absolute_url();
+                             image_view_url python:image_obj.absolute_url() + '/view';
+                             image_cover_img python:image_url + '/image';">
+
+              <div class="photo-item">
+                <a href=""
+                   tal:attributes="href python:image_view_url">
+                  <img src="" alt="" title=""
+                       tal:attributes="src python:image_cover_img;
+                                       alt python:image_title">
+                </a>
+              </div>
+
+              <h3 class="photo-description" tal:content="python:image_title">Nice image</h3>
+            </div>
+          </tal:columns>
+        </div>
+      </tal:rows>
+    </div>
+  </div>
+</metal:main>
 
 </body>
 </html>
