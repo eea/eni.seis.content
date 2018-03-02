@@ -8,6 +8,10 @@
 
 <body>
 <metal:main fill-slot="main">
+
+  <link href="./lightbox2/css/lightbox.css" rel="stylesheet">
+  <script src="./lightbox2/js/lightbox.js"></script>
+
   <div id="photo-gallery-container">
 
     <h1 id="parent-fieldname-title" class="documentFirstHeading"
@@ -38,12 +42,16 @@
                                image_cover_img python:image_url + '/image';">
 
                 <div class="photo-item">
-                  <a href=""
-                     tal:attributes="href python:image_view_url">
-                    <img src="" alt="" title=""
-                         tal:attributes="src python:image_cover_img;
-                                         alt python:image_title">
-                  </a>
+                  <a href="http://localhost:8081/east/++theme++eni.seis.theme.east/img/logo-eu.png"
+                     data-lightbox="image-1"
+                     data-title="My caption">Image #1</a>
+                  <!-- <a href="" -->
+                  <!--    tal:attributes="href python:image_cover_img" -->
+                  <!--    data&#45;lightbox="roadtrip"> -->
+                  <!--   <img src="" alt="" title="" -->
+                  <!--        tal:attributes="src python:image_cover_img; -->
+                  <!--                        alt python:image_title"> -->
+                  <!-- </a> -->
                 </div>
 
                 <h3 class="photo-description" tal:content="python:image_title">Nice image</h3>
@@ -54,6 +62,7 @@
       </div>
     </div>
   </div>
+
 </metal:main>
 
 </body>
