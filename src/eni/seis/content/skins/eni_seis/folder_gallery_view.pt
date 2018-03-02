@@ -32,7 +32,7 @@
       <div tal:replace="structure context/long_description" />
 
       <div class="photo-gallery"
-           tal:define="images python:context.getFolderContents(contentFilter={'portal_type':['Image']});
+           tal:define="images python:context.getFolderImages();
                        images_per_row python:3;
                        images_rows python:[images[i:i+images_per_row] for i in range(0, len(images), images_per_row)];">
 
@@ -40,11 +40,8 @@
           <div class="row">
             <tal:columns tal:repeat="image python:images_columns">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 land-publication-item"
-                   tal:define="image_obj python:image.getObject();
-                               image_title python:image_obj.Title();
-                               image_url python:image_obj.absolute_url();
-                               image_view_url python:image_obj.absolute_url() + '/view';
-                               image_file python:image_url + '/image';">
+                   tal:define="image_title python:image.Title();
+                               image_file python:image.absolute_url() + '/image';">
 
                 <div class="photo-item">
                   <a href=""
