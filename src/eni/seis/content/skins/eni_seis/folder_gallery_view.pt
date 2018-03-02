@@ -40,19 +40,18 @@
           <div class="row">
             <tal:columns tal:repeat="image python:images_columns">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 land-publication-item"
-                   tal:define="image_title python:image.Title();
+                   tal:define="image_description python:image.Description();
                                image_file python:image.absolute_url() + '/image';">
 
                 <div class="photo-item">
                   <a href=""
-                     tal:attributes="href python:image_file"
+                     tal:attributes="href python:image_file;
+                                     data-title python:image_description"
                      data-lightbox="photo-item">
-
-                    <!-- Optional: data-title python:image_title -->
 
                     <img src="" alt="" title=""
                          tal:attributes="src python:image_file;
-                                         alt python:image_title" />
+                                         alt python:image_description" />
                   </a>
                 </div>
               </div>
