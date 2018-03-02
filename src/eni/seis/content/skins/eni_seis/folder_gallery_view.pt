@@ -12,9 +12,11 @@
   <script src="./lightbox2/js/lightbox.js"></script>
 </metal:javascriptslot>
 
-<metal:main fill-slot="main">
+<metal:styleslot fill-slot="style_slot">
   <link href="./lightbox2/css/lightbox.css" rel="stylesheet">
+</metal:styleslot>
 
+<metal:main fill-slot="main">
   <div id="photo-gallery-container">
 
     <h1 id="parent-fieldname-title" class="documentFirstHeading"
@@ -48,6 +50,8 @@
                   <a href=""
                      tal:attributes="href python:image_file"
                      data-lightbox="photo-item">
+
+                    <!-- Optional: data-title python:image_title -->
 
                     <img src="" alt="" title=""
                          tal:attributes="src python:image_file;
