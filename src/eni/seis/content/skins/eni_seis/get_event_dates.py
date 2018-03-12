@@ -20,10 +20,7 @@ else:
         end = event.end()
 
     elif event.portal_type == 'eea.meeting':
-        start = DateTime.DateTime(event.start)
-        end = DateTime.DateTime(event.end)
-    else:
-        return ''
+        return event.human_readable_date
 
 if not (start and end):
     return ""
