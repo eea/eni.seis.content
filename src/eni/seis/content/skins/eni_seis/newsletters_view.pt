@@ -30,7 +30,8 @@
                   <span class="icon">
                     <img src="./newsletter-icon.svg" />
                   </span>
-                  <a href="" tal:content="item/Title">
+                  <a href="" tal:content="item/Title"
+                     tal:attributes="href item/getURL">
                     Newsletter title
                   </a>
                 </h3>
