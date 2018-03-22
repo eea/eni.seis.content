@@ -5,27 +5,34 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
+
 <body>
 
-<metal:content-core fill-slot="content-core">
-  <metal:block define-macro="content-core"
-               tal:define="kssClassesView context/@@kss_field_decorator_view;
-                           getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
-                           templateId template/getId;
-                           ">
+<metal:main fill-slot="main">
+  <div id="newsletters-container">
 
-    Newsletter view EAST WIP
-    <tal:listing>
-      <div class="newsitem-items" tal:define="folderContents python:context.getFolderContents();"
-           tal:condition="folderContents">
-        <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" >
-          <metal:fill fill-slot="long_description"></metal:fill>
-        </metal:content>
-      </div>
-    </tal:listing>
+    <h1 id="parent-fieldname-title" class="documentFirstHeading"
+        tal:content="context/Title">
+      Newsletters
+    </h1>
 
-  </metal:block>
-</metal:content-core>
+    <div id="content-core">
+      <div tal:replace="structure context/long_description" />
+
+      <h4>Previous newsletters</h4>
+
+      <tal:listing>
+        <div class="newsitem-items" tal:define="folderContents python:context.getFolderContents();"
+             tal:condition="folderContents">
+          <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" >
+            <metal:fill fill-slot="long_description"></metal:fill>
+          </metal:content>
+        </div>
+      </tal:listing>
+    </div>
+  </div>
+
+</metal:main>
 
 </body>
 </html>
