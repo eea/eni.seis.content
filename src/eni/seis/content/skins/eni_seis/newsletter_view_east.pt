@@ -19,14 +19,23 @@
     <div id="content-core">
       <div tal:replace="structure context/long_description" />
 
-      <h4>Previous newsletters</h4>
+      <h3>Previous newsletters</h3>
 
       <tal:listing>
-        <div class="newsitem-items" tal:define="folderContents python:context.getFolderContents();"
+        <div class="newsletter-items" tal:define="folderContents python:context.getFolderContents();"
              tal:condition="folderContents">
-          <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" >
-            <metal:fill fill-slot="long_description"></metal:fill>
-          </metal:content>
+            <ul class="newsletters">
+              <li tal:repeat="item folderContents">
+                <h3 class="item">
+                  <span class="icon">
+                    <img src="./newsletter-icon.svg" />
+                  </span>
+                  <a href="" tal:content="item/Title">
+                    Newsletter title
+                  </a>
+                </h3>
+              </li>
+            </ul>
         </div>
       </tal:listing>
     </div>
