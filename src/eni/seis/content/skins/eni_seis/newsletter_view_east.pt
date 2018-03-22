@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+  <metal:block define-macro="content-core"
+               tal:define="kssClassesView context/@@kss_field_decorator_view;
+                           getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                           templateId template/getId;
+                           ">
+
+    Newsletter view EAST WIP
+    <tal:listing>
+      <div class="newsitem-items" tal:define="folderContents python:context.getFolderContents();"
+           tal:condition="folderContents">
+        <metal:content metal:use-macro="here/folder_tabular_view/macros/listing" >
+          <metal:fill fill-slot="long_description"></metal:fill>
+        </metal:content>
+      </div>
+    </tal:listing>
+
+  </metal:block>
+</metal:content-core>
+
+</body>
+</html>
