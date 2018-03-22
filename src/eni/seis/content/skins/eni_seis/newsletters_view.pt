@@ -19,14 +19,14 @@
     <div id="content-core">
       <div tal:replace="structure context/long_description" />
 
-      <h3>Previous newsletters</h3>
+      <h3 class="eni-section-title">Previous newsletters</h3>
 
       <tal:listing>
         <div class="newsletter-items" tal:define="folderContents python:context.getFolderContents();"
              tal:condition="folderContents">
-            <ul class="newsletters">
+            <ul class="newsletters list-group">
               <li tal:repeat="item folderContents">
-                <h3 class="item">
+                <span class="item list-group-item">
                   <span class="icon">
                     <img src="./newsletter-icon.svg" />
                   </span>
@@ -34,7 +34,7 @@
                      tal:attributes="href item/getURL">
                     Newsletter title
                   </a>
-                </h3>
+                </span>
               </li>
             </ul>
         </div>
