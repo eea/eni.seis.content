@@ -95,7 +95,7 @@ div.eni-faq-wrapper div.eni-faq-item:before {
   content: 'FAQ item';
   font-size: 10px;
   position: absolute;
-  top: -6px;
+  top: -10px;
   color: gray;
   background: white;
   padding-left: 5px;
@@ -113,7 +113,7 @@ div.eni-faq-wrapper div.eni-faq-item div.eni-faq-question:before {
   content: 'Question';
   font-size: 10px;
   position: absolute;
-  top: -6px;
+  top: -10px;
   color: gray;
   background: white;
   padding-left: 5px;
@@ -123,13 +123,14 @@ div.eni-faq-wrapper div.eni-faq-item div.eni-faq-question:before {
 div.eni-faq-wrapper div.eni-faq-item div.eni-faq-answer {
   border: 1px solid gray;
   padding: 15px;
+  position: relative;
 }
 
 div.eni-faq-wrapper div.eni-faq-item div.eni-faq-answer:before {
   content: 'Answer';
   font-size: 10px;
-  position: relative;
-  top: -25px;
+  position: absolute;
+  top: -10px;
   color: gray;
   background: white;
   padding-left: 5px;
