@@ -67,24 +67,71 @@ font[face=mceinline] {font-family:inherit !important}
 /* #92274 Styles for FAQ sections in edit mode */
 div.eni-faq-wrapper {
   border: 1px solid red;
-  padding: 10px 10px 5px 10px;
-  margin: 10px;
+  padding: 15px;
   border-style: dashed;
+  position: relative;
 }
+
+div.eni-faq-wrapper:before {
+  content: 'FAQ wrapper';
+  font-size: 10px;
+  position: absolute;
+  top: -10px;
+  color: red;
+  background: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 div.eni-faq-wrapper div.eni-faq-item {
   border: 1px solid gray;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 10px;
   border-style: dashed;
+  position: relative;
+}
+
+div.eni-faq-wrapper div.eni-faq-item:before {
+  content: 'FAQ item';
+  font-size: 10px;
+  position: absolute;
+  top: -6px;
+  color: gray;
+  background: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 div.eni-faq-wrapper div.eni-faq-item div.eni-faq-question {
-  border: 1px solid #e0e0e0;
-  padding: 10px;
+  border: 1px solid gray;
+  padding: 15px;
   margin-bottom: 10px;
+  position: relative;
+}
+
+div.eni-faq-wrapper div.eni-faq-item div.eni-faq-question:before {
+  content: 'Question';
+  font-size: 10px;
+  position: absolute;
+  top: -6px;
+  color: gray;
+  background: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 div.eni-faq-wrapper div.eni-faq-item div.eni-faq-answer {
-  border: 1px solid #e0e0e0;
-  padding: 10px;
+  border: 1px solid gray;
+  padding: 15px;
+}
+
+div.eni-faq-wrapper div.eni-faq-item div.eni-faq-answer:before {
+  content: 'Answer';
+  font-size: 10px;
+  position: relative;
+  top: -25px;
+  color: gray;
+  background: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
