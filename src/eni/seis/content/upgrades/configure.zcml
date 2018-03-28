@@ -104,5 +104,17 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.0.7"
+            destination="1.1"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeStep
+            title="Upgrade step for eni.seis.content: update indicators / reports."
+	          description="East: update country indicators and reports."
+            handler=".evolve11.run"
+            />
+
+    </genericsetup:upgradeSteps>
 
 </configure>
