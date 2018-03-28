@@ -9,8 +9,6 @@ MessageFactory = MF('eni.seis')
 
 REPORTS_TYPES = OrderedDict([
     (u"national-environmental-reports", u"National environmental reports"),
-    (u"local-environmental-reports",
-     u"Local environmental reports"),
     (u"specialized-reports-climate-national-communications-to-unfccc",
      u"Specialized reports - climate (national communications to UNFCCC)"),
     (u"specialized-reports-air",
@@ -21,9 +19,11 @@ REPORTS_TYPES = OrderedDict([
         u"Specialized reports - biodiversity"),
     (u"specialized-reports-waste", u"Specialized reports - waste"),
     (u"indicator-based-reports", u"Indicator-based reports"),
-    (u"national-statistical-yearbook", u"National Statistical Yearbook"),
     (u"national-statistical-yearbook-on-environment",
-        u"National Statistical Yearbook on environment")
+        u"National Statistical Yearbook on environment"),
+    (u"national-statistical-yearbook", u"National Statistical Yearbook"),
+    (u"report-on-sustainable-development",
+        u"Report on sustainable development")
 ])
 
 REPORTS_STATUS_TYPES = OrderedDict([
