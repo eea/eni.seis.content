@@ -117,4 +117,15 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.1"
+            destination="1.2"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Import step reports roles Environmental Assesment Reports Types vocabulary"
+            import_steps="eni.seis.environmental_assesment_reports_types"
+            />
+
+    </genericsetup:upgradeSteps>
 </configure>

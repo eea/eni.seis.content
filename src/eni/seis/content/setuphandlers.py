@@ -1,14 +1,16 @@
 """ Generic Setup
 """
-import logging
-from zope.interface import implementer
-from zope.component import queryUtility
-from zope.component.hooks import getSite
-from plone.i18n.locales.interfaces import ICountryAvailability
-from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces import INonInstallable
+from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.vocabulary import EUROPEAN_COUNTRIES
 from eni.seis.content.vocabulary import SUBSCRIBER_ROLES
+from plone.i18n.locales.interfaces import ICountryAvailability
+from zope.component import queryUtility
+from zope.component.hooks import getSite
+from zope.interface import implementer
+import logging
+
 
 logger = logging.getLogger('eni.seis')
 
@@ -121,3 +123,34 @@ def setup_subscriber_roles_vocabulary(context):
             'Adding subscriber role %s: %s within subscriber_roles vocabulary',
             key, val)
         voc.addTerm(key, val)
+
+
+def setup_environmental_assesment_reports_types_vocabulary(context):
+    """ Add reports types vocabulary to Portal vocabularies
+        (the rows of related table in Countries section of East)
+    """
+    site = getSite()
+
+    atvm = getToolByName(site, 'portal_vocabularies')
+    if not atvm:
+        logger.warn('No portal_vocabularies. Nothing to do.')
+        return
+
+    if 'environmental_assesment_reports_types' in atvm.objectIds():
+        logger.warn(
+            """ environmental_assesment_reports_types already """
+            """imported. Nothing to do.""")
+        return
+
+    atvm.invokeFactory(
+        'SimpleVocabulary',
+        'environmental_assesment_reports_types'
+    )
+
+    voc = atvm.getVocabularyByName('environmental_assesment_reports_types')
+
+    for term in REPORTS_TYPES_VOCAB._terms:
+        logger.info(
+            'Adding report type %s: %s within reports types vocabulary',
+            term.value, term.title)
+        voc.addTerm(term.value, term.title)

@@ -66,6 +66,12 @@
       title="ENI SEIS Subscriber Roles Vocabulary" description="Add Subscriber Roles Vocabulary"
       handler="eni.seis.content.setuphandlers.setup_subscriber_roles_vocabulary" />
 
+  <genericsetup:importStep
+      name="eni.seis.environmental_assesment_reports_types"
+      title="ENI SEIS Environmental Assesment Reports Types Vocabulary"
+      description="Add Environmental Assesment Reports Types Vocabulary"
+      handler="eni.seis.content.setuphandlers.setup_environmental_assesment_reports_types_vocabulary" />
+
   <subscriber
     for="Products.ATContentTypes.interfaces.IATFolder
          Products.Archetypes.event.ObjectInitializedEvent"
