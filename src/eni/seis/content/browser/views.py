@@ -4,15 +4,15 @@
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
-from eni.seis.content.config import REPORTS_TYPES
-from eni.seis.content.config import REPORTS_TYPES_VOCAB
-from eni.seis.content.config import REPORTS_CONTAINER
+from collections import OrderedDict
 from eni.seis.content.config import EAST_COUNTRIES
+from eni.seis.content.config import REPORTS_CONTAINER
+from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.config import SOUTH_COUNTRIES
-from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
-from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES
+from eni.seis.content.config import UNECE_INDICATORS_CONTAINER
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES
+from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
@@ -259,7 +259,10 @@ class ReportsDataView(BrowserView):
     def get_reports_types(self):
         """ Return possible types for a report
         """
-        return REPORTS_TYPES
+        terms = self.context.portal_vocabularies.getVocabularyByName(
+            'environmental_assesment_reports_types').items()
+        res = [(t[0], t[1].title) for t in terms]
+        return OrderedDict(res)
 
     def get_reports(self):
         """ Return all published reports found in this context
