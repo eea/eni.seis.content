@@ -94,4 +94,8 @@
       name="subscriber_roles"
       component=".vocabulary.subscriber_roles_vocabulary" />
 
+  <utility
+      name="environmental_assesment_reports_types"
+      component=".vocabulary.environmental_assesment_reports_types_vocabulary" />
+
 </configure>

@@ -138,6 +138,7 @@ SOUTH_COUNTRIES = [
     'Tunisia'
 ]
 
+# Moved in portal_vocabularies: environmental_assesment_reports_types
 REPORTS_TYPES_VOCAB = SimpleVocabulary(
     [
         SimpleTerm(

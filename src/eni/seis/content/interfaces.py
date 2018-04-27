@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
-from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
@@ -47,7 +46,7 @@ class IReport(model.Schema):
 
     report_type = schema.Choice(
         title=u"Type of the report",
-        vocabulary=REPORTS_TYPES_VOCAB,
+        vocabulary="environmental_assesment_reports_types",
         required=True
         )
 

@@ -90,3 +90,8 @@ alsoProvides(countries_vocabulary, IVocabularyFactory)
 
 subscriber_roles_vocabulary = atvocabulary_to_zope_vocab('subscriber_roles')
 alsoProvides(subscriber_roles_vocabulary, IVocabularyFactory)
+
+environmental_assesment_reports_types_vocabulary = atvocabulary_to_zope_vocab(
+    'environmental_assesment_reports_types')
+alsoProvides(
+    environmental_assesment_reports_types_vocabulary, IVocabularyFactory)
