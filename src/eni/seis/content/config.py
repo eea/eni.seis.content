@@ -13,7 +13,7 @@ REPORTS_TYPES = OrderedDict([
      u"Specialized reports - climate (national communications to UNFCCC)"),
     (u"specialized-reports-air",
      u"Specialized reports - air"),
-    (u"specialied-reports-water",
+    (u"specialized-reports-water",
      u"Specialized reports - water"),
     (u"specialized-reports-biodiversity",
         u"Specialized reports - biodiversity"),
