@@ -192,6 +192,9 @@ class CountriesViewEast(BrowserView):
             else:
                 return 'report-no-data'
 
+        reports_types = self.context.unrestrictedTraverse(
+            'reports_data').get_reports_types().keys()
+
         stats = {}
         for country in self.get_countries_folders():
             stats[country.Title()] = {}
@@ -204,6 +207,15 @@ class CountriesViewEast(BrowserView):
                     'object': report
                 }
 
+            missing_reports = [
+                x for x in reports_types if x not in [y.id for y in reports]
+            ]
+            for report in missing_reports:
+                stats[country.Title()][report] = {
+                    'status': 'N/A',
+                    'report_class': 'report-no-data',
+                    'object': None
+                }
         return stats
 
 
