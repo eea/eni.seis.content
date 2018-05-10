@@ -128,4 +128,16 @@
             />
 
     </genericsetup:upgradeSteps>
+
+    <genericsetup:upgradeSteps
+            source="1.2"
+            destination="1.3"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Import skins and tinymce settings."
+            import_steps="skins tinymce_settings"
+            />
+
+    </genericsetup:upgradeSteps>
 </configure>

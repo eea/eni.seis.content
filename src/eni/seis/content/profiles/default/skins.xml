@@ -3,13 +3,18 @@
 
     <object name="eni_seis" meta_type="Filesystem Directory View"
             directory="eni.seis.content:skins/eni_seis" />
-  
+
     <object name="eni_tinymce_override" meta_type="Filesystem Directory View"
             directory="eni.seis.content:skins/eni_tinymce_override" />
+
+    <object name="eni_tinymce_faq_section_plugin"
+            meta_type="Filesystem Directory View"
+            directory="eni.seis.content:skins/eni_tinymce_faq_section_plugin"/>
 
     <skin-path name="*">
         <layer name="eni_seis" insert-after="custom" />
         <layer name="eni_tinymce_override" insert-after="custom" />
+        <layer name="eni_tinymce_faq_section_plugin" insert-after="custom" />
     </skin-path>
 
 </object>
