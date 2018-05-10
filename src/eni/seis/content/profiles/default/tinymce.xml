@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <object>
+ <toolbar>
+  <customtoolbarbuttons purge="False">
+    <element value="eni_faq_section"/>
+  </customtoolbarbuttons>
+ </toolbar>
+
  <resourcetypes purge="False">
   <customplugins purge="False">
-    <element value="eni_faq_section|portal_skins/eni_tinymce_faq_section_plugin/editor_plugin.js"/>
+    <element value="eni_faq_section|portal_skins/eni_faq_section/editor_plugin.js"/>
   </customplugins>
  </resourcetypes>
 </object>
