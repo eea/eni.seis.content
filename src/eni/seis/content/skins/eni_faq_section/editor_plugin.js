@@ -32,7 +32,7 @@
             ed.addButton('eni_faq_section', {
                 title : 'eni_faq_section.desc',
                 cmd : 'mceENIFAQSection',
-                image : url + '/img/eni_faq_section.gif'
+                image : url + '/img/eni_faq_section.png'
             });
 
             // Add a node change handler, selects the button in the UI when a image is selected
