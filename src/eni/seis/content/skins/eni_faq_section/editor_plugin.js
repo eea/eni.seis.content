@@ -14,7 +14,6 @@
          * @param {string} url Absolute URL to where the plugin is located.
          */
         init : function(ed, url) {
-            debugger;
             // Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceENIFAQSection');
             ed.addCommand('mceENIFAQSection', function() {
                 ed.windowManager.open({
@@ -35,9 +34,9 @@
                 image : url + '/img/eni_faq_section.png'
             });
 
-            // Add a node change handler, selects the button in the UI when a image is selected
+            // Add a node change handler, selects the button in the UI when a child of .eni-faq-wrapper is selected
             ed.onNodeChange.add(function(ed, cm, n) {
-                cm.setActive('eni_faq_section', n.nodeName == 'IMG');
+              cm.setActive('eni_faq_section', $(n).closest(".eni-faq-wrapper").length);
             });
         },
 
