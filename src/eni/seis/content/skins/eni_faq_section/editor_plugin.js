@@ -17,9 +17,9 @@
             // Register the command so that it can be invoked by using tinyMCE.activeEditor.execCommand('mceENIFAQSection');
             ed.addCommand('mceENIFAQSection', function() {
                 ed.windowManager.open({
-                    file : url + '/dialog.htm',
-                    width : 320 + ed.getLang('eni_faq_section.delta_width', 0),
-                    height : 120 + ed.getLang('eni_faq_section.delta_height', 0),
+                    file : url + '/eni_faq_section.html',
+                    width : 900 + ed.getLang('eni_faq_section.delta_width', 0),
+                    height : 700 + ed.getLang('eni_faq_section.delta_height', 0),
                     inline : 1
                 }, {
                     plugin_url : url, // Plugin absolute URL
