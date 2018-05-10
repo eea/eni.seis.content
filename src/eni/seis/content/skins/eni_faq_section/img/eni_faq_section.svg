@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-109.18939"
-     inkscape:cy="725.89353"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="316.73439"
+     inkscape:cy="656.04342"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -53,52 +53,62 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:1;vector-effect:none;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1.81523716;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;vector-effect:none;fill:#fcddbc;fill-opacity:1;stroke:none;stroke-width:1.81523716;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect815"
        width="100"
        height="100"
-       x="28.181015"
-       y="53.611557"
+       x="29.846109"
+       y="60.671928"
        inkscape:export-xdpi="5.0799999"
        inkscape:export-ydpi="5.0799999" />
-    <g
-       id="g849"
-       transform="matrix(0.8959373,0,0,0.8959373,3.8255059,14.554383)"
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:51.55919647px;line-height:1.25;font-family:Andada;-inkscape-font-specification:Andada;letter-spacing:0px;word-spacing:0px;fill:#47011e;fill-opacity:1;stroke:none;stroke-width:1.28897989"
+       x="30.13781"
+       y="103.87947"
+       id="text1070"
        inkscape:export-xdpi="5.0799999"
-       inkscape:export-ydpi="5.0799999">
-      <text
-         id="text819"
-         y="114.39064"
-         x="31.391727"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:77.99570465px;line-height:1.25;font-family:Andada;-inkscape-font-specification:Andada;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.94989252"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#1a1a1a;stroke-width:1.94989252"
-           y="114.39064"
-           x="31.391727"
-           id="tspan817"
-           sodipodi:role="line">F</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:77.99570465px;line-height:1.25;font-family:Andada;-inkscape-font-specification:Andada;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.94989252"
-         x="53.420162"
-         y="139.86168"
-         id="text823"><tspan
-           sodipodi:role="line"
-           id="tspan821"
-           x="53.420162"
-           y="139.86168"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#1a1a1a;fill-opacity:1;stroke-width:1.94989252">A</tspan></text>
-      <text
-         id="text827"
-         y="115.1904"
-         x="85.197266"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:77.99570465px;line-height:1.25;font-family:Andada;-inkscape-font-specification:Andada;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.94989252"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#1a1a1a;stroke-width:1.94989252"
-           y="115.1904"
-           x="85.197266"
-           id="tspan825"
-           sodipodi:role="line">Q</tspan></text>
-    </g>
+       inkscape:export-ydpi="5.0799999"><tspan
+         sodipodi:role="line"
+         id="tspan1068"
+         x="30.13781"
+         y="103.87947"
+         style="fill:#47011e;fill-opacity:1;stroke-width:1.28897989">FAQ</tspan></text>
+    <rect
+       style="opacity:1;vector-effect:none;fill:#47011e;fill-opacity:1;stroke:none;stroke-width:1.06489432;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1072"
+       width="76.729164"
+       height="3.7797618"
+       x="34.773808"
+       y="110.65775"
+       inkscape:export-xdpi="5.0799999"
+       inkscape:export-ydpi="5.0799999" />
+    <rect
+       y="117.8393"
+       x="40.821426"
+       height="13.418155"
+       width="45.924103"
+       id="rect1074"
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.55224693;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="5.0799999"
+       inkscape:export-ydpi="5.0799999" />
+    <rect
+       y="134.65924"
+       x="34.395832"
+       height="3.7797618"
+       width="76.729164"
+       id="rect1076"
+       style="opacity:1;vector-effect:none;fill:#47011e;fill-opacity:1;stroke:none;stroke-width:1.06489432;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="5.0799999"
+       inkscape:export-ydpi="5.0799999" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.55224693;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1078"
+       width="45.924103"
+       height="13.418155"
+       x="40.443451"
+       y="141.84079"
+       inkscape:export-xdpi="5.0799999"
+       inkscape:export-ydpi="5.0799999" />
   </g>
 </svg>

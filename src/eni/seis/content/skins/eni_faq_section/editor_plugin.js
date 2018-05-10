@@ -30,7 +30,7 @@
 
             // Register eni_faq_section button
             ed.addButton('eni_faq_section', {
-                title : 'eni_faq_section.desc',
+                title : 'ENI FAQ Section',
                 cmd : 'mceENIFAQSection',
                 image : url + '/img/eni_faq_section.png'
             });
