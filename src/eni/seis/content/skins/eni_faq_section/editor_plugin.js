@@ -155,7 +155,10 @@
     },
 
     _onSave: function() {
-      alert("Saved");
+      $faq_dialog = $("iframe").contents().find("div#eni-faq-dialog");
+      // html_content = $faq_dialog.find("textarea").text();
+      html_content = "<h1>Replaced ZZZ<h1>";
+      tinyMCE.activeEditor.selection.setContent(html_content);
     },
 
     _onEdit: function() {
