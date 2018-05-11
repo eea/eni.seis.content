@@ -23,8 +23,6 @@
           inline : 1
         }, {
           plugin_url : url, // Plugin absolute URL
-          faq_html : 'WIP HTML', // Custom argument
-          editor_id: "TEXT"
         });
       });
 
@@ -158,6 +156,13 @@
 
     _onSave: function() {
       alert("Saved");
+    },
+
+    _onEdit: function() {
+      var $content = $("iframe").contents().find('div.eni-faq-wrapper').first();
+      $faq_items = $content.find("div.eni-faq-item");
+      $faq_dialog = $("iframe").contents().find("div#eni-faq-dialog");
+      $faq_dialog.find("textarea").val($faq_items.html());
     },
 
     /**

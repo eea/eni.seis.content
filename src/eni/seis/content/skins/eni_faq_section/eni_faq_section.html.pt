@@ -8,7 +8,10 @@
 <body style="display: none" role="application" aria-labelledby="app_title">
 <form onsubmit="tinymce.activeEditor.plugins.eni_faq_section._onSave();" action="#">
   <div class="mceInputPanel">
-    <div class="eni-faq-wrapper">
+    <div id="eni-faq-dialog">
+      <textarea rows="4" cols="50">
+        WIP replace with custom inputs
+      </textarea>
     </div>
   </div>
 
@@ -17,5 +20,9 @@
     <input type="button" id="cancel" name="cancel" value="Cancel" onclick="tinyMCEPopup.close();" />
   </div>
 </form>
+
+<script>
+  tinymce.activeEditor.plugins.eni_faq_section._onEdit();
+</script>
 </body>
 </html>
