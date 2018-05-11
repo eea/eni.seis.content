@@ -6,7 +6,7 @@
   <script type="text/javascript" src="./editor_plugin.js?v={tinymce_version}"></script>
 </head>
 <body style="display: none" role="application" aria-labelledby="app_title">
-<form onsubmit="debugger;" action="#">
+<form onsubmit="tinymce.activeEditor.plugins.eni_faq_section._onSave();" action="#">
   <div class="mceInputPanel">
     <div class="eni-faq-wrapper">
     </div>
