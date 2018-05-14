@@ -15,9 +15,16 @@
   margin-bottom: 1em;
 }
 
+#eni-faq-dialog button.eni-faq-delete-all,
 #eni-faq-dialog button.eni-faq-delete-question,
 #eni-faq-dialog button.eni-faq-add-question,
 #eni-faq-dialog button#faq-save {
   padding: 0.5em;
   margin-right: 1em;
+}
+
+#eni-faq-dialog button.eni-faq-delete-all {
+  position: relative;
+  float: right;
+  bottom: 4px;
 }
