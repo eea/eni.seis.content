@@ -155,16 +155,14 @@
     },
 
     _onSave: function() {
-      $faq_dialog = $("iframe").contents().find("div#eni-faq-dialog");
-      // html_content = $faq_dialog.find("textarea").text();
-      html_content = "<h1>Replaced ZZZ<h1>";
+      var html_content = $("iframe").contents().find("#eni-faq-dialog").find("textarea").val();
       tinyMCE.activeEditor.selection.setContent(html_content);
     },
 
     _onEdit: function() {
       var $content = $("iframe").contents().find('div.eni-faq-wrapper').first();
-      $faq_items = $content.find("div.eni-faq-item");
-      $faq_dialog = $("iframe").contents().find("div#eni-faq-dialog");
+      var $faq_items = $content.find("div.eni-faq-item");
+      var $faq_dialog = $("iframe").contents().find("div#eni-faq-dialog");
       $faq_dialog.find("textarea").val($faq_items.html());
     },
 
