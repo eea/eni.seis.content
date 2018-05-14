@@ -69,7 +69,8 @@
         return result;
       }
 
-      var html_content = $("iframe").contents().find("#eni-faq-dialog").find("textarea").val();
+      var $edit_dialog = $("iframe").contents().find("#eni-faq-dialog");
+      var html_content = html_edit_to_view($edit_dialog);
       tinyMCE.activeEditor.selection.setContent(html_content);
     },
 
