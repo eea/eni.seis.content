@@ -57,7 +57,7 @@
       function html_edit_to_view($edit_dialog) {
         // Prepare the html for view mode based on updated items.
         // Return the html as used in a faq section.
-        var result = "";
+        var result = "<div class='eni-faq-wrapper'>";
         $edit_dialog.find(".eni-faq-item").each(function() {
           $question = $(this).find("textarea.question");
           $answer = $(this).find("textarea.answer");
@@ -66,12 +66,15 @@
           result += "<div class='eni-faq-answer'>" + $answer.val() + "</div>";
           result += "</div>";
         });
+
+        result += "</div>"
         return result;
       }
 
       var $edit_dialog = $("iframe").contents().find("#eni-faq-dialog");
       var html_content = html_edit_to_view($edit_dialog);
-      tinyMCE.activeEditor.selection.setContent(html_content);
+      var $old_section = $("iframe").contents().find('div.eni-faq-wrapper').first();
+      $old_section.replaceWith(html_content);
     },
 
     // TODO:
