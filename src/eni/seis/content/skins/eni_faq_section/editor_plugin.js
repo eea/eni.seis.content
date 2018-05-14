@@ -58,7 +58,14 @@
         // Prepare the html for view mode based on updated items.
         // Return the html as used in a faq section.
         var result = "<div class='eni-faq-wrapper'>";
-        $edit_dialog.find(".eni-faq-item").each(function() {
+        var $faq_items = $edit_dialog.find(".eni-faq-item");
+
+        if($faq_items.length == 0) {
+          // Delete all
+          return "";
+        }
+
+        $faq_items.each(function() {
           $question = $(this).find("textarea.question");
           $answer = $(this).find("textarea.answer");
           result += "<div class='eni-faq-item'>";
@@ -73,11 +80,13 @@
 
       var $edit_dialog = $("iframe").contents().find("#eni-faq-dialog");
       var html_content = html_edit_to_view($edit_dialog);
-      var $old_section = $("iframe").contents().find('div.eni-faq-wrapper').first();
 
+      var $old_section = $("iframe").contents().find('div.eni-faq-wrapper').first();
       if($old_section.length > 0) {
+        // Update items
         $old_section.replaceWith(html_content);
       } else {
+        // Insert items in given selection
         tinyMCE.activeEditor.selection.setContent(html_content);
       }
     },
