@@ -10,9 +10,6 @@
 <form onsubmit="tinymce.activeEditor.plugins.eni_faq_section._onSave();" action="#">
   <div class="mceInputPanel">
     <div id="eni-faq-dialog">
-      <textarea rows="4" cols="50">
-        WIP replace with custom inputs
-      </textarea>
     </div>
   </div>
 

@@ -91,12 +91,6 @@
       }
     },
 
-    // TODO:
-    // - option: delete all section
-    // - clear code in theme
-    // - add styles for dialog
-    // - clear styles in theme
-
     _onEdit: function() {
       function faq_item(question_text, answer_html) {
         // Return a faq item as used in edit mode
