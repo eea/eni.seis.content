@@ -106,14 +106,16 @@
       }
 
       $(document).ready(function() {
-        $(document.body).on('click', 'button.eni-faq-delete-question', function(evt) {
+        $("iframe").contents().on('click', 'button.eni-faq-delete-question', function(evt) {
+          evt.preventDefault();
           var result = confirm("Delete item: Are you sure?");
           if (result) {
             $(this).parent().remove();
           }
         });
 
-        $(document.body).on('click', 'button.eni-faq-add-question', function(evt) {
+        $("iframe").contents().on('click', 'button.eni-faq-add-question', function(evt) {
+          evt.preventDefault();
           $(this).parent().after(faq_item("", "<p></p>"));
         });
       });
