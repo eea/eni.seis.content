@@ -1,0 +1,32 @@
+/*
+.eni-faq-dialog {
+  z-index: 99999999;
+  width: 80% !important;
+  left: 10% !important;
+  top: 10px !important;
+
+  .eni-faq-item {
+    border: 1px solid @color-gray-light;
+    padding: 1em;
+    margin-bottom: 1em;
+
+    h3 {
+      color: @color-gray-dark;
+      margin-bottom: 0.5em;
+    }
+
+    textarea.question,
+    textarea.answer {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+
+  button.eni-faq-delete-question,
+  button.eni-faq-add-question,
+  button#faq-save {
+    padding: 0.5em;
+    margin-right: 1em;
+  }
+}
+*/

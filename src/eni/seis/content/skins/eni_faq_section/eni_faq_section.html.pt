@@ -4,6 +4,7 @@
   <title>ENI FAQ Section editor</title>
   <script type="text/javascript" src="../../tiny_mce_popup.js?v={tinymce_version}"></script>
   <script type="text/javascript" src="./editor_plugin.js?v={tinymce_version}"></script>
+  <link rel="stylesheet" href="./eni_faq_section.css">
 </head>
 <body style="display: none" role="application" aria-labelledby="app_title">
 <form onsubmit="tinymce.activeEditor.plugins.eni_faq_section._onSave();" action="#">
