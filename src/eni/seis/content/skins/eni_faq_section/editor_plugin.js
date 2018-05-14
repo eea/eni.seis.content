@@ -74,12 +74,16 @@
       var $edit_dialog = $("iframe").contents().find("#eni-faq-dialog");
       var html_content = html_edit_to_view($edit_dialog);
       var $old_section = $("iframe").contents().find('div.eni-faq-wrapper').first();
-      $old_section.replaceWith(html_content);
+
+      if($old_section.length > 0) {
+        $old_section.replaceWith(html_content);
+      } else {
+        tinyMCE.activeEditor.selection.setContent(html_content);
+      }
     },
 
     // TODO:
     // - option: delete all section
-    // - option: insert section
     // - clear code in theme
     // - add styles for dialog
     // - clear styles in theme
