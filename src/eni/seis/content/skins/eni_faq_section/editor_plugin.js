@@ -74,6 +74,13 @@
       tinyMCE.activeEditor.selection.setContent(html_content);
     },
 
+    // TODO:
+    // - option: delete all section
+    // - option: insert section
+    // - clear code in theme
+    // - add styles for dialog
+    // - clear styles in theme
+
     _onEdit: function() {
       function faq_item(question_text, answer_html) {
         // Return a faq item as used in edit mode
@@ -103,10 +110,12 @@
         if($faq_items.length == 0) {
           result += faq_item("", "<p></p>");
         }
+        result += "<button class='eni-faq-delete-all'>Delete all</button>";
         return result;
       }
 
       $(document).ready(function() {
+        // Delete item
         $("iframe").contents().on('click', 'button.eni-faq-delete-question', function(evt) {
           evt.preventDefault();
           var result = confirm("Delete item: Are you sure?");
@@ -115,9 +124,19 @@
           }
         });
 
+        // Add item
         $("iframe").contents().on('click', 'button.eni-faq-add-question', function(evt) {
           evt.preventDefault();
           $(this).parent().after(faq_item("", "<p></p>"));
+        });
+
+        // Delete all items
+        $("iframe").contents().on('click', 'button.eni-faq-delete-all', function(evt) {
+          evt.preventDefault();
+          var result = confirm("Delete ALL items: Are you sure?");
+          if (result) {
+            $(this).parent().html("");
+          }
         });
       });
 
