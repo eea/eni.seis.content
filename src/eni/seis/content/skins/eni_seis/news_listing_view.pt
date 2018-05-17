@@ -38,6 +38,8 @@
                       tal:condition="python:news_item.portal_type in ['News Item', 'Folderish News Item']">
 
                       <td>
+                        <img src="" tal:attributes="src python:news_item.getLeadImagePath('thumb', 'newsitem-fallback.png')"
+                             class="news-preview" />
                         <h3><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></h3>
                         <p class="discreet">Published: <tal:block tal:content="python:toLocalizedTime(item.EffectiveDate)" /></p>
                         <div tal:content="item/Description"></div>
