@@ -122,7 +122,7 @@
                   <div tal:repeat="subtab subtabs">
                     <h4 tal:content="subtab/Title">Key Documents</h4>
 
-                    <ul tal:define="contents python:subtab.getFolderContents()[:5];
+                    <ul tal:define="contents python:subtab.getFolderContents()[:2];
                                     is_links_list python: 'link' in subtab.Title().lower();
                                     icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'"
                         class="list-group">
