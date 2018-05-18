@@ -119,35 +119,37 @@
                     Add category
                   </a>
 
-                  <div tal:repeat="subtab subtabs">
-                    <h4 tal:content="subtab/Title">Key Documents</h4>
+                  <tal:keysections tal:repeat="subtab subtabs">
+                    <div tal:define="contents python:subtab.getFolderContents();
+                                     is_links_list python: 'link' in subtab.Title().lower();
+                                     icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'">
 
-                    <ul tal:define="contents python:subtab.getFolderContents()[:2];
-                                    is_links_list python: 'link' in subtab.Title().lower();
-                                    icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'"
-                        class="list-group">
-                      <li tal:repeat="brain contents" class="list-group-item">
-                        <a href="" tal:attributes="href brain/getURL">
-                          <i tal:attributes="class python:icon_class"></i>
-                          <span tal:replace="brain/Title">Title here</span>
-                        </a>
-                      </li>
-                    </ul>
+                      <h4 tal:content="subtab/Title">Key Documents</h4>
 
-                    <a class="btn btn-default edit-text"
-                       href=""
-                       tal:attributes="href string:${subtab/absolute_url}/folder_contents">
-                      Manage contents
-                    </a>
+                      <ul class="list-group">
+                        <li tal:repeat="brain python:contents[:2]" class="list-group-item">
+                          <a href="" tal:attributes="href brain/getURL">
+                            <i tal:attributes="class python:icon_class"></i>
+                            <span tal:replace="brain/Title">Title here</span>
+                          </a>
+                        </li>
+                      </ul>
 
-                    <a
-                           href=""
-                           tal:attributes="href string:${subtab/absolute_url}"
-                           class="more-items pull-right"
-                           tal:define="subtab_description python:subtab.Description() if subtab.Description() != '' else subtab.Title()">
-                      More <span tal:replace="python:subtab_description" ></span>
-                    </a>
-                  </div>
+                      <a class="btn btn-default edit-text"
+                         href=""
+                         tal:attributes="href string:${subtab/absolute_url}/folder_contents">
+                        Manage contents
+                      </a>
+
+                      <a href=""
+                         tal:attributes="href string:${subtab/absolute_url}"
+                         tal:condition="python:len(contents) > 2"
+                         class="more-items pull-right"
+                         tal:define="subtab_description python:subtab.Description() if subtab.Description() != '' else subtab.Title()">
+                        More <span tal:replace="python:subtab_description" ></span>
+                      </a>
+                    </div>
+                  </tal:keysections>
 
                   <a class="btn btn-default edit-text"
                      href=""
