@@ -99,7 +99,7 @@
 
             <div class="container"
                  tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
-              <div class="row">
+              <div class="row country-subsection-listing">
                   <tal:keysections tal:repeat="subtab subtabs">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
                           tal:define="contents python:subtab.getFolderContents();
