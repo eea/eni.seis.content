@@ -68,7 +68,7 @@
     </div>
 
     <div class="row no-portlets">
-      <div class="col-md-7 country-right-column"
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 country-bottom-column"
            tal:define="
            query python: {'portal_type': 'Folder'};
            excluded_folders python:['nfps'];
