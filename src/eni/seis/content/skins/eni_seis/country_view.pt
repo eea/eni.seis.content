@@ -62,7 +62,9 @@
       </div>
 
       <div class="col-md-7 country-right-column">
-        <!-- National events, News -->
+        <!-- National events, Country news -->
+        <img style="display:none;" class="jquery-move-me news-image"src="./newsitem-fallback.png" />
+        <img style="display:none;" class="jquery-move-me events-image" src="./event-fallback.png" />
         <tal:block replace="structure provider:plone.rightcolumn" />
       </div>
     </div>
