@@ -61,14 +61,19 @@
         <div tal:content="structure context/long_description" ></div>
       </div>
 
+      <div class="col-md-7 country-right-column">
+        <!-- National events, News -->
+        <tal:block replace="structure provider:plone.rightcolumn" />
+      </div>
+    </div>
+
+    <div class="row no-portlets">
       <div class="col-md-7 country-right-column"
            tal:define="
            query python: {'portal_type': 'Folder'};
            excluded_folders python:['nfps'];
            tabs python: [x for x in context.getFolderContents(
            query, full_objects=True) if x.Title().lower() not in excluded_folders]">
-
-        <tal:block replace="structure provider:plone.rightcolumn" />
         <ul class="nav nav-tabs"
             tal:define="tab_icons python:{'Waste': 'icon icon-waste', 'Water':
             'icon icon-water', 'Emissions': 'icon icon-emissions', 'Nutrients':
@@ -86,7 +91,6 @@
 
         <div class="tab-content">
           <tal:tab tal:repeat="tab tabs" >
-
           <div tal:attributes="
           id tab/getId;
           class python:'tab-pane active' if not repeat['tab'].index else 'tab-pane'"
@@ -159,11 +163,9 @@
               </div>
             </div>
           </div>
-
           </tal:tab>
         </div>
       </div>
     </div>
-
   </body>
 </html>
