@@ -97,33 +97,12 @@
              class="tab-pane active"
              data-toggle="pill">
 
-            <div class="container">
+            <div class="container"
+                 tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
               <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a class="btn btn-default edit-text"
-                     href=""
-                     tal:attributes="href string:${tab/absolute_url}/edit">
-                    Edit this text
-                  </a>
-                </div>
-              </div>
-
-              <div class="row"
-                   tal:define="subtabs python:tab.getFolderContents(query, full_objects=True)">
-
-                <div tal:content="structure tab/long_description" class="col-md-8 col-xs-12">
-                  Air richtext description here
-                </div>
-
-                <div class="country-subsection-listing col-md-4 col-xs-12">
-                  <a class="btn btn-default edit-text"
-                     href=""
-                     tal:attributes="href string:${tab/absolute_url}/createObject?type_name=Folder">
-                    Add category
-                  </a>
-
                   <tal:keysections tal:repeat="subtab subtabs">
-                    <div tal:define="contents python:subtab.getFolderContents();
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                          tal:define="contents python:subtab.getFolderContents();
                                      is_links_list python: 'link' in subtab.Title().lower();
                                      icon_class python: 'fa fa-link' if is_links_list else 'fa fa-file-text-o'">
 
@@ -159,8 +138,24 @@
                      tal:attributes="href string:${tab/absolute_url}/folder_contents">
                     Manage categories
                   </a>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                     tal:content="structure tab/long_description">
+                  Air richtext description here
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <a class="btn btn-default edit-text"
+                     href=""
+                     tal:attributes="href string:${tab/absolute_url}/edit">
+                    Edit this text
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
           </tal:tab>
