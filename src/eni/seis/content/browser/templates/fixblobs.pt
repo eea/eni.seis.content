@@ -3,8 +3,8 @@
   <thead>
     <tr>
       <th>URL</th>
-      <th>Creation time</th>
-      <th>Last modified time</th>
+      <th>Creation time (YYYY/MM/DD)</th>
+      <th>Last modified time (YYYY/MM/DD)</th>
       <th>Is it broken?</th>
     </tr>
   </thead>
