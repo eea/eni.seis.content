@@ -101,7 +101,7 @@ def recurse(tree, only_check=True):
         fix_blobs(child, only_check=only_check)
 
         if IFolderish.providedBy(child):
-            recurse(child)
+            recurse(child, only_check=only_check)
 
 
 class FixBlobsOnlyCheck(BrowserView):
