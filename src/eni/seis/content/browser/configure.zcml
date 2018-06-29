@@ -167,6 +167,20 @@
     permission="zope2.View"
     />
 
+   <browser:view
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="fix-blobs-only-check"
+    class=".fixblobs.FixBlobsOnlyCheck"
+    permission="cmf.ManagePortal"
+    />
+
+   <browser:view
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="fix-blobs-imsure-delete"
+    class=".fixblobs.FixBlobs"
+    permission="cmf.ManagePortal"
+    />
+
   <!-- Publish static files -->
   <browser:resourceDirectory
     name="eni.seis.content"
