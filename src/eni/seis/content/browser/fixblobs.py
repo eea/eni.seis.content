@@ -24,8 +24,30 @@ from Products.CMFCore.interfaces import IFolderish
 from Products.Five import BrowserView
 from Products.Archetypes.Field import FileField
 from Products.Archetypes.interfaces import IBaseContent
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.namedfile.interfaces import INamedFile
 from plone.dexterity.content import DexterityContent
+
+
+all_broken_links = []
+
+
+def add_broken_link(url, creation, modification, reason):
+    """ To know what item is broken
+        when was created / last time modified
+        why is in this list: "sure" (for blobs found by classic script)
+                             "maybe" (for advanced check)
+
+        The links with maybe must be checked manually before deleting them.
+    """
+    all_broken_links.append(
+        {
+            'url': url,
+            'creation': creation,
+            'modification': modification,
+            'reason': reason
+        }
+    )
 
 
 def check_at_blobs(context):
@@ -72,6 +94,14 @@ def check_dexterity_blobs(context):
                     except POSKeyError:
                         print "Found damaged Dexterity plone.app.NamedFile \
                                 %s on %s" % (key, context.absolute_url())
+
+                        add_broken_link(
+                            url=context.absolute_url(),
+                            creation=context.creation_date,
+                            modification=context.modification_date,
+                            reason="sure"
+                        )
+
                         return True
     return False
 
@@ -86,6 +116,14 @@ def fix_blobs(context, only_check=True):
 
     if check_at_blobs(context) or check_dexterity_blobs(context):
         print "Bad blobs found on %s" % context.absolute_url() + " -> deleting"
+
+        add_broken_link(
+            url=context.absolute_url(),
+            creation=context.creation_date,
+            modification=context.modification_date,
+            reason="sure"
+        )
+
         parent = context.aq_parent
         if only_check is False:
             parent.manage_delObjects([context.getId()])
@@ -97,10 +135,14 @@ def fix_blobs_advanced(context, only_check=True):
     """
     try:
         context.get_size()
-    except Exception as e:
-        e = e
-        # import pdb; pdb.set_trace()
+    except Exception:
         print "MAYBE: {0}".format(context.absolute_url())
+        add_broken_link(
+            url=context.absolute_url(),
+            creation=context.creation_date,
+            modification=context.modification_date,
+            reason="maybe"
+        )
 
 
 def recurse(tree, only_check=True):
@@ -120,7 +162,12 @@ def recurse(tree, only_check=True):
 class FixBlobsOnlyCheck(BrowserView):
     """
         The same as FixBlobs but do not delete objects only list them
+
+        Also list broken links in page as table with details.
     """
+    index = ViewPageTemplateFile("templates/fixblobs.pt")
+    bad_items = all_broken_links
+
     def disable_integrity_check(self):
         """ Content HTML may have references to this broken image - we cannot
         fix that HTML but link integrity check will yell if we try to
@@ -148,10 +195,14 @@ class FixBlobsOnlyCheck(BrowserView):
         recurse(portal, only_check=True)
         self.enable_integrity_check()
         print "All done"
-        return "OK - check console for status messages"
+        return self.index()
+
+    @property
+    def broken_links(self):
+        return self.bad_items
 
     def __call__(self):
-        self.render()
+        return self.render()
 
 
 class FixBlobs(BrowserView):

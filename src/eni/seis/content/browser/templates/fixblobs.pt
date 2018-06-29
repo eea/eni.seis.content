@@ -1,0 +1,2 @@
+<h3>Broken links</h3>
+<span tal:replace="python:view.broken_links"></span>

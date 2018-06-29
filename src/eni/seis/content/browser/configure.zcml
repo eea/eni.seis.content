@@ -167,14 +167,15 @@
     permission="zope2.View"
     />
 
-   <browser:view
+   <browser:page
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     name="fix-blobs-only-check"
     class=".fixblobs.FixBlobsOnlyCheck"
+    template="templates/fixblobs.pt"
     permission="cmf.ManagePortal"
     />
 
-   <browser:view
+   <browser:page
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     name="fix-blobs-imsure-delete"
     class=".fixblobs.FixBlobs"
