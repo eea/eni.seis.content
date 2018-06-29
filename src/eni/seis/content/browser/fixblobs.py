@@ -29,6 +29,7 @@ from plone.namedfile.interfaces import INamedFile
 from plone.dexterity.content import DexterityContent
 
 
+only_urls = []
 all_broken_links = []
 
 
@@ -40,14 +41,16 @@ def add_broken_link(url, creation, modification, reason):
 
         The links with maybe must be checked manually before deleting them.
     """
-    all_broken_links.append(
-        {
-            'url': url,
-            'creation': creation,
-            'modification': modification,
-            'reason': reason
-        }
-    )
+    if url not in only_urls:
+        all_broken_links.append(
+            {
+                'url': url,
+                'creation': creation,
+                'modification': modification,
+                'reason': reason
+            }
+        )
+        only_urls.append(url)
 
 
 def check_at_blobs(context):

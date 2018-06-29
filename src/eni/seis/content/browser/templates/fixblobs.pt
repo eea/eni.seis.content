@@ -1,2 +1,32 @@
 <h3>Broken links</h3>
-<span tal:replace="python:view.broken_links"></span>
+<table id="broken-links">
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>Creation time</th>
+      <th>Last modified time</th>
+      <th>Is it broken?</th>
+    </tr>
+  </thead>
+  <tbody tal:define="links python:view.broken_links">
+    <tr tal:repeat="link links">
+      <td tal:content="python:link['url']">URL</td>
+      <td tal:content="python:link['creation'].strftime('%Y/%m/%d/ %H:%M')">Creation</td>
+      <td tal:content="python:link['creation'].strftime('%Y/%m/%d/ %H:%M')">Modification</td>
+      <td tal:content="python:link.get('reason', 'N/A')">maybe</td>
+    </tr>
+  </tbody>
+</table>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<style src="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></style>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function (){
+      $('#broken-links').DataTable();
+  });
+</script>
