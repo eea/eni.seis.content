@@ -91,6 +91,18 @@ def fix_blobs(context, only_check=True):
             parent.manage_delObjects([context.getId()])
 
 
+def fix_blobs_advanced(context, only_check=True):
+    """ Discover other bad objects which are not found by fix_blobs,
+        but returns the same No blob file error
+    """
+    try:
+        context.get_size()
+    except Exception as e:
+        e = e
+        # import pdb; pdb.set_trace()
+        print "MAYBE: {0}".format(context.absolute_url())
+
+
 def recurse(tree, only_check=True):
     """ Walk through all the content on a Plone site
 
@@ -99,6 +111,7 @@ def recurse(tree, only_check=True):
     for id, child in tree.contentItems():
 
         fix_blobs(child, only_check=only_check)
+        fix_blobs_advanced(child, only_check=only_check)
 
         if IFolderish.providedBy(child):
             recurse(child, only_check=only_check)
