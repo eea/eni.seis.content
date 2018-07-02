@@ -1,19 +1,3 @@
-"""
-    A Zope command line script to delete content with missing BLOB in Plone,
-    causing POSKeyErrors when content is being accessed or during
-    portal_catalog rebuild.
-
-    Tested on Plone 4.1 + Dexterity 1.1.
-
-    http://stackoverflow.com/questions/8655675/
-    cleaning-up-poskeyerror-no-blob-file-content-from-plone-site
-
-    Also see:
-
-    https://pypi.python.org/pypi/experimental.gracefulblobmissing/
-
-"""
-
 # Zope imports
 from ZODB.POSException import POSKeyError
 from zope.component import queryUtility
@@ -57,8 +41,7 @@ def add_broken_link(url, creation, modification, reason):
 
 def check_at_blobs(context):
     """ Archetypes content checker.
-
-    Return True if purge needed
+        Return True if purge needed
     """
 
     if IBaseContent.providedBy(context):
@@ -79,17 +62,13 @@ def check_at_blobs(context):
 
 def check_dexterity_blobs(context):
     """ Check Dexterity content for damaged blob fields
-
-    XXX: NOT TESTED - THEORETICAL, GUIDELINING, IMPLEMENTATION
-
-    Return True if purge needed
+        Return True if purge needed
     """
 
     # Assume dexterity contennt inherits from Item
     if isinstance(context, DexterityContent):
 
         # Iterate through all Python object attributes
-        # XXX: Might be smarter to use zope.schema introspection here?
         for key, value in context.__dict__.items():
             # Ignore non-contentish attributes to speed up us a bit
             if not key.startswith("_"):
@@ -112,11 +91,10 @@ def check_dexterity_blobs(context):
 
 
 def fix_blobs(context, only_check=True):
-    """
-    Iterate through the object variables and see if they are blob fields
-    and if the field loading fails then poof
+    """ Iterate through the object variables and see if they are blob fields
+        and if the field loading fails then poof
 
-    only_check = False if you really want to delete the objects
+        only_check = False if you really want to delete the objects
     """
 
     if check_at_blobs(context) or check_dexterity_blobs(context):
@@ -172,8 +150,7 @@ def recurse(tree, only_check=True):
 
 
 class FixBlobsOnlyCheck(BrowserView):
-    """
-        The same as FixBlobs but do not delete objects only list them
+    """ The same as FixBlobs but do not delete objects only list them
 
         Also list broken links in page as table with details.
     """
@@ -198,8 +175,6 @@ class FixBlobsOnlyCheck(BrowserView):
         props.enable_link_integrity_checks = self.old_check
 
     def render(self):
-        # plone = getMultiAdapter(
-        # (self.context, self.request), name="plone_portal_state")
         print "Checking blobs"
         portal = self.context
         self.disable_integrity_check()
@@ -222,20 +197,18 @@ class FixBlobsOnlyCheck(BrowserView):
 
 
 class FixBlobs(BrowserView):
-    """
-    A management view to clean up content with damaged BLOB files
+    """ Clean up content with damaged BLOB files
 
-    You can call this view by
+        Run it with: site/fix-blobs-imsure-delete
 
-    1) Starting Plone in debug mode (console output available)
-
-    2) Visit site.com/@@fix-blobs URL
-
+        but before this:
+        Run site/fix-blobs-only-check to check broken items to be deleted
+            manually check each link with Reason: maybe
     """
     def disable_integrity_check(self):
         """ Content HTML may have references to this broken image - we cannot
-        fix that HTML but link integrity check will yell if we try to
-        delete the bad image.
+            fix that HTML but link integrity check will yell if we try to
+            delete the bad image.
         """
 
         ptool = queryUtility(IPropertiesTool)
@@ -245,7 +218,6 @@ class FixBlobs(BrowserView):
         props.enable_link_integrity_checks = False
 
     def enable_integrity_check(self):
-        """ """
         ptool = queryUtility(IPropertiesTool)
         props = getattr(ptool, 'site_properties', None)
         props.enable_link_integrity_checks = self.old_check
