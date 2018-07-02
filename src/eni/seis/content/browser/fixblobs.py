@@ -129,8 +129,8 @@ def fix_blobs(context, only_check=True):
             reason="sure"
         )
 
-        parent = context.aq_parent
         if only_check is False:
+            parent = context.aq_parent
             parent.manage_delObjects([context.getId()])
 
 
@@ -141,13 +141,20 @@ def fix_blobs_advanced(context, only_check=True):
     try:
         context.get_size()
     except Exception:
-        print "MAYBE: {0}".format(context.absolute_url())
+        print "MAYBE: {0} -> deleting".format(context.absolute_url())
         add_broken_link(
             url=context.absolute_url(),
             creation=context.creation_date,
             modification=context.modification_date,
             reason="maybe"
         )
+
+        if only_check is False:
+            try:
+                parent = context.aq_parent
+                parent.manage_delObjects([context.getId()])
+            except Exception:
+                pass  # already deleted
 
 
 def recurse(tree, only_check=True):
