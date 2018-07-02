@@ -263,3 +263,4 @@ class FixBlobs(BrowserView):
 
     def __call__(self):
         self.render()
+        return "OK - check console for status messages"
