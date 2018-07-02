@@ -41,7 +41,9 @@ def add_broken_link(url, creation, modification, reason):
 
         The links with maybe must be checked manually before deleting them.
     """
+    global only_urls
     if url not in only_urls:
+        global all_broken_links
         all_broken_links.append(
             {
                 'url': url,
@@ -169,7 +171,6 @@ class FixBlobsOnlyCheck(BrowserView):
         Also list broken links in page as table with details.
     """
     index = ViewPageTemplateFile("templates/fixblobs.pt")
-    bad_items = all_broken_links
 
     def disable_integrity_check(self):
         """ Content HTML may have references to this broken image - we cannot
@@ -202,9 +203,14 @@ class FixBlobsOnlyCheck(BrowserView):
 
     @property
     def broken_links(self):
-        return self.bad_items
+        global all_broken_links
+        return all_broken_links
 
     def __call__(self):
+        global all_broken_links
+        all_broken_links = []
+        global only_urls
+        only_urls = []
         return self.render()
 
 
