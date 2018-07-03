@@ -13,7 +13,7 @@
     <tbody>
       <tr tal:repeat="link links">
         <td>
-          <a href="python:link['url']" tal:content="python:link['url']">url</a>
+          <a href="" tal:attributes="href python:link['url']" tal:content="python:link['url']">url</a>
         </td>
         <td tal:content="python:link['creation'].strftime('%Y/%m/%d/ %H:%M')">Creation</td>
         <td tal:content="python:link['modification'].strftime('%Y/%m/%d/ %H:%M')">Modification</td>
@@ -25,7 +25,7 @@
   <p>The same content, for easier copy-paste:</p>
   <div class="link-for-copy-paste">
     <p tal:repeat="link links">
-      <a href="python:link['url']" tal:content="python:link['url']">url</a>
+      <a href="" tal:attributes="href python:link['url']" tal:content="python:link['url']">url</a>
       (<span tal:content="python:link['creation'].strftime('%Y/%m/%d/ %H:%M')">Creation</span>,
        <span tal:content="python:link['modification'].strftime('%Y/%m/%d/ %H:%M')">Modification</span>)
     </p>
