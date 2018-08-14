@@ -140,4 +140,17 @@
             />
 
     </genericsetup:upgradeSteps>
+
+    <genericsetup:upgradeSteps
+            source="1.3"
+            destination="1.4"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import types."
+	          description="New content type: Newsletter."
+            import_steps="typeinfo"
+            />
+
+    </genericsetup:upgradeSteps>
 </configure>

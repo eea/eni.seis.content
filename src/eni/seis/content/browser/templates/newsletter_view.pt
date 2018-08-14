@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
+      <div class="newsletter-details" tal:define="
+        newsletter python:context;
+        has_link python:newsletter.has_link();
+        has_file python:newsletter.has_file();">
+
+        <div>
+          <p tal:condition="python:has_link is True">
+            Link:
+            <a tal:attributes="href python:newsletter.link"
+               tal:content="python:newsletter.link">
+              Link
+            </a>
+          </p>
+
+          <p tal:condition="python:has_file is True">
+            File:
+            <a tal:attributes="href python:newsletter.absolute_url() + '/@@download/file'"
+               tal:content="python:newsletter.file.filename">
+              Filename
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+    </metal:block>
+</metal:content-core>
+</body>
+</html>

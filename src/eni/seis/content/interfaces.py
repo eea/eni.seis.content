@@ -116,3 +116,25 @@ class INationalFocalPoint(model.Schema):
         title=u"Photo",
         required=False,
     )
+
+
+class INewsletter(model.Schema):
+    """ newsletter item
+    """
+    photo = NamedBlobImage(
+        title=u"Photo",
+        required=True,
+    )
+
+    link = schema.URI(
+        title=u"Internal or External link",
+        required=False,
+        description=u"The source for your newsletter item."
+    )
+
+    file = NamedBlobFile(
+        title=u"File",
+        required=False,
+        description=u"If you prefer you can upload the file right here. " +
+        "Let the link field empty in this case."
+    )

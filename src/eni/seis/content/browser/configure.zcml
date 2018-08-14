@@ -117,6 +117,14 @@
     />
 
   <browser:page
+    name="view"
+    for="eni.seis.content.interfaces.INewsletter"
+    class=".views.NewsletterView"
+    template="templates/newsletter_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="reports_data"
     for="*"
     class=".views.ReportsDataView"
