@@ -25,7 +25,7 @@
 
       <div class="section-newsletters"
            tal:define="newsletters python:context.getFolderNewsletters(full_objects=True);
-                       newsletters_per_row python:3;
+                       newsletters_per_row python:4;
                        newsletters_rows python:[newsletters[i:i+newsletters_per_row] for i in range(0, len(newsletters), newsletters_per_row)];">
 
         <tal:rows tal:repeat="newsletters_columns python:newsletters_rows">
