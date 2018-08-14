@@ -24,7 +24,7 @@
       <div tal:replace="structure context/long_description" />
 
       <div class="section-newsletters"
-           tal:define="newsletters python:context.getFolderNewsletters();
+           tal:define="newsletters python:context.getFolderNewsletters(full_objects=True);
                        newsletters_per_row python:3;
                        newsletters_rows python:[newsletters[i:i+newsletters_per_row] for i in range(0, len(newsletters), newsletters_per_row)];">
 
@@ -33,13 +33,20 @@
             <tal:columns tal:repeat="newsletter python:newsletters_columns">
               <div class="tile col-xs-6 col-md-3">
 
-                <a href="#" class="tile-img" title="">
-                  <img src="https://eni-seis.eionet.europa.eu/east/event-fallback.png">
+                <a href="#" class="tile-img" title=""
+                   tal:define="photo nocall:newsletter/photo"
+                   tal:condition="nocall:photo">
+                      <img tal:attributes="src string:${newsletter/absolute_url}/@@download/photo/${photo/filename};
+                                           height photo/_height | nothing;
+                                           width photo/_width | nothing;"
+                          />
                 </a>
 
-                <a href="#" class="tile-title" title="">Title</a>
+                <a href="#" class="tile-title" title=""
+                   tal:content="newsletter/Title">Title</a>
 
-                <div class="tile-footer">
+                <div class="tile-footer"
+                     tal:content="python:newsletter.toLocalizedTime(newsletter.Date())">
                   28-30 August
                   2018
                 </div>
