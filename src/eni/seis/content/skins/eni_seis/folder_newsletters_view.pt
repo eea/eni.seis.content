@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:javascriptslot fill-slot="javascript_head_slot">
+  <script src="./lightbox2/js/lightbox.js"></script>
+</metal:javascriptslot>
+
+<metal:styleslot fill-slot="style_slot">
+  <link href="./lightbox2/css/lightbox.css" rel="stylesheet">
+</metal:styleslot>
+
+<metal:main fill-slot="main">
+  <div id="photo-gallery-container">
+
+    <h1 id="parent-fieldname-title" class="documentFirstHeading"
+        tal:content="context/Title">
+      Photo gallery title
+    </h1>
+
+    <div class="documentDescription" tal:content="context/Description">
+      Photo gallery description
+    </div>
+
+    <div id="content-core">
+      <div tal:replace="structure context/long_description" />
+
+      <div class="photo-gallery"
+           tal:define="images python:context.getFolderImages();
+                       images_per_row python:3;
+                       images_rows python:[images[i:i+images_per_row] for i in range(0, len(images), images_per_row)];">
+
+        <tal:rows tal:repeat="images_columns python:images_rows">
+          <div class="row">
+            <tal:columns tal:repeat="image python:images_columns">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 land-publication-item"
+                   tal:define="image_description python:image.Description();
+                               image_file python:image.absolute_url() + '/image';">
+
+                <div class="photo-item">
+                  <a href=""
+                     tal:attributes="href python:image_file;
+                                     data-title python:image_description"
+                     data-lightbox="photo-item">
+
+                    <img src="" alt="" title=""
+                         tal:attributes="src python:image_file;
+                                         alt python:image_description" />
+                  </a>
+                </div>
+              </div>
+            </tal:columns>
+          </div>
+        </tal:rows>
+      </div>
+    </div>
+  </div>
+
+</metal:main>
+
+</body>
+</html>
