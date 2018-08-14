@@ -23,7 +23,7 @@
     <div id="content-core">
       <div tal:replace="structure context/long_description" />
 
-      <div class="newsletters-gallery"
+      <div class="section-newsletters"
            tal:define="newsletters python:context.getFolderNewsletters();
                        newsletters_per_row python:3;
                        newsletters_rows python:[newsletters[i:i+newsletters_per_row] for i in range(0, len(newsletters), newsletters_per_row)];">
@@ -31,7 +31,20 @@
         <tal:rows tal:repeat="newsletters_columns python:newsletters_rows">
           <div class="row">
             <tal:columns tal:repeat="newsletter python:newsletters_columns">
-              <span tal:replace="python: newsletter"></span>
+              <div class="tile col-xs-6 col-md-3">
+
+                <a href="#" class="tile-img" title="">
+                  <img src="https://eni-seis.eionet.europa.eu/east/event-fallback.png">
+                </a>
+
+                <a href="#" class="tile-title" title="">Title</a>
+
+                <div class="tile-footer">
+                  28-30 August
+                  2018
+                </div>
+              </div>
+
             </tal:columns>
           </div>
         </tal:rows>
