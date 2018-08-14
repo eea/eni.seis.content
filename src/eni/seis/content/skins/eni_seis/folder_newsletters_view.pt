@@ -34,6 +34,7 @@
               <div class="tile col-xs-6 col-md-3">
 
                 <a href="#" class="tile-img" title=""
+                   tal:attributes="href newsletter/get_view_url"
                    tal:define="photo nocall:newsletter/photo"
                    tal:condition="nocall:photo">
                       <img tal:attributes="src string:${newsletter/absolute_url}/@@download/photo/${photo/filename};
@@ -43,6 +44,7 @@
                 </a>
 
                 <a href="#" class="tile-title" title=""
+                   tal:attributes="href newsletter/get_view_url"
                    tal:content="newsletter/Title">Title</a>
 
                 <div class="tile-footer"

@@ -26,4 +26,8 @@ class Newsletter(Container):
         """
         if self.has_link():
             return self.link
+
+        if self.has_file():
+            return "{0}/@@download/file".format(self.absolute_url())
+
         return self.absolute_url()
