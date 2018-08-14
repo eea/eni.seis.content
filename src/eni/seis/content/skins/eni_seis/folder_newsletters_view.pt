@@ -47,10 +47,12 @@
                    tal:attributes="href newsletter/get_view_url"
                    tal:content="newsletter/Title">Title</a>
 
-                <div class="tile-footer"
-                     tal:content="python:newsletter.toLocalizedTime(newsletter.Date())">
-                  28-30 August
-                  2018
+                <div class="tile-footer">
+                  <span tal:replace="python:newsletter.toLocalizedTime(newsletter.Date())">30 Aug 2018</span>
+                  <span tal:condition="python:len(newsletter.description) > 1">
+                    -
+                    <span tal:content="newsletter/Description"></span>
+                  </span>
                 </div>
               </div>
 
