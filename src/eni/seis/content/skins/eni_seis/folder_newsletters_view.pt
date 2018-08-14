@@ -8,53 +8,30 @@
 
 <body>
 
-<metal:javascriptslot fill-slot="javascript_head_slot">
-  <script src="./lightbox2/js/lightbox.js"></script>
-</metal:javascriptslot>
-
-<metal:styleslot fill-slot="style_slot">
-  <link href="./lightbox2/css/lightbox.css" rel="stylesheet">
-</metal:styleslot>
-
 <metal:main fill-slot="main">
-  <div id="photo-gallery-container">
+  <div id="newsletter-items-container">
 
     <h1 id="parent-fieldname-title" class="documentFirstHeading"
         tal:content="context/Title">
-      Photo gallery title
+      Newsletters section title
     </h1>
 
     <div class="documentDescription" tal:content="context/Description">
-      Photo gallery description
+      Newsletters section description
     </div>
 
     <div id="content-core">
       <div tal:replace="structure context/long_description" />
 
-      <div class="photo-gallery"
-           tal:define="images python:context.getFolderImages();
-                       images_per_row python:3;
-                       images_rows python:[images[i:i+images_per_row] for i in range(0, len(images), images_per_row)];">
+      <div class="newsletters-gallery"
+           tal:define="newsletters python:context.getFolderNewsletters();
+                       newsletters_per_row python:3;
+                       newsletters_rows python:[newsletters[i:i+newsletters_per_row] for i in range(0, len(newsletters), newsletters_per_row)];">
 
-        <tal:rows tal:repeat="images_columns python:images_rows">
+        <tal:rows tal:repeat="newsletters_columns python:newsletters_rows">
           <div class="row">
-            <tal:columns tal:repeat="image python:images_columns">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 land-publication-item"
-                   tal:define="image_description python:image.Description();
-                               image_file python:image.absolute_url() + '/image';">
-
-                <div class="photo-item">
-                  <a href=""
-                     tal:attributes="href python:image_file;
-                                     data-title python:image_description"
-                     data-lightbox="photo-item">
-
-                    <img src="" alt="" title=""
-                         tal:attributes="src python:image_file;
-                                         alt python:image_description" />
-                  </a>
-                </div>
-              </div>
+            <tal:columns tal:repeat="newsletter python:newsletters_columns">
+              <span tal:replace="python: newsletter"></span>
             </tal:columns>
           </div>
         </tal:rows>
