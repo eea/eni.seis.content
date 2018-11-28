@@ -2,6 +2,7 @@
   xmlns="http://namespaces.zope.org/zope"
   xmlns:browser="http://namespaces.zope.org/browser"
   xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
   i18n_domain="eni.seis.content">
 
   <include package="eea.meeting" file="permissions.zcml" />
@@ -39,5 +40,14 @@
     factory=".subscriber.EditFormExtender"
     />
 
+  <configure zcml:condition="installed plone.app.layout">
+    <browser:viewlet
+      name="plone.links.canonical_url"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      class=".viewlets.CanonicalURL"
+      permission="zope2.View"
+      layer="eni.seis.content.interfaces.IEniSeisContentLayer"
+    />
+  </configure>
 </configure>
 
