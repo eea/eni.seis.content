@@ -41,6 +41,8 @@ FIELDS_SIGNUP = (
     ('role', 'role'),
     ('visa', 'visa'),
     ('reimbursed', 'reimbursed'),
+    ('disclaimer', 'disclaimer'),
+    ('request_data_deletion', 'request_data_deletion'),
 )
 
 
@@ -230,6 +232,8 @@ class Register(views.Register):
                 role=self.request.get('role'),
                 visa=bool(self.request.get('visa')),
                 role_other=self.request.get('role_other', ''),
+                request_data_deletion=(self.request.get(
+                    'request_data_deletion') is not None),
             )
             views.add_subscriber(subscribers, **props)
             notify(SendNewSubscriberEmailEvent(self.context))
