@@ -252,4 +252,4 @@ class Register(views.Register):
 
     @property
     def privacy_statement_url(self):
-        return "/east/privacy-statement"
+        return api.portal.get().absolute_url() + "/privacy-statement"
