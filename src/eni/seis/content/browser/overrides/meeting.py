@@ -249,3 +249,7 @@ class Register(views.Register):
             name='subscriber_roles'
         )(self.context)
         return tuple((term.token, term.title) for term in vocab)
+
+    @property
+    def privacy_statement_url(self):
+        return "/east/privacy-statement"

@@ -250,6 +250,7 @@
             <script>meeting.widget_other('#f_role', '#f_role_other')</script>
           </metal:body>
         </metal:field>
+
         <metal:field use-macro="template/macros/field">
           <metal:label fill-slot="label">
             <label for="f_visa">I need visa support letter<span class="required"></span></label>
@@ -263,6 +264,7 @@
             <span>&nbsp;</span>
           </metal:body>
         </metal:field>
+
         <metal:field use-macro="template/macros/field">
           <metal:label fill-slot="label">
             <label for="f_reimbursed">Reimbursed participation<span class="required"></span></label>
@@ -276,6 +278,21 @@
             <span class="info" title="Only a limited number of participants will be eligible for pre-paid travel ticket, accommodation and subsistence expenses, as specified in the invitation letter. Once you confirm your participation, we will provide you with additional information.">&#x24d8;</span>
           </metal:body>
         </metal:field>
+
+        <metal:field use-macro="template/macros/field">
+          <metal:label fill-slot="label">
+            <label for="f_disclaimer">
+              I consent on the processing of my personal data according to the
+              <a tal:attributes="href view/privacy_statement_url" target="_blank">privacy statement</a>
+              <span class="required advanced"></span>
+            </label>
+          </metal:label>
+          <metal:body fill-slot="body">
+            <input type="checkbox" name="disclaimer" required
+              tal:attributes="value python:fields.get('disclaimer', '')" />
+          </metal:body>
+        </metal:field>
+
         <div class="buttons">
           <span>
             <button type="submit" name="submit.signup">Register to this meeting</button>
