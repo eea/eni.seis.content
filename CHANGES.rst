@@ -4,7 +4,8 @@ Changelog
 
 1.0a1 (unreleased)
 ------------------
-- Fix eea.versions warning by reverting to original CanonicalURL viewlet.
+- Improve: add disclaimer privacy statement checkbox in meeting register.
+- Fix: eea.versions warning by reverting to original CanonicalURL viewlet.
   [GhitaB #96598]
 
   ---------------
