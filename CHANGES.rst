@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0a1 (unreleased)
-------------------
+1.0 (2018-12-07)
+----------------
 - Improve: add disclaimer privacy statement checkbox in meeting register.
 - Improve: add request_data_deletion field for subscriber. Update subscriber
   view to include its value.
