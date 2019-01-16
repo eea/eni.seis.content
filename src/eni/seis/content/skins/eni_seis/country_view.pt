@@ -80,7 +80,7 @@
             tal:define="tab_icons python:{'Waste': 'icon icon-waste', 'Water':
             'icon icon-water', 'Emissions': 'icon icon-emissions', 'Nutrients':
             'icon icon-nutrients', 'Hazardous': 'icon icon-hazardous',
-            'Litter': 'icon icon-litter'}">
+            'Litter': 'icon icon-litter', 'Key docs': 'icon icon-key-docs'}">
           <tal:tab tal:repeat="tab tabs">
           <li tal:attributes="class python:'active' if not repeat['tab'].index else ''">
             <a tal:attributes="href string:#${tab/getId}; class python:tab_icons.get(tab.Title(), 'icon icon-none')" data-toggle="tab">
