@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.1.dev0 (unreleased)
----------------------
+1.0.1 (2019-01-16)
+------------------
 - Improve: Add icon class for Key docs tab in country view - South.
   [GhitaB #101533]
 
