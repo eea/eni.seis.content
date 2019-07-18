@@ -43,6 +43,7 @@ setup(
         'Products.ATVocabularyManager',
         'wildcard.media',
         'z3c.jbot',
+        'eea.sentry',
     ],
     extras_require={
         'test': [
