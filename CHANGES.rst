@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.0.2 (2019-07-18)
 ------------------
 - Feature: Add main_template customization. Add sentry config in main_template.
   [GhitaB #107647]
