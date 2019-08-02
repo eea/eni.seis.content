@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.0.4 (unreleased)
+------------------
+
 1.0.3 (2019-08-02)
 ------------------
 - Fix: Update folder custom listing to have direct links in case of images.
