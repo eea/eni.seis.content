@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.3 (unreleased)
+1.0.3 (2019-08-02)
 ------------------
 - Fix: Update folder custom listing to have direct links in case of images.
   Useful in some cases of No blob file error for images.
