@@ -1,10 +1,9 @@
 from eni.seis.content.browser.misc import compute_broken_links
 
 HOST = 'eni-seis.eionet.europa.eu'
-PLONE = "/east"  # TODO South?
 
 
-def get_plone_site():
+def get_plone_site(PLONE):
     import Zope2
     app = Zope2.app()
     from Testing.ZopeTestCase import utils
@@ -36,5 +35,7 @@ def get_broken_links():
     This should be run through the zope client script running machinery,:
     bin/www1 run bin/get_broken_links
     """
-    site = get_plone_site()
-    compute_broken_links(site)
+    PLONES = ["/east", "/south"]
+    for PLONE in PLONES:
+        site = get_plone_site("/east")
+        compute_broken_links(site)
