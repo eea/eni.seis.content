@@ -54,20 +54,19 @@ def discover_links(string_to_search):
 def compute_broken_links(site):
     """ Script that will get called by cron once per day
     """
-    print "ZZZZZZZZZZZZZz"
-    # links = get_links(site)
-    #
-    # results = []
-    #
-    # for info in links:
-    #     res = check_link(info['link'])
-    #
-    #     if res is not None:
-    #         res['object_url'] = info['object_url']
-    #         results.append(res)
-    #
-    # IAnnotations(site)['broken_links_data'] = results
-    # transaction.commit()
+    links = get_links(site)
+
+    results = []
+
+    for info in links:
+        res = check_link(info['link'])
+
+        if res is not None:
+            res['object_url'] = info['object_url']
+            results.append(res)
+
+    IAnnotations(site)['broken_links_data'] = results
+    transaction.commit()
 
 
 def get_links(site):
@@ -78,7 +77,7 @@ def get_links(site):
     catalog = getToolByName(site, 'portal_catalog')
     query = {
         'portal_type': [
-            # TODO add portal types
+            "Document"
         ]
     }
     brains = catalog.searchResults(**query)
@@ -92,6 +91,8 @@ def get_links(site):
     logger.info('Got %s objects' % len(brains))
     for b in brains:
         obj = b.getObject()
+        print "ZZZZZZZZZZZ"
+        print obj
         path = obj.getPhysicalPath()
         if hasattr(obj, 'websites'):
             if isinstance(obj.websites, str):
@@ -104,7 +105,10 @@ def get_links(site):
                 append_urls(obj.website_of_the_local_authority, path)
         attrs = ['long_description', 'description', 'source', 'comments']
         for attr in attrs:
-            string_to_search = convert_to_string(getattr(obj, attr, ''))
+            try:
+                string_to_search = convert_to_string(getattr(obj, attr, ''))
+            except Exception:
+                string_to_search = ""
 
             if len(string_to_search) > 0:
                 if attr == 'long_description':
