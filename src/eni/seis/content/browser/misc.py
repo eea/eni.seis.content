@@ -1,4 +1,4 @@
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 from Products.CMFPlone.utils import getToolByName
 from zope.annotation.interfaces import IAnnotations
 import logging
@@ -54,19 +54,20 @@ def discover_links(string_to_search):
 def compute_broken_links(site):
     """ Script that will get called by cron once per day
     """
-    links = get_links(site)
-
-    results = []
-
-    for info in links:
-        res = check_link(info['link'])
-
-        if res is not None:
-            res['object_url'] = info['object_url']
-            results.append(res)
-
-    IAnnotations(site)['broken_links_data'] = results
-    transaction.commit()
+    print "ZZZZZZZZZZZZZz"
+    # links = get_links(site)
+    #
+    # results = []
+    #
+    # for info in links:
+    #     res = check_link(info['link'])
+    #
+    #     if res is not None:
+    #         res['object_url'] = info['object_url']
+    #         results.append(res)
+    #
+    # IAnnotations(site)['broken_links_data'] = results
+    # transaction.commit()
 
 
 def get_links(site):
