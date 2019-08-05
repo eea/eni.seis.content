@@ -1,0 +1,50 @@
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xml:lang="en"
+  lang="en"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="eni.seis.content">
+
+  <body>
+    <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="content-core">
+    <div class="CSSTableGenerator">
+      <table tal:define="results view/results">
+        <thead>
+          <tr>
+            <th>Broken Links</th>
+            <th>Object URL</th>
+            <th>Status Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tal:rep repeat="result view/results">
+            <tr tal:condition="result">
+              <td>
+                <a href="" tal:attributes="href python: result['url']"
+                  target="_blank" tal:content="python: result['url']">
+                </a>
+              </td>
+              <td>
+                <a
+                  href=""
+                  target="_blank"
+                  tal:define="url python: view.url(result['object_url'])"
+                  tal:attributes="href url"
+                  tal:content="url">
+                  URL
+                </a>
+              </td>
+              <td tal:content="python: result['status']"></td>
+            </tr>
+          </tal:rep>
+        </tbody>
+      </table>
+    </div>
+    </tal:main-macro>
+    </metal:main>
+  </body>
+</html>

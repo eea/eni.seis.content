@@ -1,5 +1,6 @@
-from bs4 import BeautifulSoup
 from Products.CMFPlone.utils import getToolByName
+from Products.Five.browser import BrowserView
+from bs4 import BeautifulSoup
 from zope.annotation.interfaces import IAnnotations
 import logging
 import re
@@ -8,6 +9,30 @@ import transaction
 
 
 logger = logging.getLogger('eni.seis.content')
+
+
+class DetectBrokenLinksView(BrowserView):
+    """ View for detecting broken links"""
+
+    def url(self, path):
+        path = '/'.join(path[2:])
+
+        return path
+
+    def results(self):
+        annot = IAnnotations(self.context)
+        res = []
+        for info in annot.get('broken_links_data', []):
+            try:
+                obj = self.context.restrictedTraverse(info['object_url'])
+            except:
+                continue
+            state = get_state(obj)
+
+            if state not in ['private', 'archived']:
+                res.append(info)
+
+        return res
 
 
 def convert_to_string(item):

@@ -34,6 +34,14 @@
     />
 
   <browser:page
+    class=".misc.DetectBrokenLinksView"
+    for="*"
+    name="broken-links"
+    permission="zope2.View"
+    template="templates/detect_links.pt"
+    />
+
+  <browser:page
     name="get_upcoming_events"
     for="*"
     permission="zope2.View"
