@@ -106,7 +106,7 @@ def get_links(site):
     catalog = getToolByName(site, 'portal_catalog')
     query = {
         'portal_type': [
-            "Document"
+            "Document"  # TODO Update types
         ]
     }
     brains = catalog.searchResults(**query)
@@ -122,8 +122,6 @@ def get_links(site):
     logger.info('Got %s objects' % len(brains))
     for b in brains:
         obj = b.getObject()
-        print "ZZZZZZZZZZZ"
-        print obj
         path = obj.getPhysicalPath()
         if hasattr(obj, 'websites'):
             if isinstance(obj.websites, str):
@@ -135,6 +133,7 @@ def get_links(site):
             if obj.portal_type == 'eea.climateadapt.city_profile':
                 append_urls(obj.website_of_the_local_authority, path)
         attrs = ['long_description', 'description', 'source', 'comments']
+        # TODO update fields
         for attr in attrs:
             try:
                 string_to_search = convert_to_string(getattr(obj, attr, ''))
