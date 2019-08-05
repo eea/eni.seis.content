@@ -64,5 +64,7 @@ setup(
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
+    [console_scripts]
+    get_broken_links = eni.seis.content.browser.scripts:get_broken_links
     """,
 )
