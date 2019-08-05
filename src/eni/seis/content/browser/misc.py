@@ -1,6 +1,7 @@
 from Products.CMFPlone.utils import getToolByName
 from Products.Five.browser import BrowserView
 from bs4 import BeautifulSoup
+from plone.api.content import get_state
 from zope.annotation.interfaces import IAnnotations
 import logging
 import re
@@ -64,7 +65,10 @@ def discover_links(string_to_search):
     # [a-z]{2,4}/)(?:[^\s()<>]|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>
     # ]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'\".,<>?\xab\xbb\u201c\u201d\u2018
     # \u2019]))')
-    REGEX = re.compile('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
+
+    REGEX = re.compile(
+        r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|'
+        r'[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
 
     try:
         result = re.findall(REGEX, string_to_search) or []
@@ -108,10 +112,12 @@ def get_links(site):
     brains = catalog.searchResults(**query)
     urls = []
 
-    append_urls = lambda link, path: urls.append({
-        'link': link,
-        'object_url': path
-    })
+    def append_urls(link, path):
+        urls.append({
+            'link': link,
+            'object_url': path
+        })
+
     count = 0
     logger.info('Got %s objects' % len(brains))
     for b in brains:
