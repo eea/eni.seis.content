@@ -138,26 +138,19 @@ def get_links(site):
             'link': link,
             'object_url': path
         })
+        print link
 
     count = 0
     logger.info('Got %s objects' % len(brains))
     for b in brains:
         obj = b.getObject()
         path = obj.getPhysicalPath()
-        if hasattr(obj, 'websites'):
-            if isinstance(obj.websites, str):
-                append_urls(obj.websites, path)
-            else:
-                for url in obj.websites:
-                    append_urls(url, path)
-        else:
-            if obj.portal_type == 'eea.climateadapt.city_profile':
-                append_urls(obj.website_of_the_local_authority, path)
         attrs = ['long_description', 'description', 'source', 'comments']
-        # TODO update fields
-        print obj.portal_type
+
+        if obj.portal_type in ["report", "indicator"]:
+            attrs.append('external_link')
+
         for attr in attrs:
-            print attr
             try:
                 string_to_search = convert_to_string(getattr(obj, attr, ''))
             except Exception:
@@ -179,17 +172,6 @@ def get_links(site):
                     links = list(set(links))
                     for link in links:
                         append_urls(link, path)
-
-        if obj.portal_type == 'collective.cover.content':
-            for tile in obj.list_tiles():
-                if 'richtext' in obj.get_tile_type(tile):
-                    richtext = obj.get_tile(tile).getText()
-                    bs = BeautifulSoup(richtext)
-                    links = bs.findAll(
-                        'a', attrs={'href': re.compile("^https?://")}
-                    )
-                    for link in links:
-                        append_urls(link.get('href'), path)
 
         count += 1
         if count % 100 == 0:
