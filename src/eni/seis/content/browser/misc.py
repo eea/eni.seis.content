@@ -106,7 +106,28 @@ def get_links(site):
     catalog = getToolByName(site, 'portal_catalog')
     query = {
         'portal_type': [
-            "Document"  # TODO Update types
+            'Document',
+            'Event',
+            'File',
+            'Folder',
+            'Image',
+            'Link',
+            'News Item',
+            'eea.meeting',
+            'eea.meeting.subscribers',
+            'eea.meeting.subscriber',
+            'eea.meeting.email',
+            'eea.meeting.emails',
+            'report',
+            'indicator',
+            'nfp',
+            'Folderish Document',
+            'Folderish Event',
+            'Folderish News Item',
+            'WildcardVideo',
+            'WildcardAudio',
+            'newsletter',
+            'eea.meeting.workspace'
         ]
     }
     brains = catalog.searchResults(**query)
@@ -134,7 +155,9 @@ def get_links(site):
                 append_urls(obj.website_of_the_local_authority, path)
         attrs = ['long_description', 'description', 'source', 'comments']
         # TODO update fields
+        print obj.portal_type
         for attr in attrs:
+            print attr
             try:
                 string_to_search = convert_to_string(getattr(obj, attr, ''))
             except Exception:
