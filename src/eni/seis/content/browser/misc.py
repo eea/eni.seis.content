@@ -185,7 +185,7 @@ def check_link(link):
     """ Check the links and return only the broken ones with the respective
         status codes
     """
-
+    print "?" + link
     if link:
         if isinstance(link, unicode):
             link = link.encode()
