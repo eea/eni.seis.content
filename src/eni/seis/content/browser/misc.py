@@ -114,18 +114,12 @@ def get_links(site):
             'Link',
             'News Item',
             'eea.meeting',
-            'eea.meeting.subscribers',
-            'eea.meeting.subscriber',
-            'eea.meeting.email',
-            'eea.meeting.emails',
             'report',
             'indicator',
             'nfp',
             'Folderish Document',
             'Folderish Event',
             'Folderish News Item',
-            'WildcardVideo',
-            'WildcardAudio',
             'newsletter',
             'eea.meeting.workspace'
         ]
