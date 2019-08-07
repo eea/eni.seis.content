@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.5 (unreleased)
+1.0.5 (2019-08-07)
 ------------------
 - Fix: script for South.
   [GhitaB #108137]
