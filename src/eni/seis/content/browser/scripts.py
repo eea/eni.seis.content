@@ -37,5 +37,5 @@ def get_broken_links():
     """
     PLONES = ["/east", "/south"]
     for PLONE in PLONES:
-        site = get_plone_site("/east")
+        site = get_plone_site(PLONE)
         compute_broken_links(site)
