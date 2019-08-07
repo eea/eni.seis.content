@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.0.5 (unreleased)
+------------------
+
 1.0.4 (2019-08-07)
 ------------------
 - Feature: implement broken-links view and script.
