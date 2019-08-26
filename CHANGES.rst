@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.0.7 (unreleased)
+------------------
+
 1.0.6 (2019-08-26)
 ------------------
 - Improve: Show last update info in broken-links view.
