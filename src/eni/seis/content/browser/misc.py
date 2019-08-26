@@ -1,3 +1,4 @@
+from DateTime import DateTime
 from Products.CMFPlone.utils import getToolByName
 from Products.Five.browser import BrowserView
 from bs4 import BeautifulSoup
@@ -34,6 +35,10 @@ class DetectBrokenLinksView(BrowserView):
                 res.append(info)
 
         return res
+
+    def last_update(self):
+        annot = IAnnotations(self.context)
+        return annot.get('broken_links_data_updated', 'N/A')
 
 
 def convert_to_string(item):
@@ -94,7 +99,9 @@ def compute_broken_links(site):
             res['object_url'] = info['object_url']
             results.append(res)
 
+    last_update = DateTime().strftime("%a, %d %b %Y %H:%M:%S")
     IAnnotations(site)['broken_links_data'] = results
+    IAnnotations(site)['broken_links_data_updated'] = last_update
     transaction.commit()
 
 

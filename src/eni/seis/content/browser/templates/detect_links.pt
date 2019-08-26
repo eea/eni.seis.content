@@ -42,8 +42,14 @@
               <td tal:content="python: result['status']"></td>
             </tr>
           </tal:rep>
+
         </tbody>
       </table>
+
+      <p class="info-update">
+        <span>Last update:</span>
+        <span tal:content="view/last_update"></span>
+      </p>
     </div>
     </tal:main-macro>
     </metal:main>
