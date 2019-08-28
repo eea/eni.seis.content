@@ -47,12 +47,14 @@ In 2017, the share of protected areas is 6.4% of the total territory of the Repu
 
       <h3>Development with the designation of nationally protected areas as a tool for biodiversity conservation</h3>
 
-      <p>Since 1971 protection of biodiversity through development of protected areas has been implemented in the Republic of Moldova. In the beginning, only a slight portion of the country’s territory was under protection. However, starting from early 1998 Moldova has been establishing the legal framework for developing and expanding the protected areas network across the country. Despite the total number of the protected areas has not changed substantially over the time, by means of  expanding boundaries of the protected areas with inclusion of wetlands and biosphere reserves, the area of nationally designated protected sites has been remarkably expanded from 664.7 km2 in 1998 up to  2107 km2 in 2018. This corresponds 6.4% of the country territory today. In 2018, the Republic of Moldova holds 311 protected sites in the country.</p>
+      <div class="image-container">
+        <img src="./images/image-demo-indicator1.png" />
+        <p class="image-caption">Since 1971 protection of biodiversity through development of protected areas has been implemented in the Republic of Moldova. In the beginning, only a slight portion of the country’s territory was under protection. However, starting from early 1998 Moldova has been establishing the legal framework for developing and expanding the protected areas network across the country. Despite the total number of the protected areas has not changed substantially over the time, by means of  expanding boundaries of the protected areas with inclusion of wetlands and biosphere reserves, the area of nationally designated protected sites has been remarkably expanded from 664.7 km2 in 1998 up to  2107 km2 in 2018. This corresponds 6.4% of the country territory today. In 2018, the Republic of Moldova holds 311 protected sites in the country.</p>
+      </div>
+
       <p>Despite all efforts, designation of protected areas is not solely a guarantee of biodiversity protection. Therefore, beyond this quantitative analysis, specific information on site management and quality would help to complete the assessment of affectiveness of the protected areas management. </p>
       <p>The Aichi target 11 of the Convention on Biological Diversity aims to, by 2020, at least 17 per cent of terrestrial areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well-connected systems of protected areas and other effective area-based conservation measures, and integrated into the wider landscape and seascape (See the Aichic target 11; https://www.cbd.int/sp/targets/rationale/target-11/). </p>
       <p>The national biodiversity strategy and action plan 2015-2020 aims to reach 10% of the country to be under protection including Emerald sites. With the coverage of 6.4% of its territory, the Republic of Moldova is still far from reaching to the national and  Aichi target 11. </p>
-
-
 
     </div>
   </div>
@@ -93,6 +95,24 @@ body.template-indicator_demo main.page-main div.key-messages {
   background: #F8F8F8;
   /* border-left: 1em solid #737373; */
   border-left: 1em solid #1f87e8;
+}
+
+body.template-indicator_demo main.page-main div.image-container {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+body.template-indicator_demo main.page-main div.image-container img {
+  margin: 20px;
+}
+
+body.template-indicator_demo main.page-main div.image-container p.image-caption {
+  text-align: left;
+  background: #F8F8F8;
+  border-left: 1em solid #737373;
+  padding: 20px;
+  font-size: 80%;
 }
 
 </style>
