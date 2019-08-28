@@ -8,8 +8,11 @@
 
 <body>
 
+<tal:col metal:fill-slot="portlets_one_slot"></tal:col>
+<tal:col metal:fill-slot="portlets_two_slot"></tal:col>
+
 <metal:main fill-slot="main">
-  <div id="newsletter-items-container">
+  <div id="indicator-container">
 
     <h1 id="parent-fieldname-title" class="documentFirstHeading">
       Demo indicator
@@ -24,6 +27,11 @@
     </div>
   </div>
 
+<style>
+body.template-indicator_demo main.page-main {
+  width: 100%;
+}
+</style>
 </metal:main>
 
 </body>
