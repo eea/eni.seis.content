@@ -15,21 +15,56 @@
   <div id="indicator-container">
 
     <h1 id="parent-fieldname-title" class="documentFirstHeading">
-      Demo indicator
+      Nationally designated protected areas of Republic of Moldova
     </h1>
 
     <div class="documentDescription">
-      Some description
+      Indicator assessment – known as D1. Protected areas – UNECE Environmental Indicators
     </div>
 
     <div id="content-core">
-      <p>Text text</p>
+      <div id="themes-tags">
+        <span class="listHead">Topics:</span>
+        <span>
+          <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/biodiversity">
+            Biodiversity — Ecosystems
+          </a>
+        </span>
+
+        <span>
+          <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/agriculture">
+            Agriculture
+          </a>
+        </span>
+      </div>
+
     </div>
   </div>
 
 <style>
 body.template-indicator_demo main.page-main {
   width: 100%;
+}
+
+
+body.template-indicator_demo main.page-main div#themes-tags a.link-category {
+  color: black !important;
+  padding: 2px 6px;
+  margin: 2px 0;
+  word-break: keep-all;
+  display: inline-block;
+  line-height: inherit;
+  background: #F8F8F8;
+  font-size: 12px;
+}
+
+body.template-indicator_demo main.page-main div#themes-tags a.link-category:hover {
+  color: white !important;
+  background: #1f87e8;
+}
+
+body.template-indicator_demo main.page-main div#themes-tags span.listHead {
+  font-weight: 500;
 }
 </style>
 </metal:main>
