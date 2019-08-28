@@ -306,6 +306,8 @@ body.template-indicator_demo main.page-main div.row.metadata-container {
   background: #F8F8F8;
   border: 1px solid #eaeaea;
   border-top: 1em solid #eaeaea;
+  padding: 20px;
+  margin-top: 3em;
 }
 </style>
 </metal:main>
