@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.0.8 (unreleased)
+------------------
+
 1.0.7 (2019-08-28)
 ------------------
 - Feature: Prepare a demo template to preview the new indicator view layout.
