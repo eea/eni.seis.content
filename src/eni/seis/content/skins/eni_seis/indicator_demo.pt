@@ -203,7 +203,21 @@
           <h3>Generic metadata</h3>
           <p><b>Topics:</b> Biodiversity and ecosystems</p>
           <p><b>Indicator code:</b> D1</p>
-          <p><b>Tags:</b> protected areas, Republic of Moldova</p>
+          <p>
+            <b>Tags:</b>
+            <span>
+              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/biodiversity">
+                protected areas
+              </a>
+            </span>
+
+            <span>
+              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/agriculture">
+                Republic of Moldova
+              </a>
+            </span>
+          </p>
+
           <p><b>Temporal coverage:</b> 1971-2018</p>
           <p><b>DPSIR:</b> Response</p>
           <p><b>Typology:</b> Descriptive indicator (Type A - What is happening to the environment and to humans?)</p>
@@ -238,18 +252,20 @@ body.template-indicator_demo main.page-main div#themes-tags {
   margin-top: 2em;
 }
 
-body.template-indicator_demo main.page-main div#themes-tags a.link-category {
+body.template-indicator_demo main.page-main div#themes-tags a.link-category,
+body.template-indicator_demo main.page-main div.metadata-container a.link-category {
   color: black !important;
   padding: 2px 6px;
   margin: 2px 0;
   word-break: keep-all;
   display: inline-block;
   line-height: inherit;
-  background: #F8F8F8;
+  background: #eaeaea;
   font-size: 12px;
 }
 
-body.template-indicator_demo main.page-main div#themes-tags a.link-category:hover {
+body.template-indicator_demo main.page-main div#themes-tags a.link-category:hover,
+body.template-indicator_demo main.page-main div.metadata-container a.link-category:hover {
   color: white !important;
   background: #1f87e8;
 }
@@ -305,9 +321,13 @@ body.template-indicator_demo main.page-main h4 {
 body.template-indicator_demo main.page-main div.row.metadata-container {
   background: #F8F8F8;
   border: 1px solid #eaeaea;
-  border-top: 1em solid #eaeaea;
+  border-top: 1em solid #1f87e8;
   padding: 20px;
   margin-top: 3em;
+}
+
+body.template-indicator_demo main.page-main div.metadata-container h3 {
+  border-bottom: 1px solid #737373;
 }
 </style>
 </metal:main>
