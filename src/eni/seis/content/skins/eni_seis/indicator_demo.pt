@@ -6,15 +6,25 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 
-  <tal:col metal:fill-slot="portlets_one_slot"></tal:col>
-  <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
+<body>
 
-  <body metal:fill-slot="content-core">
+<metal:main fill-slot="main">
+  <div id="newsletter-items-container">
 
-    <div class="row no-portlets">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 country-bottom-column">
-        Some content
-      </div>
+    <h1 id="parent-fieldname-title" class="documentFirstHeading">
+      Demo indicator
+    </h1>
+
+    <div class="documentDescription">
+      Some description
     </div>
-  </body>
+
+    <div id="content-core">
+      <p>Text text</p>
+    </div>
+  </div>
+
+</metal:main>
+
+</body>
 </html>
