@@ -79,6 +79,23 @@ https://rm.coe.int/status-of-the-emerald-network-of-areas-of-special-conservatio
 https://www.thegef.org/project/improving-coverage-and-management-effectiveness-protected-area-system-moldova  (Accessed on 15 03 2019)
         </li>
       </ul>
+
+      <h3>Map -1 Nationally designated protected areas of the Republic of Moldova (2018)</h3>
+      <div class="image-container">
+        <img src="./images/image-demo-indicator3.png" />
+        <p class="image-caption">
+        <b>Source:</b> http://www.ieg.asm.md/en/node/133 (accessed on 14/10/2019)
+        <br />
+        <br />
+        <b>Note:</b> the original map is available on the website of the Institute of Ecology and Geography, Academy of Sciences of Moldova. The above map is a reproduction from the shape file of the original map.
+      </div>
+
+      <h3>Indicator Specification</h3>
+      <h4>Indicator definition</h4>
+      <p>The proposed definition is a combination of the D1 UNECE Environmental Indicator and of the SEBI 007 indicator.  </p>
+      <p>The indicator shows the area of terrestrial area protected in compliance with the national legislation and its evolution over time. It reflects both the extent of protected areas and their share in the total area of the country.  </p>
+
+      <p>The indicator can be further broken down by IUCN management categories and by category of national designation (national park, nature reserve, landscape park etc.). In addition, a sub-indicator showing the relation between nationally designated areas at national level and Emerald sites designation can be developed.</p>
     </div>
   </div>
 
@@ -120,10 +137,16 @@ body.template-indicator_demo main.page-main div.key-messages {
   border-left: 1em solid #1f87e8;
 }
 
+body.template-indicator_demo main.page-main div.key-messages h3 {
+  margin-top: 1em;
+}
+
 body.template-indicator_demo main.page-main div.image-container {
   padding: 20px;
   width: 100%;
   text-align: center;
+  border: 1px solid #737373;
+  margin-bottom: 20px;
 }
 
 body.template-indicator_demo main.page-main div.image-container img {
@@ -135,11 +158,15 @@ body.template-indicator_demo main.page-main div.image-container p.image-caption 
   background: #F8F8F8;
   border-left: 1em solid #737373;
   padding: 20px;
-  font-size: 80%;
+  margin-bottom: 0px !important;
 }
 
 body.template-indicator_demo main.page-main ul li {
   list-style: square;
+}
+
+body.template-indicator_demo main.page-main h3 {
+  margin-top: 3em;
 }
 
 </style>
