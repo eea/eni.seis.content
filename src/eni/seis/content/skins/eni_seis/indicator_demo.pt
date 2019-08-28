@@ -53,9 +53,32 @@ In 2017, the share of protected areas is 6.4% of the total territory of the Repu
       </div>
 
       <p>Despite all efforts, designation of protected areas is not solely a guarantee of biodiversity protection. Therefore, beyond this quantitative analysis, specific information on site management and quality would help to complete the assessment of affectiveness of the protected areas management. </p>
-      <p>The Aichi target 11 of the Convention on Biological Diversity aims to, by 2020, at least 17 per cent of terrestrial areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well-connected systems of protected areas and other effective area-based conservation measures, and integrated into the wider landscape and seascape (See the Aichic target 11; https://www.cbd.int/sp/targets/rationale/target-11/). </p>
+      <p>The Aichi target 11 of the Convention on Biological Diversity aims to, by 2020, at least 17 per cent of terrestrial areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well-connected systems of protected areas and other effective area-based conservation measures, and integrated into the wider landscape and seascape (See the Aichic target 11; <a href="https://www.cbd.int/sp/targets/rationale/target-11/">https://www.cbd.int/sp/targets/rationale/target-11/</a>). </p>
       <p>The national biodiversity strategy and action plan 2015-2020 aims to reach 10% of the country to be under protection including Emerald sites. With the coverage of 6.4% of its territory, the Republic of Moldova is still far from reaching to the national and  Aichi target 11. </p>
 
+      <div class="image-container">
+        <img src="./images/image-demo-indicator2.png" />
+      </div>
+
+
+      <p>The national designation types of protected areas considerably are varying in the Republic of Moldova. The protected area system of the country are dealing with twelfe different management categories from national parks to Zoos. The largest coverage of the protected areas (42%) are Ramsar sites followed by landscape reservations (18%) and national parks (17%). Scienctifi reserves (10%) and Biosphere reserves (8%) are also widely applied management categories in the country. </p>
+
+      <p>Management categories of the nationally designated protected areas in the country still are not aligned with the IUCN management categories. Neither information on the overall objectives of various management categories are available, except those international designations such as ramsar sites and biosphere reserves. A GEF-UNDP fuınded project has been resulted –among others- with technical recommendation for aligment of the national designation types with the IUCN management categories but so far the implementation of those reccomendation is still pending (UNDP, 2013). </p>
+
+      <p>The European Environment Agency jointly with the Council of Europe by means of  financial support of the EU Neighbourhood Partnership Program has been supporting the process of developing the Emerald network in the country since 2017. During 2017-2018, the Republic of Moldova has included
+      52 new sites into the Emerald Network of the Bern Convention.</p>
+
+      <h3>References in specific assessment text </h3>
+      <ul>
+        <li>
+          Roekaerts, M. and Opermanis, O., 2018. Status of the Emerald Network of Areas of Special Conservation Interest in 2018. Group of Experts on Protected Areas and Ecological Networks, 9th Meeting, 4-5 October 2018. Council of Europe. Strasbourg.
+https://rm.coe.int/status-of-the-emerald-network-of-areas-of-special-conservation-interes/16808d46c7 (Accessed on 15 03 2019)
+        </li>
+        <li>
+          UNDP, 2013. Improving Coverage and Management Effectiveness of the Protected Area System in Moldova. Terminal Evaluation. UNDP Atlas Project Number: 00050699.
+https://www.thegef.org/project/improving-coverage-and-management-effectiveness-protected-area-system-moldova  (Accessed on 15 03 2019)
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -113,6 +136,10 @@ body.template-indicator_demo main.page-main div.image-container p.image-caption 
   border-left: 1em solid #737373;
   padding: 20px;
   font-size: 80%;
+}
+
+body.template-indicator_demo main.page-main ul li {
+  list-style: square;
 }
 
 </style>
