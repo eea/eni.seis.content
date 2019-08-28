@@ -90,12 +90,130 @@ https://www.thegef.org/project/improving-coverage-and-management-effectiveness-p
         <b>Note:</b> the original map is available on the website of the Institute of Ecology and Geography, Academy of Sciences of Moldova. The above map is a reproduction from the shape file of the original map.
       </div>
 
-      <h3>Indicator Specification</h3>
-      <h4>Indicator definition</h4>
+      <h3 class="eni-section-title">Indicator Specification</h3>
+      <h3>Indicator definition</h3>
       <p>The proposed definition is a combination of the D1 UNECE Environmental Indicator and of the SEBI 007 indicator.  </p>
       <p>The indicator shows the area of terrestrial area protected in compliance with the national legislation and its evolution over time. It reflects both the extent of protected areas and their share in the total area of the country.  </p>
 
       <p>The indicator can be further broken down by IUCN management categories and by category of national designation (national park, nature reserve, landscape park etc.). In addition, a sub-indicator showing the relation between nationally designated areas at national level and Emerald sites designation can be developed.</p>
+
+      <h3>Units</h3>
+      <p>Total area (km2) of nationally designated protected areas as a percentage of the country territory.</p>
+
+      <h3 class="eni-section-title">Rationale</h3>
+      <h3>Justification for indicator selection</h3>
+      <p>Establishment of protected areas is a direct response to concerns over biodiversity loss, so an indicator in protected area coverage is a valuable indication of commitment to conserving biodiversity and reducing loss at a range of levels.</p>
+      <p>The indicator demonstrates the change over time in one form of protection afforded to components of biodiversity. It provides a measure of the response to the degradation of ecosystems and the loss of biodiversity in a country. It demonstrates the extent to which areas important for conserving biodiversity, cultural heritage, scientific research (including baseline monitoring of processes in the ecosystems), recreation, natural resource maintenance and other environmental values are protected.</p>
+      <p>National biodiversity strategy and action plan of the Republic of Moldova has defined the expansion of the nationally desginated protected areas as one of the priority areas of work between 2015-2020.</p>
+
+      <h3>Scientific references</h3>
+      <ul>
+        <li>Dudley, N. (Editor) (2008). Guidelines for Applying Protected Area Management Categories. Gland, Switzerland: IUCN. x + 86pp. WITH Stolton, S., P. Shadie and N. Dudley (2013). IUCN WCPA Best Practice Guidance on Recognising Protected Areas and Assigning Management Categories and Governance Types, Best Practice Protected Area Guidelines Series No. 21, Gland, Switzerland: IUCN. xxpp. ISBN: 978-2-8317-1636-7
+          <br />https://portals.iucn.org/library/sites/library/files/documents/PAG-021.pdf
+          <br />(Accessed on 15 03 2019)
+        </li>
+        <li>Convention on Biological Diversity
+          <br />http://www.cbd.int
+        </li>
+        <li>
+          CBD Strategic Plan for Biodiversity 2011--‐2020: http://www.cbd.int/decision/cop/?id=12268
+        </li>
+      </ul>
+
+      <h3 class="eni-section-title">Policy context and targets</h3>
+      <h3>Policy context description</h3>
+      <p>The National Strategy on Biological Diversity and its Action Plan for 2015-2020 (NBSAP), 2015, provides policy framework for further capacity building and measures for conservation of biodiversity and improvement management and extension of protected areas in Moldova.
+      https://www.cbd.int/doc/world/md/md-nbsap-v2-en.pdf</p>
+
+      <p>The state-funded nature policy is promoted by the Law Nr. 1538 of 25.02.1998 on State-protected areas found.  This Law establishes the legal bases of the creation and functioning of the state-funded nature reserve, its principles, mechanism and mode of preservation, as well as the attributions of central and local public authorities, non-governmental organizations and citizens in this field.
+      http://lex.justice.md/index.php?action=view&view=doc&lang=1&id=311614</p>
+
+      <p>Government Decision Nr. 803 of 19.06.2002  approves the Regulation on Procedure for establishing the natural protected area regime
+      http://lex.justice.md/index.php?action=view&view=doc&lang=1&id=304836</p>
+
+      <p>The United Nations Convention on Biological Diversity (CBD) aimed at the establishment and maintenance of comprehensive, effectively managed and ecologically representative national and regional systems of protected areas. Under CBD, the Strategic Plan for Biodiversity 2011-2020 was adopted which requires that by 2020, at least 17 per cent of terrestrial and inland water areas, and 10 per cent of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well-connected systems of protected areas and other effective area-based conservation measures, and integrated into the wider landscapes and seascapes (Target 11).</p>
+
+      <h3>Targets</h3>
+      <p>National Biodiversity Strategy and Action Plan 2015-2020 of the Republic of Moldova set 10% of the country’s territory to be under protection by 2020.</p>
+
+      <p>The Aichi target 11 of the Convention on Biological Diversity is set, by 2020, at least 17 per cent of terrestrial and inland water, and 10 per cent of coastal and marine areas, especially areas of particular importance for biodiversity and ecosystem services, are conserved through effectively and equitably managed, ecologically representative and well connected systems of protected areas and other effective area-based conservation measures, and integrated into the wider landscapes and seascapes.</p>
+
+      <h3>Related policy documents</h3>
+      <ul>
+        <li>
+          National Biodiversity Strategy and Action Plan 2015-2020 of the Republic of Moldova
+          https://www.informea.org/en/action-plan/national-biodiversity-strategy-and-action-plan-2015-2020 (Accessed on 15 03 2019)
+        </li>
+        <li>
+          Convention on Biological Diversity: http://www.cbd.int
+        </li>
+      </ul>
+
+      <h3 class="eni-section-title">Methodology</h3>
+      <h3>Methodology for indicator calculation (including description of data used)</h3>
+
+      <p>Methodology for indicator calculation (including description of data used)</p>
+
+      <p>It is necessary for this indicator to have a database of all nationally protected areas in the country, including name of the protected area, date of establishment, protection regime in accordance with national legislation (and relevant international requirements), size, digital boundaries.
+      To breakdown results per IUCN management categories, it is necessary for each protected area to be characterized according to the type of management applied, following the IUCN guidelines.</p>
+
+      <p>To assess the (spatial) complementarity between Emerald designation and nationally protected areas, two datasets are necessary (to be overlayed): 1) spatial delineation of nationally protected areas and 2) spatial delineation of Emerald sites (only Candidate and officially designated Emerald sites to be considered).</p>
+
+      <p>Percentage of protected areas can be calculated by the formula: <br />
+Share of protected areas (%) = (total area of protected areas in hectares or km2/ total area of the country in hectares or km2) × 100.
+      </p>
+
+      <h3>Methodology for gap filling</h3>
+      <p>No methodology for gap filling has been specified.</p>
+
+      <h3>Methodology references</h3>
+      <p>The Law on Natural Areas Protected by the State (1998) provides the enabling legal framework for 12 different categories of protected areas in the republic of Moldova. Seven different national designation types are corresponding to the IUCN protected areas management categories (Scientific Reserve, National Park, Natural Monument, Nature Reserve, Landscape Reserve, Resource Reserve, Multifunctional Management Area) while three designation types are applied at the local scale i.e. dendrological garden, zoological garden and landscape monument. In addition, two international designation types are implemented for Biosphere Reserves and Ramsar sites.</p>
+
+      <h3 class="eni-section-title">Uncertainties</h3>
+      <h3>Methodology Uncertainty</h3>
+      <p>The indicator "Progress in the designation of protected areas by IUCN categories over time" couldn’t be clearly defined as many national protected areas may include a territory with several IUCN categories. A specific definition of the IUCN category is possible by a separate expert assessment.</p>
+Data sets uncertainty
+Republic of Moldova doesn’t regularly implement the UNECE environmental indicators in the country. Hence, there is no regular update of the database in the Republic of Moldova for developing this indicator. On the other hand, a slight inconsistency is subject between total area of the nationally designated protected areas and designation types per se.
+Rationale uncertainty
+The indicator does not describe the quality of management or whether or not the areas are protected from incompatible uses. The indicator needs to be complemented by information on management effectiveness or funding, or other elements that would indicate the potential of the designated area to protect biodiversity.
+
+Further work
+Short-term work
+    • Establish the National Park “Lower Nistru”;
+    • Create the “Emerald” network as a component part of the Pan-European Ecological Network;
+    • Develop the Cadaster of state protected natural areas.
+
+Long-term work
+    • Develop and promote the program of extending the system of protected areas; to expanse of the protected areas system up to 17 per cent of the total territory of the country;
+    • Develop management plans for protected areas.
+
+
+Generic metadata
+Topics: Biodiversity and ecosystems
+Indicator code: D1
+Tags: protected areas, Republic of Moldova
+Temporal coverage: 1971-2018
+DPSIR: Response
+Typology: Descriptive indicator (Type A - What is happening to the environment and to humans?)
+
+Contact and ownership
+Contact: Angela Lozan, Ion Cotofana, Veronica Josu
+Ownership: Institute of Ecology and Geography, Academy of Sciences of Moldova http://www.ieg.asm.md/en
+
+Dates
+First draft created: 05 November 2018
+Second final draft: 30 January 2019
+Final draft : 15 March 2019
+Publish date:
+Last modified:
+
+Related content:
+National Biodiversity Strategy and Action Plan 2015-2020 of the Republic of Moldova
+https://www.informea.org/en/action-plan/national-biodiversity-strategy-and-action-plan-2015-2020 (Accessed on 15 03 2019)
+
+
+
+
     </div>
   </div>
 
@@ -166,9 +284,12 @@ body.template-indicator_demo main.page-main ul li {
 }
 
 body.template-indicator_demo main.page-main h3 {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
+body.template-indicator_demo main.page-main h4 {
+  margin-top: 1em;
+}
 </style>
 </metal:main>
 
