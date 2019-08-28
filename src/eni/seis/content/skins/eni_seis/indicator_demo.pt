@@ -263,7 +263,6 @@ body.template-indicator_demo main.page-main div.key-messages {
   margin-bottom: 2em;
   padding: 20px;
   background: #F8F8F8;
-  /* border-left: 1em solid #737373; */
   border-left: 1em solid #1f87e8;
 }
 
@@ -275,7 +274,7 @@ body.template-indicator_demo main.page-main div.image-container {
   padding: 20px;
   width: 100%;
   text-align: center;
-  border: 1px solid #737373;
+  border: 1px solid #eaeaea;
   margin-bottom: 20px;
 }
 
@@ -301,6 +300,12 @@ body.template-indicator_demo main.page-main h3 {
 
 body.template-indicator_demo main.page-main h4 {
   margin-top: 1em;
+}
+
+body.template-indicator_demo main.page-main div.row.metadata-container {
+  background: #F8F8F8;
+  border: 1px solid #eaeaea;
+  border-top: 1em solid #eaeaea;
 }
 </style>
 </metal:main>
