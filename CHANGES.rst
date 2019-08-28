@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.0.7 (unreleased)
+1.0.7 (2019-08-28)
 ------------------
+- Feature: Prepare a demo template to preview the new indicator view layout.
+  [GhitaB #108504]
 
 1.0.6 (2019-08-26)
 ------------------
