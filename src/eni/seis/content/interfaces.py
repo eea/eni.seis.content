@@ -4,13 +4,14 @@
 from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
-from plone.autoform import directives as form
+from plone.app.textfield import RichText
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
+from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobFile
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
-from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from zope import schema
+from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
 class IEniSeisContentLayer(IDefaultBrowserLayer):
@@ -94,20 +95,28 @@ class IIndicator(model.Schema):
 class IIndicatorData(model.Schema):
     """ IndicatorData item
     """
-    external_link = schema.URI(
-        title=u"External link",
-        required=False,
-        description=u"TODO WIP"
+    long_description = RichText(
+        title=u"Long description",
+        required=True,
+    )
+
+    image = NamedBlobImage(
+        title=u"Lead image",
+        required=True,
+    )
+
+    key_messages = RichText(
+        title=u"Key messages",
+        required=True,
+    )
+
+    text = RichText(
+        title=u"Body text",
+        required=True,
     )
     """
     TODO add fields:
-    title
-    short description (under the title)
-    long description
-    image (to be used in landing page)
     topics
-    key messages
-    body text
     metadata
         Topics
         Indicator code
@@ -120,6 +129,7 @@ class IIndicatorData(model.Schema):
         Dates
         Related content
     """
+
 
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section
