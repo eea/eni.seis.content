@@ -3,6 +3,8 @@ Changelog
 
 1.0.8 (unreleased)
 ------------------
+- Feature: Add IndicatorData content type.
+  [GhitaB #108504]
 
 1.0.7 (2019-08-28)
 ------------------
