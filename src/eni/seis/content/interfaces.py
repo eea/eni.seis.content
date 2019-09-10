@@ -91,6 +91,16 @@ class IIndicator(model.Schema):
         )
 
 
+class IIndicatorData(model.Schema):
+    """ IndicatorData item
+    """
+    external_link = schema.URI(
+        title=u"External link",
+        required=False,
+        description=u"TODO WIP"
+    )
+
+
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section
     """

@@ -344,6 +344,11 @@ class IndicatorView(BrowserView):
     """
 
 
+class IndicatorDataView(BrowserView):
+    """ Indicator Data
+    """
+
+
 class NewsletterView(BrowserView):
     """ Newsletter
     """
