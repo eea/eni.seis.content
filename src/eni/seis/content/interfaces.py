@@ -99,7 +99,27 @@ class IIndicatorData(model.Schema):
         required=False,
         description=u"TODO WIP"
     )
-
+    """
+    TODO add fields:
+    title
+    short description (under the title)
+    long description
+    image (to be used in landing page)
+    topics
+    key messages
+    body text
+    metadata
+        Topics
+        Indicator code
+        Tags
+        Temporal coverage
+        DPSIR
+        Typology
+        Contact
+        Ownership
+        Dates
+        Related content
+    """
 
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section
