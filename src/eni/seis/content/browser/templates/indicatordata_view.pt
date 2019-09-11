@@ -122,6 +122,10 @@
             <b>Last modified:</b>
             <span tal:replace="python:' %s' % plone_view.toLocalizedTime(modification_date)"> August 16, 2001 at 23:35:59</span>
           </p>
+          <p tal:condition="python:indicator.frecvency_of_updates">
+            <b>Frequency of updates:</b>
+            <span tal:content="python:indicator.frecvency_of_updates">every year</span>
+          </p>
 
           <h3>Related content:</h3>
           <p tal:condition="python:indicator.related_content">

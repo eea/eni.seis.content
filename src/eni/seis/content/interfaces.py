@@ -157,6 +157,11 @@ class IIndicatorData(model.Schema):
         required=False,
     )
 
+    frecvency_of_updates = schema.TextLine(
+        title=u'Frecvency of updates',
+        required=False,
+    )
+
 
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section
