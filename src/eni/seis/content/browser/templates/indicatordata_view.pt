@@ -43,9 +43,7 @@
 
           <div class="key-messages">
             <h3>Key messages</h3>
-            <p>
-    In 2017, the share of protected areas is 6.4% of the total territory of the Republic of Moldova. Republic of Moldova is still far from reaching to national target of 10% of the country’s territory under the protected areas, neither Aichi target 11 of the Convention of Biological Diversity, which sets 17 % of terrestrial and inland water to be protected by 2020.
-            </p>
+            <p tal:replace="structure python:indicator.key_messages.output"></p>
           </div>
 
           <h3>Development with the designation of nationally protected areas as a tool for biodiversity conservation</h3>
