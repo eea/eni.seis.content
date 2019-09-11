@@ -43,8 +43,10 @@
 
           <div class="key-messages">
             <h3>Key messages</h3>
-            <p tal:replace="structure python:indicator.key_messages.output"></p>
+            <p tal:replace="structure python:indicator.key_messages.output">Key messages</p>
           </div>
+
+          <div tal:replace="structure python:indicator.text.output">Body text</div>
 
           <h3>Development with the designation of nationally protected areas as a tool for biodiversity conservation</h3>
 
