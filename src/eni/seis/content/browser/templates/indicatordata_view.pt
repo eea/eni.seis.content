@@ -72,7 +72,7 @@
             </span>
             </tal:topics>
           </p>
-          <p><b>Indicator code:</b> D1</p>
+          <p><b>Indicator code:</b> <span tal:content="python:indicator.indicator_code">C2</span></p>
           <p>
             <b>Tags:</b>
             <tal:topics tal:repeat="tag python:indicator.subject">

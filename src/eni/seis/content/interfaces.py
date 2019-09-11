@@ -121,13 +121,14 @@ class IIndicatorData(model.Schema):
         value_type=schema.TextLine(title=u'Topic', default=u"")
     )
 
+    indicator_code = schema.TextLine(
+        title=u'Indicator code',
+        required=False,
+    )
+
     """
     TODO add fields:
-    topics
     metadata
-        Topics
-        Indicator code
-        Tags
         Temporal coverage
         DPSIR
         Typology
