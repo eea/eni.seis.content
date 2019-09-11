@@ -60,9 +60,21 @@
       <div class="row metadata-container">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <h3>Generic metadata</h3>
-          <p><b>Topics:</b> Biodiversity and ecosystems</p>
+          <p>
+            <b>Topics:</b>
+            <tal:topics tal:repeat="topic python:indicator.subject">
+            <span>
+              <a class="link-category" rel="tag"
+                 tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
+                 tal:content="topic">
+                Topic 1
+              </a>
+            </span>
+            </tal:topics>
+          </p>
           <p><b>Indicator code:</b> D1</p>
           <p>
+            <!-- TODO topics vs tags? -->
             <b>Tags:</b>
             <tal:topics tal:repeat="topic python:indicator.subject">
             <span>
