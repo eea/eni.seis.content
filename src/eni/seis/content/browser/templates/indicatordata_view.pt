@@ -72,7 +72,9 @@
             </span>
             </tal:topics>
           </p>
-          <p><b>Indicator code:</b> <span tal:content="python:indicator.indicator_code">C2</span></p>
+          <p tal:condition="python:indicator.indicator_code">
+            <b>Indicator code:</b> <span tal:content="python:indicator.indicator_code">C2</span>
+          </p>
           <p>
             <b>Tags:</b>
             <tal:topics tal:repeat="tag python:indicator.subject">
@@ -86,7 +88,9 @@
             </tal:topics>
           </p>
 
-          <p><b>Temporal coverage:</b> 1971-2018</p>
+          <p tal:condition="python:indicator.temporal_coverage">
+            <b>Temporal coverage:</b> <span tal:content="python:indicator.temporal_coverage">1971-2000</span>
+          </p>
           <p><b>DPSIR:</b> Response</p>
           <p><b>Typology:</b> Descriptive indicator (Type A - What is happening to the environment and to humans?)</p>
 

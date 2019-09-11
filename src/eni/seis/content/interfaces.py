@@ -126,10 +126,15 @@ class IIndicatorData(model.Schema):
         required=False,
     )
 
+    temporal_coverage = schema.TextLine(
+        title=u'Temporal coverage',
+        required=False,
+        # TODO ? fix field type
+    )
+
     """
     TODO add fields:
     metadata
-        Temporal coverage
         DPSIR
         Typology
         Contact
