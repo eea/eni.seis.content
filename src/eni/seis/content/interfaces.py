@@ -132,16 +132,25 @@ class IIndicatorData(model.Schema):
         # TODO ? fix field type
     )
 
-    """
-    TODO add fields:
-    metadata
-        DPSIR
-        Typology
-        Contact
-        Ownership
-        Dates
-        Related content
-    """
+    dpsir = schema.TextLine(
+        title=u'DPSIR',
+        required=False,
+    )
+
+    typology = schema.TextLine(
+        title=u'Typology',
+        required=False,
+    )
+
+    contact = RichText(
+        title=u'Contact',
+        required=False,
+    )
+
+    ownership = RichText(
+        title=u'Ownership',
+        required=False,
+    )
 
 
 class INationalFocalPoint(model.Schema):

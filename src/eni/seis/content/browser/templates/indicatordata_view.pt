@@ -91,12 +91,22 @@
           <p tal:condition="python:indicator.temporal_coverage">
             <b>Temporal coverage:</b> <span tal:content="python:indicator.temporal_coverage">1971-2000</span>
           </p>
-          <p><b>DPSIR:</b> Response</p>
-          <p><b>Typology:</b> Descriptive indicator (Type A - What is happening to the environment and to humans?)</p>
+
+          <p tal:condition="python:indicator.dpsir">
+            <b>DPSIR:</b> <span tal:content="python:indicator.dpsir">Response</span>
+          </p>
+
+          <p tal:condition="python:indicator.typology">
+            <b>Typology:</b> <span tal:content="python:indicator.typology">Descriptive indicator</span>
+          </p>
 
           <h3>Contact and ownership</h3>
-          <p><b>Contact:</b> Angela Lozan, Ion Cotofana, Veronica Josu</p>
-          <p><b>Ownership:</b> Institute of Ecology and Geography, Academy of Sciences of Moldova http://www.ieg.asm.md/en</p>
+          <p tal:condition="python:indicator.contact">
+            <b>Contact:</b> <span tal:content="structure python:indicator.contact.output">Name 1, Name 2</span>
+          </p>
+          <p tal:condition="python:indicator.ownership">
+            <b>Ownership:</b> <span tal:content="structure python:indicator.ownership.output">Institute of Ecology</span>
+          </p>
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
