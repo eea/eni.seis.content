@@ -12,14 +12,14 @@
 <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
 <metal:main fill-slot="main">
-  <div id="indicator-container">
+  <div id="indicator-container" tal:define="indicator python:context">
 
-    <h1 id="parent-fieldname-title" class="documentFirstHeading">
-      Nationally designated protected areas of Republic of Moldova
+    <h1 id="parent-fieldname-title" class="documentFirstHeading" tal:content="indicator/Title">
+      Title
     </h1>
 
-    <div class="documentDescription">
-      Indicator assessment – known as D1. Protected areas – UNECE Environmental Indicators
+    <div class="documentDescription" tal:content="indicator/Description">
+      Summary
     </div>
 
     <div id="content-core">
