@@ -26,9 +26,9 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-          <div id="themes-tags" tal:condition="python:indicator.subject">
+          <div id="themes-tags" tal:condition="python:indicator.topics">
             <span class="list-head">Topics:</span>
-            <tal:topics tal:repeat="topic python:indicator.subject">
+            <tal:topics tal:repeat="topic python:indicator.topics">
             <span>
               <a class="link-category" rel="tag"
                  tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
@@ -62,7 +62,7 @@
           <h3>Generic metadata</h3>
           <p>
             <b>Topics:</b>
-            <tal:topics tal:repeat="topic python:indicator.subject">
+            <tal:topics tal:repeat="topic python:indicator.topics">
             <span>
               <a class="link-category" rel="tag"
                  tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
@@ -74,13 +74,12 @@
           </p>
           <p><b>Indicator code:</b> D1</p>
           <p>
-            <!-- TODO topics vs tags? -->
             <b>Tags:</b>
-            <tal:topics tal:repeat="topic python:indicator.subject">
+            <tal:topics tal:repeat="tag python:indicator.subject">
             <span>
               <a class="link-category" rel="tag"
-                 tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
-                 tal:content="topic">
+                 tal:attributes="href python:'/@@search?Subject%3Alist=' + tag"
+                 tal:content="tag">
                 Topic 1
               </a>
             </span>
