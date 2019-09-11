@@ -97,23 +97,30 @@ class IIndicatorData(model.Schema):
     """
     long_description = RichText(
         title=u"Long description",
-        required=True,
+        required=False,
     )
 
     image = NamedBlobImage(
         title=u"Lead image",
-        required=True,
+        required=False,
     )
 
     key_messages = RichText(
         title=u"Key messages",
-        required=True,
+        required=False,
     )
 
     text = RichText(
         title=u"Body text",
-        required=True,
+        required=False,
     )
+
+    topics = schema.List(
+        title=u'Topics',
+        required=False,
+        value_type=schema.TextLine(title=u'Topic', default=u"")
+    )
+
     """
     TODO add fields:
     topics
