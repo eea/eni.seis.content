@@ -30,7 +30,8 @@
             <span class="list-head">Topics:</span>
             <tal:topics tal:repeat="topic python:indicator.subject">
             <span>
-              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/biodiversity"
+              <a class="link-category" rel="tag"
+                 tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
                  tal:content="topic">
                 Topic 1
               </a>
@@ -63,17 +64,15 @@
           <p><b>Indicator code:</b> D1</p>
           <p>
             <b>Tags:</b>
+            <tal:topics tal:repeat="topic python:indicator.subject">
             <span>
-              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/biodiversity">
-                protected areas
+              <a class="link-category" rel="tag"
+                 tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
+                 tal:content="topic">
+                Topic 1
               </a>
             </span>
-
-            <span>
-              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/agriculture">
-                Republic of Moldova
-              </a>
-            </span>
+            </tal:topics>
           </p>
 
           <p><b>Temporal coverage:</b> 1971-2018</p>
