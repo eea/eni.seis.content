@@ -26,19 +26,16 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-          <div id="themes-tags">
+          <div id="themes-tags" tal:condition="python:indicator.subject">
             <span class="list-head">Topics:</span>
+            <tal:topics tal:repeat="topic python:indicator.subject">
             <span>
-              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/biodiversity">
-                Biodiversity — Ecosystems
+              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/biodiversity"
+                 tal:content="topic">
+                Topic 1
               </a>
             </span>
-
-            <span>
-              <a class="link-category" rel="tag" href="https://www.eea.europa.eu/themes/agriculture">
-                Agriculture
-              </a>
-            </span>
+            </tal:topics>
           </div>
 
           <div class="key-messages">
