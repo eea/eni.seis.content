@@ -118,8 +118,9 @@
           <p><b>Last modified:</b></p>
 
           <h3>Related content:</h3>
-          <p>National Biodiversity Strategy and Action Plan 2015-2020 of the Republic of Moldova
-          https://www.informea.org/en/action-plan/national-biodiversity-strategy-and-action-plan-2015-2020 (Accessed on 15 03 2019)</p>
+          <p tal:condition="python:indicator.related_content">
+            <span tal:replace="structure python:indicator.related_content.output">related</span>
+          </p>
         </div>
       </div>
     </div>

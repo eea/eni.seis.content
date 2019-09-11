@@ -152,6 +152,11 @@ class IIndicatorData(model.Schema):
         required=False,
     )
 
+    related_content = RichText(
+        title=u'Related content',
+        required=False,
+    )
+
 
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section
