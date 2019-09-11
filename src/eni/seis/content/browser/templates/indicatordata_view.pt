@@ -109,13 +109,19 @@
           </p>
         </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
+          tal:define="publish_date python:indicator.EffectiveDate();
+                      modification_date python:indicator.ModificationDate();
+                      plone_view indicator/@@plone;">
           <h3>Dates</h3>
-          <p><b>First draft created:</b> 05 November 2018</p>
-          <p><b>Second final draft:</b> 30 January 2019</p>
-          <p><b>Final draft:</b> 15 March 2019</p>
-          <p><b>Publish date:</b></p>
-          <p><b>Last modified:</b></p>
+          <p>
+            <b>Publish date:</b>
+            <span tal:replace="python:' %s' % plone_view.toLocalizedTime(publish_date)"> August 16, 2001 at 23:35:59</span>
+          </p>
+          <p>
+            <b>Last modified:</b>
+            <span tal:replace="python:' %s' % plone_view.toLocalizedTime(modification_date)"> August 16, 2001 at 23:35:59</span>
+          </p>
 
           <h3>Related content:</h3>
           <p tal:condition="python:indicator.related_content">
