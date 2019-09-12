@@ -51,11 +51,11 @@
               <li class="nav-item">
                 <a class="nav-link active"
                    id="chart-tab" data-toggle="tab"
-                   href="#chart" role="tab" aria-controls="home" aria-selected="true">Chart</a>
+                   href="#chart" role="tab" aria-controls="chart" aria-selected="true">Chart</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="tabledata-tab" data-toggle="tab"
-                                                       href="#tabledata" role="tab" aria-controls="profile" aria-selected="false">Table</a>
+                href="#tabledata" role="tab" aria-controls="tabledata" aria-selected="false">Table</a>
               </li>
             </ul>
             <div class="tab-content" id="myTabContent">
