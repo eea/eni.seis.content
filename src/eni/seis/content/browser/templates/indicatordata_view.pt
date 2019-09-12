@@ -46,20 +46,22 @@
 
           <div tal:replace="structure python:indicator.text.output">Body text</div>
 
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet lacus congue, venenatis lacus eu, porttitor lorem. Sed auctor urna vel elit ultrices, vitae fermentum orci pellentesque. In a enim tincidunt sapien rhoncus vestibulum in maximus nulla. Mauris urna massa, gravida non massa sit amet, lobortis iaculis metus. Phasellus eget dui ultrices, aliquet sapien aliquam, hendrerit ipsum. Quisque tincidunt iaculis augue, vitae mollis orci condimentum eu. Ut tortor justo, ullamcorper eu purus eget, tempor cursus ipsum. Quisque et sapien tincidunt, viverra sem in, tincidunt odio. Suspendisse potenti. Aliquam id magna nisi. Morbi a porttitor mauris, quis pulvinar turpis. Donec a dolor velit. Pellentesque rhoncus, augue in tincidunt molestie, nisl risus volutpat urna, sed dignissim odio leo pellentesque mi. Nulla malesuada odio non sollicitudin auctor. Praesent bibendum et nisi et rutrum. Sed in placerat neque.
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              Donec quis metus tortor. Phasellus id nisl sit amet justo porttitor consectetur. Donec mollis metus elit, ac interdum metus feugiat vitae. Suspendisse potenti. Sed euismod quam vitae nunc vehicula, eget ornare quam rutrum. Aliquam mauris dui, consectetur nec lectus a, auctor dictum diam. Praesent sit amet sem vel quam pharetra ornare. Suspendisse risus sem, cursus quis nibh id, rutrum bibendum dui.
+          <div class="eni-figure">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet lacus congue, venenatis lacus eu, porttitor lorem. Sed auctor urna vel elit ultrices, vitae fermentum orci pellentesque. In a enim tincidunt sapien rhoncus vestibulum in maximus nulla. Mauris urna massa, gravida non massa sit amet, lobortis iaculis metus. Phasellus eget dui ultrices, aliquet sapien aliquam, hendrerit ipsum. Quisque tincidunt iaculis augue, vitae mollis orci condimentum eu. Ut tortor justo, ullamcorper eu purus eget, tempor cursus ipsum. Quisque et sapien tincidunt, viverra sem in, tincidunt odio. Suspendisse potenti. Aliquam id magna nisi. Morbi a porttitor mauris, quis pulvinar turpis. Donec a dolor velit. Pellentesque rhoncus, augue in tincidunt molestie, nisl risus volutpat urna, sed dignissim odio leo pellentesque mi. Nulla malesuada odio non sollicitudin auctor. Praesent bibendum et nisi et rutrum. Sed in placerat neque.
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                Donec quis metus tortor. Phasellus id nisl sit amet justo porttitor consectetur. Donec mollis metus elit, ac interdum metus feugiat vitae. Suspendisse potenti. Sed euismod quam vitae nunc vehicula, eget ornare quam rutrum. Aliquam mauris dui, consectetur nec lectus a, auctor dictum diam. Praesent sit amet sem vel quam pharetra ornare. Suspendisse risus sem, cursus quis nibh id, rutrum bibendum dui.
+              </div>
             </div>
           </div>
 
@@ -239,6 +241,12 @@ body.template-view.portaltype-indicatordata div.page-main div.row.metadata-conta
 body.template-view.portaltype-indicatordata div.page-main div.metadata-container h3 {
   border-bottom: 1px solid #737373;
 }
+
+body.template-view.portaltype-indicatordata div.eni-figure .nav-item > a {
+  margin-left: initial;
+  margin-right: initial;
+}
+
 </style>
 </metal:main>
 
