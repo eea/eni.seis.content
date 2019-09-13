@@ -18,6 +18,7 @@ from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
 from plone import api
 from plone.dexterity.utils import createContentInContainer
+from zope.annotation.interfaces import IAnnotations
 
 
 def percentage(percent, whole):
@@ -347,6 +348,37 @@ class IndicatorView(BrowserView):
 class IndicatorDataView(BrowserView):
     """ Indicator Data
     """
+    def figures(self):
+        # TODO WIP use real content
+        urls = ['test/data-visualization-1', 'test/invalid']
+        figures = []
+        site = api.portal.get()
+
+        for url in urls:
+            try:
+                daviz_obj = site.unrestrictedTraverse(url)
+                annot = IAnnotations(daviz_obj)
+                chart_id = annot[
+                    'eea.daviz.config.views'][0]['chartsconfig']['charts'][
+                            0]['id']
+                figures.append(
+                    {
+                        'url': url,
+                        'chart_id': chart_id,
+                        'valid': True
+                    }
+                )
+            except Exception as err:
+                figures.append(
+                    {
+                        'url': url,
+                        'chart_id': 'N/A',
+                        'valid': False
+                    }
+                )
+                err = err
+                # import pdb; pdb.set_trace()
+        return figures
 
 
 class NewsletterView(BrowserView):

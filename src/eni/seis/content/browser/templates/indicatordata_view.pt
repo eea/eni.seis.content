@@ -80,6 +80,8 @@
             </div>
           </div>
 
+          <div tal:content="python:view.figures()"></div>
+
           <!-- <div class="image&#45;container"> -->
           <!--   <tal:block replace="structure indicator/@@images/image" /> -->
           <!--   <p class="image&#45;caption">Image caption</p> -->
