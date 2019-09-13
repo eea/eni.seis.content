@@ -82,6 +82,20 @@
 
           <div tal:content="python:view.figures()"></div>
 
+          <tal:figures>
+            <div class="eni-figure" tal:repeat="figure python:view.figures()">
+              <h3>TODO figure title here</h3>
+              <div tal:condition="python:figure['valid'] is True">
+                <span tal:replace="python:figure['url']"></span> is valid.
+                Chart ID: <span tal:content="python:figure['chart_id']"></span>
+              </div>
+              <div tal:condition="python:figure['valid'] is False">
+                <span tal:replace="python:figure['url']"></span> is not valid.
+                Chart ID: <span tal:content="python:figure['chart_id']"></span>
+              </div>
+            </div>
+          </tal:figures>
+
           <!-- <div class="image&#45;container"> -->
           <!--   <tal:block replace="structure indicator/@@images/image" /> -->
           <!--   <p class="image&#45;caption">Image caption</p> -->
