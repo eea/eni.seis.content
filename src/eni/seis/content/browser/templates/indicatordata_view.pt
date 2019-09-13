@@ -58,7 +58,9 @@
               <div role="tabpanel" class="tab-pane active" id="1">
                 <iframe width='1172' height='630' src='http://localhost:8090/east/test/data-visualization-1/embed-chart?chart=chart_1&chartWidth=800&chartHeight=600&padding=fixed&customStyle=.googlechart_view{margin-left:0px%3B}'></iframe>
               </div>
-              <div role="tabpanel" class="tab-pane" id="2">2</div>
+              <div role="tabpanel" class="tab-pane" id="2">
+                <iframe src="http://localhost:8090/east/test/data-visualization-1/download.table"></iframe>
+              </div>
             </div>
           </div>
 
