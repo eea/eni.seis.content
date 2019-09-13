@@ -47,24 +47,34 @@
           <div tal:replace="structure python:indicator.text.output">Body text</div>
 
           <div class="eni-figure">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active"
-                   id="chart-tab" data-toggle="tab"
-                   href="#chart" role="tab" aria-controls="chart" aria-selected="true">Chart</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="tabledata-tab" data-toggle="tab"
-                href="#tabledata" role="tab" aria-controls="tabledata" aria-selected="false">Table</a>
-              </li>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">Chart</a></li>
+              <li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">Table</a></li>
             </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade active" id="chart" role="tabpanel" aria-labelledby="chart-tab">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet lacus congue, venenatis lacus eu, porttitor lorem. Sed auctor urna vel elit ultrices, vitae fermentum orci pellentesque. In a enim tincidunt sapien rhoncus vestibulum in maximus nulla. Mauris urna massa, gravida non massa sit amet, lobortis iaculis metus. Phasellus eget dui ultrices, aliquet sapien aliquam, hendrerit ipsum. Quisque tincidunt iaculis augue, vitae mollis orci condimentum eu. Ut tortor justo, ullamcorper eu purus eget, tempor cursus ipsum. Quisque et sapien tincidunt, viverra sem in, tincidunt odio. Suspendisse potenti. Aliquam id magna nisi. Morbi a porttitor mauris, quis pulvinar turpis. Donec a dolor velit. Pellentesque rhoncus, augue in tincidunt molestie, nisl risus volutpat urna, sed dignissim odio leo pellentesque mi. Nulla malesuada odio non sollicitudin auctor. Praesent bibendum et nisi et rutrum. Sed in placerat neque.
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="1">
+                <iframe width='1172' height='630' src='http://localhost:8090/east/test/data-visualization-1/embed-chart?chart=chart_1&chartWidth=800&chartHeight=600&padding=fixed&customStyle=.googlechart_view{margin-left:0px%3B}'></iframe>
               </div>
-              <div class="tab-pane fade" id="tabledata" role="tabpanel" aria-labelledby="tabledata-tab">
-                Donec quis metus tortor. Phasellus id nisl sit amet justo porttitor consectetur. Donec mollis metus elit, ac interdum metus feugiat vitae. Suspendisse potenti. Sed euismod quam vitae nunc vehicula, eget ornare quam rutrum. Aliquam mauris dui, consectetur nec lectus a, auctor dictum diam. Praesent sit amet sem vel quam pharetra ornare. Suspendisse risus sem, cursus quis nibh id, rutrum bibendum dui.
+              <div role="tabpanel" class="tab-pane" id="2">2</div>
+            </div>
+          </div>
+
+          <div class="eni-figure">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">Chart</a></li>
+              <li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">Table</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="3">
+                <iframe width='1172' height='630' src='http://localhost:8090/east/test/data-visualization-1/embed-chart?chart=chart_1&chartWidth=800&chartHeight=600&padding=fixed&customStyle=.googlechart_view{margin-left:0px%3B}'></iframe>
               </div>
+              <div role="tabpanel" class="tab-pane" id="4">4</div>
             </div>
           </div>
 
