@@ -90,6 +90,8 @@
                 Chart ID: <span tal:content="python:figure['chart_id']"></span>
                 <iframe width='1172' height='680' tal:attributes="src python:indicator.portal_url() + '/' + figure['url'] + '/embed-chart?chart=' + figure['chart_id']">
                 </iframe>
+                <iframe width='1172' height='680' tal:attributes="src python:indicator.portal_url() + '/' + figure['url'] + '/download.table'">
+                </iframe>
               </div>
               <div tal:condition="python:figure['valid'] is False">
                 <span tal:replace="python:figure['url']"></span> is not valid.
