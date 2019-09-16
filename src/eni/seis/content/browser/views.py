@@ -356,6 +356,7 @@ class IndicatorDataView(BrowserView):
             {
                 'portal_type': ['DavizVisualization'],
                 'review_state': 'published',
+                'sort_on': 'getObjPositionInParent',
                 'path': '/'.join(self.context.getPhysicalPath())
             }
         )]
