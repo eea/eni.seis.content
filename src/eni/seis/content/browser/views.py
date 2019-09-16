@@ -348,7 +348,23 @@ class IndicatorView(BrowserView):
 class IndicatorDataView(BrowserView):
     """ Indicator Data
     """
+    def get_indicator_data_items(self):
+        """ Return all published indicatordata items found in this context
+        """
+        catalog = getToolByName(self.context, 'portal_catalog')
+        results = [x.getObject() for x in catalog.searchResults(
+            {
+                'portal_type': ['DavizVisualization'],
+                'review_state': 'published',
+                'path': '/'.join(self.context.getPhysicalPath())
+            }
+        )]
+
+        return results
+
     def figures(self):
+        items = self.get_indicator_data_items()
+        import pdb; pdb.set_trace()
         # TODO WIP use real content
         urls = ['test/data-visualization-1', 'test/invalid']
         figures = []
