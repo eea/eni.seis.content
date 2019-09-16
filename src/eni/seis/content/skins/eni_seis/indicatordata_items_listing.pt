@@ -34,7 +34,7 @@
 
       <metal:block tal:repeat="result batch">
 
-        <div class="newsItem clearfix"
+        <div class="indicatordata clearfix"
              metal:define-macro="listitem"
              tal:define="resultObject result/getObject;
                         creator result/Creator;
