@@ -363,8 +363,12 @@ class IndicatorDataView(BrowserView):
         return results
 
     def figures(self):
+        def get_ids(number):
+            return ["chart-" + str(number), "table-" + str(number)]
+
         items = self.get_daviz_items()
         figures = []
+        ids = 0
 
         for item in items:
             try:
@@ -378,7 +382,8 @@ class IndicatorDataView(BrowserView):
                         'url': url,
                         'chart_id': chart_id,
                         'valid': True,
-                        'title': item.Description()
+                        'title': item.Description(),
+                        'ids': get_ids(ids)
                     }
                 )
             except Exception as err:
@@ -387,10 +392,12 @@ class IndicatorDataView(BrowserView):
                         'url': url,
                         'chart_id': 'N/A',
                         'valid': False,
-                        'title': 'Invalid'
+                        'title': 'Invalid',
+                        'ids': get_ids(ids)
                     }
                 )
                 err = err
+            ids = ids + 2
         return figures
 
 

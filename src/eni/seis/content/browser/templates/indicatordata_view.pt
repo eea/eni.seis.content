@@ -13,7 +13,6 @@
 
 <metal:main fill-slot="main">
   <div id="indicator-container" tal:define="indicator python:context">
-
     <h1 id="parent-fieldname-title" class="documentFirstHeading" tal:content="indicator/Title">
       Title
     </h1>
@@ -51,43 +50,34 @@
           <tal:figures>
             <div class="eni-figure" tal:repeat="figure python:view.figures()">
               <h3 tal:content="python:figure['title']"></h3>
+
               <div tal:condition="python:figure['valid'] is True">
-                <span tal:replace="python:figure['url']"></span> is valid.
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation"><a tal:attributes="href python:'#' + figure['ids'][0]; aria-controls python:figure['ids'][0]" role="tab" data-toggle="tab">Chart</a></li>
+                  <li role="presentation"><a tal:attributes="href python:'#' + figure['ids'][1]; aria-controls python:figure['ids'][1]" role="tab" data-toggle="tab">Table</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
+                    <iframe width='1172' height='680'
+                            tal:attributes="src python:figure['url'] + '/embed-chart?chart=' + figure['chart_id']">
+                  </iframe>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
+                    <iframe width='1172' height='680'
+                            tal:attributes="src python:figure['url'] + '/download.table'">
+                    </iframe>
+                  </div>
+                </div>
               </div>
+
               <div tal:condition="python:figure['valid'] is False">
                 <span tal:replace="python:figure['url']"></span> is not valid.
                 Chart ID: <span tal:content="python:figure['chart_id']"></span>
               </div>
 
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation">
-                  <a tal:attributes="href python:figure['chart_id'] + '1';
-                                     aria-controls python:figure['chart_id'] + '1'"
-                     role="tab" data-toggle="tab">Chart</a>
-                </li>
-                <li role="presentation">
-                  <a tal:attributes="href python:figure['chart_id'] + '2';
-                                     aria-controls python:figure['chart_id'] + '2'"
-                     role="tab" data-toggle="tab">Table</a>
-                </li>
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active"
-                     tal:attributes="id python:figure['chart_id'] + '1'">
-                  <iframe width='1172' height='680'
-                          tal:attributes="src python:figure['url'] + '/embed-chart?chart=' + figure['chart_id']">
-                </iframe>
-                </div>
-                <div role="tabpanel" class="tab-pane"
-                     tal:attributes="id python:figure['chart_id'] + '2'">
-                  <iframe width='1172' height='680'
-                          tal:attributes="src python:figure['url'] + '/download.table'">
-                  </iframe>
-                </div>
-              </div>
             </div>
           </tal:figures>
 
