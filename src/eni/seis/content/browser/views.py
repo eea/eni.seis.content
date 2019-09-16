@@ -348,8 +348,8 @@ class IndicatorView(BrowserView):
 class IndicatorDataView(BrowserView):
     """ Indicator Data
     """
-    def get_indicator_data_items(self):
-        """ Return all published indicatordata items found in this context
+    def get_daviz_items(self):
+        """ Return all data vizualizations found in this context
         """
         catalog = getToolByName(self.context, 'portal_catalog')
         results = [x.getObject() for x in catalog.searchResults(
@@ -363,20 +363,16 @@ class IndicatorDataView(BrowserView):
         return results
 
     def figures(self):
-        items = self.get_indicator_data_items()
-        import pdb; pdb.set_trace()
-        # TODO WIP use real content
-        urls = ['test/data-visualization-1', 'test/invalid']
+        items = self.get_daviz_items()
         figures = []
-        site = api.portal.get()
 
-        for url in urls:
+        for item in items:
             try:
-                daviz_obj = site.unrestrictedTraverse(url)
-                annot = IAnnotations(daviz_obj)
+                annot = IAnnotations(item)
                 chart_id = annot[
                     'eea.daviz.config.views'][0]['chartsconfig']['charts'][
                             0]['id']
+                url = item.absolute_url()
                 figures.append(
                     {
                         'url': url,
@@ -393,7 +389,7 @@ class IndicatorDataView(BrowserView):
                     }
                 )
                 err = err
-                # import pdb; pdb.set_trace()
+                import pdb; pdb.set_trace()
         return figures
 
 
