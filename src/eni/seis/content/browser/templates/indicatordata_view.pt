@@ -182,18 +182,18 @@
     </div>
   </div>
 
-<!-- <script> -->
-<!-- $("document").ready(function() { -->
-<!--   debugger; // TODO WIP fix table styles -->
-<!--   $('iframe').load( function() { -->
-<!--     $('iframe').contents().find("head") -->
-<!--       .append($("<style type='text/css'>  body {background: red !important;}  </style>")); -->
-<!--   }); -->
-<!-- }); -->
-<!-- </script> -->
+<script>
+// [TODO] Better solution
+$("document").ready(function() {
+  $('iframe').load( function() {
+    $('iframe').contents().find("head")
+      .append($("<style type='text/css'>  th, td {padding: 5px; color: #222222; border-color: #DDD}  </style>"));
+  });
+});
+</script>
 
 <style>
-
+/* [TODO] Move these vvv */
 body.template-view.portaltype-indicatordata div.page-main {
   width: 100%;
 }
