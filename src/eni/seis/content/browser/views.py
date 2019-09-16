@@ -377,7 +377,8 @@ class IndicatorDataView(BrowserView):
                     {
                         'url': url,
                         'chart_id': chart_id,
-                        'valid': True
+                        'valid': True,
+                        'title': item.Description()
                     }
                 )
             except Exception as err:
@@ -385,11 +386,11 @@ class IndicatorDataView(BrowserView):
                     {
                         'url': url,
                         'chart_id': 'N/A',
-                        'valid': False
+                        'valid': False,
+                        'title': 'Invalid'
                     }
                 )
                 err = err
-                import pdb; pdb.set_trace()
         return figures
 
 
