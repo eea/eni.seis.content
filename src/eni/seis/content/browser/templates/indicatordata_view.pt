@@ -43,7 +43,7 @@
             <p tal:replace="structure python:indicator.key_messages.output">Key messages</p>
           </div>
 
-          <div tal:replace="structure python:indicator.text.output">Body text</div>
+          <div tal:replace="structure python:indicator.text_before.output">Text before figures</div>
 
           <tal:figures>
             <div class="eni-figure" tal:repeat="figure python:view.figures()">
@@ -86,6 +86,8 @@
 
             </div>
           </tal:figures>
+
+          <div tal:replace="structure python:indicator.text.output">Body text</div>
 
           <!-- <div class="image&#45;container"> -->
           <!--   <tal:block replace="structure indicator/@@images/image" /> -->

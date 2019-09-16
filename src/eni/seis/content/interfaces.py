@@ -110,8 +110,13 @@ class IIndicatorData(model.Schema):
         required=False,
     )
 
+    text_before = RichText(
+        title=u"Body text (section before figures)",
+        required=False,
+    )
+
     text = RichText(
-        title=u"Body text",
+        title=u"Body text (section after figures)",
         required=False,
     )
 
