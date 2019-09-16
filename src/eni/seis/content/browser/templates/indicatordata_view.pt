@@ -84,7 +84,7 @@
 
           <tal:figures>
             <div class="eni-figure" tal:repeat="figure python:view.figures()">
-              <h3>TODO figure title here</h3>
+              <h3 tal:content="python:figure['title']"></h3>
               <div tal:condition="python:figure['valid'] is True">
                 <span tal:replace="python:figure['url']"></span> is valid.
                 Chart ID: <span tal:content="python:figure['chart_id']"></span>
