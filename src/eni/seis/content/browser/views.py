@@ -384,7 +384,8 @@ class IndicatorDataView(BrowserView):
                         'chart_id': chart_id,
                         'valid': True,
                         'title': item.Description(),
-                        'ids': get_ids(ids)
+                        'ids': get_ids(ids),
+                        'text': item.body()
                     }
                 )
             except Exception as err:
@@ -394,7 +395,8 @@ class IndicatorDataView(BrowserView):
                         'chart_id': 'N/A',
                         'valid': False,
                         'title': 'Invalid',
-                        'ids': get_ids(ids)
+                        'ids': get_ids(ids),
+                        'text': ''
                     }
                 )
                 err = err

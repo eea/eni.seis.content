@@ -45,8 +45,8 @@
 
           <div tal:replace="structure python:indicator.text_before.output">Text before figures</div>
 
-          <tal:figures>
-            <div class="eni-figure" tal:repeat="figure python:view.figures()">
+          <tal:figures tal:repeat="figure python:view.figures()">
+            <div class="eni-figure">
               <h3 tal:content="python:figure['title']"></h3>
 
               <div tal:condition="python:figure['valid'] is True">
@@ -77,13 +77,16 @@
                     </iframe>
                   </div>
                 </div>
+
+                <div tal:content="structure python:figure['text']">
+                  Figure's body text
+                </div>
               </div>
 
               <div tal:condition="python:figure['valid'] is False">
                 <span tal:replace="python:figure['url']"></span> is not valid.
                 Chart ID: <span tal:content="python:figure['chart_id']"></span>
               </div>
-
             </div>
           </tal:figures>
 
