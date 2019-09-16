@@ -54,8 +54,16 @@
               <div tal:condition="python:figure['valid'] is True">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                  <li role="presentation"><a tal:attributes="href python:'#' + figure['ids'][0]; aria-controls python:figure['ids'][0]" role="tab" data-toggle="tab">Chart</a></li>
-                  <li role="presentation"><a tal:attributes="href python:'#' + figure['ids'][1]; aria-controls python:figure['ids'][1]" role="tab" data-toggle="tab">Table</a></li>
+                  <li role="presentation">
+                    <a tal:attributes="href python:'#' + figure['ids'][0]; aria-controls python:figure['ids'][0]"
+                       role="tab" data-toggle="tab">Chart
+                    </a>
+                  </li>
+                  <li role="presentation">
+                    <a tal:attributes="href python:'#' + figure['ids'][1]; aria-controls python:figure['ids'][1]"
+                       role="tab" data-toggle="tab">Table
+                    </a>
+                  </li>
                 </ul>
 
                 <!-- Tab panes -->
