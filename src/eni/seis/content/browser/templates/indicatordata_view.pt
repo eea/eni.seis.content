@@ -45,8 +45,6 @@
 
           <div tal:replace="structure python:indicator.text.output">Body text</div>
 
-          <div tal:content="python:view.figures()"></div>
-
           <tal:figures>
             <div class="eni-figure" tal:repeat="figure python:view.figures()">
               <h3 tal:content="python:figure['title']"></h3>
