@@ -16,6 +16,7 @@ from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.util import is_east_website
 from eni.seis.content.util import is_south_website
 from eni.seis.content.util import portal_absolute_url
+from itertools import groupby
 from plone import api
 from plone.dexterity.utils import createContentInContainer
 from zope.annotation.interfaces import IAnnotations
@@ -348,6 +349,67 @@ class IndicatorView(BrowserView):
 class IndicatorDataView(BrowserView):
     """ Indicator Data
     """
+    def grouped_coverage(self):
+        """ Given an iterable of numbers, group them by range
+        """
+        def extract_years(data):
+            """
+                2003-2006 -> [2003, 2004, 2005, 2006]
+                2000 -> [2000]
+                abc -> invalid: abc
+            """
+            result = []
+            invalid = False
+            try:
+                year = int(data)
+                result.append(year)
+                return result
+            except ValueError:
+                try:
+                    years = data.split("-")
+                    if len(years) == 2:
+                        start = int(years[0])
+                        end = int(years[1])
+                        for year in range(start, end):
+                            result.append(year)
+                        return result
+                    else:
+                        invalid = True
+                except Exception:
+                    return "invalid: " + data
+
+            if invalid is True:
+                return "invalid: " + data
+
+        years = [
+            x for x in self.temporal_coverage.replace(",", " ").replace(
+                ";", " ").split(" ") if len(x) > 0]
+        data = []
+
+        for item in years:
+            temp = extract_years(item)
+            if "invalid" not in temp:
+                data.append(temp)
+
+        source = [int(x) for x in sorted(set(data))]
+        output = []
+
+        def group_func(idx_nr):
+            """ Used as comparator for grouping
+            """
+            index, number = idx_nr
+            return index - number
+
+        for _key, group in groupby(enumerate(source), group_func):
+            result = [x[1] for x in group]
+
+            if len(result) == 1:
+                output.append("{0}".format(result[0]))
+            else:
+                output.append("{0}-{1}".format(result[0], result[-1]))
+
+        return output
+
     def get_daviz_items(self):
         """ Return all data vizualizations found in this context
         """

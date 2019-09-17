@@ -136,6 +136,7 @@
 
           <p tal:condition="python:indicator.temporal_coverage">
             <b>Temporal coverage:</b> <span tal:content="python:indicator.temporal_coverage">1971-2000</span>
+            <span tal:replace="python:view.grouped_coverage()"></span>
           </p>
 
           <p tal:condition="python:indicator.dpsir">
