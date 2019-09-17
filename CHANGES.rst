@@ -4,6 +4,7 @@ Changelog
 1.0.8 (unreleased)
 ------------------
 - Feature: Add IndicatorData content type.
+  Manual step: /dexterity-types/indicatordata/@@behaviors - add Countries Field
   [GhitaB #108504]
 
 1.0.7 (2019-08-28)
