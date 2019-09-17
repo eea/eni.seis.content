@@ -369,7 +369,7 @@ class IndicatorDataView(BrowserView):
                     years = data.split("-")
                     if len(years) == 2:
                         start = int(years[0])
-                        end = int(years[1])
+                        end = int(years[1]) + 1
                         for year in range(start, end):
                             result.append(year)
                         return result
@@ -382,14 +382,16 @@ class IndicatorDataView(BrowserView):
                 return "invalid: " + data
 
         years = [
-            x for x in self.temporal_coverage.replace(",", " ").replace(
+            x for x in self.context.temporal_coverage.replace(
+                ",", " ").replace(
                 ";", " ").split(" ") if len(x) > 0]
-        data = []
 
+        data = []
         for item in years:
             temp = extract_years(item)
             if "invalid" not in temp:
-                data.append(temp)
+                for x in temp:
+                    data.append(x)
 
         source = [int(x) for x in sorted(set(data))]
         output = []
