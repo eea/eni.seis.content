@@ -393,6 +393,9 @@ class IndicatorDataView(BrowserView):
                 for x in temp:
                     data.append(x)
 
+        # [TODO] In this moment data contains the list of all years. Use this
+        # as search filter later.
+
         source = [int(x) for x in sorted(set(data))]
         output = []
 
