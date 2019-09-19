@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.0.9 (unreleased)
+------------------
+
 1.0.8 (2019-09-19)
 ------------------
 - Feature: Add IndicatorData content type.
