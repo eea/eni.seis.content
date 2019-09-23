@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<object name="indicators-search" meta_type="ATFolder">
+ <criteria>
+  <criterion name="c6">
+   <property name="widget">text</property>
+   <property name="title">Find indicators</property>
+   <property name="index">Title</property>
+   <property name="onlyallelements">True</property>
+   <property name="wildcard">False</property>
+   <property name="position">center</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+  </criterion>
+  <criterion name="c3">
+   <property name="widget">criteria</property>
+   <property name="title">Current search</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+  </criterion>
+  <criterion name="c0">
+   <property name="widget">resultsperpage</property>
+   <property name="title">Results per page</property>
+   <property name="default">20</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">True</property>
+   <property name="start">0</property>
+   <property name="end">20</property>
+   <property name="step">5</property>
+  </criterion>
+  <criterion name="c2">
+   <property name="widget">sorting</property>
+   <property name="title">Sort on</property>
+   <property name="vocabulary"></property>
+   <property name="default">sortable_title</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">True</property>
+  </criterion>
+  <criterion name="c4">
+   <property name="widget">tagscloud</property>
+   <property name="title">Tags</property>
+   <property name="index">Subject</property>
+   <property name="vocabulary"></property>
+   <property name="catalog">portal_catalog</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+   <property name="count">True</property>
+   <property name="sortcountable">True</property>
+   <property name="hidezerocount">True</property>
+   <property name="maxitems">50</property>
+   <property name="maxchars">0</property>
+   <property name="colormin">9acee6</property>
+   <property name="colormax">007bb3</property>
+   <property name="sortreversed">False</property>
+   <property name="cloud">list</property>
+   <property name="sizemin">10</property>
+   <property name="sizemax">20</property>
+   <property name="height">200</property>
+  </criterion>
+  <criterion name="c5">
+   <property name="widget">daterange</property>
+   <property name="title">Published on</property>
+   <property name="index">effective</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+   <property name="calYearRange">c-10:c+10</property>
+   <property name="usePloneDateFormat">False</property>
+  </criterion>
+  <criterion name="c1">
+   <property name="widget">checkbox</property>
+   <property name="title">Portal type</property>
+   <property name="index">Type</property>
+   <property name="operator">or</property>
+   <property name="operator_visible">False</property>
+   <property name="vocabulary"></property>
+   <property name="catalog">portal_catalog</property>
+   <property name="default">
+    <element value="IndicatorData"/>
+   </property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">True</property>
+   <property name="count">False</property>
+   <property name="sortcountable">False</property>
+   <property name="hidezerocount">False</property>
+   <property name="maxitems">0</property>
+   <property name="sortreversed">False</property>
+  </criterion>
+ </criteria>
+</object>
