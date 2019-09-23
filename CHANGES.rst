@@ -3,6 +3,8 @@ Changelog
 
 1.0.9 (unreleased)
 ------------------
+- Fix: links for topics and tags in indicatordata view.
+  [GhitaB #108504]
 
 1.0.8 (2019-09-19)
 ------------------
