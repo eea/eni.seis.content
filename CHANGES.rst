@@ -3,6 +3,7 @@ Changelog
 
 1.0.9 (unreleased)
 ------------------
+- Feature: Indicators search (faceted). Manual step: import config.
 - Fix: links for topics and tags in indicatordata view.
   [GhitaB #108504]
 
