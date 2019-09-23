@@ -12,7 +12,8 @@
 <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
 <metal:main fill-slot="main">
-  <div id="indicator-container" tal:define="indicator python:context">
+  <div id="indicator-container" tal:define="indicator python:context;
+                                            portal_url python:indicator.portal_url()">
     <h1 id="parent-fieldname-title" class="documentFirstHeading" tal:content="indicator/Title">
       Title
     </h1>
@@ -30,7 +31,7 @@
             <tal:topics tal:repeat="topic python:indicator.topics">
             <span>
               <a class="link-category" rel="tag"
-                 tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
+                 tal:attributes="href python:portal_url + '/@@search?Subject%3Alist=' + topic"
                  tal:content="topic">
                 Topic 1
               </a>
@@ -111,7 +112,7 @@
             <tal:topics tal:repeat="topic python:indicator.topics">
             <span>
               <a class="link-category" rel="tag"
-                 tal:attributes="href python:'/@@search?Subject%3Alist=' + topic"
+                 tal:attributes="href python:portal_url + '/@@search?Subject%3Alist=' + topic"
                  tal:content="topic">
                 Topic 1
               </a>
@@ -126,7 +127,7 @@
             <tal:topics tal:repeat="tag python:indicator.subject">
             <span>
               <a class="link-category" rel="tag"
-                 tal:attributes="href python:'/@@search?Subject%3Alist=' + tag"
+                 tal:attributes="href python:portal_url + '/@@search?Subject%3Alist=' + tag"
                  tal:content="tag">
                 Topic 1
               </a>
