@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.9 (unreleased)
+1.0.9 (2019-09-24)
 ------------------
 - Feature: Indicators search (faceted). Manual step: import config.
 - Fix: links for topics and tags in indicatordata view.
