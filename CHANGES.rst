@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.0 (unreleased)
+------------------
+
 1.0.9 (2019-09-24)
 ------------------
 - Feature: Indicators search (faceted). Manual step: import config.
