@@ -3,6 +3,8 @@ Changelog
 
 1.1.0 (unreleased)
 ------------------
+- Manual step: disable portlets for indicators folder. Else the styles are
+  broken because main.page-main instead of div.page-main.
 
 1.0.9 (2019-09-24)
 ------------------
