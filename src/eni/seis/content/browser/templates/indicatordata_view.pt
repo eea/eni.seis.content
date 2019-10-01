@@ -44,7 +44,8 @@
             <p tal:replace="structure python:indicator.key_messages.output">Key messages</p>
           </div>
 
-          <div tal:replace="structure python:indicator.text_before.output">Text before figures</div>
+          <div tal:condition="python:indicator.text_before"
+               tal:replace="structure python:indicator.text_before.output">Text before figures</div>
 
           <tal:figures tal:repeat="figure python:view.figures()">
             <div class="eni-figure">
