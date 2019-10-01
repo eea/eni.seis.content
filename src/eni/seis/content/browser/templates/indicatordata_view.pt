@@ -186,6 +186,18 @@
     </div>
   </div>
 
+<style>
+/* [TODO] Move to theme. */
+table.eni-indicator-table,
+table.eni-indicator-table td {
+  border: 1px solid #1f87e8;
+}
+table.eni-indicator-table tr:first-child td {
+  background: #1f87e8;
+  color: white;
+}
+</style>
+
 <script>
 // [TODO] Better solution
 $("document").ready(function() {
