@@ -39,7 +39,7 @@
             </tal:topics>
           </div>
 
-          <div class="key-messages">
+          <div class="key-messages" tal:condition="python:indicator.key_messages">
             <h3>Key messages</h3>
             <p tal:replace="structure python:indicator.key_messages.output">Key messages</p>
           </div>
