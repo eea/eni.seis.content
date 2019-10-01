@@ -3,6 +3,7 @@ Changelog
 
 1.1.0 (unreleased)
 ------------------
+- Improve: add style for custom tables in indicator view.
 - Fix: error when fields are empty.
 - Feature: custom indicators listing for search section.
 - Manual step: disable portlets for indicators folder. Else the styles are
