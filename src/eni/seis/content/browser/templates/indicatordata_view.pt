@@ -92,7 +92,8 @@
             </div>
           </tal:figures>
 
-          <div tal:replace="structure python:indicator.text.output">Body text</div>
+          <div tal:condition="python:indicator.text"
+               tal:replace="structure python:indicator.text.output">Body text</div>
 
           <!-- <div class="image&#45;container"> -->
           <!--   <tal:block replace="structure indicator/@@images/image" /> -->
