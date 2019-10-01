@@ -16,6 +16,11 @@
   margin-right: 20px;
   min-width: 128px;
 }
+
+.tileItem {
+  padding: 7px;
+}
+
 </style>
         <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
             <!-- we don't want the dl -->
