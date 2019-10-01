@@ -5,18 +5,8 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="eea">
-<head>
-    <metal:jsslot fill-slot="javascript_head_slot">
-        <script type="text/javascript"
-                 tal:content="string:jQuery(document).ready(function(evt){
-                    if (window.Faceted) {
-                        jQuery(Faceted.Events).trigger(Faceted.Events.LAZY_LOAD, {msg: 'Enabling Lazy Loading'});
-                    }
-                });"></script>
-    </metal:jsslot>
-</head>
-<body>
 
+<body>
     <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
         <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
@@ -26,15 +16,15 @@
                     <metal:entry fill-slot="entry">
                 <div class="tileItem visualIEFloatFix"
                      tal:define="item_type_class python: 'visualIcon contenttype-' + normalizeString(item_type);
-                                 item_type_title_display item_type_title_display|python: True">
+                                 item_type_title_display item_type_title_display|python: True;
+                                 itemObj python:item.getObject()">
                     <a class="tileImage"
                        tal:attributes="href item_url;
                                        title item_title_or_id;
                                        class string:tileImage">
-                        <!-- <img class="lazy" -->
-                        <!--      tal:attributes="src string:${item_absolute_url}/image_mini; -->
-                        <!--                      title item_title_or_id; -->
-                        <!--                      alt item_title_or_id" /> -->
+                        <div tal:condition="python:itemObj.image">
+                          <img tal:replace="structure itemObj/@@images/image/thumb" />
+                        </div>
                     </a>
 
                     <div class="tileContent">
