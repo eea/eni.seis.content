@@ -9,6 +9,14 @@
 <body>
     <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
+<style>
+/* [TODO] Move this to theme. */
+.tileImage {
+  float: left;
+  margin-right: 20px;
+  min-width: 128px;
+}
+</style>
         <metal:block define-macro="listing" extend-macro="context/folder_listing/macros/content-core">
             <!-- we don't want the dl -->
             <metal:entries fill-slot="entries">
@@ -37,15 +45,15 @@
                                tal:content="item_title_or_id">
                                 Item Title
                             </a>
-
                         </h2>
-                        <span tal:condition="item_type_title_display" tal:content="item_type_title"></span>
-                        <!-- <span class="date" -->
-                        <!--       tal:condition="python:item_published != 'None' and  item_type not in ('Event', 'QuickEvent', 'Promotion', 'Rich Topic','Smart Folder',)"> -->
-                        <!--     <span tal:replace="python:toLocalizedTime(item_published)"> -->
-                        <!--         August 16, 2001 at 23:35:59 -->
-                        <!--     </span> -->
-                        <!-- </span> -->
+
+                        <span class="publish-date"
+                          tal:define="publish_date python:itemObj.EffectiveDate();
+                                      plone_view itemObj/@@plone;">
+                            <span tal:replace="python:' %s' % plone_view.toLocalizedTime(publish_date)">
+                              August 16, 2001 at 23:35:59
+                            </span>
+                        </span>
 
                         <div class="documentByLine" tal:condition="python: site_properties.allowAnonymousViewAbout or not isAnon">
                         <tal:event condition="python: item_type == 'Event'">
@@ -135,6 +143,7 @@
         </metal:block>
         </metal:block>
     </metal:content-core>
+
 
 </body>
 </html>
