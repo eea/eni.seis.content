@@ -3,8 +3,10 @@ Changelog
 
 1.1.0 (unreleased)
 ------------------
+- Feature: custom indicators listing for search section.
 - Manual step: disable portlets for indicators folder. Else the styles are
   broken because main.page-main instead of div.page-main.
+  [GhitaB #108504]
 
 1.0.9 (2019-09-24)
 ------------------
