@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.1 (unreleased)
+------------------
+
 1.1.0 (2019-10-01)
 ------------------
 - Improve: add style for custom tables in indicator view.
