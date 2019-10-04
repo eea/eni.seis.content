@@ -3,6 +3,8 @@ Changelog
 
 1.1.1 (unreleased)
 ------------------
+- Fix: lead image listing for indicators in search page.
+  [GhitaB #110078]
 
 1.1.0 (2019-10-01)
 ------------------
