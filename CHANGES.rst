@@ -4,6 +4,7 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 - Fix: lead image listing for indicators in search page.
+  Manual step: delete template customization in production website (East).
   [GhitaB #110078]
 
 1.1.0 (2019-10-01)
