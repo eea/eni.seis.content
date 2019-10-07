@@ -3,6 +3,8 @@ Changelog
 
 1.1.1 (unreleased)
 ------------------
+- Improve: Move styles to theme.
+  [refs #108504]
 - Fix: lead image listing for indicators in search page.
   Manual step: delete template customization in production website (East).
   [GhitaB #110078]
