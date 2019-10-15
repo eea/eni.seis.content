@@ -65,6 +65,78 @@
           </div>
         </div>
       </div>
+
+      <div class="container-fluid seea-progress-section3">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="seea-table-container">
+              <h3 class="text-center">
+                Summary of the SEEA Progress in the six eastern partnership countries
+              </h3>
+              <h5 class="text-center">January 2019</h5>
+
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Armenia</th>
+                    <th>Azerbaijan</th>
+                    <th>Belarus</th>
+                    <th>Georgia</th>
+                    <th>Moldova</th>
+                    <th>Ukraine</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>SEEA Central framework</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Natural resource accounts</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid seea-progress-section4">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="explore-further">
+              <h3>Explore further</h3>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <style>
