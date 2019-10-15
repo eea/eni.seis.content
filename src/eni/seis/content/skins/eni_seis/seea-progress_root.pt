@@ -75,7 +75,7 @@
               </h3>
               <h5 class="text-center">January 2019</h5>
 
-              <table class="table table-responsive">
+              <table class="table table-responsive seea-table">
                 <thead>
                   <tr>
                     <th></th>
@@ -432,6 +432,28 @@
       td.ml-2 {
         padding-left: 30px !important;
       }
+
+      table.seea-table {
+        border-bottom: 2px solid green;
+      }
+
+      table.seea-table td.title {
+        color: green;
+        font-size: 1.5em;
+      }
+
+      table.seea-table td.title2 {
+        background: green;
+        color: white;
+        font-size: 1.2em;
+      }
+
+
+      table.seea-table th {
+        background: green;
+        color: white;
+      }
+
     </style>
 
   </body>
