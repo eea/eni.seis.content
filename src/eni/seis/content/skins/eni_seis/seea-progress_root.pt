@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row vertical-align">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <img class="img-responsive" src="./seea-progress-01.png" />
+            <img class="img-responsive lead-img" src="./seea-progress-01.png" />
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <p>
@@ -41,6 +41,10 @@
     </div>
 
     <style>
+      img.lead-img {
+        max-width: 90%;
+      }
+
       .vertical-align {
         display: flex !important;
         align-items: center;
