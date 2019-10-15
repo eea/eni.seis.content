@@ -459,6 +459,15 @@
 
       table.seea-table td {
         border-top: none !important;
+        text-align: center;
+      }
+
+      table.seea-table th {
+        text-align: center;
+      }
+
+      table.seea-table td:first-of-type {
+        text-align: left;
       }
 
       table.seea-table th,
