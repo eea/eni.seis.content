@@ -3,8 +3,10 @@ Changelog
 
 1.1.1 (unreleased)
 ------------------
+- Feature: SEEA Progress section template.
+  [GhitaB #107341]
 - Improve: Move styles to theme.
-  [refs #108504]
+  [GhitaB #108504]
 - Fix: lead image listing for indicators in search page.
   Manual step: delete template customization in production website (East).
   [GhitaB #110078]
