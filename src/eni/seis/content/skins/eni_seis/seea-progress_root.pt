@@ -457,6 +457,20 @@
         background: gray;
       }
 
+      table.seea-table td {
+        border-top: none !important;
+      }
+
+      table.seea-table th,
+      table.seea-table td {
+        border-right: 1px solid gray;
+      }
+
+      table.seea-table th:last-of-type,
+      table.seea-table td:last-of-type {
+        border-right: none;
+      }
+
       table.seea-table tr:not(.no-hover):hover td {
         background: blue;
         color: white;
