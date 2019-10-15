@@ -77,7 +77,7 @@
 
               <table class="table table-responsive seea-table">
                 <thead>
-                  <tr>
+                  <tr class="no-hover">
                     <th></th>
                     <th>Armenia</th>
                     <th>Azerbaijan</th>
@@ -88,7 +88,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr class="no-hover">
                     <td class="title">SEEA Central framework</td>
                     <td></td>
                     <td></td>
@@ -97,7 +97,7 @@
                     <td></td>
                     <td></td>
                   </tr>
-                  <tr>
+                  <tr class="no-hover">
                     <td class="title2">Natural resource accounts</td>
                     <td></td>
                     <td></td>
@@ -205,7 +205,7 @@
                     <td></td>
                     <td></td>
                   </tr>
-                  <tr>
+                  <tr class="no-hover">
                     <td class="title2">Physical and hybrid flow accounts</td>
                     <td></td>
                     <td></td>
@@ -313,7 +313,7 @@
                     <td></td>
                     <td></td>
                   </tr>
-                  <tr>
+                  <tr class="no-hover">
                     <td class="title2">Environmental activity accounts</td>
                     <td></td>
                     <td></td>
@@ -367,7 +367,7 @@
                     <td></td>
                     <td></td>
                   </tr>
-                  <tr>
+                  <tr class="no-hover">
                     <td class="title">SEEA Experimental Ecosystem Accounts</td>
                     <td>Future</td>
                     <td>Future</td>
@@ -455,6 +455,11 @@
 
       table.seea-table tr.odd td {
         background: gray;
+      }
+
+      table.seea-table tr:not(.no-hover):hover td {
+        background: blue;
+        color: white;
       }
     </style>
 
