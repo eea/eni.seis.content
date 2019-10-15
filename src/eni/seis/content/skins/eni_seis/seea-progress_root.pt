@@ -42,7 +42,26 @@
       <div class="container-fluid seea-progress-section2">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4>Knowledge resources</h4>
+            <div class="knowledge-resources">
+              <h3>Knowledge resources</h3>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">List item</a>
+                </li>
+              </ul>
+              <a href="#" class="more-items pull-right">
+                More
+              </a>
+            </div>
           </div>
         </div>
       </div>
