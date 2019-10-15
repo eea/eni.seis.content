@@ -89,7 +89,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>SEEA Central framework</td>
+                    <td class="title">SEEA Central framework</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -98,7 +98,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td>Natural resource accounts</td>
+                    <td class="title2">Natural resource accounts</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -206,7 +206,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td>Physical and hybrid flow accounts</td>
+                    <td class="title2">Physical and hybrid flow accounts</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -314,7 +314,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td>Environmental activity accounts</td>
+                    <td class="title2">Environmental activity accounts</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -349,8 +349,33 @@
                     <td></td>
                     <td></td>
                   </tr>
-
-
+                  <tr>
+                    <td>2.15. Environmental taxes account</td>
+                    <td>Future</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2.16. Environmental goods and services sector accounts (EGSS)</td>
+                    <td>Future</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="title">SEEA Experimental Ecosystem Accounts</td>
+                    <td>Future</td>
+                    <td>Future</td>
+                    <td>Future</td>
+                    <td>Future</td>
+                    <td>Future</td>
+                    <td>Future</td>
+                  </tr>
                 </tbody>
               </table>
 
