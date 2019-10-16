@@ -10,7 +10,7 @@
   <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
   <body metal:fill-slot="content-core">
-    <div class="seea-progress-container">
+    <div class="seea-progress-container" data-diazo="seea-content">
       <div class="container seea-progress-section1">
         <div class="row vertical-align">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-left">
