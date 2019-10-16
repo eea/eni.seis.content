@@ -71,7 +71,11 @@
                   </td>
 
                   <td class="event-table-location">
-                    <span tal:content="python: context.get_event_location(item)"></span>
+                    <span tal:condition="python:item.getObject().is_webinar() is False"
+                          tal:content="python:context.get_event_location(item)"></span>
+                    <span tal:condition="python:item.getObject().is_webinar() is True">
+                      Webinar
+                    </span>
                   </td>
 
                 </tr>
