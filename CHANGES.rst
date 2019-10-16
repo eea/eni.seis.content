@@ -7,6 +7,7 @@ Changelog
   instead of empty field.
   [GhitaB #110353]
 - Feature: SEEA Progress section template.
+  Manual step: add seea-progress_root as display type for Folder.
   [GhitaB #107341]
 - Improve: Move styles to theme.
   [GhitaB #108504]
