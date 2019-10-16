@@ -3,6 +3,9 @@ Changelog
 
 1.1.1 (unreleased)
 ------------------
+- Improve: In meetings table view describe webinar's location as 'Webinar'
+  instead of empty field.
+  [GhitaB #110353]
 - Feature: SEEA Progress section template.
   [GhitaB #107341]
 - Improve: Move styles to theme.
