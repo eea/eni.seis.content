@@ -10,399 +10,409 @@
   <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
 
   <body metal:fill-slot="content-core">
-    <div class="seea-progress-container" data-diazo="seea-content">
-      <div class="container seea-progress-section1">
-        <div class="row vertical-align">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-left">
-            <img class="img-responsive lead-img" src="./seea-progress-01.png" />
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            aliquam ante sed magna blandit tempus. Etiam euismod leo non
-            tincidunt venenatis.
-            </p>
-            <p>
-            Mauris id mi vitae enim fermentum lacinia
-            quis non leo. Aenean bibendum a nisi eget dictum. Integer id mi
-            nec massa blandit ullamcorper non ultricies lorem. Donec elit
-            diam, hendrerit at nunc id, ullamcorper dictum nisi. Sed eu
-            metus eu ante tempus venenatis at nec arcu. Integer non
-            purus dapibus, bibendum nunc vitae, placerat massa. Nulla
-            facilisi. Donec in velit in massa accumsan porta nec at odio.
-            Maecenas a enim lorem. Suspendisse pulvinar condimentum molestie.
-            Aenean suscipit ante id ligula pretium, aliquam congue lectus
-            tempor. Sed eget arcu nibh. In in feugiat diam. Quisque pulvinar
-            tincidunt metus, eu blandit sapien finibus vitae.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid seea-progress-section2">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="knowledge-resources">
-              <h3>Knowledge resources</h3>
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-              </ul>
-              <a href="#" class="more-items pull-right">
-                More
-              </a>
+    <div data-diazo="seea-content">
+      <div class="site-container">
+        <div class="seea-progress-container">
+          <div class="container seea-progress-section1">
+            <div class="row vertical-align">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-left">
+                <img class="img-responsive lead-img" src="./seea-progress-01.png" />
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                aliquam ante sed magna blandit tempus. Etiam euismod leo non
+                tincidunt venenatis.
+                </p>
+                <p>
+                Mauris id mi vitae enim fermentum lacinia
+                quis non leo. Aenean bibendum a nisi eget dictum. Integer id mi
+                nec massa blandit ullamcorper non ultricies lorem. Donec elit
+                diam, hendrerit at nunc id, ullamcorper dictum nisi. Sed eu
+                metus eu ante tempus venenatis at nec arcu. Integer non
+                purus dapibus, bibendum nunc vitae, placerat massa. Nulla
+                facilisi. Donec in velit in massa accumsan porta nec at odio.
+                Maecenas a enim lorem. Suspendisse pulvinar condimentum molestie.
+                Aenean suscipit ante id ligula pretium, aliquam congue lectus
+                tempor. Sed eget arcu nibh. In in feugiat diam. Quisque pulvinar
+                tincidunt metus, eu blandit sapien finibus vitae.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container-fluid seea-progress-section3">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="seea-table-container">
-              <h3 class="text-center">
-                Summary of the SEEA Progress in the six eastern partnership countries
-              </h3>
-              <h5 class="text-center">January 2019</h5>
-
-              <table class="table table-responsive seea-table">
-                <thead>
-                  <tr class="no-hover">
-                    <th></th>
-                    <th>Armenia</th>
-                    <th>Azerbaijan</th>
-                    <th>Belarus</th>
-                    <th>Georgia</th>
-                    <th>Moldova</th>
-                    <th>Ukraine</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="no-hover">
-                    <td class="title">SEEA Central framework</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="no-hover">
-                    <td class="title2">Natural resource accounts</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.1. Land cover accounts</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.1.1. Physical asset accounts for land (land cover and/or land use)</td>
-                    <td></td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="ml-2">2.1.2. Monetary asset accounts for land (land cover and/or land use)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>2.2. Forest accounts</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="ml-2">2.2.1. Physical asset accounts for timber resources</td>
-                    <td></td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.2.2. Monetary asset accounts for timber resources</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.3. Water stock accounts</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.3.1. Physical asset accounts for water resources</td>
-                    <td></td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.4. Mineral and energy asset accounts</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.4.1. Physical asset accounts for mineral and energy resources</td>
-                    <td></td>
-                    <td>Regular</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="ml-2">2.4.2. Monetary asset accounts for mineral and energy resources</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="no-hover">
-                    <td class="title2">Physical and hybrid flow accounts</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.7. Air emission accounts</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                    <td>Future</td>
-                    <td>Regular</td>
-                    <td>Regular</td>
-                  </tr>
-                  <tr>
-                    <td>2.8. Water emission accounts</td>
-                    <td>Regular</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.9. Water flow accounts</td>
-                    <td>Regular</td>
-                    <td></td>
-                    <td></td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.9.1. Physical supply and use tablets for water</td>
-                    <td>Regular</td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="ml-2">2.9.2. Monetary supply and use tablets for water</td>
-                    <td>Regular</td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>2.10. Energy and material flow accounts</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="ml-2">2.10.1. Physical supply and use tablets for energy</td>
-                    <td></td>
-                    <td>Regular</td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.10.2. Monetary supply and use tablets for energy</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td class="ml-2">2.10.3. Full set of supply use tablets for energy</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="ml-2">2.10.4. Enonomy-wide material flow accounts (MFA)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.11. Waste accounts</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="no-hover">
-                    <td class="title2">Environmental activity accounts</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.12. Environmental protection expenditure accounts (EPEA)</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Pilot</td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td>Future</td>
-                  </tr>
-                  <tr>
-                    <td>2.13. Resource use and management accounts (RUMEA)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Regular</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.14. Environmental subsidies account</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                    <td>Pilot</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>2.15. Environmental taxes account</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="odd">
-                    <td>2.16. Environmental goods and services sector accounts (EGSS)</td>
-                    <td>Future</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="no-hover">
-                    <td class="title">SEEA Experimental Ecosystem Accounts</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                    <td>Future</td>
-                  </tr>
-                </tbody>
-              </table>
-
+      <div class="site-container">
+        <div class="container-fluid seea-progress-section2">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="knowledge-resources">
+                <h3>Knowledge resources</h3>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                </ul>
+                <a href="#" class="more-items pull-right">
+                  More
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="container-fluid seea-progress-section4">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="explore-further">
-              <h3>Explore further</h3>
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="#">List item</a>
-                </li>
-              </ul>
+      <div class="site-container">
+        <div class="container-fluid seea-progress-section3">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="seea-table-container">
+                <h3 class="text-center">
+                  Summary of the SEEA Progress in the six eastern partnership countries
+                </h3>
+                <h5 class="text-center">January 2019</h5>
+
+                <table class="table table-responsive seea-table">
+                  <thead>
+                    <tr class="no-hover">
+                      <th></th>
+                      <th>Armenia</th>
+                      <th>Azerbaijan</th>
+                      <th>Belarus</th>
+                      <th>Georgia</th>
+                      <th>Moldova</th>
+                      <th>Ukraine</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="no-hover">
+                      <td class="title">SEEA Central framework</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="no-hover">
+                      <td class="title2">Natural resource accounts</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.1. Land cover accounts</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.1.1. Physical asset accounts for land (land cover and/or land use)</td>
+                      <td></td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td class="ml-2">2.1.2. Monetary asset accounts for land (land cover and/or land use)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2.2. Forest accounts</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td class="ml-2">2.2.1. Physical asset accounts for timber resources</td>
+                      <td></td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.2.2. Monetary asset accounts for timber resources</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.3. Water stock accounts</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.3.1. Physical asset accounts for water resources</td>
+                      <td></td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.4. Mineral and energy asset accounts</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.4.1. Physical asset accounts for mineral and energy resources</td>
+                      <td></td>
+                      <td>Regular</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td class="ml-2">2.4.2. Monetary asset accounts for mineral and energy resources</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="no-hover">
+                      <td class="title2">Physical and hybrid flow accounts</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.7. Air emission accounts</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                      <td>Future</td>
+                      <td>Regular</td>
+                      <td>Regular</td>
+                    </tr>
+                    <tr>
+                      <td>2.8. Water emission accounts</td>
+                      <td>Regular</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.9. Water flow accounts</td>
+                      <td>Regular</td>
+                      <td></td>
+                      <td></td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.9.1. Physical supply and use tablets for water</td>
+                      <td>Regular</td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td class="ml-2">2.9.2. Monetary supply and use tablets for water</td>
+                      <td>Regular</td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2.10. Energy and material flow accounts</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td class="ml-2">2.10.1. Physical supply and use tablets for energy</td>
+                      <td></td>
+                      <td>Regular</td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.10.2. Monetary supply and use tablets for energy</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td class="ml-2">2.10.3. Full set of supply use tablets for energy</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="ml-2">2.10.4. Enonomy-wide material flow accounts (MFA)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.11. Waste accounts</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="no-hover">
+                      <td class="title2">Environmental activity accounts</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.12. Environmental protection expenditure accounts (EPEA)</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Pilot</td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td>Future</td>
+                    </tr>
+                    <tr>
+                      <td>2.13. Resource use and management accounts (RUMEA)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Regular</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.14. Environmental subsidies account</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                      <td>Pilot</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2.15. Environmental taxes account</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="odd">
+                      <td>2.16. Environmental goods and services sector accounts (EGSS)</td>
+                      <td>Future</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="no-hover">
+                      <td class="title">SEEA Experimental Ecosystem Accounts</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                      <td>Future</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-container-fluid">
+        <div class="container-fluid seea-progress-section4">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="explore-further">
+                <h3>Explore further</h3>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">List item</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
