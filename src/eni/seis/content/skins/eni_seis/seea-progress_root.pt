@@ -37,24 +37,7 @@
                 <img class="img-responsive lead-img" src="./seea-progress-01.png" />
               </div>
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                aliquam ante sed magna blandit tempus. Etiam euismod leo non
-                tincidunt venenatis.
-                </p>
-                <p>
-                Mauris id mi vitae enim fermentum lacinia
-                quis non leo. Aenean bibendum a nisi eget dictum. Integer id mi
-                nec massa blandit ullamcorper non ultricies lorem. Donec elit
-                diam, hendrerit at nunc id, ullamcorper dictum nisi. Sed eu
-                metus eu ante tempus venenatis at nec arcu. Integer non
-                purus dapibus, bibendum nunc vitae, placerat massa. Nulla
-                facilisi. Donec in velit in massa accumsan porta nec at odio.
-                Maecenas a enim lorem. Suspendisse pulvinar condimentum molestie.
-                Aenean suscipit ante id ligula pretium, aliquam congue lectus
-                tempor. Sed eget arcu nibh. In in feugiat diam. Quisque pulvinar
-                tincidunt metus, eu blandit sapien finibus vitae.
-                </p>
+                <div tal:replace="structure python:context.long_description">Body text</div>
               </div>
             </div>
           </div>
