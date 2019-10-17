@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.1 (unreleased)
+1.1.1 (2019-10-17)
 ------------------
 - Improve: In meetings table view describe webinar's location as 'Webinar'
   instead of empty field.
