@@ -82,6 +82,12 @@
   <adapter
       factory=".extender.DescriptionFieldExtender" />
 
+  <adapter name="indicatordata_topics" factory=".indexers.indicatordata_topics" />
+  <adapter name="indicatordata_indicator_code" factory=".indexers.indicatordata_indicator_code" />
+  <adapter name="indicatordata_temporal_coverage" factory=".indexers.indicatordata_temporal_coverage" />
+  <adapter name="indicatordata_dpsir" factory=".indexers.indicatordata_dpsir" />
+  <adapter name="indicatordata_typology" factory=".indexers.indicatordata_typology" />
+
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="eni.seis.content-hiddenprofiles" />
