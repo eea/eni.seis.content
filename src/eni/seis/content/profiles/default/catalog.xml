@@ -21,9 +21,14 @@
   <indexed_attr value="indicatordata_typology"/>
  </index>
 
+ <index name="indicatordata_countries" meta_type="FieldIndex">
+  <indexed_attr value="indicatordata_countries"/>
+ </index>
+
  <column value="indicatordata_topics" />
  <column value="indicatordata_indicator_code" />
  <column value="indicatordata_temporal_coverage" />
  <column value="indicatordata_dpsir" />
  <column value="indicatordata_typology" />
+ <column value="indicatordata_countries" />
 </object>

@@ -87,6 +87,7 @@
   <adapter name="indicatordata_temporal_coverage" factory=".indexers.indicatordata_temporal_coverage" />
   <adapter name="indicatordata_dpsir" factory=".indexers.indicatordata_dpsir" />
   <adapter name="indicatordata_typology" factory=".indexers.indicatordata_typology" />
+  <adapter name="indicatordata_countries" factory=".indexers.indicatordata_countries" />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"

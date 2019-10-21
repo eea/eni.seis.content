@@ -25,3 +25,8 @@ def indicatordata_dpsir(context):
 @indexer(IIndicatorData)
 def indicatordata_typology(context):
     return context.typology
+
+
+@indexer(IIndicatorData)
+def indicatordata_countries(context):
+    return context.countries
