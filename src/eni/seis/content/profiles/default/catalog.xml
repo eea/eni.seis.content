@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+
+ <index name="indicatordata_topics" meta_type="FieldIndex">
+  <indexed_attr value="indicatordata_topics"/>
+ </index>
+
+ <index name="indicatordata_indicator_code" meta_type="FieldIndex">
+  <indexed_attr value="indicatordata_indicator_code"/>
+ </index>
+
+ <index name="indicatordata_temporal_coverage" meta_type="FieldIndex">
+  <indexed_attr value="indicatordata_temporal_coverage"/>
+ </index>
+
+ <index name="indicatordata_dpsir" meta_type="FieldIndex">
+  <indexed_attr value="indicatordata_dpsir"/>
+ </index>
+
+ <index name="indicatordata_typology" meta_type="FieldIndex">
+  <indexed_attr value="indicatordata_typology"/>
+ </index>
+
+ <column value="indicatordata_topics" />
+ <column value="indicatordata_indicator_code" />
+ <column value="indicatordata_temporal_coverage" />
+ <column value="indicatordata_dpsir" />
+ <column value="indicatordata_typology" />
+</object>
