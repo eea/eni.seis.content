@@ -93,7 +93,7 @@
                 <h3 class="text-center">
                   Summary of the SEEA Progress in the six eastern partnership countries
                 </h3>
-                <h5 class="text-center">January 2019</h5>
+                <h5 class="text-center">September 2019</h5>
 
                 <table class="table table-responsive seea-table">
                   <thead>
@@ -138,45 +138,45 @@
                     <tr>
                       <td class="ml-2">2.1.1. Physical asset accounts for land (land cover and/or land use)</td>
                       <td></td>
-                      <td><a href="#">Future</a></td>
-                      <td><a href="#">Future</a></td>
-                      <td><a href="#">Future</a></td>
-                      <td><a href="#">Future</a></td>
-                      <td></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
                     </tr>
                     <tr class="odd">
                       <td class="ml-2">2.1.2. Monetary asset accounts for land (land cover and/or land use)</td>
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr>
                       <td>2.2. Forest accounts</td>
                       <td><a href="#">Future</a></td>
-                      <td></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                     </tr>
                     <tr class="odd">
                       <td class="ml-2">2.2.1. Physical asset accounts for timber resources</td>
                       <td></td>
-                      <td></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr>
                       <td class="ml-2">2.2.2. Monetary asset accounts for timber resources</td>
                       <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                     </tr>
@@ -192,10 +192,10 @@
                     <tr>
                       <td class="ml-2">2.3.1. Physical asset accounts for water resources</td>
                       <td></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
                       <td></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td></td>
-                      <td><a href="#">Pilot</a></td>
+                      <td><a href="#">Project</a></td>
                       <td></td>
                     </tr>
                     <tr class="odd">
@@ -219,7 +219,7 @@
                     <tr class="odd">
                       <td class="ml-2">2.4.2. Monetary asset accounts for mineral and energy resources</td>
                       <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -237,16 +237,16 @@
                     <tr class="odd">
                       <td>2.7. Air emission accounts</td>
                       <td><a href="#">Future</a></td>
-                      <td></td>
-                      <td></td>
                       <td><a href="#">Future</a></td>
-                      <td><a href="#">Regular</a></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
                       <td><a href="#">Regular</a></td>
                     </tr>
                     <tr>
                       <td>2.8. Water emission accounts</td>
                       <td><a href="#">Regular</a></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -255,7 +255,7 @@
                     <tr class="odd">
                       <td>2.9. Water flow accounts</td>
                       <td><a href="#">Regular</a></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td><a href="#">Future</a></td>
                       <td></td>
@@ -264,17 +264,17 @@
                     <tr>
                       <td class="ml-2">2.9.1. Physical supply and use tablets for water</td>
                       <td><a href="#">Regular</a></td>
-                      <td></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td></td>
-                      <td><a href="#">Pilot</a></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
                       <td></td>
                     </tr>
                     <tr class="odd">
                       <td class="ml-2">2.9.2. Monetary supply and use tablets for water</td>
                       <td><a href="#">Regular</a></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
-                      <td><a href="#">Pilot</a></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -292,15 +292,15 @@
                       <td class="ml-2">2.10.1. Physical supply and use tablets for energy</td>
                       <td></td>
                       <td><a href="#">Regular</a></td>
-                      <td><a href="#">Pilot</a></td>
+                      <td><a href="#">Project</a></td>
                       <td></td>
-                      <td><a href="#">Pilot</a></td>
+                      <td></td>
                       <td></td>
                     </tr>
                     <tr>
                       <td class="ml-2">2.10.2. Monetary supply and use tablets for energy</td>
                       <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -309,7 +309,7 @@
                     <tr class="odd">
                       <td class="ml-2">2.10.3. Full set of supply use tablets for energy</td>
                       <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -318,9 +318,9 @@
                     <tr>
                       <td class="ml-2">2.10.4. Enonomy-wide material flow accounts (MFA)</td>
                       <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
-                      <td></td>
-                      <td></td>
+                      <td><a href="#">Regular</a></td>
                       <td></td>
                       <td></td>
                     </tr>
@@ -346,42 +346,42 @@
                       <td>2.12. Environmental protection expenditure accounts (EPEA)</td>
                       <td><a href="#">Future</a></td>
                       <td><a href="#">Future</a></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td></td>
                       <td><a href="#">Future</a></td>
+                      <td></td>
+                      <td></td>
+                      <td><a href="#">Regular</a></td>
                     </tr>
                     <tr>
                       <td>2.13. Resource use and management accounts (RUMEA)</td>
                       <td></td>
                       <td></td>
                       <td></td>
-                      <td><a href="#">Regular</a></td>
+                      <td></td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr class="odd">
                       <td>2.14. Environmental subsidies account</td>
                       <td><a href="#">Future</a></td>
-                      <td></td>
-                      <td></td>
-                      <td><a href="#">Pilot</a></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
+                      <td><a href="#">Project</a></td>
                       <td></td>
                     </tr>
                     <tr>
                       <td>2.15. Environmental taxes account</td>
                       <td><a href="#">Future</a></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Future</a></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr class="odd">
                       <td>2.16. Environmental goods and services sector accounts (EGSS)</td>
                       <td><a href="#">Future</a></td>
-                      <td></td>
+                      <td><a href="#">Future</a></td>
                       <td></td>
                       <td></td>
                       <td></td>
