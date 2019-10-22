@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.3 (unreleased)
+------------------
+
 1.1.2 (2019-10-22)
 ------------------
 - Improve: Update SEEA Progress page table section.
