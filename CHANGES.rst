@@ -3,6 +3,7 @@ Changelog
 
 1.1.2 (unreleased)
 ------------------
+- Improve: update configuration for indicators search.
 - Improve: add new indexes in portal_catalog for indicatordata.
   Manual step: run upgrade step, reindex indexes.
   [GhitaB #108504]
