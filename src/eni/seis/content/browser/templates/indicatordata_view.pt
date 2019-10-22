@@ -129,7 +129,7 @@
             <tal:topics tal:repeat="tag python:indicator.subject">
             <span>
               <a class="link-category" rel="tag"
-                 tal:attributes="href python:portal_url + '/@@search?Subject%3Alist=' + tag"
+                 tal:attributes="href python:portal_url + '/indicators/indicators-search/#b_start0&c4=' + tag.replace(' ', '+')"
                  tal:content="tag">
                 Topic 1
               </a>
