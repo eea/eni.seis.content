@@ -18,6 +18,48 @@
    <property name="section">default</property>
    <property name="hidden">False</property>
   </criterion>
+  <criterion name="c8">
+   <property name="widget">select</property>
+   <property name="title">Country</property>
+   <property name="index">indicatordata_countries</property>
+   <property name="vocabulary"></property>
+   <property name="catalog">portal_catalog</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+   <property name="count">False</property>
+   <property name="sortcountable">False</property>
+   <property name="hidezerocount">False</property>
+   <property name="sortreversed">False</property>
+  </criterion>
+  <criterion name="c7">
+   <property name="widget">select</property>
+   <property name="title">Indicator code</property>
+   <property name="index">indicatordata_indicator_code</property>
+   <property name="vocabulary"></property>
+   <property name="catalog">portal_catalog</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+   <property name="count">False</property>
+   <property name="sortcountable">False</property>
+   <property name="hidezerocount">False</property>
+   <property name="sortreversed">False</property>
+  </criterion>
+  <criterion name="c9">
+   <property name="widget">select</property>
+   <property name="title">Theme</property>
+   <property name="index">indicatordata_topics</property>
+   <property name="vocabulary"></property>
+   <property name="catalog">portal_catalog</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">False</property>
+   <property name="count">False</property>
+   <property name="sortcountable">False</property>
+   <property name="hidezerocount">False</property>
+   <property name="sortreversed">False</property>
+  </criterion>
   <criterion name="c0">
    <property name="widget">resultsperpage</property>
    <property name="title">Results per page</property>
