@@ -3,6 +3,8 @@ Changelog
 
 1.1.2 (unreleased)
 ------------------
+- Improve: update links for tags and topics in indicatordata view to use
+  faceted search for indicators section.
 - Improve: update configuration for indicators search.
 - Improve: add new indexes in portal_catalog for indicatordata.
   Manual step: run upgrade step, reindex indexes.
