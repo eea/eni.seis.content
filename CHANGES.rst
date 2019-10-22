@@ -3,6 +3,8 @@ Changelog
 
 1.1.3 (unreleased)
 ------------------
+- Fix: Update SEEA Progress page table - value for Armenia 2.1.1.
+  [GhitaB #107341]
 
 1.1.2 (2019-10-22)
 ------------------
