@@ -3,6 +3,8 @@ Changelog
 
 1.1.2 (unreleased)
 ------------------
+- Improve: Update SEEA Progress page table section.
+  [GhitaB #107341]
 - Improve: update links for tags and topics in indicatordata view to use
   faceted search for indicators section.
 - Improve: update configuration for indicators search.
