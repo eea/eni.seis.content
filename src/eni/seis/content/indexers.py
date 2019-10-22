@@ -1,5 +1,6 @@
 from plone.indexer.decorator import indexer
 from eni.seis.content.interfaces import IIndicatorData
+from eni.seis.content.config import EAST_COUNTRIES_DICT
 
 
 @indexer(IIndicatorData)
@@ -29,4 +30,4 @@ def indicatordata_typology(context):
 
 @indexer(IIndicatorData)
 def indicatordata_countries(context):
-    return context.countries
+    return [EAST_COUNTRIES_DICT.get(x, None) for x in context.countries]

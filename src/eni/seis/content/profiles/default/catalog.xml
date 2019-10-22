@@ -21,7 +21,7 @@
   <indexed_attr value="indicatordata_typology"/>
  </index>
 
- <index name="indicatordata_countries" meta_type="FieldIndex">
+ <index name="indicatordata_countries" meta_type="KeywordIndex">
   <indexed_attr value="indicatordata_countries"/>
  </index>
 

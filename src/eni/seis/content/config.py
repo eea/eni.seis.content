@@ -126,6 +126,15 @@ EAST_COUNTRIES = [
     'Ukraine'
 ]
 
+EAST_COUNTRIES_DICT = {
+    'am': 'Armenia',
+    'az': 'Azerbaijan',
+    'by': 'Belarus',
+    'ge': 'Georgia',
+    'md': 'Moldova',
+    'ua': 'Ukraine'
+}
+
 SOUTH_COUNTRIES = [
     'Algeria',
     'Egypt',
