@@ -4,6 +4,7 @@ Changelog
 1.1.4 (unreleased)
 ------------------
 - Improve: Update indicators search configuration. Manual step: import.
+- Improve: move styles to theme.
   [GhitaB #110829]
 
 1.1.3 (2019-10-31)
