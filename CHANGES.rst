@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1.4 (unreleased)
+------------------
+- Improve: Update indicators search configuration. Manual step: import.
+  [GhitaB #110829]
+
 1.1.3 (2019-10-31)
 ------------------
 - Fix: Update SEEA Progress page table - value for Armenia 2.1.1.
