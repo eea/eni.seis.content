@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.5 (unreleased)
+------------------
+
 1.1.4 (2019-11-06)
 ------------------
 - Improve: Update indicators search configuration. Manual step: import.
