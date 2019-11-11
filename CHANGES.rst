@@ -3,6 +3,8 @@ Changelog
 
 1.1.5 (unreleased)
 ------------------
+- Feature: Results section.
+  [GhitaB #107342]
 
 1.1.4 (2019-11-06)
 ------------------
