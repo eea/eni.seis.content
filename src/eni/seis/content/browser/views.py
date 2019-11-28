@@ -441,6 +441,17 @@ class IndicatorDataView(BrowserView):
         for item in items:
             try:
                 annot = IAnnotations(item)
+                dashboard = annot['eea.daviz.config.views'][2]['dashboards']
+                if dashboard is not None:
+                    print "ZZZZZZZZZz Dashboard"
+                    continue
+                    # [TODO] render dashboard
+
+            except Exception:
+                pass
+
+            try:
+                annot = IAnnotations(item)
                 chart_id = annot[
                     'eea.daviz.config.views'][0]['chartsconfig']['charts'][
                             0]['id']
