@@ -455,6 +455,7 @@ class IndicatorDataView(BrowserView):
                             'text': item.body()
                         }
                     )
+                    ids = ids + 2
                     print "ZZZZZZZZZz Dashboard"
                     continue
 
