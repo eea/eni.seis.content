@@ -52,36 +52,68 @@
               <h3 tal:content="python:figure['title']"></h3>
 
               <div tal:condition="python:figure['valid'] is True">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                  <li role="presentation">
-                    <a tal:attributes="href python:'#' + figure['ids'][0]; aria-controls python:figure['ids'][0]"
-                       role="tab" data-toggle="tab">Chart
-                    </a>
-                  </li>
-                  <li role="presentation">
-                    <a tal:attributes="href python:'#' + figure['ids'][1]; aria-controls python:figure['ids'][1]"
-                       role="tab" data-toggle="tab">Table
-                    </a>
-                  </li>
-                </ul>
+                <div tal:condition="python:figure['type'] == 'chart'">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation">
+                      <a tal:attributes="href python:'#' + figure['ids'][0]; aria-controls python:figure['ids'][0]"
+                         role="tab" data-toggle="tab">Chart
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a tal:attributes="href python:'#' + figure['ids'][1]; aria-controls python:figure['ids'][1]"
+                         role="tab" data-toggle="tab">Table
+                      </a>
+                    </li>
+                  </ul>
 
-                <!-- Tab panes -->
-                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
-                    <iframe width='1172' height='680'
-                            tal:attributes="src python:figure['url'] + '/embed-chart?chart=' + figure['chart_id']">
-                  </iframe>
-                  </div>
-                  <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
-                    <iframe width='1172' height='680'
-                            tal:attributes="src python:figure['url'] + '/download.table'">
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
+                      <iframe width='1172' height='680'
+                              tal:attributes="src python:figure['url'] + '/embed-chart?chart=' + figure['chart_id']">
                     </iframe>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
+                      <iframe width='1172' height='680'
+                              tal:attributes="src python:figure['url'] + '/download.table'">
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <div tal:content="structure python:figure['text']">
+                    Figure's body text
                   </div>
                 </div>
 
-                <div tal:content="structure python:figure['text']">
-                  Figure's body text
+                <div tal:condition="python:figure['type'] == 'dashboard'">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation">
+                      <a tal:attributes="href python:'#' + figure['ids'][0]; aria-controls python:figure['ids'][0]"
+                         role="tab" data-toggle="tab">Dashboard
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a tal:attributes="href python:'#' + figure['ids'][1]; aria-controls python:figure['ids'][1]"
+                         role="tab" data-toggle="tab">Table
+                      </a>
+                    </li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
+                      DASHBOARD render here TODO
+                    </div>
+                    <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
+                      TABLE
+                    </div>
+                  </div>
+
+                  <div tal:content="structure python:figure['text']">
+                    Figure's body text
+                  </div>
                 </div>
               </div>
 

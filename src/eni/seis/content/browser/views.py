@@ -443,9 +443,20 @@ class IndicatorDataView(BrowserView):
                 annot = IAnnotations(item)
                 dashboard = annot['eea.daviz.config.views'][2]['dashboards']
                 if dashboard is not None:
+                    url = item.absolute_url()
+                    figures.append(
+                        {
+                            'type': 'dashboard',
+                            'url': url,
+                            'chart_id': 'TODOchart_id',
+                            'valid': True,
+                            'title': item.Description(),
+                            'ids': get_ids(ids),
+                            'text': item.body()
+                        }
+                    )
                     print "ZZZZZZZZZz Dashboard"
                     continue
-                    # [TODO] render dashboard
 
             except Exception:
                 pass
@@ -458,6 +469,7 @@ class IndicatorDataView(BrowserView):
                 url = item.absolute_url()
                 figures.append(
                     {
+                        'type': 'chart',
                         'url': url,
                         'chart_id': chart_id,
                         'valid': True,
@@ -469,6 +481,7 @@ class IndicatorDataView(BrowserView):
             except Exception as err:
                 figures.append(
                     {
+                        'type': 'chart',
                         'url': url,
                         'chart_id': 'N/A',
                         'valid': False,
