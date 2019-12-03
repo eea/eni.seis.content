@@ -3,6 +3,8 @@ Changelog
 
 1.1.5 (unreleased)
 ------------------
+- Improve: SEEA Progress table will be editable as page.
+  [GhitaB #111804]
 - Feature: Results section.
   [GhitaB #107342]
 
