@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.6 (unreleased)
+------------------
+
 1.1.5 (2019-12-03)
 ------------------
 - Improve: SEEA Progress table will be editable as page.
