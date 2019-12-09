@@ -104,7 +104,9 @@
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
-                      DASHBOARD render here TODO
+                      <iframe width='1172' height='680'
+                              tal:attributes="src python:figure['url'] + '/embed-dashboard?dashboard=' + figure['chart_id']">
+                      </iframe>
                     </div>
                     <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
                       TABLE
