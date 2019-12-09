@@ -448,7 +448,7 @@ class IndicatorDataView(BrowserView):
                         {
                             'type': 'dashboard',
                             'url': url,
-                            'chart_id': 'TODOchart_id',
+                            'chart_id': dashboard[0]['name'],
                             'valid': True,
                             'title': item.Description(),
                             'ids': get_ids(ids),
@@ -456,7 +456,6 @@ class IndicatorDataView(BrowserView):
                         }
                     )
                     ids = ids + 2
-                    print "ZZZZZZZZZz Dashboard"
                     continue
 
             except Exception:
