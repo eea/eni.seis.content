@@ -109,7 +109,9 @@
                       </iframe>
                     </div>
                     <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
-                      TABLE
+                      <iframe width='1172' height='680'
+                              tal:attributes="src python:figure['url'] + '/download.table'">
+                      </iframe>
                     </div>
                   </div>
 
