@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.6 (unreleased)
+1.1.6 (2019-12-16)
 ------------------
 - Improve: DaViz dashboard rendering in indicator view.
   [GhitaB #110823]
