@@ -25,34 +25,26 @@
   body.template-results_root_east div.row.cooperation-container {
     margin-top: 2em;
     margin-bottom: 2em;
+    background: transparent;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-left {
-    background: green;
+    background: transparent;
     float: left;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-left div.col-content {
-    background: red;
     padding-top: 4em;
     padding-bottom: 4em;
     width: 200%;
     padding-left: 100%;
     left: -100%;
     position: relative;
-  }
-
-  body.template-results_root_east div.row.cooperation-container div.col-left:after {
-    content: '';
-    position: relative;
-    top: 33px;
-    right: calc(-100% + 69px);
-    border-top: 143px solid transparent;
-    border-right: 100px solid blue;
+    background: linear-gradient(60deg, #009345 90%, #FFFFFF 10%);
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-right {
-    background: gray;
+    background: transparent;
     float: left;
   }
 </style>
