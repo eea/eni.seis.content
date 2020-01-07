@@ -17,6 +17,10 @@
   body.template-results_root_east div#plone-document-byline {
     display: none;
   }
+
+  body.template-results_root_east main.page-main {
+    width: 100%;
+  }
 </style>
 
     <div class="row no-portlets">
