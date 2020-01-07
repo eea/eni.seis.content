@@ -5,6 +5,9 @@ Changelog
 ------------------
 - Feature: Results page.
   Manual step: create /east/governance/results/ folder.
+  Manual step: add results_root_east in
+  /east/portal_types/Folder/manage_propertiesForm and set is as display mode
+  for Results folder.
   [GhitaB #107342]
 
 1.1.6 (2019-12-16)
