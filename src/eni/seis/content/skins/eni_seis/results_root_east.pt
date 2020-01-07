@@ -78,6 +78,13 @@
   body.template-results_root_east div.row.cooperation-container div.col-right img {
     max-height: 240px;
   }
+
+  body.template-results_root_east div.intro-text-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
 </style>
 
     <div class="row no-portlets">
