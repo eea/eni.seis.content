@@ -29,12 +29,25 @@
 
   body.template-results_root_east div.row.cooperation-container div.col-left {
     background: green;
+    width: 50%;
+    float: left;
+    padding: 0px;
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-left div.col-content {
+    background: red;
     padding-top: 4em;
     padding-bottom: 4em;
+    width: 100%;
+    padding-left: 50%;
+    left: -50%;
+    position: relative;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-right {
     background: gray;
+    width: 50%;
+    float: left;
   }
 </style>
 
@@ -45,18 +58,20 @@
     </div>
 
     <div class="row no-portlets cooperation-container">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-left">
-        <h2>Context of cooperation</h2>
-        <div>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a
-            type specimen book.
-          </p>
+      <div class="col-left">
+        <div class="col-content">
+          <h2>Context of cooperation</h2>
+          <div>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a
+              type specimen book.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-right">
+      <div class="col-right">
         <div>
           <p>
             TODO Photo here
