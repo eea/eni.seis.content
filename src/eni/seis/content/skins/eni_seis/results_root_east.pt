@@ -38,9 +38,21 @@
     padding-bottom: 4em;
     width: 200%;
     padding-left: 100%;
+    padding-right: 25%;
     left: -100%;
     position: relative;
-    background: linear-gradient(60deg, #009345 90%, #FFFFFF 10%);
+    background: linear-gradient(60deg, #009345 89%, #FFFFFF 11%);
+    color: white;
+  }
+
+  @media (max-width: 1000px) {
+    body.template-results_root_east div.row.cooperation-container div.col-left div.col-content {
+      background: green;
+    }
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-left div.col-content h2 {
+    color: white;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-right {
