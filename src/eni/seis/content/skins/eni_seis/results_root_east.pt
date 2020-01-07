@@ -29,12 +29,11 @@
 
   body.template-results_root_east div.row.cooperation-container div.col-left {
     background: green;
-    width: 50%;
     float: left;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-left div.col-content {
-    background: green;
+    background: red;
     padding-top: 4em;
     padding-bottom: 4em;
     width: 200%;
@@ -43,9 +42,17 @@
     position: relative;
   }
 
+  body.template-results_root_east div.row.cooperation-container div.col-left:after {
+    content: '';
+    position: relative;
+    top: 33px;
+    right: calc(-100% + 69px);
+    border-top: 143px solid transparent;
+    border-right: 100px solid blue;
+  }
+
   body.template-results_root_east div.row.cooperation-container div.col-right {
     background: gray;
-    width: 50%;
     float: left;
   }
 </style>
@@ -57,7 +64,7 @@
     </div>
 
     <div class="row no-portlets cooperation-container">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-left">
+      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 col-left">
         <div class="col-content">
           <h2>Context of cooperation</h2>
           <div>
@@ -70,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-right">
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-right">
         <div>
           <p>
             TODO Photo here
