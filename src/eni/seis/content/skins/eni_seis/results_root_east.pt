@@ -53,11 +53,30 @@
 
   body.template-results_root_east div.row.cooperation-container div.col-left div.col-content h2 {
     color: white;
+    border-bottom: 3px solid white;
+    padding-right: 1em;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 0.5em;
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-left div.col-content p {
+    padding-top: 1em;
+    margin-bottom: 0px !important;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-right {
     background: transparent;
     float: left;
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-right p {
+    margin-bottom: 0px !important;
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-right img {
+    max-height: 240px;
   }
 </style>
 
@@ -68,7 +87,7 @@
     </div>
 
     <div class="row no-portlets cooperation-container">
-      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 col-left">
+      <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7 col-left">
         <div class="col-content">
           <h2>Context of cooperation</h2>
           <div>
@@ -81,10 +100,10 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 col-right">
+      <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5 col-right">
         <div>
           <p>
-            <img src="./east-results-seis-tree.png" alt="ENI SEIS" />
+            <img class="img-responsive" src="./east-results-seis-tree.png" alt="ENI SEIS" />
           </p>
         </div>
       </div>
