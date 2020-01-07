@@ -31,16 +31,15 @@
     background: green;
     width: 50%;
     float: left;
-    padding: 0px;
   }
 
   body.template-results_root_east div.row.cooperation-container div.col-left div.col-content {
-    background: red;
+    background: green;
     padding-top: 4em;
     padding-bottom: 4em;
-    width: 100%;
-    padding-left: 50%;
-    left: -50%;
+    width: 200%;
+    padding-left: 100%;
+    left: -100%;
     position: relative;
   }
 
@@ -58,7 +57,7 @@
     </div>
 
     <div class="row no-portlets cooperation-container">
-      <div class="col-left">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-left">
         <div class="col-content">
           <h2>Context of cooperation</h2>
           <div>
@@ -71,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="col-right">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-right">
         <div>
           <p>
             TODO Photo here
