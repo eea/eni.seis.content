@@ -11,6 +11,14 @@
 
   <body metal:fill-slot="content-core">
 
+<style>
+  /* TODO move styles in theme */
+  body.template-results_root_east h1#parent-fieldname-title,
+  body.template-results_root_east div#plone-document-byline {
+    display: none;
+  }
+</style>
+
     <div class="row no-portlets">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
         <h1 class="eni-page-title">Results</h1>
