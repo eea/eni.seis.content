@@ -3,6 +3,9 @@ Changelog
 
 1.1.7 (unreleased)
 ------------------
+- Feature: Results page.
+  Manual step: create /east/governance/results/ folder.
+  [GhitaB #107342]
 
 1.1.6 (2019-12-16)
 ------------------
