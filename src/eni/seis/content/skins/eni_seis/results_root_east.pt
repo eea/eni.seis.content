@@ -21,6 +21,21 @@
   body.template-results_root_east main.page-main {
     width: 100%;
   }
+
+  body.template-results_root_east div.row.cooperation-container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-left {
+    background: green;
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+
+  body.template-results_root_east div.row.cooperation-container div.col-right {
+    background: gray;
+  }
 </style>
 
     <div class="row no-portlets">
@@ -30,7 +45,7 @@
     </div>
 
     <div class="row no-portlets cooperation-container">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-left">
         <h2>Context of cooperation</h2>
         <div>
           <p>
@@ -38,6 +53,13 @@
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
             when an unknown printer took a galley of type and scrambled it to make a
             type specimen book.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-right">
+        <div>
+          <p>
+            TODO Photo here
           </p>
         </div>
       </div>
