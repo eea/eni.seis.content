@@ -133,26 +133,6 @@
       </div>
     </div>
 
-    <!-- <div class="row no&#45;portlets countries&#45;container" -->
-    <!--      tal:define="results_context python:context; -->
-    <!--                  site_context python:results_context.aq_parent.aq_parent; -->
-    <!--                  countries_objects python:site_context['countries'].get_countries_folders(); -->
-    <!--                  countries_titles python:[x.Title() for x in -->
-    <!--                  countries_objects]"> -->
-    <!--   <tal:countries tal:repeat="country countries_objects"> -->
-    <!--     <div class="col&#45;lg&#45;2 col&#45;md&#45;2 col&#45;sm&#45;4 col&#45;xs&#45;12"> -->
-    <!--       <a href="" tal:attributes="href country/absolute_url" class="country&#45;item"> -->
-    <!--         <div class="country&#45;box"> -->
-    <!--           <img src="" alt="flag" class="country&#45;flag" -->
-    <!--                tal:attributes="src python:country.absolute_url() -->
-    <!--                + '/flag/@@images/image/preview'" /> -->
-    <!--           <p class="country&#45;title" tal:content="country/Title">Country title</p> -->
-    <!--         </div> -->
-    <!--       </a> -->
-    <!--     </div> -->
-    <!--   </tal:countries> -->
-    <!-- </div> -->
-
     <div class="row no-portlets sections-list-container">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         TODO sections list
