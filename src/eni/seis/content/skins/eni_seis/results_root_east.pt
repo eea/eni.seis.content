@@ -138,9 +138,11 @@
 
       <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12"
            tal:repeat="country countries">
-        <a href="/countries/armenia" class="country-item">
+        <a tal:attributes="href python:'/east/countries/' + country[0]" class="country-item">
           <div class="country-box">
-            <img src="./../../countries/armenia/flag/@@images/image/preview" alt="flag" class="country-flag">
+            <img
+              tal:attributes="src python:'./../../countries/' + country[0] + '/flag/@@images/image/preview'"
+              alt="flag" class="country-flag" />
             <p class="country-title" tal:content="python:country[1]">Armenia</p>
           </div>
         </a>
