@@ -52,7 +52,14 @@
 
     <div class="row no-portlets how-results-container">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        TODO circles menu
+        <h2>How results were achieved</h2>
+        <ul>
+          <li>Case studies</li>
+          <li>Photos</li>
+          <li>Testimonials</li>
+          <li>Indicators</li>
+          <li>Countries</li>
+        </ul>
       </div>
     </div>
 
