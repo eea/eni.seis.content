@@ -77,9 +77,78 @@
         </div>
       </div>
 
-      <div class="row no-portlets sections-list-container">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          TODO sections list
+      <div class="homepage-section-aow-slider row">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/work-plans">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-1-square-national-work-plans.jpg">
+              </div>
+              <div class="text">
+                <span>Work Plans</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-2-square-data.jpg">
+              </div>
+              <div class="text">
+                <span>Data</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data-management-and-infrastructure">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg">
+              </div>
+              <div class="text">
+                <span>Data Management and Infrastructure</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/Indicators%20and%20Assessments">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Indicators and Assessments</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/work-plans">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./seea-progress-icon.png">
+              </div>
+              <div class="text">
+                <span>UN SEEA</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/communication">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-5-square-communication-and-visibility.jpg">
+              </div>
+              <div class="text">
+                <span>Communication and Visibility</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
