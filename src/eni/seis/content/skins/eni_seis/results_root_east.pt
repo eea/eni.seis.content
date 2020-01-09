@@ -51,19 +51,64 @@
     </div>
 
     <div class="row no-portlets how-results-container">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2>How results were achieved</h2>
-        <ul>
-          <li>Case studies</li>
-          <li>Photos</li>
-          <li>Testimonials</li>
-          <li>Indicators</li>
-          <li>Countries</li>
-        </ul>
-      </div>
-
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
         <img src="./east-results-big-circle-demo.png" alt="ENI-SEIS" />
+        <div class="homepage-section-aow-slider row big-circle">
+          <div class="aow-slide" id="aow-case-studies">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Case studies</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="aow-slide" id="aow-photos">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Photos</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="aow-slide" id="aow-testimonials">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Testimonials</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="aow-slide" id="aow-indicators">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Indicators</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="aow-slide" id="aow-countries">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Countries</span>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
