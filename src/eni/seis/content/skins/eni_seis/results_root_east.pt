@@ -85,7 +85,7 @@
       </div>
 
       <div class="homepage-section-aow-slider row">
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/work-plans">
               <div class="img-circle-cropper">
@@ -97,7 +97,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data">
               <div class="img-circle-cropper">
@@ -109,7 +109,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data-management-and-infrastructure">
               <div class="img-circle-cropper">
@@ -121,7 +121,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/Indicators%20and%20Assessments">
               <div class="img-circle-cropper">
@@ -133,7 +133,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/work-plans">
               <div class="img-circle-cropper">
@@ -145,7 +145,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/communication">
               <div class="img-circle-cropper">
