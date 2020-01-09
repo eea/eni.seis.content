@@ -87,16 +87,90 @@
       <div class="homepage-section-aow-slider row">
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
+                <span>Indicators</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
             <a href="/east/areas-of-work/work-plans">
               <div class="img-circle-cropper">
                 <img class="slide-img" src="./homepage-1-square-national-work-plans.jpg">
               </div>
               <div class="text">
-                <span>Work Plans</span>
+                <span>Reports</span>
               </div>
             </a>
           </div>
         </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data/air">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./data-air.png" title="© Charles Keddie">
+              </div>
+              <div class="text">
+                <span>Air</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data/biodiversity">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./data-biodiversity.png" title="© Charles Keddie">
+              </div>
+              <div class="text">
+                <span>Biodiversity</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data/water">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./data-water.png" title="© Charles Keddie">
+              </div>
+              <div class="text">
+                <span>Water</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data/land">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./data-land.png" title="© Charles Keddie">
+              </div>
+              <div class="text">
+                <span>Land</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/data/waste">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./data-waste.png" title="© Zoltán Balogh, WasteSMART /EEA">
+              </div>
+              <div class="text">
+                <span>Waste</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data">
@@ -104,7 +178,7 @@
                 <img class="slide-img" src="./homepage-2-square-data.jpg">
               </div>
               <div class="text">
-                <span>Data</span>
+                <span>Open Data</span>
               </div>
             </a>
           </div>
@@ -116,43 +190,7 @@
                 <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg">
               </div>
               <div class="text">
-                <span>Data Management and Infrastructure</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
-          <div class="aow-slide">
-            <a href="/east/areas-of-work/Indicators%20and%20Assessments">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
-              </div>
-              <div class="text">
-                <span>Indicators and Assessments</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
-          <div class="aow-slide">
-            <a href="/east/areas-of-work/work-plans">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./seea-progress-icon.png">
-              </div>
-              <div class="text">
-                <span>UN SEEA</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
-          <div class="aow-slide">
-            <a href="/east/areas-of-work/communication">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-5-square-communication-and-visibility.jpg">
-              </div>
-              <div class="text">
-                <span>Communication and Visibility</span>
+                <span>SEA</span>
               </div>
             </a>
           </div>
