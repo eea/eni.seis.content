@@ -64,7 +64,7 @@
       </div>
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center circular-menu">
-        <!-- <img src="./east&#45;results&#45;big&#45;circle&#45;demo.png" alt="ENI&#45;SEIS" /> -->
+        <img src="./east-results-big-circle-demo.png" alt="ENI-SEIS" />
         <div class="homepage-section-aow-slider row big-circle">
           <div class="aow-slide deg0" id="aow-case-studies">
             <a href="/east/indicators">
