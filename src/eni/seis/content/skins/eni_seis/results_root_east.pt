@@ -61,6 +61,7 @@
               </div>
               <div class="text">
                 <span>Case studies</span>
+                <span class="discover">Discover</span>
               </div>
             </a>
           </div>
@@ -72,6 +73,7 @@
               </div>
               <div class="text">
                 <span>Photos</span>
+                <span class="discover">Discover</span>
               </div>
             </a>
           </div>
@@ -83,6 +85,7 @@
               </div>
               <div class="text">
                 <span>Testimonials</span>
+                <span class="discover">Discover</span>
               </div>
             </a>
           </div>
@@ -94,6 +97,7 @@
               </div>
               <div class="text">
                 <span>Indicators</span>
+                <span class="discover">Discover</span>
               </div>
             </a>
           </div>
@@ -105,6 +109,7 @@
               </div>
               <div class="text">
                 <span>Countries</span>
+                <span class="discover">Discover</span>
               </div>
             </a>
           </div>
