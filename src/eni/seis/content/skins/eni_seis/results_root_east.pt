@@ -52,6 +52,18 @@
 
     <div class="row no-portlets how-results-container">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <div class='circle-container'>
+          <a href='#' class='center'><img src='image.jpg'></a>
+          <a href='#' class='deg0'><img src='image.jpg'></a>
+          <a href='#' class='deg45'><img src='image.jpg'></a>
+          <a href='#' class='deg135'><img src='image.jpg'></a>
+          <a href='#' class='deg180'><img src='image.jpg'></a>
+          <a href='#' class='deg225'><img src='image.jpg'></a>
+          <a href='#' class='deg315'><img src='image.jpg'></a>
+        </div>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
         <img src="./east-results-big-circle-demo.png" alt="ENI-SEIS" />
         <div class="homepage-section-aow-slider row big-circle">
           <div class="aow-slide" id="aow-case-studies">
