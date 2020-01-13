@@ -51,79 +51,70 @@
     </div>
 
     <div class="row no-portlets how-results-container">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-        <div class='circle-container'>
-          <a href='#' class='center'><img src='image.jpg'></a>
-          <a href='#' class='deg0'><img src='image.jpg'></a>
-          <a href='#' class='deg45'><img src='image.jpg'></a>
-          <a href='#' class='deg135'><img src='image.jpg'></a>
-          <a href='#' class='deg180'><img src='image.jpg'></a>
-          <a href='#' class='deg225'><img src='image.jpg'></a>
-          <a href='#' class='deg315'><img src='image.jpg'></a>
-        </div>
-      </div>
-
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center circular-menu">
-        <img src="./east-results-big-circle-demo.png" alt="ENI-SEIS" />
-        <div class="homepage-section-aow-slider row big-circle">
-          <div class="aow-slide deg0" id="aow-case-studies">
-            <a href="/east/indicators">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
-              </div>
-              <div class="text">
-                <span>Case studies</span>
-                <span class="discover">Discover</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="aow-slide deg45" id="aow-photos">
-            <a href="/east/indicators">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
-              </div>
-              <div class="text">
-                <span>Photos</span>
-                <span class="discover">Discover</span>
-              </div>
-            </a>
-          </div>
+        <div class="circle-menu">
 
-          <div class="aow-slide deg135" id="aow-testimonials">
-            <a href="/east/indicators">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
-              </div>
-              <div class="text">
-                <span>Testimonials</span>
-                <span class="discover">Discover</span>
-              </div>
-            </a>
-          </div>
+          <div class="homepage-section-aow-slider row big-circle">
+            <div class="aow-slide" id="aow-case-studies">
+              <a href="/east/indicators">
+                <div class="img-circle-cropper">
+                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                </div>
+                <div class="text">
+                  <span>Case studies</span>
+                  <span class="discover">Discover</span>
+                </div>
+              </a>
+            </div>
 
-          <div class="aow-slide deg180" id="aow-indicators">
-            <a href="/east/indicators">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
-              </div>
-              <div class="text">
-                <span>Indicators</span>
-                <span class="discover">Discover</span>
-              </div>
-            </a>
-          </div>
+            <div class="aow-slide" id="aow-photos">
+              <a href="/east/indicators">
+                <div class="img-circle-cropper">
+                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                </div>
+                <div class="text">
+                  <span>Photos</span>
+                  <span class="discover">Discover</span>
+                </div>
+              </a>
+            </div>
 
-          <div class="aow-slide deg225" id="aow-countries">
-            <a href="/east/indicators">
-              <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
-              </div>
-              <div class="text">
-                <span>Countries</span>
-                <span class="discover">Discover</span>
-              </div>
-            </a>
+            <div class="aow-slide" id="aow-testimonials">
+              <a href="/east/indicators">
+                <div class="img-circle-cropper">
+                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                </div>
+                <div class="text">
+                  <span>Testimonials</span>
+                  <span class="discover">Discover</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="aow-slide" id="aow-indicators">
+              <a href="/east/indicators">
+                <div class="img-circle-cropper">
+                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                </div>
+                <div class="text">
+                  <span>Indicators</span>
+                  <span class="discover">Discover</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="aow-slide" id="aow-countries">
+              <a href="/east/indicators">
+                <div class="img-circle-cropper">
+                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                </div>
+                <div class="text">
+                  <span>Countries</span>
+                  <span class="discover">Discover</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
