@@ -3,6 +3,7 @@ Changelog
 
 1.1.7 (unreleased)
 ------------------
+- Feature: Settings for dashboards heights in indicatordata.
 - Feature: Results page.
   Manual step: create /east/governance/results/ folder.
   Manual step: add results_root_east in
