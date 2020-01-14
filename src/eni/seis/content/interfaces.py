@@ -167,6 +167,12 @@ class IIndicatorData(model.Schema):
         required=False,
     )
 
+    dashboards_heights = schema.TextLine(
+        title=u'Dashboards heights',
+        description=u'Example: 600, 680 - will set the height for 1st and 2nd',
+        required=False,
+    )
+
 
 class INationalFocalPoint(model.Schema):
     """ nfp item to be added in a country section

@@ -104,13 +104,15 @@
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
-                      <iframe width='1172' height='680'
-                              tal:attributes="src python:figure['url'] + '/embed-dashboard?dashboard=' + figure['chart_id']">
+                      <iframe width='1172'
+                              tal:attributes="src python:figure['url'] + '/embed-dashboard?dashboard=' + figure['chart_id'];
+                                              height python:figure['height']">
                       </iframe>
                     </div>
                     <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
-                      <iframe width='1172' height='680'
-                              tal:attributes="src python:figure['url'] + '/download.table'">
+                      <iframe width='1172'
+                              tal:attributes="src python:figure['url'] + '/download.table';
+                                              height python:figure['height']">
                       </iframe>
                     </div>
                   </div>

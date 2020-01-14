@@ -438,11 +438,18 @@ class IndicatorDataView(BrowserView):
         figures = []
         ids = 0
 
+        import pdb; pdb.set_trace()
+        dashboards_heights = self.context.dashboards_heights
+        heights = [int(x) for x in dashboards_heights.split(",")]
+
+        dashboard_index = 0
+
         for item in items:
             try:
                 annot = IAnnotations(item)
                 dashboard = annot['eea.daviz.config.views'][2]['dashboards']
                 if dashboard is not None:
+                    height = heights[dashboard_index]
                     url = item.absolute_url()
                     figures.append(
                         {
@@ -452,10 +459,12 @@ class IndicatorDataView(BrowserView):
                             'valid': True,
                             'title': item.Description(),
                             'ids': get_ids(ids),
+                            'height': height,
                             'text': item.body()
                         }
                     )
                     ids = ids + 2
+                    dashboard_index += 1
                     continue
 
             except Exception:
