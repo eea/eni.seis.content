@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.8 (unreleased)
+------------------
+
 1.1.7 (2020-01-14)
 ------------------
 - Feature: Settings for dashboards heights in indicatordata.
