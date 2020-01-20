@@ -149,10 +149,6 @@
         </div>
       </div>
     </div>
-
-    <div id="content-core">
-      <h3 class="eni-section-title">Test</h3>
-    </div>
   </div>
 
 </metal:main>
