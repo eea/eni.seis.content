@@ -34,7 +34,9 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
-            <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            <div class="img-circle-cropper">
+              <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            </div>
 
             <div class="text">
               <p>
@@ -50,7 +52,9 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
-            <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            <div class="img-circle-cropper">
+              <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            </div>
 
             <div class="text">
               <p>
@@ -69,7 +73,9 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
-            <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            <div class="img-circle-cropper">
+              <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            </div>
 
             <div class="text">
               <p>
@@ -85,7 +91,9 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
-            <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            <div class="img-circle-cropper">
+              <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            </div>
 
             <div class="text">
               <p>
@@ -148,7 +156,9 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
-            <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            <div class="img-circle-cropper">
+              <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            </div>
 
             <div class="text">
               <p>
@@ -164,7 +174,9 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
-            <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            <div class="img-circle-cropper">
+              <img class="author-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+            </div>
 
             <div class="text">
               <p>
