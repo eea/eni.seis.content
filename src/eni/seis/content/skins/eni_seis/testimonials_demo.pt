@@ -109,50 +109,53 @@
         </div>
       </div>
 
-      <div class="row row-no-img">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="simple-quote">
-            <div class="text">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-                amet tortor id ipsum tempus suscipit non eget tortor. Integer id arcu
-                a justo aliquet blandit placerat ac justo. Ut sit amet nisl turpis.
-                Sed ut vehicula tellus, et feugiat dolor.
-              </p>
+      <div class="row-fullwidth-gray">
+        <div class="row row-no-img">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="simple-quote">
+              <div class="text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
+                  amet tortor id ipsum tempus suscipit non eget tortor. Integer id arcu
+                  a justo aliquet blandit placerat ac justo. Ut sit amet nisl turpis.
+                  Sed ut vehicula tellus, et feugiat dolor.
+                </p>
 
-              <p class="author">Rich ard Muller, Slovakia</p>
+                <p class="author">Rich ard Muller, Slovakia</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="simple-quote">
-            <div class="text">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-                amet tortor id ipsum tempus suscipit non eget tortor. Integer id arcu
-                a justo aliquet blandit placerat ac justo. Ut sit amet nisl turpis.
-                Sed ut vehicula tellus, et feugiat dolor.
-              </p>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="simple-quote">
+              <div class="text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
+                  amet tortor id ipsum tempus suscipit non eget tortor. Integer id arcu
+                  a justo aliquet blandit placerat ac justo. Ut sit amet nisl turpis.
+                  Sed ut vehicula tellus, et feugiat dolor.
+                </p>
 
-              <p class="author">Rich ard Muller, Slovakia</p>
+                <p class="author">Rich ard Muller, Slovakia</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <div class="simple-quote">
-            <div class="text">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-                amet tortor id ipsum tempus suscipit non eget tortor. Integer id arcu
-                a justo aliquet blandit placerat ac justo. Ut sit amet nisl turpis.
-                Sed ut vehicula tellus, et feugiat dolor.
-              </p>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="simple-quote">
+              <div class="text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
+                  amet tortor id ipsum tempus suscipit non eget tortor. Integer id arcu
+                  a justo aliquet blandit placerat ac justo. Ut sit amet nisl turpis.
+                  Sed ut vehicula tellus, et feugiat dolor.
+                </p>
 
-              <p class="author">Rich ard Muller, Slovakia</p>
+                <p class="author">Rich ard Muller, Slovakia</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="simple-quote">
