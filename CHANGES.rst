@@ -3,6 +3,9 @@ Changelog
 
 1.1.8 (unreleased)
 ------------------
+- Feature: add Testimonials demo template (East).
+- Improve: Results section (East).
+  [GhitaB #107342]
 
 1.1.7 (2020-01-14)
 ------------------
