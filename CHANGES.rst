@@ -4,6 +4,8 @@ Changelog
 1.1.8 (unreleased)
 ------------------
 - Feature: add Testimonials demo template (East).
+  Manual step: add page /east/governance/results/testimonials, use content
+  from testimonials_demo template.
 - Improve: Results section (East).
   [GhitaB #107342]
 
