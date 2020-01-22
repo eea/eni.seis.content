@@ -146,6 +146,19 @@
                 <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
               </div>
               <div class="text">
+                <span>Communication</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+          <div class="aow-slide">
+            <a href="/east/indicators">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+              </div>
+              <div class="text">
                 <span>Indicators</span>
               </div>
             </a>
