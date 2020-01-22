@@ -69,7 +69,7 @@
             </div>
 
             <div class="aow-slide" id="aow-photos">
-              <a href="/east/indicators">
+              <a href="./photos">
                 <div class="img-circle-cropper">
                   <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg">
                 </div>
