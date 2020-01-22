@@ -57,7 +57,7 @@
 
           <div class="homepage-section-aow-slider row big-circle">
             <div class="aow-slide" id="aow-case-studies">
-              <a href="/east/indicators">
+              <a href="./case-studies">
                 <div class="img-circle-cropper">
                   <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg">
                 </div>

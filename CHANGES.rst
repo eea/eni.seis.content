@@ -6,8 +6,10 @@ Changelog
 - Feature: add Testimonials demo template (East).
   Manual step: add page /east/governance/results/testimonials, use content
   from testimonials_demo template.
-  Manual step: add page /east/governance/results/photos, set display as
+  Manual step: add folder /east/governance/results/photos, set display as
   photo gallery.
+  Manual step: add folder /east/governance/results/case-studies, set display as
+  news listing.
 - Improve: Results section (East).
   [GhitaB #107342]
 
