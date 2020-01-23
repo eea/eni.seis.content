@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.8 (unreleased)
+1.1.8 (2020-01-23)
 ------------------
 - Feature: add Testimonials demo template (East).
   Manual step: add page /east/governance/results/testimonials, use content
