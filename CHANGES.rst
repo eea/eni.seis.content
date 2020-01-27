@@ -3,6 +3,8 @@ Changelog
 
 1.1.9 (unreleased)
 ------------------
+- Fix: Countries link in Results section.
+  [GhitaB #107342]
 
 1.1.8 (2020-01-23)
 ------------------
