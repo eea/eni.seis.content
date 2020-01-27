@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.1.9 (unreleased)
+------------------
+
 1.1.8 (2020-01-23)
 ------------------
 - Feature: add Testimonials demo template (East).
