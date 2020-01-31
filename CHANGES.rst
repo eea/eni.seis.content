@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.1.9 (unreleased)
+1.1.9 (2020-01-31)
 ------------------
+- Skip daviz title in embeded chart and dashboard.
+  [GhitaB #113379]
 - Fix: Countries link in Results section.
   [GhitaB #107342]
 
