@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.2.0 (unreleased)
+------------------
+
 1.1.9 (2020-01-31)
 ------------------
 - Skip daviz title in embeded chart and dashboard.
