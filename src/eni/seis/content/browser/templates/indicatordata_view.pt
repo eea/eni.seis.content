@@ -71,7 +71,7 @@
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
                       <iframe width='1172' height='680'
-                              tal:attributes="src python:figure['url'] + '/embed-chart?chart=' + figure['chart_id']">
+                              tal:attributes="src python:figure['url'] + '/embed-chart?chart=' + figure['chart_id'] + '&skipdaviztitle=true'">
                     </iframe>
                     </div>
                     <div role="tabpanel" class="tab-pane" tal:attributes="id python:figure['ids'][1]">
@@ -105,7 +105,7 @@
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" tal:attributes="id python:figure['ids'][0]">
                       <iframe width='1172'
-                              tal:attributes="src python:figure['url'] + '/embed-dashboard?dashboard=' + figure['chart_id'];
+                              tal:attributes="src python:figure['url'] + '/embed-dashboard?dashboard=' + figure['chart_id'] + '&skipdaviztitle=true';
                                               height python:figure['height']">
                       </iframe>
                     </div>
