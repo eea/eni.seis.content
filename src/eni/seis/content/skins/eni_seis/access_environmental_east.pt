@@ -26,38 +26,40 @@ They will appear in Countries, but also in this dedicated page.
 <body>
 
   <metal:content-core fill-slot="content-core">
+    <div class="access-environmental-container">
+      <div tal:replace="structure python:context.long_description">Body text</div>
 
-    <legend>
-      <span class="level-national">
-        <i class="fa fa-circle level-national" aria-hidden="true"></i>
-        <span>National Event</span>
-      </span>
-      <span class="level-regional">
-        <i class="fa fa-circle level-regional" aria-hidden="true"></i>
-        <span>Regional Event</span>
-      </span>
-      <span class="other">
-        <i class="fa fa-circle other" aria-hidden="true"></i>
-        <span>Other Event</span>
-      </span>
-    </legend>
+      <legend>
+        <span class="level-national">
+          <i class="fa fa-circle level-national" aria-hidden="true"></i>
+          <span>National Event</span>
+        </span>
+        <span class="level-regional">
+          <i class="fa fa-circle level-regional" aria-hidden="true"></i>
+          <span>Regional Event</span>
+        </span>
+        <span class="other">
+          <i class="fa fa-circle other" aria-hidden="true"></i>
+          <span>Other Event</span>
+        </span>
+      </legend>
 
-    <table class="listing event-table table table-responsive table-hover"
-           summary="Content listing"
-           i18n:attributes="summary summary_content_listing;">
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Dates</th>
-          <th>Title</th>
-          <th>Location</th>
-        </tr>
-      </thead>
+      <table class="listing event-table table table-responsive table-hover"
+             summary="Content listing"
+             i18n:attributes="summary summary_content_listing;">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Dates</th>
+            <th>Title</th>
+            <th>Location</th>
+          </tr>
+        </thead>
 
-      <tbody>
-      </tbody>
-    </table>
-    ZZZZ
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
 
