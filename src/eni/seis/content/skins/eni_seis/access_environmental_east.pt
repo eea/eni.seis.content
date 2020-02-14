@@ -27,7 +27,7 @@ They will appear in Countries, but also in this dedicated page.
 
   <metal:content-core fill-slot="content-core">
     <div class="access-environmental-container">
-      <div tal:replace="structure python:context.long_description">Body text</div>
+      <div tal:replace="structure context/long_description" />
 
       <legend>
         <span class="level-national">
