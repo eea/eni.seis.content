@@ -83,6 +83,20 @@ They will appear in Countries, but also in this dedicated page.
       </div>
     </div>
 
+<style>
+body.template-access_environmental_east div.national-reports-container {
+  background: #eee;
+  padding: 3em;
+  margin-top: 3em;
+}
+
+body.template-access_environmental_east div.gp-reports-container {
+  background: #eee;
+  padding: 3em;
+  margin-top: 3em;
+}
+</style>
+
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
 
   </metal:content-core>
