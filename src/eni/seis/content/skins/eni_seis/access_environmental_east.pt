@@ -44,40 +44,44 @@ They will appear in Countries, but also in this dedicated page.
         </span>
       </legend>
 
-      <span tal:replace="python:context.getFeaturedMeetings()"></span>
+      <div class="featured-meetings-container">
+        <table class="listing event-table table table-responsive table-hover"
+               summary="Content listing"
+               i18n:attributes="summary summary_content_listing;">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Dates</th>
+              <th>Title</th>
+              <th>Location</th>
+            </tr>
+          </thead>
 
-      <table class="listing event-table table table-responsive table-hover"
-             summary="Content listing"
-             i18n:attributes="summary summary_content_listing;">
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Dates</th>
-            <th>Title</th>
-            <th>Location</th>
-          </tr>
-        </thead>
+          <tbody>
 
-        <tbody>
+            <tal:repeat repeat="item python:context.getFeaturedMeetings()">
+            <tr>
+              <td><span tal:content="python: context.get_event_year(item)"></span></td>
+              <td><span tal:content="python:context.get_event_dates(item)"></span></td>
+              <td><span tal:content="python: context.get_event_type(item)"></span></td>
+              <td><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></td>
+              <td><span tal:content="python: context.get_event_location(item)"></span></td>
+            </tr>
+            </tal:repeat>
+          </tbody>
+        </table>
+      </div>
 
-          <tal:repeat repeat="item python:context.getFeaturedMeetings()">
-          <tr>
-            <td><span tal:content="python: context.get_event_year(item)"></span></td>
-            <td><span tal:content="python:context.get_event_dates(item)"></span></td>
-            <td><span tal:content="python: context.get_event_type(item)"></span></td>
-            <td><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></td>
-            <td><span tal:content="python: context.get_event_location(item)"></span></td>
-          </tr>
-          </tal:repeat>
-        </tbody>
-      </table>
+      <div class="national-reports-container">
+        <h2>National reports</h2>
+        <p>TODO implement reports</p>
+      </div>
+
+      <div class="gp-reports-container">
+        <h2>Good practice reports</h2>
+        <p>TODO implement reports</p>
+      </div>
     </div>
-
-    <h2>National reports</h2>
-    <p>TODO implement reports</p>
-
-    <h2>Good practice reports</h2>
-    <p>TODO implement reports</p>
 
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
 
