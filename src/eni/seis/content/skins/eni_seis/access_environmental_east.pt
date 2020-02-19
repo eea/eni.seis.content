@@ -44,6 +44,8 @@ They will appear in Countries, but also in this dedicated page.
         </span>
       </legend>
 
+      <span tal:replace="python:context.getFeaturedMeetings()"></span>
+
       <table class="listing event-table table table-responsive table-hover"
              summary="Content listing"
              i18n:attributes="summary summary_content_listing;">
