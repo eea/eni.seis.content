@@ -61,6 +61,12 @@ They will appear in Countries, but also in this dedicated page.
       </table>
     </div>
 
+    <h2>National reports</h2>
+    <p>TODO implement reports</p>
+
+    <h2>Good practice reports</h2>
+    <p>TODO implement reports</p>
+
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
 
   </metal:content-core>
