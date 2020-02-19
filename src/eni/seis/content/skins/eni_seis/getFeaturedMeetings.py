@@ -6,5 +6,6 @@ res = context.portal_catalog.searchResults(
         path='/east/areas-of-work/communication/events'
         )
 meetings = [b.getObject() for b in res]
+featured = [x for x in meetings if x.is_featured is True]
 
-return meetings
+return featured
