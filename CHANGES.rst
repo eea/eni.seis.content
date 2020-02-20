@@ -1,12 +1,15 @@
 Changelog
 =========
 
-1.2.0 (unreleased)
+1.2.0 (2020-02-20)
 ------------------
+- Feature: Add Access env section (East).
+  Manual step: set template, rename item.
+  [GhitaB #114456]
 
 1.1.9 (2020-01-31)
 ------------------
-- Skip daviz title in embeded chart and dashboard.
+- Fix: Skip daviz title in embeded chart and dashboard.
   [GhitaB #113379]
 - Fix: Countries link in Results section.
   [GhitaB #107342]
