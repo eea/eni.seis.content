@@ -82,9 +82,6 @@ They will appear in Countries, but also in this dedicated page.
       </div>
     </div>
 
-<style>
-</style>
-
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
 
   </metal:content-core>
