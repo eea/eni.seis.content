@@ -63,7 +63,6 @@ They will appear in Countries, but also in this dedicated page.
             <tr>
               <td><span tal:content="python: context.get_event_year(item)"></span></td>
               <td><span tal:content="python:context.get_event_dates(item)"></span></td>
-              <td><span tal:content="python: context.get_event_type(item)"></span></td>
               <td><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></td>
               <td><span tal:content="python: context.get_event_location(item)"></span></td>
             </tr>
@@ -84,17 +83,6 @@ They will appear in Countries, but also in this dedicated page.
     </div>
 
 <style>
-body.template-access_environmental_east div.national-reports-container {
-  background: #eee;
-  padding: 3em;
-  margin-top: 3em;
-}
-
-body.template-access_environmental_east div.gp-reports-container {
-  background: #eee;
-  padding: 3em;
-  margin-top: 3em;
-}
 </style>
 
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
