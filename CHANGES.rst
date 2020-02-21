@@ -3,6 +3,8 @@ Changelog
 
 1.2.1 (unreleased)
 ------------------
+- Fix: Set level class for national and regional meetings.
+  [GhitaB #114456]
 
 1.2.0 (2020-02-20)
 ------------------
