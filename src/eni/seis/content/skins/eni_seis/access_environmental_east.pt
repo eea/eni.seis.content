@@ -60,7 +60,8 @@ They will appear in Countries, but also in this dedicated page.
           <tbody>
 
             <tal:repeat repeat="item python:context.getFeaturedMeetings()">
-            <tr>
+            <tr tal:define="oddrow repeat/item/odd; event_level python: context.get_event_level(item)"
+                tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')">
               <td><span tal:content="python: context.get_event_year(item)"></span></td>
               <td><span tal:content="python:context.get_event_dates(item)"></span></td>
               <td><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></td>
