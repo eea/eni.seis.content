@@ -35,19 +35,6 @@
       </tal:countries>
     </div>
 
-    <div class="row no-portlets country-visits-container">
-      <tal:visits tal:repeat="visits_page python:view.get_country_visits_pages()">
-        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 country-visits-item">
-          <h3 tal:content="visits_page/Title">Country visits in 2016</h3>
-          <p>
-            <span tal:content="visits_page/Description">Page description</span>
-            <a href="" tal:attributes="href visits_page/absolute_url">
-              Read more
-            </a>
-        </div>
-      </tal:visits>
-    </div>
-
     <div class="row no-portlets environmental-assesment-reports-container"
       tal:define="reports_types
       python:context.unrestrictedTraverse('reports_data/get_reports_types')();">
@@ -233,9 +220,22 @@
             </div>
           </div>
 
-        </tal:tab>
+          </tal:tab>
+        </div>
       </div>
     </div>
+
+    <div class="row no-portlets country-visits-container">
+      <tal:visits tal:repeat="visits_page python:view.get_country_visits_pages()">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 country-visits-item">
+          <h3 tal:content="visits_page/Title">Country visits in 2016</h3>
+          <p>
+            <span tal:content="visits_page/Description">Page description</span>
+            <a href="" tal:attributes="href visits_page/absolute_url">
+              Read more
+            </a>
+        </div>
+      </tal:visits>
     </div>
   </body>
 </html>
