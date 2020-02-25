@@ -69,6 +69,13 @@
       </div>
     </div>
 
+    <div class="row no-portlets environmental-indicators-container">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+        <h2 class="eni-section-title">NATIONAL STATE OF ENVIRONMENT REPORTS IN THE EASTERN PARTNERSHIP COUNTRIES</h2>
+        <h4>OCTOBER 2018</h4>
+      </div>
+    </div>
+
     <div class="row no-portlets environmental-indicators-container"
       tal:define="indicators_categories
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();">
