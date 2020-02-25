@@ -77,16 +77,19 @@
 
         <table class="national-reports-table"
                tal:define="national_reports python:view.get_national_reports();
-                           years python:national_reports['years']">
+                           years python:national_reports['years'];
+                           countries python:national_reports['countries'];
+                           countries_data python:national_reports['data']">
           <thead>
             <tr>
-              <th><th>
+              <th></th>
               <th tal:repeat="year python:years" tal:content="python:year[1]"></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Test</td>
+            <tr tal:repeat="country python:countries">
+              <td tal:content="python:country">Country name</td>
+              <td tal:repeat="year python:years" tal:content="python:countries_data.get(country, None)"></td>
             </tr>
           </tbody>
         </table>
