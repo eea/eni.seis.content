@@ -74,6 +74,22 @@
         <h2 class="eni-section-title">NATIONAL STATE OF ENVIRONMENT REPORTS IN THE EASTERN PARTNERSHIP COUNTRIES</h2>
         <h4>OCTOBER 2018</h4>
         <p tal:content="python:view.get_national_reports()">TODO WIP Table here</p>
+
+        <table class="national-reports-table"
+               tal:define="national_reports python:view.get_national_reports();
+                           years python:national_reports['years']">
+          <thead>
+            <tr>
+              <th><th>
+              <th tal:repeat="year python:years" tal:content="python:year[1]"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Test</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
