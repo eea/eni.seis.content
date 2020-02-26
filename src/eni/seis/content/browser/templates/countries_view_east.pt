@@ -82,7 +82,8 @@
           <thead>
             <tr>
               <th></th>
-              <th tal:repeat="year python:years" tal:content="python:year[1]"></th>
+              <th tal:repeat="year python:years" tal:content="python:year[1]"
+                  tal:attributes="class python:'dec-separator' if year[0] % 10 == 0 else 'simple'"></th>
             </tr>
           </thead>
           <tbody>
@@ -90,7 +91,8 @@
               <tr tal:define="oddrow repeat/country/odd;"
                   tal:attributes="class python:'odd' if oddrow is True else 'even'">
                 <td tal:content="python:country" class="country-name">Country name</td>
-                <td tal:repeat="year python:years" tal:content="python:countries_data[country].get(str(year[0]), None) if countries_data.get(country, None) is not None else None"></td>
+                <td tal:repeat="year python:years" tal:content="python:countries_data[country].get(str(year[0]), None) if countries_data.get(country, None) is not None else None"
+                    tal:attributes="class python:'dec-separator' if year[0] % 10 == 0 else 'simple'"></td>
               </tr>
             </tal:repeat>
           </tbody>
