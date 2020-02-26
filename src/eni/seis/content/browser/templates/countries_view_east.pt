@@ -87,7 +87,7 @@
           </thead>
           <tbody>
             <tr tal:repeat="country python:countries">
-              <td tal:content="python:country">Country name</td>
+              <td tal:content="python:country" class="country-name">Country name</td>
               <td tal:repeat="year python:years" tal:content="python:countries_data[country].get(str(year[0]), None) if countries_data.get(country, None) is not None else None"></td>
             </tr>
           </tbody>
