@@ -213,10 +213,14 @@ class CountriesViewEast(BrowserView):
             (2018, u"'18")
         ]
 
-        countries = ["RO", "MD", "Test"]
+        countries = [x.Title() for x in self.get_countries_folders()]
+
         countries_data = {
-                "RO": {
-                    "2010": True
+                "Armenia": {
+                    "1994": True
+                },
+                "Belarus": {
+                    "1995": True
                 }
             }
         return {
