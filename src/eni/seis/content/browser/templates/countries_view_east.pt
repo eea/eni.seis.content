@@ -86,10 +86,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="country python:countries">
-              <td tal:content="python:country" class="country-name">Country name</td>
-              <td tal:repeat="year python:years" tal:content="python:countries_data[country].get(str(year[0]), None) if countries_data.get(country, None) is not None else None"></td>
-            </tr>
+            <tal:repeat repeat="country python:countries">
+              <tr tal:define="oddrow repeat/country/odd;"
+                  tal:attributes="class python:'odd' if oddrow is True else 'even'">
+                <td tal:content="python:country" class="country-name">Country name</td>
+                <td tal:repeat="year python:years" tal:content="python:countries_data[country].get(str(year[0]), None) if countries_data.get(country, None) is not None else None"></td>
+              </tr>
+            </tal:repeat>
           </tbody>
         </table>
       </div>
