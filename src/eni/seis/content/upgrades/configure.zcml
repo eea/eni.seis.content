@@ -186,4 +186,16 @@
 
     </genericsetup:upgradeSteps>
 
+    <genericsetup:upgradeSteps
+            source="1.6"
+            destination="1.7"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import types."
+	          description="New content type: National Report."
+            import_steps="typeinfo"
+            />
+
+    </genericsetup:upgradeSteps>
 </configure>

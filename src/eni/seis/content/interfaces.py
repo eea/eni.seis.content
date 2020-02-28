@@ -64,6 +64,28 @@ class IReport(model.Schema):
     )
 
 
+class INationalReport(model.Schema):
+    """ National Report item to be added in a country section
+    """
+    external_link = schema.URI(
+        title=u"External link",
+        required=False,
+        description=u"Report source if it is an external link."
+    )
+
+    file = NamedBlobFile(
+        title=u"File",
+        required=False,
+        description=u"Report file if it has one."
+    )
+
+    pages_number = schema.TextLine(
+        title=u"Number of pages",
+        required=False,
+        description=u"Example: 171"
+    )
+
+
 class IIndicator(model.Schema):
     """ Indicator item to be added in a country section
     """
