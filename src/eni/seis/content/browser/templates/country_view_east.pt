@@ -35,6 +35,11 @@
                 Environmental assessment reports
               </a>
             </li>
+            <li class="pull-right">
+              <a data-toggle="tab" href="#report-state-environment">
+                Report on the state of environment
+              </a>
+            </li>
             <li class="active pull-right">
               <a data-toggle="tab" href="#unece-environmental-indicators">
                 UNECE Environmental Indicators
