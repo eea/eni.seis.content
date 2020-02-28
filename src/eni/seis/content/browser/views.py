@@ -368,6 +368,11 @@ class ReportView(BrowserView):
     """
 
 
+class NationalReportView(BrowserView):
+    """ National Report
+    """
+
+
 class IndicatorsDataView(BrowserView):
     """ Utils for Indicators
     """
