@@ -227,7 +227,7 @@
               <!-- TODO use real content -->
               <h3>Ministry of environmental protection and agriculture of Georgia, Experience in SOER</h3>
 
-              <table class="table table-responsive table-hover environ-reports" summary="Content listing">
+              <table class="table table-responsive table-hover national-reports" summary="Content listing">
                 <thead>
                   <tr>
                     <th>Title</th>
@@ -236,25 +236,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="nodata" tal:condition="python:len(reports) == 0">
+                  <tr class="nodata" tal:condition="python:len(national_reports) == 0">
                     <td colspan="3">No reports.</td>
                   </tr>
-                  <tal:repeat tal:repeat="report reports">
+                  <tal:repeat tal:repeat="report national_reports">
                     <tr tal:define="oddrow repeat/report/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
                         <span tal:replace="report/Title">Report title</span>
                       </td>
-                      <td>
-                        <span tal:replace="python:report.get_status()">
-                          Yes / Annual
-                        </span>
-                      </td>
-                      <td>
-                        <a tal:attributes="href python:report.get_view_url()">
-                          Link to the report »
-                        </a>
-                      </td>
+                      <td>Language</td>
+                      <td>234 TODO</td>
                     </tr>
                   </tal:repeat>
                 </tbody>
