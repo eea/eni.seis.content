@@ -216,12 +216,12 @@
                       </div>
                     </div>
                   </div>
+                  </tal:tab>
 
-                </tal:tab>
+                </div>
               </div>
             </div>
 
-            </div>
             <div id="environmental-assessment-reports" class="tab-pane fade">
               <table class="table table-responsive table-hover environ-reports" summary="Content listing">
                 <thead>
