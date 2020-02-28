@@ -4,7 +4,7 @@ from eni.seis.content.interfaces import INationalReport
 
 
 @implementer(INationalReport)
-class Report(Container):
+class NationalReport(Container):
     """ National Report content type """
 
     def get_view_url(self):
