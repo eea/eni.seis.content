@@ -351,7 +351,7 @@ class ReportsDataView(BrowserView):
         catalog = getToolByName(self.context, 'portal_catalog')
         results = [x.getObject() for x in catalog.searchResults(
             {
-                'portal_type': ['report'],
+                'portal_type': ['nationalreport'],
                 'review_state': 'published',
                 'path': '/'.join(self.context.getPhysicalPath())
             }
