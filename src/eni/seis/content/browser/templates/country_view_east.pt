@@ -246,7 +246,7 @@
                         <span tal:replace="report/Title">Report title</span>
                       </td>
                       <td>Language</td>
-                      <td>234 TODO</td>
+                      <td tal:content="report/pages_number">23</td>
                     </tr>
                   </tal:repeat>
                 </tbody>
