@@ -222,6 +222,10 @@
               </div>
             </div>
 
+            <div id="report-state-environment" class="tab-pane fade">
+              TODO
+            </div>
+
             <div id="environmental-assessment-reports" class="tab-pane fade">
               <table class="table table-responsive table-hover environ-reports" summary="Content listing">
                 <thead>
