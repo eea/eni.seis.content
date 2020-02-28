@@ -17,6 +17,7 @@
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
       indicators
       python:context.unrestrictedTraverse('indicators_data/get_indicators')();
+      national_reports python:context.unrestrictedTraverse('reports_data/get_national_reports')();
       reports python:context.unrestrictedTraverse('reports_data/get_reports')()">
 
     <div class="row no-portlets">

@@ -318,7 +318,9 @@ class ReportsDataView(BrowserView):
         'get_reports_types()':
             "Return possible types for a report",
         'get_reports()':
-            "Return all published reports found in this context"
+            "Return all published reports found in this context",
+        'get_national_reports()':
+            "Return all published national reports found in this context"
     }
 
     def get_reports_types(self):
@@ -331,6 +333,20 @@ class ReportsDataView(BrowserView):
 
     def get_reports(self):
         """ Return all published reports found in this context
+        """
+        catalog = getToolByName(self.context, 'portal_catalog')
+        results = [x.getObject() for x in catalog.searchResults(
+            {
+                'portal_type': ['report'],
+                'review_state': 'published',
+                'path': '/'.join(self.context.getPhysicalPath())
+            }
+        )]
+
+        return results
+
+    def get_national_reports(self):
+        """ Return all published national reports found in this context
         """
         catalog = getToolByName(self.context, 'portal_catalog')
         results = [x.getObject() for x in catalog.searchResults(
