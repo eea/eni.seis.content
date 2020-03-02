@@ -10,7 +10,21 @@
 <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core">
       <div class="national-report-details">
-        National reports
+        <p tal:condition="python:has_external_link is True">
+          External link:
+          <a tal:attributes="href python:report.external_link"
+             tal:content="python:report.external_link">
+            External link
+          </a>
+        </p>
+
+        <p tal:condition="python:has_file is True">
+          File:
+          <a tal:attributes="href python:report.absolute_url() + '/@@download/file'"
+             tal:content="python:report.file.filename">
+            Filename
+          </a>
+        </p>
       </div>
     </metal:block>
 </metal:content-core>
