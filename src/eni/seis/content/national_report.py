@@ -15,3 +15,17 @@ class NationalReport(Container):
         if self.has_external_link():
             return self.external_link
         return self.absolute_url()
+
+    def has_external_link(self):
+        """ Return True if it has a link, else False
+        """
+        if self.external_link:
+            return True
+        return False
+
+    def has_file(self):
+        """ Return True if it has a file, else False
+        """
+        if self.file:
+            return True
+        return False
