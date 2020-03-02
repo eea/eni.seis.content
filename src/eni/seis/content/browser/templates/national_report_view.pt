@@ -28,6 +28,10 @@
             Filename
           </a>
         </p>
+
+        <p tal:condition="python:has_file is True">
+          Number of pages: <span tal:content="python:report.pages_number"></span>
+        </p>
       </div>
     </metal:block>
 </metal:content-core>
