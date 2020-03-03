@@ -68,7 +68,6 @@ SUBSCRIBER_ROLES = {
     'other': 'Other',
 }
 
-
 EAST_LANGUAGES = {
     "EN": "EN",
     "AM": "AM",

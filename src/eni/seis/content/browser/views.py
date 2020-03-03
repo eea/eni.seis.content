@@ -178,6 +178,20 @@ class CountriesViewEast(BrowserView):
             stats[country.Title()] = get_indicators_statistics(country)
         return stats
 
+    def get_national_reports_items(self):
+        """ Return all published national reports found in this context
+        """
+        catalog = getToolByName(self.context, 'portal_catalog')
+        results = [x.getObject() for x in catalog.searchResults(
+            {
+                'portal_type': ['nationalreport'],
+                'review_state': 'published',
+                'path': '/'.join(self.context.getPhysicalPath())
+            }
+        )]
+
+        return results
+
     def get_national_reports(self):
         """ Return national reports for countries
         """
@@ -215,14 +229,18 @@ class CountriesViewEast(BrowserView):
 
         countries = [x.Title() for x in self.get_countries_folders()]
 
-        countries_data = {
-                "Armenia": {
-                    "1994": True
-                },
-                "Belarus": {
-                    "1995": True
-                }
-            }
+        countries_data = {}
+
+        for country_name in countries:
+            countries_data[country_name] = {}
+
+        reports = self.get_national_reports_items()
+
+        for report in reports:
+            country_name = report.aq_parent.aq_parent.Title()
+            for year in report.years:
+                countries_data[country_name][year] = True
+
         return {
             "years": years,
             "countries": countries,
