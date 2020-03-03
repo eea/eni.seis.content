@@ -69,6 +69,30 @@ SUBSCRIBER_ROLES = {
 }
 
 
+EAST_LANGUAGES = {
+    "EN": "EN",
+    "AM": "AM",
+    "AZ": "AZ",
+    "BY": "BY",
+    "GE": "GE",
+    "MD": "MD",
+    "UA": "UA"
+}
+
+
+def _create_east_languages_vocabulary():
+    """ To be used for national reports
+    """
+    for x, y in EAST_LANGUAGES.items():
+        term = SimpleTerm(value=x, token=x, title=y)
+        yield term
+
+
+EAST_LANGUAGES_VOCABULARY = SimpleVocabulary(
+    list(_create_east_languages_vocabulary())
+)
+
+
 def atvocabulary_to_zope_vocab(name):
     """ Constructs a vocabulary factory for interop with ATVocabularyManager
     """

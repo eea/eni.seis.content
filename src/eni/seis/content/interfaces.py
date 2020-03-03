@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-"""Module where all interfaces, events and exceptions live."""
+""" Module where all interfaces, events and exceptions live. """
 
 from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
+from eni.seis.content.vocabulary import EAST_LANGUAGES_VOCABULARY
 from plone.app.textfield import RichText
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
@@ -83,6 +84,13 @@ class INationalReport(model.Schema):
         title=u"Number of pages",
         required=False,
         description=u"Example: 171"
+    )
+
+    languages = schema.List(
+        title=u"Languages",
+        description=u"Select available languages for this report.",
+        required=False,
+        value_type=schema.Choice(source=EAST_LANGUAGES_VOCABULARY),
     )
 
 
