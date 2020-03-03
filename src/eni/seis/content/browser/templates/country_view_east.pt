@@ -243,7 +243,9 @@
                     <tr tal:define="oddrow repeat/report/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
-                        <span tal:replace="report/Title">Report title</span>
+                        <a tal:attributes="href python:report.get_view_url()">
+                          <span tal:replace="report/Title">Report title</span>
+                        </a>
                         - FOR YEARS (TODO remove):
                         <span tal:replace="report/years">2002</span>
                       </td>
