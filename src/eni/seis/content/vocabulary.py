@@ -93,6 +93,19 @@ EAST_LANGUAGES_VOCABULARY = SimpleVocabulary(
 )
 
 
+def _create_east_years_vocabulary():
+    """ To be used for national reports
+    """
+    for x in range(1990, 2021):
+        term = SimpleTerm(value=x, token=x, title=x)
+        yield term
+
+
+EAST_YEARS_VOCABULARY = SimpleVocabulary(
+    list(_create_east_years_vocabulary())
+)
+
+
 def atvocabulary_to_zope_vocab(name):
     """ Constructs a vocabulary factory for interop with ATVocabularyManager
     """

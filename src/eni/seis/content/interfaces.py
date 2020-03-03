@@ -5,6 +5,7 @@ from eni.seis.content.config import REPORTS_STATUS_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_CATEGORIES_VOCAB
 from eni.seis.content.config import UNECE_INDICATORS_SUBCATEGORIES_VOCAB
 from eni.seis.content.vocabulary import EAST_LANGUAGES_VOCABULARY
+from eni.seis.content.vocabulary import EAST_YEARS_VOCABULARY
 from plone.app.textfield import RichText
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
@@ -91,6 +92,13 @@ class INationalReport(model.Schema):
         description=u"Select available languages for this report.",
         required=False,
         value_type=schema.Choice(source=EAST_LANGUAGES_VOCABULARY),
+    )
+
+    years = schema.List(
+        title=u"Years",
+        description=u"Years reported for",
+        required=False,
+        value_type=schema.Choice(source=EAST_YEARS_VOCABULARY),
     )
 
 
