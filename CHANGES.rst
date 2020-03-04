@@ -3,6 +3,8 @@ Changelog
 
 1.2.2 (unreleased)
 ------------------
+- Improve: Access to environmental - national reports listing.
+  [GhitaB #114456]
 - Feature: National reports (content type, updated templates for country view
   and Countries).
   [GhitaB #107340]
