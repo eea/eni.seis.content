@@ -3,6 +3,9 @@ Changelog
 
 1.2.2 (unreleased)
 ------------------
+- Feature: National reports (content type, updated templates for country view
+  and Countries).
+  [GhitaB #107340]
 
 1.2.1 (2020-02-24)
 ------------------
