@@ -93,7 +93,7 @@
                 <td tal:content="python:country" class="country-name">Country name</td>
                 <tal:repeat repeat="year python:years">
                   <td tal:define="has_report python:countries_data[country].get(year[0], None) if countries_data.get(country, None) is not None else None"
-                    tal:attributes="class python:'dec-separator' if year[0] % 10 == 0 else 'simple'">
+                    tal:attributes="class python:'dec-separator text-center' if year[0] % 10 == 0 else 'simple text-center'">
                     <i tal:condition="python:has_report is True"
                        class="fa fa-square" aria-hidden="true"></i>
                   </td>
