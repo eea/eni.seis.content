@@ -224,7 +224,8 @@
             </div>
 
             <div id="report-state-environment" class="tab-pane fade">
-              <h3 tal:content="python:view.get_national_reports_description()">
+              <h3 class="national-reports-title"
+                  tal:content="python:view.get_national_reports_description()">
                 Ministry of environmental protection and agriculture of Georgia, Experience in SOER
               </h3>
 
@@ -247,10 +248,12 @@
                         <a tal:attributes="href python:report.get_view_url()">
                           <span tal:replace="report/Title">Report title</span>
                         </a>
-                        - FOR YEARS (TODO remove):
-                        <span tal:replace="report/years">2002</span>
                       </td>
-                      <td tal:content="report/languages">EN</td>
+                      <td tal:define="report_languages python:report.languages">
+                        <tal:repeat repeat="report_language python:report_languages">
+                          <img tal:attributes="src python:'lang-flag-' + report_language + '.png'" />
+                        </tal:repeat>
+                      </td>
                       <td tal:content="report/pages_number">23</td>
                     </tr>
                   </tal:repeat>
