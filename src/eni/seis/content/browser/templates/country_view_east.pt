@@ -224,8 +224,9 @@
             </div>
 
             <div id="report-state-environment" class="tab-pane fade">
-              <!-- TODO use real content -->
-              <h3>Ministry of environmental protection and agriculture of Georgia, Experience in SOER</h3>
+              <h3 tal:content="python:view.get_national_reports_description()">
+                Ministry of environmental protection and agriculture of Georgia, Experience in SOER
+              </h3>
 
               <table class="table table-responsive table-hover national-reports" summary="Content listing">
                 <thead>

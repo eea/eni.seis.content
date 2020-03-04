@@ -328,6 +328,11 @@ class CountryViewEast(BrowserView):
 
         return news
 
+    def get_national_reports_description(self):
+        """ Return title to be used in Report on the state environment tab
+        """
+        return u"Ministry of environmental protection and agriculture TODO"
+
 
 class ReportsDataView(BrowserView):
     """ Utils for Reports
