@@ -251,7 +251,8 @@
                       </td>
                       <td tal:define="report_languages python:report.languages">
                         <tal:repeat repeat="report_language python:report_languages">
-                          <img tal:attributes="src python:'lang-flag-' + report_language + '.png'" />
+                          <img class="flag-img" tal:attributes="src python:'lang-flag-' + report_language + '.png'" />
+                          <span class="lang-text" tal:content="python:report_language">EN</span>
                         </tal:repeat>
                       </td>
                       <td tal:content="report/pages_number">23</td>
