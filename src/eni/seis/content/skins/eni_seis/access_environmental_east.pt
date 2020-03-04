@@ -74,9 +74,15 @@ They will appear in Countries, but also in this dedicated page.
 
       <div class="national-reports-container">
         <h2>National reports</h2>
-        <p tal:content="python:context.getNationalReports()">
-          TODO implement reports
-        </p>
+        <div class="national-reports-listing"
+             tal:define="national_reports python:context.getNationalReports()">
+          <tal:repeat repeat="national_report national_reports">
+            <p>
+              <a tal:attributes="href python:national_report.get_view_url()"
+                 tal:content="national_report/title"></a>
+            </p>
+          </tal:repeat>
+        </div>
       </div>
 
       <div class="gp-reports-container">

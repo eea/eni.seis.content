@@ -4,4 +4,5 @@ res = context.portal_catalog.searchResults(
         path='/east/countries'
         )
 
+res = [x.getObject() for x in res]
 return res
