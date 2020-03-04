@@ -74,7 +74,9 @@ They will appear in Countries, but also in this dedicated page.
 
       <div class="national-reports-container">
         <h2>National reports</h2>
-        <p>TODO implement reports</p>
+        <p tal:content="python:context.getNationalReports()">
+          TODO implement reports
+        </p>
       </div>
 
       <div class="gp-reports-container">
