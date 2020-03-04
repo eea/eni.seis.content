@@ -87,7 +87,9 @@ They will appear in Countries, but also in this dedicated page.
 
       <div class="gp-reports-container">
         <h2>Good practice reports</h2>
-        <p>TODO implement reports</p>
+        <div class="gp-reports-listing">
+          <p tal:replace="structure python:context.restrictedTraverse('good-practice-reports').long_description"></p>
+        </div>
       </div>
     </div>
 
