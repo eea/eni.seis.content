@@ -3,6 +3,9 @@ Changelog
 
 1.2.2 (unreleased)
 ------------------
+- Feature: Editable good practice reports section
+  Manual step: add folder Good practice reports.
+  [GhitaB #114456]
 - Improve: Access to environmental - national reports listing.
   [GhitaB #114456]
 - Feature: National reports (content type, updated templates for country view
