@@ -331,7 +331,10 @@ class CountryViewEast(BrowserView):
     def get_national_reports_description(self):
         """ Return title to be used in Report on the state environment tab
         """
-        return u"Ministry of environmental protection and agriculture TODO"
+        try:
+            return self.context['national-reports'].Description()
+        except Exception:
+            return "Missing national-reports folder."
 
 
 class ReportsDataView(BrowserView):
