@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.2 (unreleased)
+1.2.2 (2020-03-05)
 ------------------
 - Feature: Editable good practice reports section
   Manual step: add folder Good practice reports.
