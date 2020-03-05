@@ -224,10 +224,12 @@
             </div>
 
             <div id="report-state-environment" class="tab-pane fade">
-              <h3 class="national-reports-title"
-                  tal:content="python:view.get_national_reports_description()">
-                Ministry of environmental protection and agriculture of Georgia, Experience in SOER
-              </h3>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <h3 class="national-reports-title"
+                    tal:content="python:view.get_national_reports_description()">
+                  Ministry of environmental protection and agriculture of Georgia, Experience in SOER
+                </h3>
+              </div>
 
               <table class="table table-responsive table-hover national-reports" summary="Content listing">
                 <thead>
