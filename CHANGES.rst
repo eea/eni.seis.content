@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.2.3 (unreleased)
+------------------
+
 1.2.2 (2020-03-05)
 ------------------
 - Feature: Editable good practice reports section
