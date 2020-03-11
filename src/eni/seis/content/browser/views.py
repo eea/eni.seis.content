@@ -365,6 +365,7 @@ class ReportsDataView(BrowserView):
             {
                 'portal_type': ['report'],
                 'review_state': 'published',
+                'sort_on': 'getObjPositionInParent',
                 'path': '/'.join(self.context.getPhysicalPath())
             }
         )]
