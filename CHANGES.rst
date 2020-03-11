@@ -3,9 +3,8 @@ Changelog
 
 1.2.3 (unreleased)
 ------------------
-#115563
-TODO: reports in Country view - order by position in folder.
-https://github.com/eea/eni.seis.content/blob/master/src/eni/seis/content/browser/views.py#L360
+- Fix: reports order by position in folder, in country view - East.
+  [GhitaB #115563]
 
 1.2.2 (2020-03-05)
 ------------------
