@@ -3,6 +3,8 @@ Changelog
 
 1.2.3 (unreleased)
 ------------------
+- Feature: add country events in country view - East.
+  [GhitaB #115573]
 - Fix: reports order by position in folder, in country view - East.
   [GhitaB #115563]
 
