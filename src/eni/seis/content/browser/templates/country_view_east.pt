@@ -329,10 +329,31 @@
     <div class="row no-portlets country-events-row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h3 class="section-title">Country events</h3>
-        <ul>
-          <li tal:repeat="event context/getLocalEvents"
-              tal:content="event/Title"></li>
-        </ul>
+
+        <tal:def tal:define="
+        vocab context/event_countries_vocab;
+        events python: [b.getObject() for b in context.portal_catalog.searchResults(portal_type=['Event', 'Folderish Event', 'eea.meeting'], review_state='published', sort_on='start')];
+        events python: [ev for ev in events if vocab[context.Title()] in (ev.countries or [])];
+        ">
+          <dl class="box leading-large portlet portletEvents" tal:condition="events">
+            <dd>
+              <div tal:repeat="event events">
+
+                <a href="" tal:attributes="href event/absolute_url" class="tile" title="" tal:content="event/Title">
+                  An event related to ENI-SEIS East
+                </a>
+
+                <span class="portletItemDetails">
+                  <span tal:replace="python:event.get_event_dates(event=event)" />
+                  <span tal:replace="python:event.get_event_year(event=event)" />
+                  <span class="location"> —
+                    <span tal:replace="event/location">Bucharest</span>
+                  </span>
+                </span>
+              </div>
+            </dd>
+          </dl>
+        </tal:def>
       </div>
     </div>
 
