@@ -326,6 +326,12 @@
       </div>
     </div>
 
+    <div class="row no-portlets country-events-row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3 class="section-title">Country events</h3>
+      </div>
+    </div>
+
     <div class="row no-portlets jquery-move-me country-news-row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h3 class="section-title">Country news</h3>
