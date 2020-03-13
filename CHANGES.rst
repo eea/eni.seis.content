@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.2.4 (unreleased)
+------------------
+
 1.2.3 (2020-03-12)
 ------------------
 - Feature: add country events in country view - East.
