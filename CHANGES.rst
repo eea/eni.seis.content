@@ -3,6 +3,8 @@ Changelog
 
 1.2.4 (unreleased)
 ------------------
+- Manual: /east/areas-of-work/work-plans - exclude from navigation.
+  [GhitaB #114456]
 
 1.2.3 (2020-03-12)
 ------------------
