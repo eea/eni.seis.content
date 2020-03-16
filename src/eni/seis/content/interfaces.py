@@ -102,6 +102,29 @@ class INationalReport(model.Schema):
     )
 
 
+class IProductItem(model.Schema):
+    """ ProductItem to be added in a country section
+    """
+    external_link = schema.URI(
+        title=u"External link",
+        required=False,
+        description=u"Report source if it is an external link."
+    )
+
+    file = NamedBlobFile(
+        title=u"File",
+        required=False,
+        description=u"Report file if it has one."
+    )
+
+    languages = schema.List(
+        title=u"Languages",
+        description=u"Select available languages for this report.",
+        required=False,
+        value_type=schema.Choice(source=EAST_LANGUAGES_VOCABULARY),
+    )
+
+
 class IIndicator(model.Schema):
     """ Indicator item to be added in a country section
     """
