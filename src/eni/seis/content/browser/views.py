@@ -400,6 +400,11 @@ class NationalReportView(BrowserView):
     """
 
 
+class ProductItemView(BrowserView):
+    """ Product Item
+    """
+
+
 class IndicatorsDataView(BrowserView):
     """ Utils for Indicators
     """

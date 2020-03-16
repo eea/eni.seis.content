@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+  <metal:block define-macro="content-core">
+    <div class="product-item-details"
+         tal:define="report python:context;
+                     has_external_link python:report.has_external_link();
+                     has_file python:report.has_file()">
+      <p tal:condition="python:has_external_link is True">
+        External link:
+        <a tal:attributes="href python:report.external_link"
+           tal:content="python:report.external_link">
+          External link
+        </a>
+      </p>
+
+      <p tal:condition="python:has_file is True">
+        File:
+        <a tal:attributes="href python:report.absolute_url() + '/@@download/file'"
+           tal:content="python:report.file.filename">
+          Filename
+        </a>
+      </p>
+    </div>
+  </metal:block>
+</metal:content-core>
+</body>
+</html>
