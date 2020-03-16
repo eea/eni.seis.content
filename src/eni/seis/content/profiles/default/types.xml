@@ -3,6 +3,7 @@
  <property name="title">Controls the available content types in your portal</property>
  <object name="report" meta_type="Dexterity FTI"/>
  <object name="nationalreport" meta_type="Dexterity FTI"/>
+ <object name="productitem" meta_type="Dexterity FTI"/>
  <object name="indicator" meta_type="Dexterity FTI"/>
  <object name="indicatordata" meta_type="Dexterity FTI"/>
  <object name="nfp" meta_type="Dexterity FTI"/>
