@@ -83,6 +83,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
         </div>
         <h3>Deliverables</h3>
         <div>
+          <h4>Events tab - TODO move</h4>
           <legend>
             <span class="level-national">
               <i class="fa fa-circle level-national" aria-hidden="true"></i>
@@ -124,9 +125,12 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
               </tbody>
             </table>
           </div>
-          <p>
-            TODO Products
-          </p>
+
+          <h4>Products tab - TODO move</h4>
+          <h5>Maturity Report tab - TODO move</h5>
+          <h5>Roadmap tab - TODO move</h5>
+          <h5>Executive Summary tab - TODO move</h5>
+          <h5>Good practice tab - TODO move</h5>
         </div>
         <h3>Partners</h3>
         <div>
