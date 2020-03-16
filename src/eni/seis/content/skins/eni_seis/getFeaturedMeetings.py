@@ -8,4 +8,12 @@ res = context.portal_catalog.searchResults(
 meetings = [b for b in res]
 featured = [x for x in meetings if x.getObject().is_featured is True]
 
-return featured
+regional = []
+national = []
+for x in featured:
+    if context.get_event_level(x) == 'regional':
+        regional.append(x)
+    elif context.get_event_level(x) == 'national':
+        national.append(x)
+
+return regional + national
