@@ -28,7 +28,7 @@
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
  </property>
- <property name="schema">eni.seis.content.interfaces.ProductItem</property>
+ <property name="schema">eni.seis.content.interfaces.IProductItem</property>
  <property name="model_source"></property>
  <property name="model_file"></property>
  <property name="schema_policy">dexterity</property>
