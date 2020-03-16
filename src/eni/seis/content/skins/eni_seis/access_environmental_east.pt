@@ -27,6 +27,20 @@ They will appear in Countries, but also in this dedicated page.
 
   <metal:content-core fill-slot="content-core">
     <div class="access-environmental-container">
+
+      <h3>Summary of activities</h3>
+      <h3>Deliverables</h3>
+      <h3>Partners</h3>
+      <h3>Knowledge resources</h3>
+
+      <p>
+        The purpose of this ENI SEIS II project component is to assess the status of e-
+        government and open data readiness in the field of environment in the ENI East
+        countries. Based on this, EEA together with each country design a realistic, stepwise
+        implementation Road map in line with EU and international developments and following
+        the general principles set up by the Aarhus convention.
+      </p>
+
       <div tal:replace="structure context/long_description" />
 
       <legend>
