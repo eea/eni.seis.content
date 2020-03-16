@@ -29,7 +29,7 @@ They will appear in Countries, but also in this dedicated page.
     <div class="access-environmental-container">
 
       <div id="eni-accordion">
-        <h3>Section 1</h3>
+        <h3>Summary of activities</h3>
         <div>
           <p>
           Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
@@ -38,7 +38,7 @@ They will appear in Countries, but also in this dedicated page.
           odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
           </p>
         </div>
-        <h3>Section 2</h3>
+        <h3>Deliverables</h3>
         <div>
           <p>
           Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
@@ -47,7 +47,7 @@ They will appear in Countries, but also in this dedicated page.
           suscipit faucibus urna.
           </p>
         </div>
-        <h3>Section 3</h3>
+        <h3>Partners</h3>
         <div>
           <p>
           Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
@@ -61,7 +61,7 @@ They will appear in Countries, but also in this dedicated page.
             <li>List item three</li>
           </ul>
         </div>
-        <h3>Section 4</h3>
+        <h3>Knowledge resources</h3>
         <div>
           <p>
           Cras dictum. Pellentesque habitant morbi tristique senectus et netus
@@ -83,11 +83,6 @@ They will appear in Countries, but also in this dedicated page.
           $("#eni-accordion").accordion();
         });
       </script>
-
-      <h3>Summary of activities</h3>
-      <h3>Deliverables</h3>
-      <h3>Partners</h3>
-      <h3>Knowledge resources</h3>
 
       <p>
         The purpose of this ENI SEIS II project component is to assess the status of e-
