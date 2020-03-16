@@ -3,7 +3,8 @@ Changelog
 
 1.2.4 (unreleased)
 ------------------
-- Manual step: /east/areas-of-work/work-plans - exclude from navigation.
+- Feature: new content type Product Item.
+  Manual step: /east/areas-of-work/work-plans - exclude from navigation.
   Manual step: /east/homepage-section-aow-slider/edit - remove Work plans.
   [GhitaB #114456]
 
