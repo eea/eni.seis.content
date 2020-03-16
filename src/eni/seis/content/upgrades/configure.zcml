@@ -211,4 +211,17 @@
             />
 
     </genericsetup:upgradeSteps>
+
+    <genericsetup:upgradeSteps
+            source="1.8"
+            destination="1.9"
+            profile="eni.seis.content:default">
+
+        <genericsetup:upgradeDepends
+            title="Upgrade step for eni.seis.content: import types."
+	          description="New content type: ProductItem."
+            import_steps="typeinfo"
+            />
+
+    </genericsetup:upgradeSteps>
 </configure>
