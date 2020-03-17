@@ -11,6 +11,7 @@ Changelog
   /east/areas-of-work/access-to-environmental-information/products/
   Manual step: /east/dexterity-types/productitem/@@behaviors - add Countries
   [GhitaB #114456]
+  Something
 
 1.2.3 (2020-03-12)
 ------------------
