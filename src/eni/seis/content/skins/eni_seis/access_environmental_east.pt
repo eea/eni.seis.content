@@ -135,10 +135,43 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
           <div class="products-container"
                tal:define="product_items python:context.getProductItems()">
 
-            <p tal:content="python:product_items.get('Maturity Report', [])"></p>
-            <p tal:content="python:product_items.get('Roadmap', [])"></p>
-            <p tal:content="python:product_items.get('Executive Summary', [])"></p>
-            <p tal:content="python:product_items.get('Good practice', [])"></p>
+            <div tal:define="product_items_1 python:product_items.get('Maturity Report', [])">
+              <table class="listing product-items-table table table-responsive table-hover"
+                     summary="Content listing"
+                     i18n:attributes="summary summary_content_listing;">
+                <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Maturity Report</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                  <tal:repeat repeat="item python:product_items_1">
+                  <tr tal:define="oddrow repeat/item/odd;"
+                      tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                    <td>AAA</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tal:repeat>
+                </tbody>
+              </table>
+            </div>
+
+            <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
+
+            </div>
+
+            <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
+
+            </div>
+
+            <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
+
+            </div>
           </div>
 
         </div>
