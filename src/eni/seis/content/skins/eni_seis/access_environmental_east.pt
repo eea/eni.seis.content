@@ -133,7 +133,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
           </div>
 
           <div class="products-container">
-            <span tal:replace="python:view."></span>
+            <span tal:replace="python:context.getProductItems()"></span>
           </div>
 
         </div>
