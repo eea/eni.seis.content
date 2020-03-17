@@ -198,26 +198,6 @@ level.
 
       <div tal:replace="structure context/long_description" />
 
-      <!-- TODO Remove and clean styles -->
-      <div class="national-reports-container">
-        <h2>National reports</h2>
-        <div class="national-reports-listing"
-             tal:define="national_reports python:context.getNationalReports()">
-          <tal:repeat repeat="national_report national_reports">
-            <p>
-              <a tal:attributes="href python:national_report.get_view_url()"
-                 tal:content="national_report/title"></a>
-            </p>
-          </tal:repeat>
-        </div>
-      </div>
-
-      <div class="gp-reports-container">
-        <h2>Good practice reports</h2>
-        <div class="gp-reports-listing">
-          <p tal:replace="structure python:context.restrictedTraverse('good-practice-reports').long_description"></p>
-        </div>
-      </div>
     </div>
 
     <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
