@@ -6,6 +6,9 @@ Changelog
 - Feature: new content type Product Item.
   Manual step: /east/areas-of-work/work-plans - exclude from navigation.
   Manual step: /east/homepage-section-aow-slider/edit - remove Work plans.
+  Manual step: create folder
+  /east/areas-of-work/access-to-environmental-information/products/
+  Manual step: /east/dexterity-types/productitem/@@behaviors - add Countries
   [GhitaB #114456]
 
 1.2.3 (2020-03-12)
