@@ -319,7 +319,8 @@ level.
         // TODO Move in file
         $(function() {
           $("#eni-accordion").accordion({
-            collapsible: true
+            collapsible: true,
+            heightStyle: "content"
           });
         });
       </script>
