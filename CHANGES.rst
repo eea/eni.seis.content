@@ -3,6 +3,7 @@ Changelog
 
 1.2.4 (unreleased)
 ------------------
+- Improve: Access to environmental - add listings with tabs (Events, Products).
 - Feature: new content type Product Item.
   Manual step: /east/areas-of-work/work-plans - exclude from navigation.
   Manual step: /east/homepage-section-aow-slider/edit - remove Work plans.
