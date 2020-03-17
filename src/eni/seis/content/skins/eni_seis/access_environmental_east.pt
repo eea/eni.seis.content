@@ -152,7 +152,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td>
-                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                      <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
                     </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
@@ -183,7 +183,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td>
-                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                      <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
                     </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
@@ -214,7 +214,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td>
-                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                      <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
                     </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
@@ -245,7 +245,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td>
-                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                      <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
                     </td>
                     <td tal:content="python:item.languages"></td>
                     <td>

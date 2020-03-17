@@ -5,11 +5,15 @@
 ##bind subpath=traverse_subpath
 ##parameters=country_code=""
 
-return {
-    "am": "/east/countries/armenia",
-    "az": "/east/countries/azerbaijan",
-    "by": "/east/countries/belarus",
-    "ge": "/east/countries/georgia",
-    "md": "/east/countries/moldova",
-    "ua": "/east/countries/ukraine"
-    }.get(country_code, None)
+countries = {
+    "am": "Armenia",
+    "az": "Azerbaijan",
+    "by": "Belarus",
+    "ge": "Georgia",
+    "md": "Moldova",
+    "ua": "Ukraine"
+    }
+
+country = countries.get(country_code, '')
+country_url = "/east/countries/" + country.lower()
+return "<a href='" + country_url + "'>" + country + "</a>"
