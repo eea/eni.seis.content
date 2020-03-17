@@ -148,13 +148,12 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                 </thead>
 
                 <tbody>
-
                   <tal:repeat repeat="item python:product_items_1">
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                    <td>AAA</td>
-                    <td></td>
-                    <td></td>
+                    <td tal:content="python:item.countries"></td>
+                    <td tal:content="python:item.languages"></td>
+                    <td tal:content="python:item.get_view_url()"></td>
                   </tr>
                   </tal:repeat>
                 </tbody>
@@ -162,15 +161,78 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
             </div>
 
             <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
+              <table class="listing product-items-table table table-responsive table-hover"
+                     summary="Content listing"
+                     i18n:attributes="summary summary_content_listing;">
+                <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Maturity Report</th>
+                  </tr>
+                </thead>
 
+                <tbody>
+                  <tal:repeat repeat="item python:product_items_2">
+                  <tr tal:define="oddrow repeat/item/odd;"
+                      tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                    <td tal:content="python:item.countries"></td>
+                    <td tal:content="python:item.languages"></td>
+                    <td tal:content="python:item.get_view_url()"></td>
+                  </tr>
+                  </tal:repeat>
+                </tbody>
+              </table>
             </div>
 
             <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
+              <table class="listing product-items-table table table-responsive table-hover"
+                     summary="Content listing"
+                     i18n:attributes="summary summary_content_listing;">
+                <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Maturity Report</th>
+                  </tr>
+                </thead>
 
+                <tbody>
+                  <tal:repeat repeat="item python:product_items_3">
+                  <tr tal:define="oddrow repeat/item/odd;"
+                      tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                    <td tal:content="python:item.countries"></td>
+                    <td tal:content="python:item.languages"></td>
+                    <td tal:content="python:item.get_view_url()"></td>
+                  </tr>
+                  </tal:repeat>
+                </tbody>
+              </table>
             </div>
 
             <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
+              <table class="listing product-items-table table table-responsive table-hover"
+                     summary="Content listing"
+                     i18n:attributes="summary summary_content_listing;">
+                <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Maturity Report</th>
+                  </tr>
+                </thead>
 
+                <tbody>
+                  <tal:repeat repeat="item python:product_items_4">
+                  <tr tal:define="oddrow repeat/item/odd;"
+                      tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                    <td tal:content="python:item.countries"></td>
+                    <td tal:content="python:item.languages"></td>
+                    <td tal:content="python:item.get_view_url()"></td>
+                  </tr>
+                  </tal:repeat>
+                </tbody>
+              </table>
             </div>
           </div>
 
