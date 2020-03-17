@@ -153,7 +153,11 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td tal:content="python:item.countries"></td>
                     <td tal:content="python:item.languages"></td>
-                    <td tal:content="python:item.get_view_url()"></td>
+                    <td>
+                      <a tal:attributes="href python:item.get_view_url()"
+                         tal:content="python:item.title">
+                      </a>
+                    </td>
                   </tr>
                   </tal:repeat>
                 </tbody>
@@ -178,7 +182,11 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td tal:content="python:item.countries"></td>
                     <td tal:content="python:item.languages"></td>
-                    <td tal:content="python:item.get_view_url()"></td>
+                    <td>
+                      <a tal:attributes="href python:item.get_view_url()"
+                         tal:content="python:item.title">
+                      </a>
+                    </td>
                   </tr>
                   </tal:repeat>
                 </tbody>
@@ -203,7 +211,11 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td tal:content="python:item.countries"></td>
                     <td tal:content="python:item.languages"></td>
-                    <td tal:content="python:item.get_view_url()"></td>
+                    <td>
+                      <a tal:attributes="href python:item.get_view_url()"
+                         tal:content="python:item.title">
+                      </a>
+                    </td>
                   </tr>
                   </tal:repeat>
                 </tbody>
@@ -228,7 +240,11 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
                     <td tal:content="python:item.countries"></td>
                     <td tal:content="python:item.languages"></td>
-                    <td tal:content="python:item.get_view_url()"></td>
+                    <td>
+                      <a tal:attributes="href python:item.get_view_url()"
+                         tal:content="python:item.title">
+                      </a>
+                    </td>
                   </tr>
                   </tal:repeat>
                 </tbody>
