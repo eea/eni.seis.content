@@ -132,8 +132,13 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
           </div>
 
-          <div class="products-container">
-            <span tal:replace="python:context.getProductItems()"></span>
+          <div class="products-container"
+               tal:define="product_items python:context.getProductItems()">
+
+            <p tal:content="python:product_items.get('Maturity Report', [])"></p>
+            <p tal:content="python:product_items.get('Roadmap', [])"></p>
+            <p tal:content="python:product_items.get('Executive Summary', [])"></p>
+            <p tal:content="python:product_items.get('Good practice', [])"></p>
           </div>
 
         </div>
