@@ -4,5 +4,17 @@ res = context.portal_catalog.searchResults(
         path='/east/areas-of-work/access-to-environmental-information/products'
         )
 
+items = {}
 res = [x.getObject() for x in res]
-return res
+for item in res:
+    try:
+        category = item.category[0]
+    except Exception:
+        category = "unlisted"
+
+    if items.get(category, None) is None:
+        items[category] = []
+
+    items[category].append(item)
+
+return items
