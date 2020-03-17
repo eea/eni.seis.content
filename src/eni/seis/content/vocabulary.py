@@ -78,6 +78,13 @@ EAST_LANGUAGES = {
     "UA": "UA"
 }
 
+EAST_PRODUCTS_CATEGORIES = {
+    u"Maturity Report": u"Maturity Report",
+    u"Roadmap": u"Roadmap",
+    u"Executive Summary": u"Executive Summary",
+    u"Good practice": u"Good practice"
+}
+
 
 def _create_east_languages_vocabulary():
     """ To be used for national reports
@@ -87,8 +94,20 @@ def _create_east_languages_vocabulary():
         yield term
 
 
+def _create_east_products_categories_vocabulary():
+    """ To be used for national reports
+    """
+    for x, y in EAST_PRODUCTS_CATEGORIES.items():
+        term = SimpleTerm(value=x, token=x, title=y)
+        yield term
+
+
 EAST_LANGUAGES_VOCABULARY = SimpleVocabulary(
     list(_create_east_languages_vocabulary())
+)
+
+EAST_PRODUCTS_CATEGORIES_VOCABULARY = SimpleVocabulary(
+    list(_create_east_products_categories_vocabulary())
 )
 
 
