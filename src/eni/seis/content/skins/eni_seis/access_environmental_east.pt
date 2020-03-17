@@ -1,20 +1,3 @@
-<!--
-Access to environmental information
-
-Replace: Areas of work - Data management and infrastructure
-
-Structure:
-- Terms of reference
-- Meetings - Regional events
-- Meetings - National events
-    Meetings: for Open data & e-Governance will need to apear in the dedicated page
-- National reports
-- Good practice reports
-
-The reports are in progress, there will be 6 reports, one for each country.
-They will appear in Countries, but also in this dedicated page.
--->
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -148,6 +131,11 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
           </div>
+
+          <div class="products-container">
+            <span tal:replace="python:view."></span>
+          </div>
+
         </div>
         <h3>Partners</h3>
         <div>
