@@ -151,7 +151,9 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tal:repeat repeat="item python:product_items_1">
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                    <td tal:content="python:item.countries"></td>
+                    <td>
+                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                    </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
                       <a tal:attributes="href python:item.get_view_url()"
@@ -180,7 +182,9 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tal:repeat repeat="item python:product_items_2">
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                    <td tal:content="python:item.countries"></td>
+                    <td>
+                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                    </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
                       <a tal:attributes="href python:item.get_view_url()"
@@ -209,7 +213,9 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tal:repeat repeat="item python:product_items_3">
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                    <td tal:content="python:item.countries"></td>
+                    <td>
+                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                    </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
                       <a tal:attributes="href python:item.get_view_url()"
@@ -238,7 +244,9 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <tal:repeat repeat="item python:product_items_4">
                   <tr tal:define="oddrow repeat/item/odd;"
                       tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                    <td tal:content="python:item.countries"></td>
+                    <td>
+                      <a tal:attributes="href python:context.getCountryURL(item.countries[0])">Country</a>
+                    </td>
                     <td tal:content="python:item.languages"></td>
                     <td>
                       <a tal:attributes="href python:item.get_view_url()"
