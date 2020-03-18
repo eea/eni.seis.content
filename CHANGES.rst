@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.4 (unreleased)
+1.2.4 (2020-03-18)
 ------------------
 - Improve: Access to environmental - add listings with tabs (Events, Products).
 - Feature: new content type Product Item.
