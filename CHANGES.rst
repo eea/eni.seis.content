@@ -10,6 +10,7 @@ Changelog
   Manual step: create folder
   /east/areas-of-work/access-to-environmental-information/products/
   Manual step: /east/dexterity-types/productitem/@@behaviors - add Countries
+  Manual step: edit Access, add text in bottom of the page.
   [GhitaB #114456]
 
 1.2.3 (2020-03-12)
