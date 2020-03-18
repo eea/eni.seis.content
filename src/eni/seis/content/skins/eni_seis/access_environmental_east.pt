@@ -78,7 +78,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                  aria-controls="products" aria-selected="false">Products</a>
             </li>
           </ul>
-          <div class="tab-content" id="deliverables-tabs">
+          <div class="tab-content" id="deliverables-tabs-content">
             <div class="tab-pane fade active" id="events" role="tabpanel" aria-labelledby="events-tab">
               <legend>
                 <span class="level-national">
@@ -127,21 +127,45 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
               <div class="products-container"
                    tal:define="product_items python:context.getProductItems()">
 
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="products-tabs" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                    <a class="nav-link active" id="maturity-report-tab" data-toggle="tab"
+                       href="#maturity-report" role="tab" aria-controls="maturity-report"
+                       aria-selected="true">Maturity report</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                    <a class="nav-link" id="roadmap-tab" data-toggle="tab"
+                       href="#roadmap" role="tab" aria-controls="roadmap"
+                       aria-selected="true">Roadmap</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                    <a class="nav-link" id="executive-summary-tab" data-toggle="tab"
+                       href="#executive-summary" role="tab" aria-controls="executive-summary"
+                       aria-selected="true">Executive summary</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="good-practice-tab" data-toggle="tab"
+                       href="#good-practice" role="tab" aria-controls="good-practice"
+                       aria-selected="true">Good practice</a>
                   </li>
                 </ul>
-                <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                <div class="tab-content" id="products-tabs-content">
+                  <div class="tab-pane fade active" id="maturity-report" role="tabpanel"
+                       aria-labelledby="maturity-report-tab">
+                    MR
+                  </div>
+                  <div class="tab-pane fade" id="roadmap" role="tabpanel"
+                       aria-labelledby="roadmap-tab">
+                    R
+                  </div>
+                  <div class="tab-pane fade" id="executive-summary" role="tabpanel"
+                       aria-labelledby="executive-summary-tab">
+                    ES
+                  </div>
+                  <div class="tab-pane fade" id="good-practice" role="tabpanel"
+                       aria-labelledby="good-practice-tab">
+                    GP
+                  </div>
                 </div>
 
                 <h5>Maturity Report</h5>
