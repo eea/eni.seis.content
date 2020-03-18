@@ -152,172 +152,156 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                 <div class="tab-content" id="products-tabs-content">
                   <div class="tab-pane fade active" id="maturity-report" role="tabpanel"
                        aria-labelledby="maturity-report-tab">
-                    MR
+                    <div tal:define="product_items_1 python:product_items.get('Maturity Report', [])">
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <thead>
+                          <tr>
+                            <th>Country</th>
+                            <th>Language</th>
+                            <th>Maturity Report</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_1">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                            </td>
+                            <td tal:define="item_languages python:item.languages">
+                              <tal:repeat repeat="item_language python:item_languages">
+                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
+                                <span class="lang-text" tal:content="python:item_language">EN</span>
+                              </tal:repeat>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                   <div class="tab-pane fade" id="roadmap" role="tabpanel"
                        aria-labelledby="roadmap-tab">
-                    R
+                    <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <thead>
+                          <tr>
+                            <th>Country</th>
+                            <th>Language</th>
+                            <th>Maturity Report</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_2">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                            </td>
+                            <td tal:define="item_languages python:item.languages">
+                              <tal:repeat repeat="item_language python:item_languages">
+                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
+                                <span class="lang-text" tal:content="python:item_language">EN</span>
+                              </tal:repeat>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                   <div class="tab-pane fade" id="executive-summary" role="tabpanel"
                        aria-labelledby="executive-summary-tab">
-                    ES
+                    <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <thead>
+                          <tr>
+                            <th>Country</th>
+                            <th>Language</th>
+                            <th>Maturity Report</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_3">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                            </td>
+                            <td tal:define="item_languages python:item.languages">
+                              <tal:repeat repeat="item_language python:item_languages">
+                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
+                                <span class="lang-text" tal:content="python:item_language">EN</span>
+                              </tal:repeat>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                   <div class="tab-pane fade" id="good-practice" role="tabpanel"
                        aria-labelledby="good-practice-tab">
-                    GP
+                    <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <thead>
+                          <tr>
+                            <th>Country</th>
+                            <th>Language</th>
+                            <th>Maturity Report</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_4">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                            </td>
+                            <td tal:define="item_languages python:item.languages">
+                              <tal:repeat repeat="item_language python:item_languages">
+                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
+                                <span class="lang-text" tal:content="python:item_language">EN</span>
+                              </tal:repeat>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
-
-                <h5>Maturity Report</h5>
-
-                <div tal:define="product_items_1 python:product_items.get('Maturity Report', [])">
-                  <table class="listing product-items-table table table-responsive table-hover"
-                         summary="Content listing"
-                         i18n:attributes="summary summary_content_listing;">
-                    <thead>
-                      <tr>
-                        <th>Country</th>
-                        <th>Language</th>
-                        <th>Maturity Report</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tal:repeat repeat="item python:product_items_1">
-                      <tr tal:define="oddrow repeat/item/odd;"
-                          tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                        <td>
-                          <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
-                        </td>
-                        <td tal:define="item_languages python:item.languages">
-                          <tal:repeat repeat="item_language python:item_languages">
-                            <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                            <span class="lang-text" tal:content="python:item_language">EN</span>
-                          </tal:repeat>
-                        </td>
-                        <td>
-                          <a tal:attributes="href python:item.get_view_url()"
-                             tal:content="python:item.title">
-                          </a>
-                        </td>
-                      </tr>
-                      </tal:repeat>
-                    </tbody>
-                  </table>
-                </div>
-
-                <h5>Roadmap tab</h5>
-
-                <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
-                  <table class="listing product-items-table table table-responsive table-hover"
-                         summary="Content listing"
-                         i18n:attributes="summary summary_content_listing;">
-                    <thead>
-                      <tr>
-                        <th>Country</th>
-                        <th>Language</th>
-                        <th>Maturity Report</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tal:repeat repeat="item python:product_items_2">
-                      <tr tal:define="oddrow repeat/item/odd;"
-                          tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                        <td>
-                          <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
-                        </td>
-                        <td tal:define="item_languages python:item.languages">
-                          <tal:repeat repeat="item_language python:item_languages">
-                            <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                            <span class="lang-text" tal:content="python:item_language">EN</span>
-                          </tal:repeat>
-                        </td>
-                        <td>
-                          <a tal:attributes="href python:item.get_view_url()"
-                             tal:content="python:item.title">
-                          </a>
-                        </td>
-                      </tr>
-                      </tal:repeat>
-                    </tbody>
-                  </table>
-                </div>
-
-                <h5>Executive Summary</h5>
-
-                <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
-                  <table class="listing product-items-table table table-responsive table-hover"
-                         summary="Content listing"
-                         i18n:attributes="summary summary_content_listing;">
-                    <thead>
-                      <tr>
-                        <th>Country</th>
-                        <th>Language</th>
-                        <th>Maturity Report</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tal:repeat repeat="item python:product_items_3">
-                      <tr tal:define="oddrow repeat/item/odd;"
-                          tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                        <td>
-                          <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
-                        </td>
-                        <td tal:define="item_languages python:item.languages">
-                          <tal:repeat repeat="item_language python:item_languages">
-                            <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                            <span class="lang-text" tal:content="python:item_language">EN</span>
-                          </tal:repeat>
-                        </td>
-                        <td>
-                          <a tal:attributes="href python:item.get_view_url()"
-                             tal:content="python:item.title">
-                          </a>
-                        </td>
-                      </tr>
-                      </tal:repeat>
-                    </tbody>
-                  </table>
-                </div>
-
-                <h5>Good practice</h5>
-
-                <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
-                  <table class="listing product-items-table table table-responsive table-hover"
-                         summary="Content listing"
-                         i18n:attributes="summary summary_content_listing;">
-                    <thead>
-                      <tr>
-                        <th>Country</th>
-                        <th>Language</th>
-                        <th>Maturity Report</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tal:repeat repeat="item python:product_items_4">
-                      <tr tal:define="oddrow repeat/item/odd;"
-                          tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                        <td>
-                          <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
-                        </td>
-                        <td tal:define="item_languages python:item.languages">
-                          <tal:repeat repeat="item_language python:item_languages">
-                            <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                            <span class="lang-text" tal:content="python:item_language">EN</span>
-                          </tal:repeat>
-                        </td>
-                        <td>
-                          <a tal:attributes="href python:item.get_view_url()"
-                             tal:content="python:item.title">
-                          </a>
-                        </td>
-                      </tr>
-                      </tal:repeat>
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>
