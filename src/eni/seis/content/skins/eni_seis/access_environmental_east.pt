@@ -89,10 +89,6 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                   <i class="fa fa-circle level-regional" aria-hidden="true"></i>
                   <span>Regional Event</span>
                 </span>
-                <span class="other">
-                  <i class="fa fa-circle other" aria-hidden="true"></i>
-                  <span>Other Event</span>
-                </span>
               </legend>
               <div class="featured-meetings-container">
                 <table class="listing event-table table table-responsive table-hover"
@@ -349,14 +345,6 @@ level.
           });
         });
       </script>
-
-      <p>
-        The purpose of this ENI SEIS II project component is to assess the status of e-
-        government and open data readiness in the field of environment in the ENI East
-        countries. Based on this, EEA together with each country design a realistic, stepwise
-        implementation Road map in line with EU and international developments and following
-        the general principles set up by the Aarhus convention.
-      </p>
 
       <div tal:replace="structure context/long_description" />
 
