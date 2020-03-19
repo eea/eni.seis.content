@@ -4,6 +4,7 @@ Changelog
 1.2.5 (unreleased)
 ------------------
 TODO: Access to environmental - Events table, fix events order, table structure
+      Oh, get rid of national vs regional groups, just sort by date.
 
 1.2.4 (2020-03-18)
 ------------------
