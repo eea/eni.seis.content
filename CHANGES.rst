@@ -3,6 +3,7 @@ Changelog
 
 1.2.5 (unreleased)
 ------------------
+TODO: Access to environmental - Events table, fix events order, table structure
 
 1.2.4 (2020-03-18)
 ------------------
