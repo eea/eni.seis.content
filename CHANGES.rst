@@ -7,9 +7,6 @@ Changelog
 - Improve: Move body text before accordion.
   [GhitaB #114456]
 
-TODO: Access to environmental - Events table, fix events order, table structure
-      Oh, get rid of national vs regional groups, just sort by date.
-
 1.2.4 (2020-03-18)
 ------------------
 - Improve: Access to environmental - add listings with tabs (Events, Products).
