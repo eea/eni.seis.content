@@ -172,7 +172,8 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                           <tr tal:define="oddrow repeat/item/odd;"
                               tal:attributes="class python: test(oddrow, 'even', 'odd')">
                             <td>
-                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
                             </td>
                             <td tal:define="item_languages python:item.languages">
                               <tal:repeat repeat="item_language python:item_languages">
@@ -210,7 +211,8 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                           <tr tal:define="oddrow repeat/item/odd;"
                               tal:attributes="class python: test(oddrow, 'even', 'odd')">
                             <td>
-                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
                             </td>
                             <td tal:define="item_languages python:item.languages">
                               <tal:repeat repeat="item_language python:item_languages">
@@ -248,7 +250,8 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                           <tr tal:define="oddrow repeat/item/odd;"
                               tal:attributes="class python: test(oddrow, 'even', 'odd')">
                             <td>
-                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
                             </td>
                             <td tal:define="item_languages python:item.languages">
                               <tal:repeat repeat="item_language python:item_languages">
@@ -286,7 +289,8 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                           <tr tal:define="oddrow repeat/item/odd;"
                               tal:attributes="class python: test(oddrow, 'even', 'odd')">
                             <td>
-                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"></a>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
                             </td>
                             <td tal:define="item_languages python:item.languages">
                               <tal:repeat repeat="item_language python:item_languages">
