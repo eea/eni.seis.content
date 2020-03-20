@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.5 (unreleased)
+1.2.5 (2020-03-20)
 ------------------
 - Fix: meetings order in Events list (Access to environmental - Deliverables).
 - Fix: product items listing in case no country is selected.
