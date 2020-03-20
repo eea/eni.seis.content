@@ -3,6 +3,7 @@ Changelog
 
 1.2.5 (unreleased)
 ------------------
+- Fix: meetings order in Events list (Access to environmental - Deliverables).
 - Improve: Collapse all the accordion tabs by default.
 - Improve: Move body text before accordion.
   [GhitaB #114456]
