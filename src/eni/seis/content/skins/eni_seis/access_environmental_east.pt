@@ -11,6 +11,8 @@
   <metal:content-core fill-slot="content-core">
     <div class="access-environmental-container">
 
+      <div tal:replace="structure context/long_description" />
+
       <div id="eni-accordion">
         <h3>Summary of activities</h3>
         <div>
@@ -345,8 +347,6 @@ level.
           });
         });
       </script>
-
-      <div tal:replace="structure context/long_description" />
 
     </div>
 
