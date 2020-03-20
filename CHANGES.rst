@@ -4,6 +4,7 @@ Changelog
 1.2.5 (unreleased)
 ------------------
 - Fix: meetings order in Events list (Access to environmental - Deliverables).
+- Fix: product items listing in case no country is selected.
 - Improve: Collapse all the accordion tabs by default.
 - Improve: Move body text before accordion.
   [GhitaB #114456]
