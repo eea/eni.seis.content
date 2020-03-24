@@ -52,8 +52,8 @@
                     <img src="" alt="" title=""
                          tal:attributes="src python:image_file;
                                          alt python:image_description" />
-                    <span>Photo credit</span>
                   </a>
+                  <p class="discreet" tal:content="python:image.title">Photo credit</p>
                 </div>
               </div>
             </tal:columns>
