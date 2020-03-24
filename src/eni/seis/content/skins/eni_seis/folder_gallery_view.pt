@@ -54,7 +54,10 @@
                                          alt python:image_description" />
                   </a>
                   <p class="photo-credits" tal:condition="python:image.title[0] == '@'">
-                    <span tal:content="python:image.title">Photo credit</span>
+                    <span>
+                      ©
+                      <span tal:replace="python:image.title.split('@')[1]">Photo credit</span>
+                    </span>
                   </p>
                 </div>
               </div>
