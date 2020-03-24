@@ -3,6 +3,8 @@ Changelog
 
 1.2.6 (unreleased)
 ------------------
+- Improve: update photos in Results section (East).
+  [GhitaB #107342]
 
 1.2.5 (2020-03-20)
 ------------------
