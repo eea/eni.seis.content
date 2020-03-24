@@ -53,7 +53,9 @@
                          tal:attributes="src python:image_file;
                                          alt python:image_description" />
                   </a>
-                  <p class="discreet" tal:content="python:image.title">Photo credit</p>
+                  <p class="photo-credits">
+                    <span tal:content="python:image.title">Photo credit</span>
+                  </p>
                 </div>
               </div>
             </tal:columns>
@@ -62,6 +64,20 @@
       </div>
     </div>
   </div>
+
+<style>
+p.photo-credits {
+  position: relative;
+  top: -65px;
+  left: -53px;
+  color: white;
+}
+
+p.photo-credits span {
+  background: gray;
+  padding: 5px;
+}
+</style>
 
 </metal:main>
 
