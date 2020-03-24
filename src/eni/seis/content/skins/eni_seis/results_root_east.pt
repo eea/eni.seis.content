@@ -85,7 +85,7 @@
             <div class="aow-slide" id="aow-photos">
               <a href="./photos">
                 <div class="img-circle-cropper">
-                  <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg">
+                  <img class="slide-img" src="./eni-photos-img.jpg">
                 </div>
                 <div class="text">
                   <span>Photos</span>
@@ -97,7 +97,7 @@
             <div class="aow-slide" id="aow-testimonials">
               <a href="./testimonials">
                 <div class="img-circle-cropper">
-                  <img class="slide-img" src="./homepage-1-square-national-work-plans.jpg">
+                  <img class="slide-img" src="./eni-testimonials-img.jpg" />
                 </div>
                 <div class="text">
                   <span>Testimonials</span>
@@ -109,7 +109,7 @@
             <div class="aow-slide" id="aow-indicators">
               <a href="/east/indicators">
                 <div class="img-circle-cropper">
-                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                  <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg" />
                 </div>
                 <div class="text">
                   <span>Indicators</span>
@@ -121,7 +121,7 @@
             <div class="aow-slide" id="aow-countries">
               <a href="/east/countries">
                 <div class="img-circle-cropper">
-                  <img class="slide-img" src="./homepage-1-square-national-work-plans.jpg">
+                  <img class="slide-img" src="./eni-countries-img.jpg" />
                 </div>
                 <div class="text">
                   <span>Countries</span>
@@ -160,7 +160,7 @@
           <div class="aow-slide">
             <a href="/east/indicators">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg" />
               </div>
               <div class="text">
                 <span>Communication</span>
@@ -173,7 +173,7 @@
           <div class="aow-slide">
             <a href="/east/indicators">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg">
+                <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg" />
               </div>
               <div class="text">
                 <span>Indicators</span>
@@ -185,7 +185,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/work-plans">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-1-square-national-work-plans.jpg">
+                <img class="slide-img" src="./homepage-1-square-national-work-plans.jpg" />
               </div>
               <div class="text">
                 <span>Reports</span>
@@ -198,7 +198,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/air">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./data-air.png" title="© Charles Keddie">
+                <img class="slide-img" src="./data-air.png" title="© Charles Keddie" />
               </div>
               <div class="text">
                 <span>Air</span>
@@ -210,7 +210,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/biodiversity">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./data-biodiversity.png" title="© Charles Keddie">
+                <img class="slide-img" src="./data-biodiversity.png" title="© Charles Keddie" />
               </div>
               <div class="text">
                 <span>Biodiversity</span>
@@ -222,7 +222,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/water">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./data-water.png" title="© Charles Keddie">
+                <img class="slide-img" src="./data-water.png" title="© Charles Keddie" />
               </div>
               <div class="text">
                 <span>Water</span>
@@ -234,7 +234,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/land">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./data-land.png" title="© Charles Keddie">
+                <img class="slide-img" src="./data-land.png" title="© Charles Keddie" />
               </div>
               <div class="text">
                 <span>Land</span>
@@ -246,7 +246,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/waste">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./data-waste.png" title="© Zoltán Balogh, WasteSMART /EEA">
+                <img class="slide-img" src="./data-waste.png" title="© Zoltán Balogh, WasteSMART /EEA" />
               </div>
               <div class="text">
                 <span>Waste</span>
@@ -259,7 +259,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-2-square-data.jpg">
+                <img class="slide-img" src="./homepage-2-square-data.jpg" />
               </div>
               <div class="text">
                 <span>Open Data</span>
@@ -271,7 +271,7 @@
           <div class="aow-slide">
             <a href="/east/areas-of-work/data-management-and-infrastructure">
               <div class="img-circle-cropper">
-                <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg">
+                <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
               </div>
               <div class="text">
                 <span>SEA</span>
