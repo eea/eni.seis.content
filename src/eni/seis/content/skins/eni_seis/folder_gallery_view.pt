@@ -52,6 +52,7 @@
                     <img src="" alt="" title=""
                          tal:attributes="src python:image_file;
                                          alt python:image_description" />
+                    <span>Photo credit</span>
                   </a>
                 </div>
               </div>
