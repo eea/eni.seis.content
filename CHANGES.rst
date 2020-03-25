@@ -3,6 +3,8 @@ Changelog
 
 1.2.6 (unreleased)
 ------------------
+- Fix: Set active tabs in Access to environmental listings.
+  [GhitaB #114456]
 - Feature: show photo credits in folder gallery view when an image title
   starts with @.
   [GhitaB #116119]
