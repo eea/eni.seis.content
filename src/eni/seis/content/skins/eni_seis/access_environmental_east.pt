@@ -69,7 +69,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
         <h3>Deliverables</h3>
         <div>
           <ul class="nav nav-tabs" id="deliverables-tabs" role="tablist">
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link active" id="events-tab"
                  data-toggle="tab" href="#events" role="tab"
                  aria-controls="events" aria-selected="true">Events</a>
@@ -131,7 +131,7 @@ Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
                    tal:define="product_items python:context.getProductItems()">
 
                 <ul class="nav nav-tabs" id="products-tabs" role="tablist">
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link active" id="maturity-report-tab" data-toggle="tab"
                        href="#maturity-report" role="tab" aria-controls="maturity-report"
                        aria-selected="true">Maturity report</a>
