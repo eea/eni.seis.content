@@ -9,6 +9,7 @@ Changelog
   starts with @.
   [GhitaB #116119]
 - Improve: update photos in Results section (East). Fix links.
+- Fix: Use larger image in news listing.
   [GhitaB #107342]
 
 1.2.5 (2020-03-20)
