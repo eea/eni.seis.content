@@ -3,6 +3,9 @@ Changelog
 
 1.2.6 (unreleased)
 ------------------
+- Feature: show photo credits in folder gallery view when an image title
+  starts with @.
+  [GhitaB #116119]
 - Improve: update photos in Results section (East). Fix links.
   [GhitaB #107342]
 
