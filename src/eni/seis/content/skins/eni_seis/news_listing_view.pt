@@ -39,7 +39,7 @@
 
                       <td>
                         <div class="news-preview">
-                          <img src="" tal:attributes="src python:news_item.getLeadImagePath('thumb', 'newsitem-fallback.png')" />
+                          <img src="" tal:attributes="src python:news_item.getLeadImagePath('preview', 'newsitem-fallback.png')" />
                         </div>
                         <h3><a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a></h3>
                         <p class="discreet">Published: <tal:block tal:content="python:toLocalizedTime(item.EffectiveDate)" /></p>
