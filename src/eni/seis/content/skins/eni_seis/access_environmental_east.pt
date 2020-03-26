@@ -16,56 +16,9 @@
       <div id="eni-accordion">
         <h3>Summary of activities</h3>
         <div>
-          <p>(1) Overview of existing initiatives, trends, common practices on e-governance and open
-data and assessment of ENI East country status in these areas:
-          </p>
-          <ul>
-            <li>
-              Overview of national and international practices, initiatives and trends on
-e-government and open data;
-            </li>
-            <li>
-              Six country reports following the model of the Open Data Maturity reports in
-Europe – with specific focus on the environmental domain; and based on the
-findings collected
-            </li>
-            <li>
-              Developing a national road map for each ENI country to assist further
-implementation of e-governance and open-data initiatives in the environment and
-related areas.
-            </li>
-          </ul>
-          <p>
-            (2) Regional meeting of EaP countries to discuss the findings of the studies (task 1) and
-facilitate the preparation of countries' roadmaps to ensure that environmental
-information is integrated with national e-governance platforms and open data initiatives.
-          </p>
-          <p>
-            (3) Country actions:
-          </p>
-          <ul>
-            <li>Roundtables with national partners (e-governance management, providers and
-users of environmental information) to discuss the draft maturity report, finalise
-the national road map and identify concrete steps for implementation.
-            </li>
-          </ul>
-          <p>
-            (4) Regional event presenting key findings, good practices and brainstorming on future
-steps. Strong linkage with the work of the Aarhus convention Access to information Task
-Force:
-          </p>
-          <p>
-            (5) Visibility and awareness raising for the project deliverables and open data/e-
-government benefits for environment.
-          </p>
-          <ul>
-            <li>
-              Raise awareness on the benefits of sharing environmental information and
-knowledge in close cooperation with UNECE WGEMA, Aarhus Convention/PRTR
-Protocol Secretariat, OSCE/Aarhus Centres, RECs etc.
-            </li>
-          </ul>
+          <p tal:replace="structure python:context.restrictedTraverse('summary-of-activities-1').long_description"></p>
         </div>
+
         <h3>Deliverables</h3>
         <div>
           <ul class="nav nav-tabs" id="deliverables-tabs" role="tablist">
