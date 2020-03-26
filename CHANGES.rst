@@ -3,6 +3,8 @@ Changelog
 
 1.2.6 (unreleased)
 ------------------
+- Improve: Editable sections in Access to env.
+  Manual step: create sections (as folders) used by this custom template.
 - Fix: Set active tabs in Access to environmental listings.
   [GhitaB #114456]
 - Feature: show photo credits in folder gallery view when an image title
