@@ -16,7 +16,9 @@
       <div id="eni-accordion">
         <h3>Summary of activities</h3>
         <div>
-          <p tal:replace="structure python:context.restrictedTraverse('summary-of-activities-1').long_description"></p>
+          <p tal:define="section python:context.restrictedTraverse('summary-of-activities')"
+             tal:replace="structure section/long_description"
+             tal:on-error="string:Missing folder summary-of-activities."></p>
         </div>
 
         <h3>Deliverables</h3>
@@ -274,24 +276,8 @@
         </div>
         <h3>Knowledge resources</h3>
         <div>
-          <p>
-            Current initiatives and projects implemented in the EU served as basis for extending and
-guiding this work in the ENI East countries. Among the relevant EU processes
-considered in this context are the following:
-          </p>
-          <ul>
-            <li>
-              Open Data - annual <a href="https://www.europeandataportal.eu/en/dashboard/2019">Open Data Maturity in Europe</a> reports
-            </li>
-            <li>
-              Streamlining reporting and access to information <a href="https://ec.europa.eu/environment/legal/reporting/fc_overview_en.htm">Streamlining Environmental
-                Reporting in EU</a> and the EU project <a href="https://www.eis-data.eu/">Promotion of good practices for national
-environmental information systems and tools for data harvesting at EU
-level</a>.
-            </li>
-            <li>
-              <a href="https://www.eea.europa.eu/legal/eea-data-policy/data-policy">EEA Data Policy</a>
-            </li>
+          <p tal:replace="structure python:context.restrictedTraverse('knowledge-resources').long_description"
+             tal:on-error="string:Missing folder knowledge-resources"></p>
         </div>
       </div>
 
