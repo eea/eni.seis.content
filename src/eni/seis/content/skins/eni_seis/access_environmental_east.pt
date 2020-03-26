@@ -285,16 +285,7 @@
         </div>
       </div>
 
-      <script>
-        // TODO Move in file
-        $(function() {
-          $("#eni-accordion").accordion({
-            active: false,
-            collapsible: true,
-            heightStyle: "content"
-          });
-        });
-      </script>
+      <script src="./access_environmental_east.js"></script>
 
     </div>
 
