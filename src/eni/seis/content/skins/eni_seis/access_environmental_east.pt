@@ -270,12 +270,7 @@
 
         <h3>Partners</h3>
         <div>
-          <p>
-            The work will be implemented by PricewaterhouseCoopers (PwC) Lithuania under
-            contract with EEA. Contribution from local PwC offices in each ENI East country will be
-            ensured. In implementing this activity EEA will work closely with the Secretariat of the
-            UNECE Aarhus Convention and Protocol on PRTR.
-          </p>
+          <p tal:replace="structure python:context.restrictedTraverse('partners').long_description"></p>
         </div>
         <h3>Knowledge resources</h3>
         <div>
