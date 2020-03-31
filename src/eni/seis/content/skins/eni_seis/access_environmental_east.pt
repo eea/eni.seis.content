@@ -89,22 +89,30 @@
                   <li class="nav-item active">
                     <a class="nav-link active" id="maturity-report-tab" data-toggle="tab"
                        href="#maturity-report" role="tab" aria-controls="maturity-report"
-                       aria-selected="true">Maturity report</a>
+                       aria-selected="true">
+                      National Maturity Reports
+                    </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="roadmap-tab" data-toggle="tab"
                        href="#roadmap" role="tab" aria-controls="roadmap"
-                       aria-selected="true">Roadmap</a>
+                       aria-selected="true">
+                      National Roadmaps
+                    </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="executive-summary-tab" data-toggle="tab"
                        href="#executive-summary" role="tab" aria-controls="executive-summary"
-                       aria-selected="true">Executive summary</a>
+                       aria-selected="true">
+                      Executive Summaries
+                    </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="good-practice-tab" data-toggle="tab"
                        href="#good-practice" role="tab" aria-controls="good-practice"
-                       aria-selected="true">Good practice</a>
+                       aria-selected="true">
+                      Good Practices Report
+                    </a>
                   </li>
                 </ul>
                 <div class="tab-content" id="products-tabs-content">
