@@ -224,14 +224,20 @@
                                  tal:on-error="nothing"></a>
                             </td>
                             <td>
-                              <a tal:attributes="href python:item.get_view_url()"
-                                 tal:content="python:item.title">
-                              </a>
+                              <tal:condition condition="python:item.has_multiple_files() is False">
+                                <a tal:attributes="href python:item.get_view_url()"
+                                   tal:content="python:item.title">
+                                </a>
+                              </tal:condition>
                               <tal:condition condition="python:item.has_multiple_files() is True">
-                                <tal:files repeat="file_item python:item.files_listing()">
-                                  <br /><a tal:attributes="href python:file_item[1]"
-                                           tal:content="python:file_item[0]"></a>
-                                </tal:files>
+                                <ul class="files-listing">
+                                  <tal:files repeat="file_item python:item.files_listing()">
+                                    <li>
+                                      <a tal:attributes="href python:file_item[1]"
+                                         tal:content="python:file_item[0]"></a>
+                                    </li>
+                                  </tal:files>
+                                </ul>
                               </tal:condition>
                             </td>
                           </tr>
