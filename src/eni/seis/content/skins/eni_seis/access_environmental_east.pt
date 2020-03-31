@@ -270,18 +270,18 @@
           </div>
         </div>
 
-        <h3>Partners</h3>
-        <div>
-          <p tal:define="section python:context.restrictedTraverse('partners')"
-             tal:replace="structure section/long_description"
-             tal:on-error="string:Missing folder partners."></p>
-        </div>
-
         <h3>Knowledge resources</h3>
         <div>
           <p tal:define="section python:context.restrictedTraverse('knowledge-resources')"
              tal:replace="structure section/long_description"
              tal:on-error="string:Missing folder knowledge-resources."></p>
+        </div>
+
+        <h3>Partners</h3>
+        <div>
+          <p tal:define="section python:context.restrictedTraverse('partners')"
+             tal:replace="structure section/long_description"
+             tal:on-error="string:Missing folder partners."></p>
         </div>
       </div>
 
