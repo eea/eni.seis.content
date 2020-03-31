@@ -16,4 +16,8 @@ countries = {
 
 country = countries.get(country_code, '')
 country_url = "/east/countries/" + country.lower()
-return "<a href='" + country_url + "'>" + country + "</a>"
+return "<a href='" + country_url + "'>" + \
+        "<img class='flag-img' src='lang-flag-" + country_code.upper() + \
+        ".png' />" + \
+        country + \
+        "</a>"
