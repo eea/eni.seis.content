@@ -130,12 +130,6 @@
                               <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
                                  tal:on-error="nothing"></a>
                             </td>
-                            <td tal:define="item_languages python:item.languages">
-                              <tal:repeat repeat="item_language python:item_languages">
-                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                                <span class="lang-text" tal:content="python:item_language">EN</span>
-                              </tal:repeat>
-                            </td>
                             <td>
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
@@ -160,12 +154,6 @@
                             <td>
                               <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
                                  tal:on-error="nothing"></a>
-                            </td>
-                            <td tal:define="item_languages python:item.languages">
-                              <tal:repeat repeat="item_language python:item_languages">
-                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                                <span class="lang-text" tal:content="python:item_language">EN</span>
-                              </tal:repeat>
                             </td>
                             <td>
                               <a tal:attributes="href python:item.get_view_url()"
@@ -192,12 +180,6 @@
                               <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
                                  tal:on-error="nothing"></a>
                             </td>
-                            <td tal:define="item_languages python:item.languages">
-                              <tal:repeat repeat="item_language python:item_languages">
-                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                                <span class="lang-text" tal:content="python:item_language">EN</span>
-                              </tal:repeat>
-                            </td>
                             <td>
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
@@ -222,12 +204,6 @@
                             <td>
                               <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
                                  tal:on-error="nothing"></a>
-                            </td>
-                            <td tal:define="item_languages python:item.languages">
-                              <tal:repeat repeat="item_language python:item_languages">
-                                <img class="flag-img" tal:attributes="src python:'lang-flag-' + item_language + '.png'" />
-                                <span class="lang-text" tal:content="python:item_language">EN</span>
-                              </tal:repeat>
                             </td>
                             <td>
                               <a tal:attributes="href python:item.get_view_url()"
