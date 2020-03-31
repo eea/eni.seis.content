@@ -122,14 +122,6 @@
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
-                        <thead>
-                          <tr>
-                            <th>Country</th>
-                            <th>Language</th>
-                            <th>Maturity Report</th>
-                          </tr>
-                        </thead>
-
                         <tbody>
                           <tal:repeat repeat="item python:product_items_1">
                           <tr tal:define="oddrow repeat/item/odd;"
@@ -161,14 +153,6 @@
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
-                        <thead>
-                          <tr>
-                            <th>Country</th>
-                            <th>Language</th>
-                            <th>Maturity Report</th>
-                          </tr>
-                        </thead>
-
                         <tbody>
                           <tal:repeat repeat="item python:product_items_2">
                           <tr tal:define="oddrow repeat/item/odd;"
@@ -200,14 +184,6 @@
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
-                        <thead>
-                          <tr>
-                            <th>Country</th>
-                            <th>Language</th>
-                            <th>Maturity Report</th>
-                          </tr>
-                        </thead>
-
                         <tbody>
                           <tal:repeat repeat="item python:product_items_3">
                           <tr tal:define="oddrow repeat/item/odd;"
@@ -239,14 +215,6 @@
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
-                        <thead>
-                          <tr>
-                            <th>Country</th>
-                            <th>Language</th>
-                            <th>Maturity Report</th>
-                          </tr>
-                        </thead>
-
                         <tbody>
                           <tal:repeat repeat="item python:product_items_4">
                           <tr tal:define="oddrow repeat/item/odd;"
