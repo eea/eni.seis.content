@@ -156,6 +156,7 @@
                                  tal:on-error="nothing"></a>
                             </td>
                             <td>
+                              <span tal:replace="python:item.has_multiple_files()"></span>
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
                               </a>
@@ -181,6 +182,7 @@
                                  tal:on-error="nothing"></a>
                             </td>
                             <td>
+                              <span tal:replace="python:item.has_multiple_files()"></span>
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
                               </a>
@@ -209,6 +211,9 @@
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
                               </a>
+                              <tal:condition condition="python:item.has_multiple_files() is True">
+                                <span tal:replace="python:item.files_listing()"></span>
+                              </tal:condition>
                             </td>
                           </tr>
                           </tal:repeat>

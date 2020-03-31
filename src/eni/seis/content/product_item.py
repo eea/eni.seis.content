@@ -29,3 +29,24 @@ class ProductItem(Container):
         if self.file:
             return True
         return False
+
+    def files_listing(self):
+        """ Return the files and links to be listed in table
+        """
+        contents = [x.getObject() for x in self.getFolderContents()]
+        listing = []
+        for item in contents:
+            listing.append(
+                (
+                    item.Title(),
+                    item.absolute_url(),
+                    item.portal_type
+                )
+            )
+        return listing
+
+    def has_multiple_files(self):
+        """ Return True if it has multiple File or Link items added in its
+            container
+        """
+        return True if len(self.getFolderContents()) > 0 else False
