@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.6 (unreleased)
+1.2.6 (2020-04-01)
 ------------------
 - Improve: Editable sections in Access to env.
   Manual step: create sections (as folders) used by this custom template.
