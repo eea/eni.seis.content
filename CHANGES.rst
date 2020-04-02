@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.2.7 (unreleased)
+------------------
+
 1.2.6 (2020-04-01)
 ------------------
 - Improve: Editable sections in Access to env.
