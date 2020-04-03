@@ -3,6 +3,9 @@ Changelog
 
 1.2.7 (unreleased)
 ------------------
+- Improve: ProductItem listing - set view url to download file in case it
+  has one.
+  [GhitaB #114456]
 
 1.2.6 (2020-04-01)
 ------------------
