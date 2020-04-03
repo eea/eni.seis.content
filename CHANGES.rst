@@ -6,6 +6,8 @@ Changelog
 - Improve: ProductItem listing - set view url to download file in case it
   has one.
   [GhitaB #114456]
+- Improve: script to check broken links in body text of eea.meeting objects.
+  [GhitaB #108137]
 
 1.2.6 (2020-04-01)
 ------------------
