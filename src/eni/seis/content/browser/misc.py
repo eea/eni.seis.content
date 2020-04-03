@@ -29,9 +29,12 @@ class DetectBrokenLinksView(BrowserView):
                 obj = self.context.restrictedTraverse(info['object_url'])
             except:
                 continue
-            state = get_state(obj)
+            try:
+                state = get_state(obj)
+            except Exception:
+                state = "N/A"
 
-            if state not in ['private', 'archived']:
+            if state not in ['private', 'archived', 'N/A']:
                 res.append(info)
 
         return res
@@ -143,10 +146,12 @@ def get_links(site):
 
     count = 0
     logger.info('Got %s objects' % len(brains))
+
     for b in brains:
         obj = b.getObject()
         path = obj.getPhysicalPath()
-        attrs = ['long_description', 'description', 'source', 'comments']
+        attrs = ['long_description', 'description', 'source', 'comments',
+                 'text']
 
         if obj.portal_type in ["report", "indicator"]:
             attrs.append('external_link')

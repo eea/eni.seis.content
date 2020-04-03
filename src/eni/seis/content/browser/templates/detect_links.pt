@@ -22,7 +22,7 @@
           </tr>
         </thead>
         <tbody>
-          <tal:rep repeat="result view/results">
+          <tal:rep repeat="result results">
             <tr tal:condition="result">
               <td>
                 <a href="" tal:attributes="href python: result['url']"
