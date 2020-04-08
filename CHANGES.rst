@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.2.8 (unreleased)
+------------------
+
 1.2.7 (2020-04-03)
 ------------------
 - Improve: ProductItem listing - set view url to download file in case it
