@@ -131,7 +131,10 @@ def get_links(site):
             'Folderish Event',
             'Folderish News Item',
             'newsletter',
-            'eea.meeting.workspace'
+            'eea.meeting.workspace',
+            'indicatordata',
+            'nationalreport',
+            'productitem'
         ]
     }
     brains = catalog.searchResults(**query)
@@ -151,9 +154,11 @@ def get_links(site):
         obj = b.getObject()
         path = obj.getPhysicalPath()
         attrs = ['long_description', 'description', 'source', 'comments',
-                 'text']
+                 'text', 'text_before', 'owenership', 'related_content',
+                 ]
 
-        if obj.portal_type in ["report", "indicator"]:
+        if obj.portal_type in ["report", "indicator", "nationalreport",
+                               "productitem"]:
             attrs.append('external_link')
 
         for attr in attrs:
