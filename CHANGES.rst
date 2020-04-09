@@ -3,6 +3,8 @@ Changelog
 
 1.2.8 (unreleased)
 ------------------
+- Feature: CLC section (WIP).
+  [GhitaB #116290]
 - Improve: Include new fields and content types to be checked by script.
   [GhitaB #108137]
 
