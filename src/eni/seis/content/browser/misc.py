@@ -161,6 +161,11 @@ def get_links(site):
                                "productitem"]:
             attrs.append('external_link')
 
+        if obj.portal_type in ["nfp"]:
+            attrs.append('name')
+            attrs.append('organisation')
+            attrs.append('position')
+
         for attr in attrs:
             try:
                 string_to_search = convert_to_string(getattr(obj, attr, ''))
