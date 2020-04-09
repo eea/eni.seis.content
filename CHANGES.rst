@@ -3,6 +3,8 @@ Changelog
 
 1.2.8 (unreleased)
 ------------------
+- Improve: Include new fields and content types to be checked by script.
+  [GhitaB #108137]
 
 1.2.7 (2020-04-03)
 ------------------
