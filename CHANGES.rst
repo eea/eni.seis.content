@@ -3,12 +3,12 @@ Changelog
 
 1.2.8 (unreleased)
 ------------------
-- Feature: CLC section (WIP).
+- Feature: Land section.
   Manual step: create section (folder). Set template (clc_east).
-  Manual step: Fix order in folder_contents of Areas of work. CLC after
-  Manual step: Add bullet for CLC after ‘Indicators and Assessment’
-  /homepage-section-aow-slider.
+  Manual step: Fix order in folder_contents of Areas of work. Land after
   Indicators and Assesments.
+  Manual step: Add bullet for Land after ‘Indicators and Assessment’
+  /homepage-section-aow-slider.
   [GhitaB #116290]
 - Improve: Include new fields and content types to be checked by script.
   [GhitaB #108137]
