@@ -6,6 +6,8 @@ Changelog
 - Feature: CLC section (WIP).
   Manual step: create section (folder). Set template (clc_east).
   Manual step: Fix order in folder_contents of Areas of work. CLC after
+  Manual step: Add bullet for CLC after ‘Indicators and Assessment’
+  /homepage-section-aow-slider.
   Indicators and Assesments.
   [GhitaB #116290]
 - Improve: Include new fields and content types to be checked by script.
