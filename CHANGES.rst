@@ -5,6 +5,8 @@ Changelog
 ------------------
 - Feature: CLC section (WIP).
   Manual step: create section (folder). Set template (clc_east).
+  Manual step: Fix order in folder_contents of Areas of work. CLC after
+  Indicators and Assesments.
   [GhitaB #116290]
 - Improve: Include new fields and content types to be checked by script.
   [GhitaB #108137]
