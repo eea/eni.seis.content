@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.8 (unreleased)
+1.2.8 (2020-04-13)
 ------------------
 - Feature: Land section.
   Manual step: create section (folder). Set template (clc_east).
