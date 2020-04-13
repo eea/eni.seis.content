@@ -90,7 +90,7 @@
 
             <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
               <div class="products-container"
-                   tal:define="product_items python:context.getProductItems()">
+                   tal:define="product_items python:context.getProductItemsLand()">
 
                 <div>
                   <p tal:define="section python:context.restrictedTraverse('products')"
