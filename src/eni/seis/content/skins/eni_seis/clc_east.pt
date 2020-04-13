@@ -92,6 +92,12 @@
               <div class="products-container"
                    tal:define="product_items python:context.getProductItems()">
 
+                <div>
+                  <p tal:define="section python:context.restrictedTraverse('products')"
+                     tal:replace="structure section/long_description"
+                     tal:on-error="string:Missing folder products."></p>
+                </div>
+
                 <ul class="nav nav-tabs" id="products-tabs" role="tablist">
                   <li class="nav-item active">
                     <a class="nav-link active" id="maturity-report-tab" data-toggle="tab"
