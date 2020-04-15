@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.2.9 (unreleased)
+1.3.0 (2020-04-15)
 ------------------
+- Feature: expabdable texts in events listing.
+  [GhitaB #116290]
 
 1.2.8 (2020-04-13)
 ------------------
