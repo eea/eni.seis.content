@@ -64,7 +64,6 @@
                       <th>Type of event</th>
                       <th>City / Country</th>
                       <th>Title of events</th>
-                      <th></th>
                     </tr>
                   </thead>
 
@@ -80,12 +79,6 @@
                       <td><span tal:content="python: context.get_event_location(item)"></span></td>
                       <td>
                         <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
-                      </td>
-                      <td>
-                        <span tal:attributes="data-btn-id item/getId"
-                              tal:condition="python:item.getId in with_more_info">
-                          <i class="btn-more-info fa fa-plus"></i>
-                        </span>
                       </td>
                     </tr>
                     </tal:repeat>
