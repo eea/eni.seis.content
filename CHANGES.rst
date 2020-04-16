@@ -3,6 +3,8 @@ Changelog
 
 1.3.0 (unreleased)
 ------------------
+- Fix: Remove expandable text in events listing - Land section.
+  [GhitaB #116290]
 
 1.2.9 (2020-04-15)
 ------------------
