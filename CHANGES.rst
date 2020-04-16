@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.3.0 (unreleased)
+------------------
+
 1.2.9 (2020-04-15)
 ------------------
 - Feature: expandable texts in events listing.
