@@ -68,7 +68,7 @@
                     </tr>
                   </thead>
 
-                  <tbody tal:define="with_more_info python:['4th-eni-seis-ii-east-project-steering-committee-meeting', 'second-webinar-on-state-of-environment-reports-12-11-2019-14-00-15-00-cet']">
+                  <tbody>
                     <tal:repeat repeat="item python:context.getFeaturedMeetings2()">
                     <tr tal:define="oddrow repeat/item/odd; event_level python: context.get_event_level(item)"
                         tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')">
@@ -88,22 +88,6 @@
                         </span>
                       </td>
                     </tr>
-
-                    <tal:condition condition="python:item.getId in with_more_info">
-                      <tr class="more-info" tal:attributes="data-tr-id item/getId">
-                        <td colspan="5">
-                          <div tal:condition="python:item.getId == with_more_info[0]">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus imperdiet odio eget aliquet. Curabitur suscipit dolor et massa elementum, at placerat dui suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vel nulla iaculis, tristique dui eget, vehicula mi. Nam consectetur, erat ac vehicula finibus, neque elit tempor erat, eget suscipit ante arcu eu eros. Suspendisse lacus magna, mattis a lacus nec, egestas posuere ipsum. Pellentesque at ipsum a leo ornare lacinia. Integer lacinia nulla massa, ut congue lectus convallis aliquam. Donec placerat, arcu non sagittis auctor, tortor ligula suscipit mauris, sit amet lobortis ex tellus eget dui. Morbi id tortor semper, porta odio id, hendrerit purus. Maecenas non lacus enim. Fusce consequat nisl eu mauris egestas vestibulum. Praesent velit tortor, tempor id ultricies ut, accumsan in dui.</p>
-                            <p>Integer quis tristique quam, ut accumsan augue. Fusce eu massa aliquam lacus iaculis condimentum. Curabitur purus tortor, facilisis a odio at, egestas tincidunt odio. Vivamus eget varius erat. Mauris urna mi, vehicula sed enim eu, elementum dignissim lectus. Fusce finibus imperdiet eros, at maximus est vulputate nec. Quisque in elementum leo. Donec quis massa euismod, fringilla justo vel, semper arcu. Nam dignissim vulputate quam id maximus. Maecenas a condimentum leo. Sed ut orci in felis hendrerit ullamcorper accumsan nec erat. Nulla et placerat tortor, vitae placerat est. Vivamus non odio ipsum.</p>
-                          </div>
-
-                          <div tal:condition="python:item.getId == with_more_info[1]">
-                            <p>Nullam maximus tristique nulla sed pulvinar. Sed porta et quam eget molestie. Suspendisse sollicitudin bibendum ornare. Ut at turpis tellus. Curabitur sed iaculis mauris. Aliquam ex purus, faucibus at ultricies eu, consequat in nisi. Quisque eu vehicula ex. Curabitur at gravida leo. Donec eget egestas purus, sed cursus diam.</p>
-                          </div>
-                        </td>
-                      </tr>
-                    </tal:condition>
-
                     </tal:repeat>
                   </tbody>
                 </table>
