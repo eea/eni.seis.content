@@ -3,6 +3,8 @@ Changelog
 
 1.3.0 (unreleased)
 ------------------
+- Fix: Add image caption in photo gallery.
+  [GhitaB #116711]
 - Fix: Remove expandable text in events listing - Land section.
   [GhitaB #116290]
 
