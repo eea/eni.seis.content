@@ -53,13 +53,22 @@
                          tal:attributes="src python:image_file;
                                          alt python:image_description" />
                   </a>
-                  <p tal:content="image/Description" class="image-caption"></p>
-                  <p class="photo-credits" tal:condition="python:image.title[0] == '@'">
-                    <span>
-                      ©
-                      <span tal:replace="python:image.title.split('@')[1]">Photo credit</span>
-                    </span>
-                  </p>
+
+                  <tal:withcredits tal:condition="python:image.title[0] == '@'">
+                    <div class="photo-credits">
+                      <span>
+                        ©
+                        <span tal:replace="python:image.title.split('@')[1]">Photo credit</span>
+                      </span>
+                    </div>
+
+                    <div tal:content="image/Description" class="image-caption withcredits"></div>
+                  </tal:withcredits>
+
+                  <tal:nocredits tal:condition="python:image.title[0] != '@'">
+                    <div tal:content="image/Description" class="image-caption nocredits"></div>
+                  </tal:nocredits>
+
                 </div>
               </div>
             </tal:columns>
