@@ -99,38 +99,39 @@
 
                 <ul class="nav nav-tabs" id="products-tabs" role="tablist">
                   <li class="nav-item active">
-                    <a class="nav-link active" id="maturity-report-tab" data-toggle="tab"
-                       href="#maturity-report" role="tab" aria-controls="maturity-report"
+                    <a class="nav-link active" id="technical-reports-tab" data-toggle="tab"
+                       href="#technical-reports" role="tab" aria-controls="technical-reports"
                        aria-selected="true">
-                      National Maturity Reports
+                      Technical Reports
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="roadmap-tab" data-toggle="tab"
-                       href="#roadmap" role="tab" aria-controls="roadmap"
+                    <a class="nav-link" id="clc-analysis-tab" data-toggle="tab"
+                       href="#clc-analysis" role="tab" aria-controls="clc-analysis"
                        aria-selected="true">
-                      National Roadmaps
+                      Corine Land Cover Analysis
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="executive-summary-tab" data-toggle="tab"
-                       href="#executive-summary" role="tab" aria-controls="executive-summary"
+                    <a class="nav-link" id="link-to-copernicus-tab" data-toggle="tab"
+                       href="#link-to-copernicus" role="tab" aria-controls="link-to-copernicus"
                        aria-selected="true">
-                      Executive Summaries
+                      Link to Copernicus?
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="good-practice-tab" data-toggle="tab"
-                       href="#good-practice" role="tab" aria-controls="good-practice"
+                    <a class="nav-link" id="summary-final-tab" data-toggle="tab"
+                       href="#summary-final" role="tab" aria-controls="summary-final"
                        aria-selected="true">
-                      Good Practices Report
+                      Summary of Final Technical Report?
                     </a>
                   </li>
                 </ul>
+
                 <div class="tab-content" id="products-tabs-content">
-                  <div class="tab-pane fade active" id="maturity-report" role="tabpanel"
-                       aria-labelledby="maturity-report-tab">
-                    <div tal:define="product_items_1 python:product_items.get('Maturity Report', [])">
+                  <div class="tab-pane fade active" id="technical-reports" role="tabpanel"
+                       aria-labelledby="technical-reports-tab">
+                    <div tal:define="product_items_1 python:product_items.get('Technical Reports', [])">
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -159,9 +160,9 @@
                       </table>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="roadmap" role="tabpanel"
-                       aria-labelledby="roadmap-tab">
-                    <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
+                  <div class="tab-pane fade" id="clc-analysis" role="tabpanel"
+                       aria-labelledby="clc-analysis-tab">
+                    <div tal:define="product_items_2 python:product_items.get('Corine Land Cover Change Analysis', [])">
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -190,9 +191,9 @@
                       </table>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="executive-summary" role="tabpanel"
-                       aria-labelledby="executive-summary-tab">
-                    <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
+                  <div class="tab-pane fade" id="link-to-copernicus" role="tabpanel"
+                       aria-labelledby="link-to-copernicus-tab">
+                    <div tal:define="product_items_3 python:product_items.get('Link to Copernicus?', [])">
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -221,9 +222,9 @@
                       </table>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="good-practice" role="tabpanel"
-                       aria-labelledby="good-practice-tab">
-                    <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
+                  <div class="tab-pane fade" id="summary-final" role="tabpanel"
+                       aria-labelledby="summary-final-tab">
+                    <div tal:define="product_items_4 python:product_items.get('Summary of Final Technical Report?', [])">
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
