@@ -7,6 +7,7 @@ Changelog
   [GhitaB #116711]
 - Fix: Remove expandable text in events listing - Land section.
 - Improve: Add more categories for product item.
+- Improve: Update Land products tab titles.
   [GhitaB #116290]
 
 1.2.9 (2020-04-15)
