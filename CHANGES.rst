@@ -8,6 +8,7 @@ Changelog
 - Fix: Remove expandable text in events listing - Land section.
 - Improve: Add more categories for product item.
 - Improve: Update Land products tab titles.
+- Fix: Hide footer sections in Areas of work / Data.
   [GhitaB #116290]
 
 1.2.9 (2020-04-15)
