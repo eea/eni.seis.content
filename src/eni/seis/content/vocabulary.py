@@ -82,7 +82,13 @@ EAST_PRODUCTS_CATEGORIES = {
     u"Maturity Report": u"Maturity Report",
     u"Roadmap": u"Roadmap",
     u"Executive Summary": u"Executive Summary",
-    u"Good practice": u"Good practice"
+    u"Good practice": u"Good practice",
+    u"Technical Reports": u"Technical Reports",
+    u"Corine Land Cover Change Analysis":
+    u"Corine Land Cover Change Analysis",
+    u"Link to Copernicus?": u"Link to Copernicus?",
+    u"Summary of Final Technical Report?":
+    u"Summary of Final Technical Report?"
 }
 
 
