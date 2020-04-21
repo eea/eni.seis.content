@@ -6,6 +6,7 @@ Changelog
 - Fix: Add image caption in photo gallery.
   [GhitaB #116711]
 - Fix: Remove expandable text in events listing - Land section.
+- Improve: Add more categories for product item.
   [GhitaB #116290]
 
 1.2.9 (2020-04-15)
