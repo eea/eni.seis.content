@@ -80,7 +80,8 @@
     </div>
 
     <div class="row no-portlets jquery-move-me">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+           tal:condition="python:False"><!-- TODO: clean? -->
 
         <tal:resources tal:define="
           query python: {'portal_type': 'Folder'};
