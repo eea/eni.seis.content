@@ -4,7 +4,8 @@ Changelog
 1.3.0 (unreleased)
 ------------------
 - Improve: Update image for Communication in East Results section.
-- Improve: Update info for SEEA in East Result section.
+- Improve: Update info for SEEA in East Results section.
+- Improve: Update Work Plans section title for SEEA in East Results section.
   [GhitaB #116738]
 - Fix: Add image caption in photo gallery.
   [GhitaB #116711]
