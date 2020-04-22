@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.0 (unreleased)
+1.3.0 (2020-04-22)
 ------------------
 - Improve: Update image for Communication in East Results section.
 - Improve: Update info for SEEA in East Results section.
