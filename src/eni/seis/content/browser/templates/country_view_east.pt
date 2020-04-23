@@ -232,13 +232,6 @@
               </div>
 
               <table class="table table-responsive table-hover national-reports" summary="Content listing">
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Language</th>
-                    <th>Pages</th>
-                  </tr>
-                </thead>
                 <tbody>
                   <tr class="nodata" tal:condition="python:len(national_reports) == 0">
                     <td colspan="3">No reports.</td>
@@ -246,18 +239,29 @@
                   <tal:repeat tal:repeat="report national_reports">
                     <tr tal:define="oddrow repeat/report/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
+
+                      <!-- TODO clarify
+                        <td tal:define="report_languages python:report.languages"> -->
+                      <!--   <tal:repeat repeat="report_language python:report_languages"> -->
+                      <!--     <img class="flag&#45;img" tal:attributes="src python:'lang&#45;flag&#45;' + report_language + '.png'" /> -->
+                      <!--     <span class="lang&#45;text" tal:content="python:report_language">EN</span> -->
+                      <!--   </tal:repeat> -->
+                      <!-- </td> -->
+
+                      <td>
+                        <a href="./">
+                          <img class="flag-img" src="./flag/@@images/image/preview" alt="flag"/>
+                          <span tal:content="country_title">
+                            Country title
+                          </span>
+                        </a>
+                      </td>
                       <td>
                         <a tal:attributes="href python:report.get_view_url()">
                           <span tal:replace="report/Title">Report title</span>
                         </a>
                       </td>
-                      <td tal:define="report_languages python:report.languages">
-                        <tal:repeat repeat="report_language python:report_languages">
-                          <img class="flag-img" tal:attributes="src python:'lang-flag-' + report_language + '.png'" />
-                          <span class="lang-text" tal:content="python:report_language">EN</span>
-                        </tal:repeat>
-                      </td>
-                      <td tal:content="report/pages_number">23</td>
+
                     </tr>
                   </tal:repeat>
                 </tbody>
