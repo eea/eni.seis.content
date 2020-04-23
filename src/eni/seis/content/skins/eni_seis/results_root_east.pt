@@ -156,7 +156,7 @@
       </div>
 
       <div class="homepage-section-aow-slider row">
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/communication">
               <div class="img-circle-cropper">
@@ -169,7 +169,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/indicators">
               <div class="img-circle-cropper">
@@ -181,7 +181,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/work-plans">
               <div class="img-circle-cropper">
@@ -194,7 +194,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/air">
               <div class="img-circle-cropper">
@@ -206,7 +206,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/biodiversity">
               <div class="img-circle-cropper">
@@ -218,7 +218,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/water">
               <div class="img-circle-cropper">
@@ -230,7 +230,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/land">
               <div class="img-circle-cropper">
@@ -242,7 +242,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data/waste">
               <div class="img-circle-cropper">
@@ -255,7 +255,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/data">
               <div class="img-circle-cropper">
@@ -267,7 +267,7 @@
             </a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 aow-item">
+        <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/seea-progress">
               <div class="img-circle-cropper">
