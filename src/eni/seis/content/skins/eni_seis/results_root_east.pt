@@ -315,6 +315,20 @@
         </div>
       </div>
     </div>
+    <style>
+      /* TODO Move */
+      div.eni-quote {
+        padding: 30px;
+        position: relative;
+        top: 50px;
+      }
+      div.eni-quote p.text-quote {
+        font-size: 20px;
+      }
 
+      div.eni-quote p.author {
+        font-style: italic;
+      }
+    </style>
   </body>
 </html>
