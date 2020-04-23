@@ -3,6 +3,8 @@ Changelog
 
 1.3.1 (unreleased)
 ------------------
+- Manual step: /east/dexterity-types/eea.meeting/@@behaviors add Categorization
+  [GhitaB #116290]
 
 1.3.0 (2020-04-22)
 ------------------
