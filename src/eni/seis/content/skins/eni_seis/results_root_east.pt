@@ -106,13 +106,13 @@
               </a>
             </div>
 
-            <div class="aow-slide" id="aow-capacity-development">
-              <a href="./capacity-development">
+            <div class="aow-slide" id="aow-capacity-building">
+              <a href="./capacity-building">
                 <div class="img-circle-cropper">
                   <img class="slide-img" src="./homepage-4-square-indicators-and-assessments.jpg" />
                 </div>
                 <div class="text">
-                  <span>Capacity Development</span>
+                  <span>Capacity Building</span>
                   <span class="discover">Discover</span>
                 </div>
               </a>

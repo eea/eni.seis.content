@@ -3,7 +3,7 @@ Changelog
 
 1.3.1 (unreleased)
 ------------------
-- Improve: Replace Indicators with Capacity Development in Results section.
+- Improve: Replace Indicators with Capacity Building in Results section.
   [GhitaB #116738]
 - Improve: use tags (featured-land, featured-access) to filter events for
   special lists in Land and Access sections.
