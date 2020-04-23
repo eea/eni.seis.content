@@ -21,13 +21,6 @@
              tal:on-error="string:Missing folder summary-of-activities."></p>
         </div>
 
-        <h3>Objectives</h3>
-        <div>
-          <p tal:define="section python:context.restrictedTraverse('objectives')"
-             tal:replace="structure section/long_description"
-             tal:on-error="string:Missing folder objectives."></p>
-        </div>
-
         <h3>Deliverables</h3>
         <div>
           <ul class="nav nav-tabs" id="deliverables-tabs" role="tablist">
@@ -116,14 +109,14 @@
                     <a class="nav-link" id="link-to-copernicus-tab" data-toggle="tab"
                        href="#link-to-copernicus" role="tab" aria-controls="link-to-copernicus"
                        aria-selected="true">
-                      Link to Copernicus?
+                      Link to Copernicus
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="summary-final-tab" data-toggle="tab"
                        href="#summary-final" role="tab" aria-controls="summary-final"
                        aria-selected="true">
-                      Summary of Final Technical Report?
+                      Summary of Final Technical Report
                     </a>
                   </li>
                 </ul>
