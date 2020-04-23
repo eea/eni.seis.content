@@ -4,6 +4,7 @@ Changelog
 1.3.1 (unreleased)
 ------------------
 - Improve: Replace Indicators with Capacity Building in Results section.
+- Manual step: add Capacity building section (as news listing). Block portlets.
   [GhitaB #116738]
 - Improve: use tags (featured-land, featured-access) to filter events for
   special lists in Land and Access sections.
