@@ -9,6 +9,7 @@ Changelog
 - Improve: use tags (featured-land, featured-access) to filter events for
   special lists in Land and Access sections.
 - Manual step: /east/dexterity-types/eea.meeting/@@behaviors add Categorization
+- Improve: Update product items categories.
   [GhitaB #116290]
 
 1.3.0 (2020-04-22)
