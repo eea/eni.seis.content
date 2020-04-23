@@ -3,6 +3,8 @@ Changelog
 
 1.3.1 (unreleased)
 ------------------
+- Improve: Replace Indicators with Capacity Development in Results section.
+  [GhitaB #116738]
 - Improve: use tags (featured-land, featured-access) to filter events for
   special lists in Land and Access sections.
 - Manual step: /east/dexterity-types/eea.meeting/@@behaviors add Categorization
