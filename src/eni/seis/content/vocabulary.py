@@ -86,9 +86,9 @@ EAST_PRODUCTS_CATEGORIES = {
     u"Technical Reports": u"Technical Reports",
     u"Corine Land Cover Change Analysis":
     u"Corine Land Cover Change Analysis",
-    u"Link to Copernicus?": u"Link to Copernicus?",
-    u"Summary of Final Technical Report?":
-    u"Summary of Final Technical Report?"
+    u"Link to Copernicus": u"Link to Copernicus",
+    u"Summary of Final Technical Report":
+    u"Summary of Final Technical Report"
 }
 
 
