@@ -3,6 +3,8 @@ Changelog
 
 1.3.1 (unreleased)
 ------------------
+- Improve: Update table of national reports structure.
+  [GhitaB #107340]
 - Improve: Replace Indicators with Capacity Building in Results section.
 - Manual step: add Capacity building section (as news listing). Block portlets.
   [GhitaB #116738]
