@@ -304,7 +304,15 @@
       </div>
 
       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text-center">
-        <img class="img-responsive" src="./east-results-learn1.png" alt="ENI SEIS" />
+        <div class="eni-quote">
+          <p class="text-quote">'We have a close cooperation with our colleagues from Eastern
+             Partnership countries and as we all know, one of the best way
+             to deepen our knowledge is to share it.'
+          </p>
+          <p class="author">
+            Georgi Sanadze , NFP from the National Statistics Office of Georgia — GeoStat
+          </p>
+        </div>
       </div>
     </div>
 
