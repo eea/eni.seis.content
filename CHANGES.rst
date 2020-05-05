@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.3.2 (unreleased)
+------------------
+
 1.3.1 (2020-04-23)
 ------------------
 - Improve: Update table of national reports structure.
