@@ -3,6 +3,8 @@ Changelog
 
 1.3.2 (unreleased)
 ------------------
+- Improve: Sort meetings by start date desc in meetings table view.
+  [GhitaB #116729]
 
 1.3.1 (2020-04-23)
 ------------------
