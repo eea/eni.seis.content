@@ -3,6 +3,7 @@ Changelog
 
 1.3.2 (unreleased)
 ------------------
+- Improve: Sort events in events table by start date desc.
 - Improve: Sort meetings by start date desc in meetings table view.
   [GhitaB #116729]
 
