@@ -118,13 +118,6 @@ class IProductItem(model.Schema):
         description=u"Report file if it has one."
     )
 
-    languages = schema.List(
-        title=u"Languages",
-        description=u"Select available languages for this report.",
-        required=False,
-        value_type=schema.Choice(source=EAST_LANGUAGES_VOCABULARY),
-    )
-
     category = schema.List(
         title=u"Category",
         description=u"Select the category.",
