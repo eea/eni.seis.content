@@ -35,16 +35,6 @@
           <div tal:replace="structure tab/long_description | nothing" tal:on-error="nothing"></div>
 
           <table class="listing" summary="Content listing" i18n:attributes="summary summary_content_listing;">
-            <thead>
-              <tr>
-                <th>&nbsp;Year&nbsp;</th>
-                <th class="nosort">&nbsp;Dates&nbsp;</th>
-                <th>&nbsp;Type&nbsp;</th>
-                <th >&nbsp;Title&nbsp;</th>
-                <th >&nbsp;Location&nbsp;</th>
-              </tr>
-            </thead>
-
             <tbody>
               <metal:block use-macro="context/folder_listing/macros/entries">
                 <metal:entry fill-slot="entry">
