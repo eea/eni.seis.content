@@ -37,15 +37,6 @@
         <table class="listing event-table table table-responsive table-hover"
                summary="Content listing"
                i18n:attributes="summary summary_content_listing;">
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Dates</th>
-              <th>Title</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-
           <tbody>
             <metal:block use-macro="context/folder_listing/macros/entries">
               <metal:entry fill-slot="entry">
