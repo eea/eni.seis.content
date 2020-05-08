@@ -1,6 +1,7 @@
 """ Vocabularies for eni.seis.content
 """
 
+from collections import OrderedDict
 from plone import api
 from zope.interface import alsoProvides
 from zope.schema.interfaces import IVocabularyFactory
@@ -79,16 +80,17 @@ EAST_LANGUAGES = {
 }
 
 EAST_PRODUCTS_CATEGORIES = {
-    u"Maturity Report": u"Maturity Report",
-    u"Roadmap": u"Roadmap",
-    u"Executive Summary": u"Executive Summary",
-    u"Good practice": u"Good practice",
-    u"Technical Reports": u"Technical Reports",
+    u"Maturity Report": u"AEI: Maturity Report",
+    u"Roadmap": u"AEI: Roadmap",
+    u"Executive Summary": u"AEI: Executive Summary",
+    u"Good practice": u"AEI: Good practice",
+
+    u"Technical Reports": u"Land: Technical Reports",
     u"Corine Land Cover Change Analysis":
-    u"Corine Land Cover Change Analysis",
-    u"Link to Copernicus": u"Link to Copernicus",
+    u"Land: Corine Land Cover Change Analysis",
+    u"Link to Copernicus": u"Land: Link to Copernicus",
     u"Summary of Final Technical Report":
-    u"Summary of Final Technical Report"
+    u"Land: Summary of Final Technical Report"
 }
 
 
@@ -103,7 +105,10 @@ def _create_east_languages_vocabulary():
 def _create_east_products_categories_vocabulary():
     """ To be used for national reports
     """
-    for x, y in EAST_PRODUCTS_CATEGORIES.items():
+    categories = OrderedDict(
+        sorted(EAST_PRODUCTS_CATEGORIES.items(), key=lambda t: t[1]))
+
+    for x, y in categories.items():
         term = SimpleTerm(value=x, token=x, title=y)
         yield term
 
