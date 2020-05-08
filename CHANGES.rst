@@ -3,6 +3,8 @@ Changelog
 
 1.3.2 (unreleased)
 ------------------
+- Improve: product category field select.
+  [GhitaB #116290]
 - Fix: Get rid of unused Languages field for product item.
 - Improve: Sort events in events table by start date desc.
 - Improve: Sort meetings by start date desc in meetings table view.
