@@ -80,17 +80,17 @@ EAST_LANGUAGES = {
 }
 
 EAST_PRODUCTS_CATEGORIES = {
-    u"Maturity Report": u"AEI: Maturity Report",
-    u"Roadmap": u"AEI: Roadmap",
-    u"Executive Summary": u"AEI: Executive Summary",
-    u"Good practice": u"AEI: Good practice",
+    u"Maturity Report": u"AEI - 1: Maturity Report",
+    u"Roadmap": u"AEI - 2: Roadmap",
+    u"Executive Summary": u"AEI - 3: Executive Summary",
+    u"Good practice": u"AEI - 4: Good practice",
 
-    u"Technical Reports": u"Land: Technical Reports",
+    u"Technical Reports": u"Land - 1: Technical Reports",
     u"Corine Land Cover Change Analysis":
-    u"Land: Corine Land Cover Change Analysis",
-    u"Link to Copernicus": u"Land: Link to Copernicus",
+    u"Land - 2: Corine Land Cover Change Analysis",
+    u"Link to Copernicus": u"Land - 3: Link to Copernicus",
     u"Summary of Final Technical Report":
-    u"Land: Summary of Final Technical Report"
+    u"Land - 4: Summary of Final Technical Report"
 }
 
 
