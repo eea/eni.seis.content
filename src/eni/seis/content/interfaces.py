@@ -13,6 +13,7 @@ from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobFile
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
+from z3c.form.browser.select import SelectWidget
 from zope import schema
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
@@ -118,12 +119,11 @@ class IProductItem(model.Schema):
         description=u"Report file if it has one."
     )
 
-    category = schema.List(
+    product_category = schema.Choice(
         title=u"Category",
         description=u"Select the category.",
-        required=False,
-        value_type=schema.Choice(
-            source=EAST_PRODUCTS_CATEGORIES_VOCABULARY),
+        required=True,
+        vocabulary=EAST_PRODUCTS_CATEGORIES_VOCABULARY,
     )
 
 
