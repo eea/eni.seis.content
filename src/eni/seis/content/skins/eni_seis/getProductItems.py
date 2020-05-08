@@ -9,7 +9,7 @@ items = {}
 res = [x.getObject() for x in res]
 for item in res:
     try:
-        category = item.category[0]
+        category = item.product_category
     except Exception:
         category = "unlisted"
 
