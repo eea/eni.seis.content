@@ -3,6 +3,7 @@ Changelog
 
 1.3.2 (unreleased)
 ------------------
+- Improve: ordered options and grouped by section - product item category.
 - Improve: product category field select.
   [GhitaB #116290]
 - Fix: Get rid of unused Languages field for product item.
