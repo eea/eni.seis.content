@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.2 (unreleased)
+1.3.2 (2020-05-11)
 ------------------
 - Improve: add footnotes in events listing.
 - Improve: ordered options and grouped by section - product item category.
