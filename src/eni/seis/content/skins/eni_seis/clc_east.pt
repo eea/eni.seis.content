@@ -68,7 +68,10 @@
                         <span tal:content="python:context.get_event_dates(item)"></span>
                         <span tal:content="python: context.get_event_year(item)"></span>
                       </td>
-                      <td tal:content="python:event_level.capitalize()"></td>
+                      <td>
+                        <span tal:content="python:event_level.capitalize()"></span>
+                        <span tal:condition="python:'capacity-building' in item.Subject">/CP<sup>1</sup></span>
+                      </td>
                       <td><span tal:content="python: context.get_event_location(item)"></span></td>
                       <td>
                         <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
@@ -77,6 +80,15 @@
                     </tal:repeat>
                   </tbody>
                 </table>
+
+                <div id="sdfootnote1">
+                  <p class="sdfootnote">
+                    <sub><sup>1<a class="sdfootnotesym" href="#sdfootnote1anc" name="sdfootnote1sym" id="sdfootnote1sym"></a> </sup><span>
+                CP = Capacity Building</span></sub>
+                  </p>
+                  <p class="sdfootnote">&nbsp;&nbsp;</p>
+                </div>
+
               </div>
             </div>
 
