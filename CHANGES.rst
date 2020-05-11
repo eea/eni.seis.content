@@ -9,6 +9,7 @@ Changelog
 - Fix: Get rid of unused Languages field for product item.
 - Improve: Sort events in events table by start date desc.
 - Improve: Sort meetings by start date desc in meetings table view.
+- Fix: Order countries by name in Countries field, edit form.
   [GhitaB #116729]
 
 1.3.1 (2020-04-23)
