@@ -3,6 +3,7 @@ Changelog
 
 1.3.2 (unreleased)
 ------------------
+- Improve: add footnotes in events listing.
 - Improve: ordered options and grouped by section - product item category.
 - Improve: product category field select.
   [GhitaB #116290]
