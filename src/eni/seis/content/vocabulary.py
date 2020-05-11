@@ -7,6 +7,7 @@ from zope.interface import alsoProvides
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+import operator
 
 
 EUROPEAN_COUNTRIES = {
@@ -144,8 +145,10 @@ def atvocabulary_to_zope_vocab(name):
         nv = atvm.getVocabularyByName(name)
         _terms = dict(nv.getVocabularyDict(nv))
 
+        sorted_terms = sorted(_terms.items(), key=operator.itemgetter(1))
+
         return SimpleVocabulary([
-            SimpleTerm(n, n.encode('utf-8'), l) for n, l in _terms.items()
+            SimpleTerm(n, n.encode('utf-8'), l) for n, l in sorted_terms
         ])
 
     return factory
