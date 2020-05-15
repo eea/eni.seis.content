@@ -224,7 +224,9 @@ class CountriesViewEast(BrowserView):
             (2015, u"'15"),
             (2016, u"'16"),
             (2017, u"'17"),
-            (2018, u"'18")
+            (2018, u"'18"),
+            (2019, u"'19"),
+            (2020, u"2020")
         ]
 
         countries = [x.Title() for x in self.get_countries_folders()]
