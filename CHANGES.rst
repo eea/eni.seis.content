@@ -3,6 +3,9 @@ Changelog
 
 1.3.3 (unreleased)
 ------------------
+- Improve: table containing national reports in Countries to include 2019 and
+  2020. Fix title to use current month and year.
+  [GhitaB #107340]
 
 1.3.2 (2020-05-11)
 ------------------
