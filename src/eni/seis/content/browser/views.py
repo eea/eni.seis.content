@@ -243,10 +243,12 @@ class CountriesViewEast(BrowserView):
             for year in report.years:
                 countries_data[country_name][year] = True
 
+        table_title = "December 2020"  # TODO use current month?
         return {
             "years": years,
             "countries": countries,
-            "data": countries_data
+            "data": countries_data,
+            "table_title": table_title
         }
 
     def get_reports_statistics(self):
