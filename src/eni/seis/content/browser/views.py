@@ -5,6 +5,7 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from collections import OrderedDict
+from datetime import datetime
 from eni.seis.content.config import EAST_COUNTRIES
 from eni.seis.content.config import REPORTS_CONTAINER
 from eni.seis.content.config import REPORTS_TYPES_VOCAB
@@ -243,12 +244,11 @@ class CountriesViewEast(BrowserView):
             for year in report.years:
                 countries_data[country_name][year] = True
 
-        table_title = "December 2020"  # TODO use current month?
         return {
             "years": years,
             "countries": countries,
             "data": countries_data,
-            "table_title": table_title
+            "table_title": datetime.today().strftime('%B %Y')
         }
 
     def get_reports_statistics(self):
