@@ -3,6 +3,7 @@ Changelog
 
 1.3.3 (unreleased)
 ------------------
+- Improve: Show years in human readable format - national report view.
 - Improve: table containing national reports in Countries to include 2019 and
   2020. Fix title to use current month and year.
   [GhitaB #107340]
