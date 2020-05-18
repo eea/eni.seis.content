@@ -32,6 +32,10 @@
       <p tal:condition="python:has_file is True">
         Number of pages: <span tal:content="python:report.pages_number"></span>
       </p>
+
+      <p>
+        Years: <span tal:content="python:report.human_readable_years()"></span>
+      </p>
     </div>
   </metal:block>
 </metal:content-core>
