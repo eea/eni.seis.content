@@ -34,7 +34,7 @@
       </p>
 
       <p>
-        Years: <span tal:content="python:report.human_readable_years()"></span>
+        Years: <span tal:content="python:'; '.join(report.human_readable_years())"></span>
       </p>
     </div>
   </metal:block>
