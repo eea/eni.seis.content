@@ -214,7 +214,7 @@ def check_link(link):
 
         logger.info("LINK: %s", link)
         try:
-            requests.head(link, timeout=5, allow_redirects=True)
+            requests.head(link, timeout=50, allow_redirects=True)
         except requests.exceptions.ReadTimeout:
             return {'status': '504', 'url': link}
         except requests.exceptions.ConnectTimeout:
