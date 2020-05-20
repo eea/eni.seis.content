@@ -3,6 +3,8 @@ Changelog
 
 1.3.4 (unreleased)
 ------------------
+- Improve: Change order (descending) of featured meetings in Acess and Land.
+  [GhitaB #116290]
 
 1.3.3 (2020-05-20)
 ------------------
