@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.3 (unreleased)
+1.3.3 (2020-05-20)
 ------------------
 - Improve: Increase timeout when checking a link.
   [GhitaB #108137]
