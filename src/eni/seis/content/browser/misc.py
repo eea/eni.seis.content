@@ -93,14 +93,19 @@ def compute_broken_links(site):
     """
     links = get_links(site)
 
+    ok_links = []
+
     results = []
 
     for info in links:
-        res = check_link(info['link'])
+        if info['link'] not in ok_links:
+            res = check_link(info['link'])
 
-        if res is not None:
-            res['object_url'] = info['object_url']
-            results.append(res)
+            if res is not None:
+                res['object_url'] = info['object_url']
+                results.append(res)
+            else:
+                ok_links.append(info['link'])
 
     last_update = DateTime().strftime("%a, %d %b %Y %H:%M:%S")
     IAnnotations(site)['broken_links_data'] = results
