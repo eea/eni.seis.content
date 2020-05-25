@@ -119,6 +119,9 @@
                   <div class="tab-pane fade active" id="maturity-report" role="tabpanel"
                        aria-labelledby="maturity-report-tab">
                     <div tal:define="product_items_1 python:product_items.get('Maturity Report', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_1)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -150,6 +153,9 @@
                   <div class="tab-pane fade" id="roadmap" role="tabpanel"
                        aria-labelledby="roadmap-tab">
                     <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_2)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -181,6 +187,9 @@
                   <div class="tab-pane fade" id="executive-summary" role="tabpanel"
                        aria-labelledby="executive-summary-tab">
                     <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_3)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -212,6 +221,9 @@
                   <div class="tab-pane fade" id="good-practice" role="tabpanel"
                        aria-labelledby="good-practice-tab">
                     <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_4)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
