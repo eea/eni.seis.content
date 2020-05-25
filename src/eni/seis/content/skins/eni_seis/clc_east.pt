@@ -70,7 +70,7 @@
                       </td>
                       <td>
                         <span tal:content="python:event_level.capitalize()"></span>
-                        <span tal:condition="python:'capacity-building' in item.Subject">/CP<sup>1</sup></span>
+                        <span tal:condition="python:'capacity-building' in item.Subject">/CP<sup>*</sup></span>
                       </td>
                       <td><span tal:content="python: context.get_event_location(item)"></span></td>
                       <td>
@@ -83,7 +83,7 @@
 
                 <div id="sdfootnote1">
                   <p class="sdfootnote">
-                    <sub><sup>1<a class="sdfootnotesym" href="#sdfootnote1anc" name="sdfootnote1sym" id="sdfootnote1sym"></a> </sup><span>
+                    <sub><sup>*<a class="sdfootnotesym" href="#sdfootnote1anc" name="sdfootnote1sym" id="sdfootnote1sym"></a> </sup><span>
                 CP = Capacity Building</span></sub>
                   </p>
                   <p class="sdfootnote">&nbsp;&nbsp;</p>
