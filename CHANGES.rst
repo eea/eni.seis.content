@@ -3,6 +3,8 @@ Changelog
 
 1.3.4 (unreleased)
 ------------------
+- Improve: get rid of unuseful versions warning message.
+  [GhitaB #116728]
 - Improve: don't verify again ok links.
   [GhitaB #108137]
 - Improve: Change order (descending) of featured meetings in Acess and Land.
