@@ -137,6 +137,9 @@
                   <div class="tab-pane fade active" id="technical-reports" role="tabpanel"
                        aria-labelledby="technical-reports-tab">
                     <div tal:define="product_items_1 python:product_items.get('Technical Reports', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_1)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -168,6 +171,9 @@
                   <div class="tab-pane fade" id="clc-analysis" role="tabpanel"
                        aria-labelledby="clc-analysis-tab">
                     <div tal:define="product_items_2 python:product_items.get('Corine Land Cover Change Analysis', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_2)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -199,6 +205,9 @@
                   <div class="tab-pane fade" id="link-to-copernicus" role="tabpanel"
                        aria-labelledby="link-to-copernicus-tab">
                     <div tal:define="product_items_3 python:product_items.get('Link to Copernicus', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_3)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
@@ -230,6 +239,9 @@
                   <div class="tab-pane fade" id="summary-final" role="tabpanel"
                        aria-labelledby="summary-final-tab">
                     <div tal:define="product_items_4 python:product_items.get('Summary of Final Technical Report', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_4)==0">
+                        Information to be available soon
+                      </p>
                       <table class="listing product-items-table table table-responsive table-hover"
                              summary="Content listing"
                              i18n:attributes="summary summary_content_listing;">
