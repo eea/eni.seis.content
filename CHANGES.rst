@@ -13,6 +13,7 @@ Changelog
 - Improve: don't verify again ok links.
   [GhitaB #108137]
 - Improve: Change order (descending) of featured meetings in Acess and Land.
+- Improve: Replace 1 with * in legend.
   [GhitaB #116290]
 
 1.3.3 (2020-05-20)
