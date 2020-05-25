@@ -3,6 +3,9 @@ Changelog
 
 1.3.4 (unreleased)
 ------------------
+- Improve: set Versioning for new content types.
+  Manual step: add Versioning behavior (/dexterity-types/nfp/@@behaviors).
+  Manual step: set Versioning policy as Automatic in Site setup - Types.
 - Improve: get rid of unuseful versions warning message.
   [GhitaB #116728]
 - Improve: don't verify again ok links.
