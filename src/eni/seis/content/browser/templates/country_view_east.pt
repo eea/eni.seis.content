@@ -323,7 +323,9 @@
                     <tr tal:define="oddrow repeat/indicator/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
-                        <span tal:replace="indicator/Title">Indicator title</span>
+                        <a tal:attributes="href indicator/absolute_url">
+                          <span tal:replace="indicator/Title">Indicator title</span>
+                        </a>
                       </td>
                     </tr>
                   </tal:repeat>

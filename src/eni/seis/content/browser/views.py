@@ -360,7 +360,7 @@ class CountryViewEast(BrowserView):
             country_titles = [
                     EAST_COUNTRIES_DICT.get(x, '') for x in countries]
             if this_country in country_titles:
-                country_indicators.append(ind)
+                country_indicators.append(indicator)
 
         return country_indicators
 
