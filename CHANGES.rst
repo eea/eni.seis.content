@@ -3,6 +3,7 @@ Changelog
 
 1.3.4 (unreleased)
 ------------------
+- Fix: Sort national reports by position in parent folder.
 - Feature: Add indicators EEA listing in country view.
 - Improve: Add text in Countries - EAR.
 - Manual step: exclude from navigation /east/indicators folder.
