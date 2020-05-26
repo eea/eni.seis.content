@@ -4,6 +4,8 @@ Changelog
 1.3.4 (unreleased)
 ------------------
 TODO: indicators listing as a new tab in country page, hide from menu.
+- Improve: Add text in Countries - EAR.
+  [GhitaB #107340]
 - Improve: set Versioning for new content types.
   Manual step: add Versioning behavior (/dexterity-types/nfp/@@behaviors).
   Manual step: set Versioning policy as Automatic in Site setup - Types.
