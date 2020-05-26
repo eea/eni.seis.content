@@ -5,6 +5,7 @@ Changelog
 ------------------
 TODO: indicators listing as a new tab in country page, hide from menu.
 - Improve: Add text in Countries - EAR.
+- Manual step: exclude from navigation /east/indicators folder.
   [GhitaB #107340]
 - Improve: set Versioning for new content types.
   Manual step: add Versioning behavior (/dexterity-types/nfp/@@behaviors).
