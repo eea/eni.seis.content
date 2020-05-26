@@ -7,6 +7,7 @@ from Products.Five.browser import BrowserView
 from collections import OrderedDict
 from datetime import datetime
 from eni.seis.content.config import EAST_COUNTRIES
+from eni.seis.content.config import EAST_COUNTRIES_DICT
 from eni.seis.content.config import REPORTS_CONTAINER
 from eni.seis.content.config import REPORTS_TYPES_VOCAB
 from eni.seis.content.config import SOUTH_COUNTRIES
@@ -339,6 +340,27 @@ class CountryViewEast(BrowserView):
             return self.context['national-reports'].Description()
         except Exception:
             return "Missing national-reports folder."
+
+    def get_indicators_eea(self):
+        """ Return the list of Indicators EEA for this country
+        """
+        all_indicators = self.context.portal_catalog.searchResults(
+            portal_type=['indicatordata'],
+            review_state='published',
+            sort_on='sortable_title',
+            sort_order='ascending',
+            path='/east/indicators'
+        )
+        country_indicators = []
+        for ind in all_indicators:
+            indicator = ind.getObject()
+            countries = indicator.countries
+            country_titles = [
+                    EAST_COUNTRIES_DICT.get(x, '') for x in countries]
+            if self.context.Title() in country_titles:
+                country_indicators.append(ind)
+
+        return country_indicators
 
 
 class ReportsDataView(BrowserView):

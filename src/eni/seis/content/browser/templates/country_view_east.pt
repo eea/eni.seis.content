@@ -18,6 +18,7 @@
       indicators
       python:context.unrestrictedTraverse('indicators_data/get_indicators')();
       national_reports python:context.unrestrictedTraverse('reports_data/get_national_reports')();
+      indicators_eea python:view.get_indicators_eea();
       reports python:context.unrestrictedTraverse('reports_data/get_reports')()">
 
     <div class="row no-portlets">
@@ -314,7 +315,7 @@
 
             <div id="indicators-eea" class="tab-pane fade">
               <table class="table table-responsive table-hover indicators-eea" summary="Content listing">
-                <tbody tal:define="indicators_eea python:[]">
+                <tbody>
                   <tr class="nodata" tal:condition="python:len(indicators_eea) == 0">
                     <td colspan="3">No indicators.</td>
                   </tr>
