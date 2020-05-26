@@ -3,7 +3,7 @@ Changelog
 
 1.3.4 (unreleased)
 ------------------
-TODO: indicators listing as a new tab in country page, hide from menu.
+- Feature: Add indicators EEA listing in country view.
 - Improve: Add text in Countries - EAR.
 - Manual step: exclude from navigation /east/indicators folder.
   [GhitaB #107340]
