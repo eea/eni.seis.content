@@ -70,7 +70,12 @@
                         <span tal:content="python: context.get_event_year(item)"></span>
                       </td>
                       <td tal:content="python:event_level.capitalize()"></td>
-                      <td><span tal:content="python: context.get_event_location(item)"></span></td>
+                      <td>
+                        <span tal:content="python: context.get_event_location(item)"></span>
+                        <span tal:condition="python:item.getObject().is_webinar() is True">
+                          Webinar
+                        </span>
+                      </td>
                       <td>
                         <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
                       </td>
