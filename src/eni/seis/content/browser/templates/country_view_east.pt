@@ -32,6 +32,11 @@
         <div class="country-content">
           <ul class="nav nav-tabs base">
             <li class="pull-right">
+              <a data-toggle="tab" href="#indicators-eea">
+                Indicators developed with EEA method
+              </a>
+            </li>
+            <li class="pull-right">
               <a data-toggle="tab" href="#environmental-assessment-reports">
                 Environmental assessment reports
               </a>
@@ -306,6 +311,25 @@
                 </tbody>
               </table>
             </div>
+
+            <div id="indicators-eea" class="tab-pane fade">
+              <table class="table table-responsive table-hover indicators-eea" summary="Content listing">
+                <tbody tal:define="indicators_eea python:[]">
+                  <tr class="nodata" tal:condition="python:len(indicators_eea) == 0">
+                    <td colspan="3">No indicators.</td>
+                  </tr>
+                  <tal:repeat tal:repeat="indicator indicators_eea">
+                    <tr tal:define="oddrow repeat/indicator/odd;"
+                        tal:attributes="class python:'odd' if oddrow else 'even'">
+                      <td>
+                        <span tal:replace="indicator/Title">Indicator title</span>
+                      </td>
+                    </tr>
+                  </tal:repeat>
+                </tbody>
+              </table>
+            </div>
+
 
             <div class="row no-portlets country-publications"
                  tal:define="publications_pages python:view.get_publications_pages()">
