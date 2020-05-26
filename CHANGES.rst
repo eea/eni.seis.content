@@ -18,7 +18,7 @@ TODO: indicators listing as a new tab in country page, hide from menu.
 - Improve: Change order (descending) of featured meetings in Acess and Land.
 - Improve: Replace 1 with * in legend.
 - Improve: Add message for no items in product items listing case.
-- Improve: Land - Events - show Webinar text as location for webinars.
+- Improve: Land, AEI - Events - show Webinar text as location for webinars.
   [GhitaB #116290]
 
 1.3.3 (2020-05-20)
