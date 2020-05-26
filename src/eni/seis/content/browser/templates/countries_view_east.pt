@@ -43,6 +43,14 @@
         <h2 class="eni-section-title">ENVIRONMENTAL ASSESMENT REPORTS</h2>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reports-content">
+        <div class="ear-info">
+          <p>
+            <b>Source:</b> Information from the National Assistants and the National Focal Points
+          </p>
+          <p>
+            <b>Last update:</b> 5 March 2020
+          </p>
+        </div>
         <div tal:define="stats python:view.get_reports_statistics()">
           <table class="environmental-assesment-reports-table">
             <thead>
