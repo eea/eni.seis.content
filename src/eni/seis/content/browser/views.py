@@ -344,6 +344,8 @@ class CountryViewEast(BrowserView):
     def get_indicators_eea(self):
         """ Return the list of Indicators EEA for this country
         """
+        this_country = self.context.Title()
+
         all_indicators = self.context.portal_catalog.searchResults(
             portal_type=['indicatordata'],
             review_state='published',
@@ -357,7 +359,7 @@ class CountryViewEast(BrowserView):
             countries = indicator.countries
             country_titles = [
                     EAST_COUNTRIES_DICT.get(x, '') for x in countries]
-            if self.context.Title() in country_titles:
+            if this_country in country_titles:
                 country_indicators.append(ind)
 
         return country_indicators
