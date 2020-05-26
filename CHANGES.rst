@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.4 (unreleased)
+1.3.4 (2020-05-26)
 ------------------
 - Fix: Sort national reports by position in parent folder.
 - Feature: Add indicators EEA listing in country view.
