@@ -48,7 +48,7 @@
             <b>Source:</b> Information from the National Assistants and the National Focal Points
           </p>
           <p>
-            <b>Last update:</b> 5 March 2020
+            <b>Last update:</b> March 2020
           </p>
         </div>
         <div tal:define="stats python:view.get_reports_statistics()">
