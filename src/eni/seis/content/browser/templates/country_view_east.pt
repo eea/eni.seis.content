@@ -257,9 +257,7 @@
                     <tr tal:define="oddrow repeat/report/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
-                        <a tal:attributes="href python:report.get_view_url()">
-                          <span tal:replace="report/Title">Report title</span>
-                        </a>
+                        <span tal:replace="report/Title">Report title</span>
                       </td>
                       <td>
                         <span tal:content="python:'; '.join(report.human_readable_years())"></span>
