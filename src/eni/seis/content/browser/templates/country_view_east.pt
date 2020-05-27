@@ -330,6 +330,14 @@
                 </p>
               </div>
               <table class="table table-responsive table-hover indicators-eea" summary="Content listing">
+                <thead>
+                  <tr>
+                    <th>
+                      <h2>&nbsp;Type of Indicator&nbsp;</h2>
+                    </th>
+                    <th><!-- Link to the report --></th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr class="nodata" tal:condition="python:len(indicators_eea) == 0">
                     <td colspan="3">No indicators.</td>
@@ -338,8 +346,11 @@
                     <tr tal:define="oddrow repeat/indicator/odd;"
                         tal:attributes="class python:'odd' if oddrow else 'even'">
                       <td>
-                        <a tal:attributes="href indicator/absolute_url">
-                          <span tal:replace="indicator/Title">Indicator title</span>
+                        <span tal:replace="indicator/Title">Indicator title</span>
+                      </td>
+                      <td>
+                        <a tal:attributes="href python:indicator.absolute_url()">
+                          Link to the indicator »
                         </a>
                       </td>
                     </tr>
