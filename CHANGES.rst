@@ -3,6 +3,8 @@ Changelog
 
 1.3.5 (unreleased)
 ------------------
+- Improve: Add text in Indicators EEA tab - Country view.
+  [GhitaB #107340]
 
 1.3.4 (2020-05-26)
 ------------------
