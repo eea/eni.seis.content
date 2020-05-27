@@ -3,7 +3,7 @@ Changelog
 
 1.3.5 (unreleased)
 ------------------
-- Improve: Update date for Countries - EAR section.
+- Improve: Add source and last update info for Countries tables sections.
 - Improve: Add text in Indicators EEA tab - Country view.
 - Improve: Update date (May 2020) in SEEA section.
   [GhitaB #107340]
