@@ -6,6 +6,7 @@ Changelog
 - Improve: Add source and last update info for Countries tables sections.
 - Improve: Add text in Indicators EEA tab - Country view.
 - Improve: Update date (May 2020) in SEEA section.
+- Improve: Country view - hide national reports with no data.
   [GhitaB #107340]
 
 1.3.4 (2020-05-26)
