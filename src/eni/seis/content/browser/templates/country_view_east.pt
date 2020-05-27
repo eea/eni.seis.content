@@ -262,7 +262,7 @@
                         </a>
                       </td>
                       <td>
-                        Year
+                        <span tal:content="python:'; '.join(report.human_readable_years())"></span>
                       </td>
                       <td>
                         <a tal:attributes="href python:report.get_view_url()">
