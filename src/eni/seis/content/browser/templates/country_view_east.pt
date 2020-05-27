@@ -314,6 +314,22 @@
             </div>
 
             <div id="indicators-eea" class="tab-pane fade">
+              <div class="indicators-eea-intro">
+                <p></p>
+                <p>An environmental indicator is a measure, generally quantitative,
+                  that can be used to illustrate and communicate complex environmental
+                  phenomena simply, including trends and progress over time — and thus
+                  helps implement knowledge-based environmental policymaking and
+                  communicate with the public.
+                </p>
+                <p>
+                  EEA supported development of selected water and biodiversity
+                  indicators from the UNECE set of environmental indicators
+                  (see the UNECE environmental indicators) to exemplify the
+                  implementation of the MDIAK
+                  (Monitoring- Data-Indicator-Assessment-Knowledge) chain.
+                </p>
+              </div>
               <table class="table table-responsive table-hover indicators-eea" summary="Content listing">
                 <tbody>
                   <tr class="nodata" tal:condition="python:len(indicators_eea) == 0">
