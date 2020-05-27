@@ -31,6 +31,13 @@ class NationalReport(Container):
             return True
         return False
 
+    def has_info(self):
+        """ Return True if file or link
+        """
+        if self.has_external_link() is True or self.has_file is True:
+            return True
+        return False
+
     def grouped_coverage(self, years):
         """ Given an iterable of numbers, group them by range
         """

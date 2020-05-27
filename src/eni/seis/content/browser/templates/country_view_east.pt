@@ -17,7 +17,7 @@
       python:context.unrestrictedTraverse('indicators_data/get_indicators_categories')();
       indicators
       python:context.unrestrictedTraverse('indicators_data/get_indicators')();
-      national_reports python:context.unrestrictedTraverse('reports_data/get_national_reports')();
+      national_reports python:context.unrestrictedTraverse('reports_data/get_national_reports_country')();
       indicators_eea python:view.get_indicators_eea();
       reports python:context.unrestrictedTraverse('reports_data/get_reports')()">
 

@@ -415,6 +415,15 @@ class ReportsDataView(BrowserView):
 
         return results
 
+    def get_national_reports_country(self):
+        """ Return all published national reports found in this context
+            only reports having data
+        """
+        res = self.get_national_reports()
+        results = [x for x in res if x.has_info() is True]
+
+        return results
+
     def __call__(self):
         return self.utils
 
