@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.3.6 (unreleased)
+------------------
+
 1.3.5 (2020-05-28)
 ------------------
 - Improve: Add source and last update info for Countries tables sections.
