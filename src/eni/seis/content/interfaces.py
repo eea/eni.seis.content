@@ -83,19 +83,6 @@ class INationalReport(model.Schema):
         description=u"Report file if it has one."
     )
 
-    pages_number = schema.TextLine(
-        title=u"Number of pages",
-        required=False,
-        description=u"Example: 171"
-    )
-
-    languages = schema.List(
-        title=u"Languages",
-        description=u"Select available languages for this report.",
-        required=False,
-        value_type=schema.Choice(source=EAST_LANGUAGES_VOCABULARY),
-    )
-
     years = schema.List(
         title=u"Years",
         description=u"Years reported for",
