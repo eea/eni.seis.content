@@ -33,11 +33,6 @@
         <div class="country-content">
           <ul class="nav nav-tabs base">
             <li class="pull-right">
-              <a data-toggle="tab" href="#indicators-eea">
-                Indicators developed with EEA method
-              </a>
-            </li>
-            <li class="pull-right">
               <a data-toggle="tab" href="#environmental-assessment-reports">
                 Environmental assessment reports
               </a>
@@ -45,6 +40,11 @@
             <li class="pull-right">
               <a data-toggle="tab" href="#report-state-environment">
                 Report on the state of environment
+              </a>
+            </li>
+            <li class="pull-right">
+              <a data-toggle="tab" href="#indicators-eea">
+                Indicators developed with EEA method
               </a>
             </li>
             <li class="active pull-right">
