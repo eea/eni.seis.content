@@ -3,6 +3,8 @@ Changelog
 
 1.3.6 (unreleased)
 ------------------
+- Improve: Move indicators EEA tab in 2nd position.
+  [GhitaB #107340]
 
 1.3.5 (2020-05-28)
 ------------------
