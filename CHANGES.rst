@@ -4,6 +4,7 @@ Changelog
 1.3.6 (unreleased)
 ------------------
 - Improve: Get rid of unused fields of national report.
+- Improve: Update national report view.
 - Improve: Move indicators EEA tab in 2nd position.
   [GhitaB #107340]
 
