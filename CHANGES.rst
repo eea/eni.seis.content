@@ -3,6 +3,8 @@ Changelog
 
 1.3.6 (unreleased)
 ------------------
+- Feature: new design for Indicators and Assessments section.
+  [GhitaB #118316]
 - Improve: Get rid of unused fields of national report.
 - Improve: Update national report view.
 - Improve: Move indicators EEA tab in 2nd position.
