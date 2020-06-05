@@ -22,6 +22,7 @@
           full_objects=True)[0];
         ">
 
+    <!--
     <div class="row no-portlets jquery-move-me video-section">
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div class="video-container">
@@ -67,5 +68,6 @@
         </div>
       </div>
     </div>
+    -->
   </body>
 </html>
