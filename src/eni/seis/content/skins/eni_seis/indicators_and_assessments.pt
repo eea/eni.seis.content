@@ -6,68 +6,289 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 
-  <tal:col metal:fill-slot="portlets_one_slot"></tal:col>
-  <tal:col metal:fill-slot="portlets_two_slot"></tal:col>
+  <body>
+  <metal:content-core fill-slot="content-core">
+    <div class="access-environmental-container">
 
-  <body metal:fill-slot="content-core"
-        tal:define="
-          query python: {'portal_type': 'Folder'};
-          all_sections python: context.getFolderContents(query,
-          full_objects=True);
-          knowledge_resources python: [x for x in all_sections if x.Title().lower() in
-          ['knowledge resources']];
-          icons python: {'newsletters': 'fa fa-envelope-o', 'knowledge
-          resources': 'fa fa-file-pdf-o'};
-          video_section python:context.getFolderContents({'Title': 'Video'},
-          full_objects=True)[0];
-        ">
+      <div tal:replace="structure context/long_description" />
 
-    <!--
-    <div class="row no-portlets jquery-move-me video-section">
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <div class="video-container">
-          <span
-            tal:replace="structure python:video_section.getField('text').getAccessor(video_section)()"></span>
+      <div id="eni-accordion">
+        <h3>Summary of activities</h3>
+        <div>
+          <p tal:define="section python:context.restrictedTraverse('summary-of-activities')"
+             tal:replace="structure section/long_description"
+             tal:on-error="string:Missing folder summary-of-activities."></p>
         </div>
-      </div>
 
-      <div class="col-lg-offset-3 col-lg-5 col-md-offset-3 col-md-5 col-sm-12 col-xs-12">
-        <div class="knowledge-resources"
-             tal:repeat="section knowledge_resources">
-          <h3 tal:content="section/Title">Knowledge resources</h3>
-          <div class="row" tal:define="contents section/getFolderContents">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <ul class="list-group">
-                <li tal:repeat="brain python:contents[:6]"
-                    class="list-group-item">
-                  <i tal:attributes="class
-                  python:icons.get(section.Title().lower(), 'fa fa-file-o')">
-                  </i>
-                  <a href="" tal:attributes="href brain/getURL">
-                    <span tal:replace="brain/Title">Title here</span>
-                  </a>
-                </li>
-              </ul>
+        <h3>Deliverables</h3>
+        <div>
+          <ul class="nav nav-tabs" id="deliverables-tabs" role="tablist">
+            <li class="nav-item active">
+              <a class="nav-link active" id="events-tab"
+                 data-toggle="tab" href="#events" role="tab"
+                 aria-controls="events" aria-selected="true">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="products-tab"
+                 data-toggle="tab" href="#products" role="tab"
+                 aria-controls="products" aria-selected="false">Products</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="deliverables-tabs-content">
+            <div class="tab-pane fade active" id="events" role="tabpanel" aria-labelledby="events-tab">
+              <legend>
+                <span class="level-national">
+                  <i class="fa fa-circle level-national" aria-hidden="true"></i>
+                  <span>National Event</span>
+                </span>
+                <span class="level-regional">
+                  <i class="fa fa-circle level-regional" aria-hidden="true"></i>
+                  <span>Regional Event</span>
+                </span>
+              </legend>
+              <div class="featured-meetings-container">
+                <table class="listing event-table table table-responsive table-hover"
+                       summary="Content listing"
+                       i18n:attributes="summary summary_content_listing;">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Type of event</th>
+                      <th>City / Country</th>
+                      <th>Title of events</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tal:repeat repeat="item python:context.getFeaturedMeetings()">
+                    <tr tal:define="oddrow repeat/item/odd; event_level python: context.get_event_level(item)"
+                        tal:attributes="class python: test(event_level, 'level-' + event_level, '') + ' ' + test(oddrow, 'even', 'odd')">
+                      <td>
+                        <span tal:content="python:context.get_event_dates(item)"></span>
+                        <span tal:content="python: context.get_event_year(item)"></span>
+                      </td>
+                      <td tal:content="python:event_level.capitalize()"></td>
+                      <td>
+                        <span tal:content="python: context.get_event_location(item)"></span>
+                        <span tal:condition="python:item.getObject().is_webinar() is True">
+                          Webinar
+                        </span>
+                      </td>
+                      <td>
+                        <a href="" tal:attributes="href item/getURL" tal:content="item/Title">Item</a>
+                      </td>
+                    </tr>
+                    </tal:repeat>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+              <div class="products-container"
+                   tal:define="product_items python:context.getProductItems()">
+
+                <ul class="nav nav-tabs" id="products-tabs" role="tablist">
+                  <li class="nav-item active">
+                    <a class="nav-link active" id="maturity-report-tab" data-toggle="tab"
+                       href="#maturity-report" role="tab" aria-controls="maturity-report"
+                       aria-selected="true">
+                      National Maturity Reports
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="roadmap-tab" data-toggle="tab"
+                       href="#roadmap" role="tab" aria-controls="roadmap"
+                       aria-selected="true">
+                      National Roadmaps
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="executive-summary-tab" data-toggle="tab"
+                       href="#executive-summary" role="tab" aria-controls="executive-summary"
+                       aria-selected="true">
+                      Executive Summaries
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="good-practice-tab" data-toggle="tab"
+                       href="#good-practice" role="tab" aria-controls="good-practice"
+                       aria-selected="true">
+                      Good Practices Report
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="products-tabs-content">
+                  <div class="tab-pane fade active" id="maturity-report" role="tabpanel"
+                       aria-labelledby="maturity-report-tab">
+                    <div tal:define="product_items_1 python:product_items.get('Maturity Report', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_1)==0">
+                        Information to be available soon
+                      </p>
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_1">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                              <tal:condition condition="python:item.has_multiple_files() is True">
+                                <tal:files repeat="file_item python:item.files_listing()">
+                                  <br /><a tal:attributes="href python:file_item[1]"
+                                           tal:content="python:file_item[0]"></a>
+                                </tal:files>
+                              </tal:condition>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="roadmap" role="tabpanel"
+                       aria-labelledby="roadmap-tab">
+                    <div tal:define="product_items_2 python:product_items.get('Roadmap', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_2)==0">
+                        Information to be available soon
+                      </p>
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_2">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                              <tal:condition condition="python:item.has_multiple_files() is True">
+                                <tal:files repeat="file_item python:item.files_listing()">
+                                  <br /><a tal:attributes="href python:file_item[1]"
+                                           tal:content="python:file_item[0]"></a>
+                                </tal:files>
+                              </tal:condition>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="executive-summary" role="tabpanel"
+                       aria-labelledby="executive-summary-tab">
+                    <div tal:define="product_items_3 python:product_items.get('Executive Summary', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_3)==0">
+                        Information to be available soon
+                      </p>
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_3">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
+                            </td>
+                            <td>
+                              <a tal:attributes="href python:item.get_view_url()"
+                                 tal:content="python:item.title">
+                              </a>
+                              <tal:condition condition="python:item.has_multiple_files() is True">
+                                <tal:files repeat="file_item python:item.files_listing()">
+                                  <br /><a tal:attributes="href python:file_item[1]"
+                                           tal:content="python:file_item[0]"></a>
+                                </tal:files>
+                              </tal:condition>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="good-practice" role="tabpanel"
+                       aria-labelledby="good-practice-tab">
+                    <div tal:define="product_items_4 python:product_items.get('Good practice', [])">
+                      <p class="no-items" tal:condition="python:len(product_items_4)==0">
+                        Information to be available soon
+                      </p>
+                      <table class="listing product-items-table table table-responsive table-hover"
+                             summary="Content listing"
+                             i18n:attributes="summary summary_content_listing;">
+                        <tbody>
+                          <tal:repeat repeat="item python:product_items_4">
+                          <tr tal:define="oddrow repeat/item/odd;"
+                              tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <td>
+                              <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
+                                 tal:on-error="nothing"></a>
+                            </td>
+                            <td>
+                              <tal:condition condition="python:item.has_multiple_files() is False">
+                                <a tal:attributes="href python:item.get_view_url()"
+                                   tal:content="python:item.title">
+                                </a>
+                              </tal:condition>
+                              <tal:condition condition="python:item.has_multiple_files() is True">
+                                <ul class="files-listing">
+                                  <tal:files repeat="file_item python:item.files_listing()">
+                                    <li>
+                                      <a tal:attributes="href python:file_item[1]"
+                                         tal:content="python:file_item[0]"></a>
+                                    </li>
+                                  </tal:files>
+                                </ul>
+                              </tal:condition>
+                            </td>
+                          </tr>
+                          </tal:repeat>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <a tal:attributes="href section/absolute_url"
-             class="more-items pull-right">
-            More
-            <span tal:replace="section/Description"></span>
-          </a>
+        </div>
+
+        <h3>Knowledge resources</h3>
+        <div>
+          <p tal:define="section python:context.restrictedTraverse('knowledge-resources')"
+             tal:replace="structure section/long_description"
+             tal:on-error="string:Missing folder knowledge-resources."></p>
+        </div>
+
+        <h3>Partners</h3>
+        <div>
+          <p tal:define="section python:context.restrictedTraverse('partners')"
+             tal:replace="structure section/long_description"
+             tal:on-error="string:Missing folder partners."></p>
         </div>
       </div>
 
-      <div class="row no-portlets jquery-move-me text-section">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="description-container">
-            <span
-              tal:replace="structure
-              python:context.getField('long_description').getAccessor(context)()"></span>
-          </div>
-        </div>
-      </div>
+      <script src="./access_environmental_east.js"></script>
+
     </div>
-    -->
+
+    <metal:subtopics use-macro="context/atct_topic_view/macros/folderlisting_macro" />
+
+  </metal:content-core>
   </body>
 </html>
