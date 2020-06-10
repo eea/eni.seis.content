@@ -44,47 +44,6 @@
         </div>
       </div>
 
-      <div class="site-container-fluid" data-diazo='seea-content-section2'>
-        <div class="container-fluid seea-progress-section2">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="knowledge-resources"
-                   tal:define="contents python:context['knowledge-resources'].getFolderContents()[:6]"
-                   tal:on-error="string:'ERROR: Missing folder knowledge-resources.'">
-
-                <h3>Knowledge resources</h3>
-
-                <ul class="list-group">
-                  <li tal:repeat="brain python:contents"
-                      class="list-group-item">
-                    <span tal:define="
-                      default_icon python:{'is_fa': True, 'text': 'fa
-                      fa-file-o'};
-                      icon python:icons.get('knowledge resources',
-                      default_icon);
-                      icon_is_fa python:icon.get('is_fa', True)">
-                      <i tal:condition="python:icon_is_fa is True"
-                         tal:attributes="class python:icon.get('text',
-                         default_icon.get('text'))">
-                      </i>
-                      <img tal:condition="python:icon_is_fa is False"
-                           tal:attributes="src python:icon.get('text', './leaflet-icon.svg')"/>
-                    </span>
-                    <a href="" tal:attributes="href brain/getURL">
-                      <span tal:replace="brain/Title">Title here</span>
-                    </a>
-                  </li>
-                </ul>
-
-                <a href="./knowledge-resources" class="more-items pull-right">
-                  More resources
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- This section is replaced by diazo based on '/seea-progress-table-section' page. -->
       <div class="site-container" data-diazo='seea-content-section3'>
         <div class="container-fluid seea-progress-section3">
