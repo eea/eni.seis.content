@@ -360,7 +360,7 @@
         </div>
       </div>
 
-<div id="eni-accordion">
+      <div id="eni-accordion" data-diazo="eni-accordion">
         <h3>Summary of activities</h3>
         <div>
           <p tal:define="section python:context.restrictedTraverse('summary-of-activities')"
