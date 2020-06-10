@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.3.7 (unreleased)
+------------------
+
 1.3.6 (2020-06-05)
 ------------------
 - Feature: new design for Indicators and Assessments section.
