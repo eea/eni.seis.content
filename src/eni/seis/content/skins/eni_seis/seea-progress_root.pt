@@ -365,43 +365,6 @@
         </div>
       </div>
 
-      <div class="site-container-fluid" data-diazo='seea-content-section4'>
-        <div class="container-fluid seea-progress-section4">
-          <div class="row"
-               tal:define="contents python:context['explore-further'].getFolderContents()"
-               tal:on-error="string:'ERROR: Missing folder explore-further.'">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="container explore-further">
-                <h3>Explore further</h3>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-left">
-                    <ul class="list-group">
-                      <li tal:repeat="brain python:contents[:len(contents)//2]"
-                          class="list-group-item">
-                        <a href="" tal:attributes="href brain/getURL">
-                          <span tal:replace="brain/Title">Title here</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-right">
-                    <div class="explore-further">
-                      <ul class="list-group">
-                        <li tal:repeat="brain python:contents[len(contents)//2:]"
-                            class="list-group-item">
-                          <a href="" tal:attributes="href brain/getURL">
-                            <span tal:replace="brain/Title">Title here</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </body>
 </html>
