@@ -614,7 +614,9 @@
               </div>
             </div>
           </div>
+          <script src="./access_environmental_east.js"></script>
         </div>
+
 
         <h3>Knowledge resources</h3>
         <div>
@@ -630,8 +632,6 @@
              tal:on-error="string:Missing folder partners."></p>
         </div>
       </div>
-
-
 
     </div>
   </body>
