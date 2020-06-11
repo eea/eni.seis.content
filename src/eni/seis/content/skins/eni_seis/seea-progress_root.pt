@@ -16,6 +16,16 @@
           './leaflet-icon.svg'}}">
 
       <div class="site-container" data-diazo="seea-content-section1">
+        <div class="container title-section">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <h1 class="documentFirstHeading text-center"
+                  tal:content="context/Title">
+                SEEA Progress
+              </h1>
+            </div>
+          </div>
+        </div>
         <div class="seea-progress-container">
 
           <div class="container seea-progress-section1">
