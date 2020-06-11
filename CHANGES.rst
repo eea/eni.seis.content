@@ -3,6 +3,8 @@ Changelog
 
 1.3.7 (unreleased)
 ------------------
+- Feature: new design and layout for SEEA section.
+  [GhitaB #118619]
 
 1.3.6 (2020-06-05)
 ------------------
