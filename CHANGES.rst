@@ -3,6 +3,8 @@ Changelog
 
 1.3.9 (unreleased)
 ------------------
+- Fix: broken styles in SEEA section.
+  [GhitaB #118619]
 
 1.3.8 (2020-06-11)
 ------------------
