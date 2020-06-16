@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.4.0 (unreleased)
+1.4.0 (2020-06-16)
 ------------------
+- Improve: update menu of result categories in Result section.
+  [GhitaB #118784]
 
 1.3.9 (2020-06-12)
 ------------------
