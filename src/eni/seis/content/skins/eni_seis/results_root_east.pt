@@ -181,6 +181,20 @@
             </a>
           </div>
         </div>
+
+        <div class="aow-item">
+          <div class="aow-slide">
+            <a href="/east/areas-of-work/access-to-environmental-information">
+              <div class="img-circle-cropper">
+                <img class="slide-img" src="./homepage-3-square-data-management-and-infrastructure.jpg" />
+              </div>
+              <div class="text" style="margin-bottom: 1em;"><!-- Sorry for this style. -->
+                <span>Access to Environmental Information</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <div class="aow-item">
           <div class="aow-slide">
             <a href="/east/areas-of-work/work-plans">
