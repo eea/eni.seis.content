@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.4.0 (unreleased)
+------------------
+
 1.3.9 (2020-06-12)
 ------------------
 - Fix: broken styles in SEEA section.
