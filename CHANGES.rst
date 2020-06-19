@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.4.1 (unreleased)
+------------------
+
 1.4.0 (2020-06-16)
 ------------------
 - Improve: update menu of result categories in Results section.
