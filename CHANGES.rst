@@ -3,7 +3,8 @@ Changelog
 
 1.4.1 (unreleased)
 ------------------
-TODO: update from production custom: get featured meetings 2 script, CLC template
+- Improve: CLC east: include simple events as featured items in listing.
+  [GhitaB #118784]
 
 1.4.0 (2020-06-16)
 ------------------
