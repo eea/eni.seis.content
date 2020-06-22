@@ -3,6 +3,7 @@ Changelog
 
 1.4.1 (unreleased)
 ------------------
+- Improve: Hide What field in event_summary.
 - Improve: Remove tags column in events table view.
 - Improve: CLC east: include simple events as featured items in listing.
   [GhitaB #118784]
