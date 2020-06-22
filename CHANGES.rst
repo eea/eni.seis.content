@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.1 (unreleased)
+1.4.1 (2020-06-22)
 ------------------
 - Improve: Hide What field in event_summary.
 - Improve: Remove tags column in events table view.
