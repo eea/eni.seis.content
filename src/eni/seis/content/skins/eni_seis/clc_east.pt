@@ -222,10 +222,12 @@
                           <tal:repeat repeat="item python:product_items_3">
                           <tr tal:define="oddrow repeat/item/odd;"
                               tal:attributes="class python: test(oddrow, 'even', 'odd')">
+                            <!--
                             <td>
                               <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
                                  tal:on-error="nothing"></a>
                             </td>
+                            -->
                             <td>
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
