@@ -129,6 +129,7 @@
                       Link to Copernicus
                     </a>
                   </li>
+                  <!--
                   <li class="nav-item">
                     <a class="nav-link" id="summary-final-tab" data-toggle="tab"
                        href="#summary-final" role="tab" aria-controls="summary-final"
@@ -136,6 +137,7 @@
                       Summary of Final Technical Report
                     </a>
                   </li>
+                  -->
                 </ul>
 
                 <div class="tab-content" id="products-tabs-content">
