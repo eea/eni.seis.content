@@ -3,6 +3,9 @@ Changelog
 
 1.4.2 (unreleased)
 ------------------
+- Improve: Hide tab in Land and Countries column in listing of product items,
+  3rd tab.
+  [GhitaB #118784]
 
 1.4.1 (2020-06-22)
 ------------------
