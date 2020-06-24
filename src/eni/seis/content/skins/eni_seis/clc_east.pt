@@ -212,6 +212,11 @@
                   <div class="tab-pane fade" id="link-to-copernicus" role="tabpanel"
                        aria-labelledby="link-to-copernicus-tab">
                     <div tal:define="product_items_3 python:product_items.get('Link to Copernicus', [])">
+                      <p>
+                       ENI CLC Pilot results can be viewed at and downloadable from the Copernicus portal at the following link:
+                       <a href="https://land.copernicus.eu/pan-european/GHSL/eni-clc-pilot">Corine Land Cover pilots in Eastern Partnership countries</a>
+                      </p>
+                      <!--
                       <p class="no-items" tal:condition="python:len(product_items_3)==0">
                         Information to be available soon
                       </p>
@@ -222,12 +227,10 @@
                           <tal:repeat repeat="item python:product_items_3">
                           <tr tal:define="oddrow repeat/item/odd;"
                               tal:attributes="class python: test(oddrow, 'even', 'odd')">
-                            <!--
                             <td>
                               <a tal:replace="structure python:context.getCountryURL(item.countries[0])"
                                  tal:on-error="nothing"></a>
                             </td>
-                            -->
                             <td>
                               <a tal:attributes="href python:item.get_view_url()"
                                  tal:content="python:item.title">
@@ -243,6 +246,7 @@
                           </tal:repeat>
                         </tbody>
                       </table>
+                      -->
                     </div>
                   </div>
                   <div class="tab-pane fade" id="summary-final" role="tabpanel"
