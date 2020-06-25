@@ -3,6 +3,7 @@ Changelog
 
 1.4.2 (unreleased)
 ------------------
+- TODO: include simple events in listing? (SEEA)
 - Improve: Add link and description in Land section - link to Copernicus.
 - Improve: Hide tab in Land and Countries column in listing of product items,
   3rd tab.
