@@ -416,7 +416,7 @@
                       <td tal:content="python:event_level.capitalize()"></td>
                       <td>
                         <span tal:content="python: context.get_event_location(item)"></span>
-                        <span tal:condition="python:item.getObject().is_webinar() is True">
+                        <span tal:condition="python:item.getObject().is_webinar() is True" tal:on-error="nothing">
                           Webinar
                         </span>
                       </td>
