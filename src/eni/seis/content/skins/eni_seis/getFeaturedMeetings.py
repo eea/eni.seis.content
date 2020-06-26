@@ -1,5 +1,5 @@
 res = context.portal_catalog.searchResults(
-        portal_type=['eea.meeting'],
+        portal_type=['eea.meeting', 'Event', 'Folderish Event'],
         review_state='published',
         sort_on='start',
         sort_order='descending',
