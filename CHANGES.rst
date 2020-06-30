@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.2 (unreleased)
+1.4.2 (2020-06-30)
 ------------------
 - Improve: include simple events in listings.
   [GhitaB #118619]
